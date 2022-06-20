@@ -1,0 +1,8 @@
+sysroot/
+source/
+p1/
+p2/
+img/
+part-uuid.txt
+board.txt
+*.xz

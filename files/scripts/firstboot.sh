@@ -6,6 +6,7 @@ BOOT=`findmnt -v -n -o SOURCE /boot`
 ROOTFS=`findmnt -v -n -o SOURCE /`
 GROW=`findmnt -v -n -o SOURCE / | sed 's/p/ /'`
 GROW_SD=`findmnt -v -n -o SOURCE / | sed 's/./& /8'`
+MACADDR=$(cat /sys/class/net/eth0/address)
 
 # Functions
 partition_uuid(){
@@ -87,6 +88,17 @@ if [[ `grep -w "ARCH=arm" "/etc/opt/board.txt"` ]]; then
 	partition_uuid;
 	sleep 1s;
 	create_cmdline;
+fi
+
+# add EtherCAT conf
+if [[ `grep -w "Debian" "/etc/os-release"` ]]; then
+systemctl stop ethercat.service;
+rm -f /etc/ethercat.conf
+tee /etc/ethercat.conf<<EOF
+MASTER0_DEVICE="$MACADDR"
+DEVICE_MODULES="generic"
+EOF
+systemctl start ethercat.service;
 fi
 
 # Clean up

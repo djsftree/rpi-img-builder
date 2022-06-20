@@ -1,3 +1,52 @@
+## LinuxCNC/EtherCAT/LXQT/QT5/VTK
+
+---
+
+```
+Notes
+5.15.44 from https://github.com/raspberrypi/linux commit ea7fe1b21ea73146b1d49ac5f554fbd0ac5de9de
+RT patches - patches/userpatches/
+Kernel config - defconfig/rt64_defconfig
+Package install -  userscripts/uscripts
+lightdm, openbox, LXQt 1.1.0, Qt Creator, VTK 9.1 and bindings preset for QtPyVCP projects
+First boot detects and sets RPI4 /etc/ethercat.conf automatically
+For more info about the image builder (forked from pyavitz/rpi-img-builder) see below.
+root password is enabled and set to 'toor' - please change after booting!
+```
+
+#### Install host dependencies
+```sh
+./install
+```
+
+#### Edit userdata.txt
+```sh
+NAME="cnc"
+USERNAME="cnc"
+PASSWORD="cnc"
+```
+
+#### Build 5.15.40-rt43 kernel
+optional - for RPI4 I have included debs in /output/bcm2711
+```sh
+make commit board=bcm2711	# linux source pulled from commmit
+paste                           ea7fe1b21ea73146b1d49ac5f554fbd0ac5de9de
+```
+
+#### Build rootfs
+
+```sh
+make rootfs board=bcm2711
+```
+
+#### Build image
+```sh
+make image board=bcm2711
+```
+
+---
+
+
 <img src="https://socialify.git.ci/pyavitz/rpi-img-builder/image?description=1&font=KoHo&forks=1&issues=1&logo=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fde%2Fthumb%2Fc%2Fcb%2FRaspberry_Pi_Logo.svg%2F475px-Raspberry_Pi_Logo.svg.png&owner=1&pattern=Charlie%20Brown&stargazers=1&theme=Dark" alt="rpi-img-builder" width="640" height="320" />
 
 ## The boards and distributions that are currently supported

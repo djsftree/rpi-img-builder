@@ -1,0 +1,147 @@
+#!/bin/bash
+
+run_function2 (){
+
+  mkdir -p /home/${USERNAME}/dev
+
+  # theme defaults
+  mv -f /root/userscripts/lightdm.conf /etc/lightdm/lightdm.conf
+  mv -f /root/userscripts/lightdm-gtk-greeter.conf /etc/lightdm/lightdm-gtk-greeter.conf
+
+
+
+  # mesa
+  echo ""
+  echo "Installing mesa 22.1.2 with vulkan support .."
+  cd /home/${USERNAME}/dev
+  git clone --depth=1 -b mesa-22.1.2 https://gitlab.freedesktop.org/mesa/mesa.git
+  mkdir -p mesa/build
+  cd mesa
+  CFLAGS="-mcpu=cortex-a72 -g1"                   \
+  CXXFLAGS="-mcpu=cortex-a72 -g1"                 \
+  meson build                                     \
+    -D b_ndebug=true                              \
+    -D b_lto=true                                 \
+    -D buildtype=plain                            \
+    --wrap-mode=nofallback                        \
+    -D platforms=x11,wayland                      \
+    -D vulkan-drivers=broadcom                    \
+    -D vulkan-layers=device-select,overlay        \
+    -D dri-drivers=[]                             \
+    -D gallium-drivers=kmsro,v3d,vc4              \
+    -D libunwind=disabled
+  ninja -C build -j4
+  ninja -C build install
+
+
+
+  # LinuxCNC
+  echo ""
+  echo "Installing LinuxCNC ..."
+  sleep 1s
+  cd /home/${USERNAME}/dev
+  git clone --depth=1 https://github.com/LinuxCNC/linuxcnc.git
+  cd linuxcnc
+  debian/configure uspace no-docs
+  dpkg-buildpackage -us -uc -ui -b -j4
+  cd ..
+  dpkg -i linuxcnc-uspace_2.9.0~pre0_arm64.deb
+  dpkg -i linuxcnc-uspace-dev_2.9.0~pre0_arm64.deb
+
+
+
+  # VTK
+  echo ""
+  echo "Installing VTK wheel .."
+  sleep 1s
+  cd /home/${USERNAME}/dev
+  git clone --depth=1 --recursive https://gitlab.kitware.com/vtk/vtk.git
+  mkdir -p vtk/build
+  cd vtk/build
+  
+  cmake -LAH .. -GNinja                                            \
+      -Wno-dev                                                     \
+      -DBUILD_SHARED_LIBS:BOOL=ON                                  \
+      -DBUILD_TESTING=OFF                                          \
+      -DCMAKE_BUILD_TYPE:STRING=Release                            \
+      -DVTK_REPORT_OPENGL_ERRORS:BOOL=ON                           \
+      -DVTK_REPORT_OPENGL_ERRORS_IN_RELEASE_BUILDS:BOOL=ON         \
+      -DVTK_DEBUG_MODULE:STRING=all                                \
+      -DVTK_DEBUG_MODULE_ALL:BOOL=ON                               \
+      -DVTK_FORBID_DOWNLOADS=ON                                    \
+      -DVTK_BUILD_EXAMPLES=OFF                                     \
+      -DVTK_BUILD_DOCUMENTATION=OFF                                \
+      -DVTK_LEGACY_SILENT:BOOL=OFF                                 \
+      -DVTK_LEGACY_REMOVE=ON                                       \
+      -DVTK_WHEEL_BUILD=ON                                         \
+      -DVTK_WRAP_PYTHON=ON                                         \
+      -DVTK_NO_PLATFORM_SOCKETS:BOOL=ON                            \
+      -DVTK_GROUP_ENABLE_Imaging=DONT_WANT                         \
+      -DVTK_GROUP_ENABLE_MPI=DONT_WANT                             \
+      -DVTK_GROUP_ENABLE_Rendering=DONT_WANT                       \
+      -DVTK_GROUP_ENABLE_StandAlone=DONT_WANT                      \
+      -DVTK_GROUP_ENABLE_Views=DONT_WANT                           \
+      -DVTK_GROUP_ENABLE_Web=DONT_WANT                             \
+      -DVTK_GROUP_ENABLE_Qt=DONT_WANT                              \
+      -DVTK_QT_VERSION=5                                           \
+      -DQt5_DIR:PATH=/usr/lib/aarch64-linux-gnu/cmake/Qt5          \
+      -DVTK_MODULE_ENABLE_VTK_GUISupportQt=YES                     \
+      -DVTK_MODULE_ENABLE_VTK_RenderingQt=YES                      \
+      -DVTK_MODULE_ENABLE_VTK_ViewsQt=YES
+    
+  ninja
+  ninja install -v
+  rm -rf dist
+  python3 -m pip install wheel
+  python3 setup.py bdist_wheel
+  pip install dist/vtk-*.whl
+
+  
+
+  # EtherCAT
+  echo ""
+  echo "Installing EtherCAT..."
+  sleep 1s
+  echo "deb [allow-insecure=yes] https://download.opensuse.org/repositories/home:/bone11111:/branches:/science:/EtherLab/Debian_11/ ./" >> /etc/apt/sources.list
+  apt update --allow-unauthenticated
+  apt install -y --allow-unauthenticated ethercat-dkms libethercat libethercat-dev ethercat-master
+  systemctl enable ethercat.service
+
+
+
+  # LinuxCNC-EtherCAT
+  echo ""
+  echo "Installing LinuxCNC-EtherCAT..."
+  sleep 1s
+  cd /home/${USERNAME}/dev
+  git clone https://github.com/sittner/linuxcnc-ethercat.git
+  mv -f /root/userscripts/realtime.mk linuxcnc-ethercat/src/realtime.mk
+  cd linuxcnc-ethercat
+  make -j4
+  make install
+  echo 'KERNEL=="EtherCAT[0-9]", MODE="0777"' > /etc/udev/rules.d/99-ethercat.rules
+
+
+
+  # Qtpyvcp support
+  echo ""
+  echo "Installing qtpyvcp ..."
+  sleep 1s
+  cd /home/${USERNAME}/dev
+  git clone https://github.com/kcjengr/qtpyvcp
+  cd qtpyvcp
+  cp scripts/.xsessionrc /home/${USERNAME}/
+  chown -R ${USERNAME}:${USERNAME} /home/${USERNAME}
+  sudo -u ${USERNAME} python3 -m pip install -e .
+  cp -r linuxcnc /home/${USERNAME}/
+
+
+
+  # Tidy up
+  echo ""
+  echo "Tidying up"
+  sleep 1s  
+  chown -R ${USERNAME}:${USERNAME} /home/${USERNAME}
+  apt -y clean
+  apt -y autoclean
+}
