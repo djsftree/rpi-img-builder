@@ -2,9 +2,15 @@
 GHURL="https://raw.githubusercontent.com/pyavitz/rpi-img-builder/master/files"
 clear -x
 echo -en "Updating menu and scripts "
-fetch -u > /dev/null 2>&1
-governor -u > /dev/null 2>&1
-swh -U > /dev/null 2>&1
+if [[ `command -v fetch` ]]; then
+	fetch -u > /dev/null 2>&1;
+fi
+if [[ `command -v governor` ]]; then
+	governor -u > /dev/null 2>&1;
+fi
+if [[ `command -v swh` ]]; then
+	swh -U > /dev/null 2>&1;
+fi
 if [ -f /etc/update-motd.d/20-sysinfo ]; then
 	sudo mv /etc/update-motd.d/20-sysinfo /etc/update-motd.d/20-sysinfo.orig;
 	sudo wget -cq $GHURL/scripts/20-sysinfo -P /etc/update-motd.d/;
@@ -13,6 +19,16 @@ if [ -f /etc/update-motd.d/20-sysinfo ]; then
 		sudo rm -f /etc/update-motd.d/20-sysinfo.orig
 	else
 		sudo mv /etc/update-motd.d/20-sysinfo.orig /etc/update-motd.d/20-sysinfo;
+	fi
+fi
+if [[ `command -v sysinfo` ]]; then
+	sudo mv -f /usr/local/bin/sysinfo /usr/local/bin/sysinfo.orig;
+	sudo wget -cq $GHURL/scripts/sysinfo -P /usr/local/bin/;
+	if [ -f /usr/local/bin/sysinfo ]; then
+		sudo chmod +x /usr/local/bin/sysinfo;
+		sudo rm -f /usr/local/bin/sysinfo.orig;
+	else
+		sudo mv /usr/local/bin/sysinfo.orig /usr/local/bin/sysinfo;
 	fi
 fi
 MENU=`command -v menu-config`
