@@ -1,0 +1,25 @@
+Format: 1.8
+Date: Fri, 24 Jun 2022 13:00:43 -0400
+Source: linuxcnc-build-deps
+Binary: linuxcnc-build-deps
+Architecture: all
+Version: 2.9.0~pre0
+Distribution: unstable
+Urgency: low
+Maintainer: cnc <cnc@noip.org>
+Changed-By: cnc <cnc@noip.org>
+Description:
+ linuxcnc-build-deps - build-dependencies for linuxcnc
+Changes:
+ linuxcnc-build-deps (2.9.0~pre0) unstable; urgency=low
+ .
+   * First version
+Checksums-Sha1:
+ d36e7687896077ffd97cb9303e209161522ef035 2488 linuxcnc-build-deps_2.9.0~pre0_all.deb
+ 3d38e214be76895c2d8c8057765652308c4aac99 5111 linuxcnc-build-deps_2.9.0~pre0_arm64.buildinfo
+Checksums-Sha256:
+ c2169fd75ebb24427f8e38363041448655b31aabef0a09d55ba3359916d9762e 2488 linuxcnc-build-deps_2.9.0~pre0_all.deb
+ 9a6793efc5b6144521aea0d09209c82ebd3a72e3843b8c557295c46f46a1d716 5111 linuxcnc-build-deps_2.9.0~pre0_arm64.buildinfo
+Files:
+ 22b6e9be77388b3be729ba71d6c175f7 2488 devel optional linuxcnc-build-deps_2.9.0~pre0_all.deb
+ b991a651e632c646d69acc9a8af34690 5111 devel optional linuxcnc-build-deps_2.9.0~pre0_arm64.buildinfo

@@ -4,14 +4,13 @@
 
 ```
 Notes
-5.15.44 from https://github.com/raspberrypi/linux commit ea7fe1b21ea73146b1d49ac5f554fbd0ac5de9de
-RT patches - patches/userpatches/
+5.19 from https://github.com/raspberrypi/linux/tree/rpi-5.19.y
+5.19-rc3-rt4 patch - patches/userpatches/
 Kernel config - defconfig/rt64_defconfig
 Package install -  userscripts/uscripts
-lightdm, openbox, LXQt 1.1.0, Qt Creator, VTK 9.1 and bindings preset for QtPyVCP projects
-First boot detects and sets RPI4 /etc/ethercat.conf automatically
+lightdm, openbox, LXQt 1.1.0, Qt5 Creator, VTK 9.1 wheel and bindings preset for QtPyVCP projects
+First boot detects and sets /etc/ethercat.conf automatically
 For more info about the image builder (forked from pyavitz/rpi-img-builder) see below.
-root password is enabled and set to 'toor' - please change after booting!
 ```
 
 #### Install host dependencies
@@ -24,13 +23,19 @@ root password is enabled and set to 'toor' - please change after booting!
 NAME="cnc"
 USERNAME="cnc"
 PASSWORD="cnc"
+rootpasswd=1 --- 'toor' please change after booting!
 ```
 
-#### Build 5.15.40-rt43 kernel
-optional - for RPI4 I have included debs in /output/bcm2711
+#### Build 5.19-rc3-rt4 kernel
+this step is optional - for RPI4 I have included debs in /output/bcm2711
 ```sh
-make commit board=bcm2711	# linux source pulled from commmit
-paste                           ea7fe1b21ea73146b1d49ac5f554fbd0ac5de9de
+make kernel board=bcm2711	# linux source pulled from raspberrypi/linux/5.19y
+```
+
+#### edit build script
+if you wish to edit the packages installed
+```sh
+files/userscripts/uscripts
 ```
 
 #### Build rootfs
@@ -43,6 +48,7 @@ make rootfs board=bcm2711
 ```sh
 make image board=bcm2711
 ```
+
 
 ---
 

@@ -30,6 +30,19 @@ apt upgrade -y
 apt dist-upgrade -y
 if [[ "$DISTRO" == "debian" ]]; then
 	apt install -y ${PKGS} ${USER_PKGS} ${SYSMODS} resolvconf openssh-client openssh-server;
+	apt install -y xserver-xorg-video-fbdev;
+	apt install -y openbox;
+	apt install -y lightdm;
+	apt install -y onboard;
+	apt install -y --no-install-recommends lxqt-core;
+	apt install -y lxqt-admin lximage-qt lxqt-powermanagement;
+	apt install -y pcmanfm-qt qps screengrab obconf-qt qterminal lxqt-archiver;
+	apt -y clean;
+	apt -y autoclean;
+	apt -y install -y featherpad geany firefox-esr;
+	apt -y install -y python3-dev python3-wheel python3-pip;
+	apt -y install --no-install-recommends dkms equivs devscripts meson ninja-build libdistro-info-perl;
+	echo "export QT_STYLE_OVERRIDE=kvantum" >> /etc/environment;
 fi
 if [[ "$DISTRO" == "devuan" ]]; then
 	apt install -y openssh-client openssh-server --no-install-recommends;
@@ -37,35 +50,6 @@ if [[ "$DISTRO" == "devuan" ]]; then
 fi
 if [[ "$DISTRO" == "ubuntu" ]]; then
 	apt install -y ${PKGS} ${USER_PKGS} ${SYSMODS} openresolv openssh-client openssh-server;
-fi
-if [[ "$DISTRO" == "debian" ]]; then
-	echo 'deb-src http://deb.debian.org/debian bookworm main contrib non-free' >> /etc/apt/sources.list;
-	apt-get update;
-	/etc/init.d/dbus restart;
-	# minimal lxqt desktop
-	apt install -y xserver-xorg-video-fbdev;
-	apt install -y openbox;
-	apt install -y lightdm;
-	apt install -y --no-install-recommends lxqt-core;
-	apt install -y geany firefox-esr lxappearance onboard;
-	# package utils
-	apt install -y equivs devscripts python3-dev python3-wheel python3-pip;
-	# mesa libsdl2 build deps
-	apt-get build-dep -y libsdl2;
-	apt-get build-dep -y mesa;
-	ln -s /usr/bin/llvm-config-14 /usr/bin/llvm-config;
-	# qt5 dev deps
-	apt install -y qtbase5-dev;
-	apt install -y python3-pyqt5 python3-dbus.mainloop.pyqt5 python3-pyqt5.qtopengl python3-pyqt5.qsci \
-	python3-pyqt5.qtmultimedia python3-pyqt5.qtquick qml-module-qtquick-controls gstreamer1.0-plugins-bad \
-	libqt5multimedia5-plugins pyqt5-dev-tools;
-	# linuxcnc
-	apt install -y linuxcnc-uspace linuxcnc-uspace-dev mesaflash;
-	# linuxcnc build deps
-	apt-get build-dep -y linuxcnc;
-	apt install -y libyaml-tiny-perl po4a;
-	# Qtpyvcp build deps
-	sleep 10s;
 fi
 apt -y clean
 apt -y autoclean

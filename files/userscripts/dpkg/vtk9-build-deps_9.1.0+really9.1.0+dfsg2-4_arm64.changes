@@ -1,0 +1,25 @@
+Format: 1.8
+Date: Fri, 24 Jun 2022 05:46:30 -0400
+Source: vtk9-build-deps
+Binary: vtk9-build-deps
+Architecture: arm64
+Version: 9.1.0+really9.1.0+dfsg2-4
+Distribution: unstable
+Urgency: low
+Maintainer: cnc <cnc@noip.org>
+Changed-By: cnc <cnc@noip.org>
+Description:
+ vtk9-build-deps - build-dependencies for vtk9
+Changes:
+ vtk9-build-deps (9.1.0+really9.1.0+dfsg2-4) unstable; urgency=low
+ .
+   * First version
+Checksums-Sha1:
+ 7d8e0c32f5e61ae6e833eb40bbdfb43c9cb5c543 4899 vtk9-build-deps_9.1.0+really9.1.0+dfsg2-4_arm64.buildinfo
+ f3e764a599d75b729bf36c731876a20793179935 3024 vtk9-build-deps_9.1.0+really9.1.0+dfsg2-4_arm64.deb
+Checksums-Sha256:
+ 11bf35b429edf14c0fa4152487831a0d445937c43ac6f61b1e6b96320e58f67d 4899 vtk9-build-deps_9.1.0+really9.1.0+dfsg2-4_arm64.buildinfo
+ 855cef4b47390ccbe1595e9ef401ced0795a2b34806a738c1b837f7d05c43c78 3024 vtk9-build-deps_9.1.0+really9.1.0+dfsg2-4_arm64.deb
+Files:
+ acf1ec7a2ee54903a5d7772b100d98b5 4899 devel optional vtk9-build-deps_9.1.0+really9.1.0+dfsg2-4_arm64.buildinfo
+ 19b6aabb2965943ea2a019314892545c 3024 devel optional vtk9-build-deps_9.1.0+really9.1.0+dfsg2-4_arm64.deb

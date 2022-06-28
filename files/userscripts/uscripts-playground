@@ -1,0 +1,64 @@
+  # mesa
+  echo ""
+  echo "Installing mesa 22.1.2 with vulkan support .."
+  cd /home/${USERNAME}/dev
+  git clone --depth=1 -b mesa-22.1.2 https://gitlab.freedesktop.org/mesa/mesa.git
+  mkdir -p mesa/build
+  cd mesa
+
+
+
+  # VTK
+  echo ""
+  echo "Installing VTK wheel .."
+  sleep 1s
+  cd /home/${USERNAME}/dev
+  git clone --depth=1 --recursive https://gitlab.kitware.com/vtk/vtk.git
+  mkdir -p vtk/build
+  cd vtk/build
+  
+  cmake -LAH .. -GNinja                                            \
+      -Wno-dev                                                     \
+      -DBUILD_SHARED_LIBS:BOOL=ON                                  \
+      -DBUILD_TESTING=OFF                                          \
+      -DCMAKE_BUILD_TYPE:STRING=Release                            \
+      -DVTK_REPORT_OPENGL_ERRORS:BOOL=ON                           \
+      -DVTK_REPORT_OPENGL_ERRORS_IN_RELEASE_BUILDS:BOOL=ON         \
+      -DVTK_DEBUG_MODULE:STRING=all                                \
+      -DVTK_DEBUG_MODULE_ALL:BOOL=ON                               \
+      -DVTK_FORBID_DOWNLOADS=ON                                    \
+      -DVTK_BUILD_EXAMPLES=OFF                                     \
+      -DVTK_BUILD_DOCUMENTATION=OFF                                \
+      -DVTK_LEGACY_SILENT:BOOL=OFF                                 \
+      -DVTK_LEGACY_REMOVE=ON                                       \
+      -DVTK_WHEEL_BUILD=ON                                         \
+      -DVTK_WRAP_PYTHON=ON                                         \
+      -DVTK_NO_PLATFORM_SOCKETS:BOOL=ON                            \
+      -DVTK_GROUP_ENABLE_Imaging=DONT_WANT                         \
+      -DVTK_GROUP_ENABLE_MPI=DONT_WANT                             \
+      -DVTK_GROUP_ENABLE_Rendering=DONT_WANT                       \
+      -DVTK_GROUP_ENABLE_StandAlone=DONT_WANT                      \
+      -DVTK_GROUP_ENABLE_Views=DONT_WANT                           \
+      -DVTK_GROUP_ENABLE_Web=DONT_WANT                             \
+      -DVTK_GROUP_ENABLE_Qt=DONT_WANT                              \
+      -DVTK_QT_VERSION=5                                           \
+      -DQt5_DIR:PATH=/usr/lib/aarch64-linux-gnu/cmake/Qt5          \
+      -DVTK_MODULE_ENABLE_VTK_GUISupportQt=YES                     \
+      -DVTK_MODULE_ENABLE_VTK_RenderingQt=YES                      \
+      -DVTK_MODULE_ENABLE_VTK_ViewsQt=YES
+        ninja
+  ninja install -v
+  rm -rf dist
+  python3 -m pip install wheel
+  python3 setup.py bdist_wheel
+
+      
+     # EtherCAT
+  echo ""
+  echo "Installing EtherCAT..."
+  sleep 1s
+  echo "deb [allow-insecure=yes] https://download.opensuse.org/repositories/home:/bone11111:/branches:/science:/EtherLab/Debian_11/ ./" >> /etc/apt/sources.list
+  apt update --allow-unauthenticated
+  apt install -y --allow-unauthenticated ethercat-dkms libethercat libethercat-dev ethercat-master
+  systemctl enable ethercat.service  
+      

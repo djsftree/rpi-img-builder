@@ -3,14 +3,14 @@ USERNAME="cnc"
 PASSWORD="cnc"
 rootpasswd=1
 ### LINUX KERNEL
-VERSION="5.15.y"
+VERSION="5.19.y"
 BUILD_VERSION="1"
 menuconfig=0
 crosscompile=1
 ### COMPILER
 GCC_VERSION="gcc-10"
 gcc=1
-ccache=0
+ccache=1
 clang=0
 ### DISTRIBUTION
 DISTRO="debian"
@@ -34,7 +34,7 @@ CLANG_LLVM="LLVM=1 LLVM_IAS=1"
 lto_clang_thin=0
 ### COMPILER TUNING
 CORES=`nproc`
-CFLAGS=""
+CFLAGS="-march=armv8-a+crc+crypto -mtune=cortex-a72"
 ### LOCALES
 set_locales(){
 apt install -y locales
