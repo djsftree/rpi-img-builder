@@ -24,6 +24,28 @@ run_function2 (){
   mv -f /root/userscripts/lightdm-gtk-greeter.conf /etc/lightdm/lightdm-gtk-greeter.conf
 
   # theme defaults
+  
+
+  
+  # mesa 22.1.2
+  echo ""
+  echo "Installing mesa 22.1.2..."
+  sleep 1s
+  apt install -y freeglut3 libglvnd-dev libglew2.2 libglew-dev libglu1-mesa \
+    wayland-protocols libwayland-bin libwayland-dev libclc-13 libclang-cpp14
+  dpkg -i /root/userscripts/dpkg/libglapi-mesa_2*arm64.deb
+  dpkg -i /root/userscripts/dpkg/libgbm1_2*arm64.deb
+  dpkg -i /root/userscripts/dpkg/libgbm-dev_2*arm64.deb
+  dpkg -i /root/userscripts/dpkg/libegl-mesa0_2*arm64.deb
+  dpkg -i /root/userscripts/dpkg/libegl1-mesa_2*arm64.deb
+  dpkg -i /root/userscripts/dpkg/libegl1-mesa-dev_2*arm64.deb
+  dpkg -i /root/userscripts/dpkg/libgl1-mesa-dri_2*arm64.deb
+  dpkg -i /root/userscripts/dpkg/libglx-mesa0_2*arm64.deb
+  dpkg -i /root/userscripts/dpkg/libwayland-egl1-mesa_2*arm64.deb
+  dpkg -i /root/userscripts/dpkg/mesa-vulkan-drivers_2*arm64.deb
+  dpkg -i /root/userscripts/dpkg/mesa-va-drivers_2*arm64.deb
+  dpkg -i /root/userscripts/dpkg/mesa-vdpau-drivers_2*arm64.deb
+  dpkg -i /root/userscripts/dpkg/mesa-opencl-icd_2*arm64.deb
 
 
 
@@ -32,8 +54,7 @@ run_function2 (){
 
 
 
-  # install EtherCAT
-  apt install -y --no-install-recommends dkms
+  # install EtherCAT 1.5.2-33
   dpkg -i /root/userscripts/dpkg/ethercat-dkms_1.5.2-33_all.deb
   dpkg -i /root/userscripts/dpkg/libethercat_1.5.2-33_arm64.deb
   dpkg -i /root/userscripts/dpkg/libethercat-dev_1.5.2-33_arm64.deb
@@ -71,6 +92,8 @@ run_function2 (){
   echo ""
   echo "Installing qtpyvcp ..."
   sleep 1s
+  apt install -y python3-pyqt5.qtmultimedia python3-pyqt5.qtquick \
+    qml-module-qtquick-controls gstreamer1.0-plugins-bad libqt5multimedia5-plugins
   pip install /root/userscripts/vtk-*.whl
   cd /home/${USERNAME}/dev
   git clone https://github.com/kcjengr/qtpyvcp
@@ -79,9 +102,9 @@ run_function2 (){
   chown -R ${USERNAME}:${USERNAME} /home/${USERNAME}
   sudo -u ${USERNAME} python3 -m pip install -e .
   cp -r linuxcnc /home/${USERNAME}/
-
-
-
+  
+  
+  
   # Tidy up
   echo ""
   echo "Tidying up"

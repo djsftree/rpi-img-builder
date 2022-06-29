@@ -2,7 +2,7 @@
 
 # dev rootfs
 sysroot_partition(){
-truncate -s 2500MB "${ROOTFS_FOLDER}${RELEASE_NAME}"
+truncate -s 3600MB "${ROOTFS_FOLDER}${RELEASE_NAME}"
 echo -e "o
 n
 p
@@ -11,7 +11,7 @@ p
 a
 t
 b
-4882811
+7031249
 
 p
 w" | fdisk "${ROOTFS_FOLDER}${RELEASE_NAME}"

@@ -15,7 +15,7 @@ clang=0
 ### DISTRIBUTION
 DISTRO="debian"
 DISTRO_VERSION="bookworm"
-networkmanager=1
+networkmanager=0
 ### FILESYSTEM
 ext4=1
 btrfs=0
@@ -35,6 +35,9 @@ lto_clang_thin=0
 ### COMPILER TUNING
 CORES=`nproc`
 CFLAGS="-march=armv8-a+crc+crypto -mtune=cortex-a72"
+### WHOAMI AND HOST
+KBUSER="linuxcnc"
+KBHOST="raspberrypi"
 ### LOCALES
 set_locales(){
 apt install -y locales
@@ -56,4 +59,4 @@ rtl8812au=0
 rtl88x2bu=0
 rtl8811cu=0
 ### DO NOT EDIT BELOW THIS LINE
-builder=4.10
+builder=4.11

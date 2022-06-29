@@ -6,3 +6,6 @@ img/
 part-uuid.txt
 board.txt
 *.xz
+*.img
+kernel.txt
+ccache.txt
