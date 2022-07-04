@@ -230,6 +230,21 @@ if [ $xfs -eq 1 ]; then
 fi
 }
 
+# whiptail color palette (ubuntu)
+palette-dark(){
+tee /etc/newt/palette.dark <<EOF
+root=,black
+checkbox=,black
+entry=,black
+label=black,
+actlistbox=,black
+helpline=,black
+roottext=lightgray,black
+emptyscale=black
+disabledentry=black,
+EOF
+}
+
 # User scripts
 uscripts_pre-stage1(){
 if [ -f files/userscripts/uscripts ]; then
@@ -339,13 +354,13 @@ rm -f kpart.txt
 # Rename and compress
 rename_image(){
 source kernel.txt
-mv -f ${BOARD_EXT}-${DISTRO}-${DISTRO_VERSION}-${IMAGE_DATE}.img ${BOARD_EXT}-${DISTRO}-${DISTRO_VERSION}-${INSTALLED_KERNEL}-${FSTYPE}-${IMAGE_DATE}.img
+mv -f ${BOARD_EXT}-${DISTRO}-${DISTRO_VERSION}-${IMAGE_DATE}.img ${BOARD_EXT}-${DISTRO}-${DISTRO_VERSION}-${INSTALLED_KERNEL}-${ARCH_EXT}-${FSTYPE}-${IMAGE_DATE}.img
 }
 
 compress_image(){
 source kernel.txt
-mv -f ${BOARD_EXT}-${DISTRO}-${DISTRO_VERSION}-${IMAGE_DATE}.img ${BOARD_EXT}-${DISTRO}-${DISTRO_VERSION}-${INSTALLED_KERNEL}-${FSTYPE}-${IMAGE_DATE}.img
-xz -zev --threads=${CORES} ${BOARD_EXT}-${DISTRO}-${DISTRO_VERSION}-${INSTALLED_KERNEL}-${FSTYPE}-${IMAGE_DATE}.img
+mv -f ${BOARD_EXT}-${DISTRO}-${DISTRO_VERSION}-${IMAGE_DATE}.img ${BOARD_EXT}-${DISTRO}-${DISTRO_VERSION}-${INSTALLED_KERNEL}-${ARCH_EXT}-${FSTYPE}-${IMAGE_DATE}.img
+xz -zev --threads=${CORES} ${BOARD_EXT}-${DISTRO}-${DISTRO_VERSION}-${INSTALLED_KERNEL}-${ARCH_EXT}-${FSTYPE}-${IMAGE_DATE}.img
 }
 
 # LED script
