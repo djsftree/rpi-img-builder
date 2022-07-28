@@ -5,7 +5,62 @@
   git clone --depth=1 -b mesa-22.1.2 https://gitlab.freedesktop.org/mesa/mesa.git
   mkdir -p mesa/build
   cd mesa
+  
+  
+  
+  DEBEMAIL="cnc@noip.org"
+  DEBFULLNAME="cnc"
+  export DEBEMAIL DEBFULLNAME
+  
+  
 
+  # PyQt5
+  echo ""
+  echo "Building PyQt5 5.15.7+dfsg-1 ..."
+  sleep 1s
+  cd /home/${USERNAME}/dev
+  git clone https://salsa.debian.org/python-team/packages/pyqt5.git
+  cd pyqt5
+  git checkout 49d94553
+  mk-build-deps --install --tool='apt-get -o Debug::pkgProblemResolver=yes --yes' debian/control
+  dch --force-distribution -b -v 5.15.7+dfsg-1 --distribution unstable "built by rpi-image-builder"
+  fakeroot ./debian/rules binary
+  # dpkg-buildpackage -us -uc -b
+  
+  
+  
+  # LinuxCNC
+  echo ""
+  echo "Installing LinuxCNC ..."
+  sleep 1s
+  apt install -y linuxcnc-uspace linuxcnc-uspace-dev mesaflash
+  cd /home/${USERNAME}/dev
+  git clone --depth 1 https://github.com/LinuxCNC/linuxcnc.git linuxcnc
+  cd linuxcnc/debian
+  ./configure no-docs uspace
+  cd ..
+  mk-build-deps --install --tool='apt-get -o Debug::pkgProblemResolver=yes --yes' debian/control
+  dch --force-distribution -b -v 2.9.0~pre0 --distribution experimental "built by rpi-image-builder"
+  dpkg-buildpackage -j4 -us -uc -b
+  cd ..
+  dpkg -i linuxcnc-uspace_*arm64.deb
+  dpkg -i linuxcnc-uspace-dev_*arm64.deb
+  
+
+
+  # Qtpyvcp support
+  echo ""
+  echo "Installing qtpyvcp ..."
+  sleep 1s
+  cd /home/${USERNAME}/dev
+  git clone --depth 1 https://github.com/kcjengr/qtpyvcp
+  cd qtpyvcp
+  mk-build-deps --install --tool='apt-get -o Debug::pkgProblemResolver=yes --no-install-recommends --yes' debian/control
+  dch --force-distribution -b -v 0.4-1 --distribution unstable "built by rpi-image-builder"
+  pip install /root/userscripts/vtk-*.whl
+  dpkg-buildpackage -j4 -b -uc
+  cd ..
+  dpkg -i python3-qtpyvcp-*.deb
 
 
   # VTK
@@ -24,6 +79,7 @@
       -DCMAKE_BUILD_TYPE:STRING=Release                            \
       -DVTK_REPORT_OPENGL_ERRORS:BOOL=ON                           \
       -DVTK_REPORT_OPENGL_ERRORS_IN_RELEASE_BUILDS:BOOL=ON         \
+      -DVTK_OPENGL_HAS_EGL=False                                   \
       -DVTK_DEBUG_MODULE:STRING=all                                \
       -DVTK_DEBUG_MODULE_ALL:BOOL=ON                               \
       -DVTK_FORBID_DOWNLOADS=ON                                    \
@@ -33,6 +89,7 @@
       -DVTK_LEGACY_REMOVE=ON                                       \
       -DVTK_WHEEL_BUILD=ON                                         \
       -DVTK_WRAP_PYTHON=ON                                         \
+      -DVTK_MODULE_ENABLE_VTK_PythonInterpreter:STRING=NO          \
       -DVTK_NO_PLATFORM_SOCKETS:BOOL=ON                            \
       -DVTK_GROUP_ENABLE_Imaging=DONT_WANT                         \
       -DVTK_GROUP_ENABLE_MPI=DONT_WANT                             \
@@ -53,7 +110,7 @@
   python3 setup.py bdist_wheel
 
       
-     # EtherCAT
+  # EtherCAT
   echo ""
   echo "Installing EtherCAT..."
   sleep 1s
@@ -61,4 +118,23 @@
   apt update --allow-unauthenticated
   apt install -y --allow-unauthenticated ethercat-dkms libethercat libethercat-dev ethercat-master
   systemctl enable ethercat.service  
+  
+  
+  
+  # Qtpyvcp support
+  echo ""
+  echo "Installing qtpyvcp ..."
+  sleep 1s
+  apt install -y python3-pyqt5.qtopengl python3-pyqt5.qtmultimedia python3-pyqt5.qtquick \
+    qml-module-qtquick-controls gstreamer1.0-plugins-bad libqt5multimedia5-plugins \
+    python3-docopt python3-qtpy python3-pyudev python3-psutil python3-vtk9 \
+    python3-pyqtgraph python3-simpleeval python3-jinja2 python3-sqlalchemy
+  pip install /root/userscripts/vtk-*.whl
+  cd /home/${USERNAME}/dev
+  git clone https://github.com/kcjengr/qtpyvcp
+  cd qtpyvcp
+  cp scripts/.xsessionrc /home/${USERNAME}/
+  chown -R ${USERNAME}:${USERNAME} /home/${USERNAME}
+  sudo -u ${USERNAME} python3 -m pip install -e .
+  cp -r linuxcnc /home/${USERNAME}/
       

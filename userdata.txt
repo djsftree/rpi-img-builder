@@ -15,7 +15,7 @@ clang=0
 ### DISTRIBUTION
 DISTRO="debian"
 DISTRO_VERSION="bookworm"
-networkmanager=0
+networkmanager=1
 ### FILESYSTEM
 ext4=1
 btrfs=0

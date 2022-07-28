@@ -13,20 +13,68 @@ run_function2 (){
 
 
   mkdir -p /home/${USERNAME}/dev
-  CFLAGS="-march=armv8-a+crc+crypto -mtune=cortex-a72"
+
+  DEBEMAIL="cnc@noip.org"
+  DEBFULLNAME="cnc"
+  export DEBEMAIL DEBFULLNAME
 
   # dpkg-build tuning flags for rpi4
+  CFLAGS="-march=armv8-a+crc+crypto -mtune=cortex-a72"
   echo "APPEND CFLAGS ${CFLAGS}" >> /etc/dpkg/buildflags.conf
   echo "APPEND CXXFLAGS ${CFLAGS}" >> /etc/dpkg/buildflags.conf
-
+  
   # onboard keyboard defaults
   mv -f /root/userscripts/lightdm.conf /etc/lightdm/lightdm.conf
   mv -f /root/userscripts/lightdm-gtk-greeter.conf /etc/lightdm/lightdm-gtk-greeter.conf
 
-  # theme defaults
-  
+  # stop lxqt auto notifications at login
+  rm /etc/xdg/autostart/lxqt-notifications.desktop
 
-  
+
+
+  # install RT kernel
+  stage2_kernel
+
+
+
+  # LinuxCNC
+  echo ""
+  echo "Installing LinuxCNC -- 27 July 2022..."
+  sleep 1s
+  apt install -y linuxcnc-uspace linuxcnc-uspace-dev mesaflash
+  dpkg -i /root/userscripts/dpkg/linuxcnc-uspace_*arm64.deb
+  dpkg -i /root/userscripts/dpkg/linuxcnc-uspace-dev_*arm64.deb
+
+
+
+  # Qtpyvcp
+  echo ""
+  echo "Installing qtpyvcp ..."
+  sleep 1s
+  python3 -m pip install /root/userscripts/vtk-*.whl
+  apt install -y python3-pyqt5 python3-dbus.mainloop.pyqt5 python3-pyqt5.qtopengl python3-pyqt5.qsci python3-pyqt5.qtmultimedia \
+    python3-pyqt5.qtquick qml-module-qtquick-controls gstreamer1.0-plugins-bad libqt5multimedia5-plugins pyqt5-dev-tools python3-dev \
+    python3-setuptools python3-wheel python3-pip python3-six python3-docopt python3-qtpy python3-pyudev python3-psutil python3-markupsafe \
+    python3-opengl python3-vtk9 python3-pyqtgraph python3-simpleeval python3-jinja2 python3-deepdiff python3-sqlalchemy git
+  cd /home/${USERNAME}/dev
+  git clone --depth 1 https://github.com/kcjengr/qtpyvcp
+  cd qtpyvcp
+  mk-build-deps --install --tool='apt-get -o Debug::pkgProblemResolver=yes --yes' debian/control
+  cp scripts/.xsessionrc /home/${USERNAME}/
+  chown -R ${USERNAME}:${USERNAME} /home/${USERNAME}
+  sudo -u ${USERNAME} python3 -m pip install --editable .
+  cp -r linuxcnc /home/${USERNAME}/
+
+
+
+  # PyQt5 Designer Plugin
+  echo ""
+  echo "PyQt5.15.7+dfsg-1 for Qt5.15.4-2-arm64 python3.10"
+  mv -f /root/userscripts/dpkg/Qt5.15.4-2-arm64/python3.10/libpyqt5.so \
+    /usr/lib/aarch64-linux-gnu/qt5/plugins/designer/libpyqt5.so
+
+
+
   # mesa 22.1.2
   echo ""
   echo "Installing mesa 22.1.2..."
@@ -42,15 +90,11 @@ run_function2 (){
   dpkg -i /root/userscripts/dpkg/libgl1-mesa-dri_2*arm64.deb
   dpkg -i /root/userscripts/dpkg/libglx-mesa0_2*arm64.deb
   dpkg -i /root/userscripts/dpkg/libwayland-egl1-mesa_2*arm64.deb
+  dpkg -i /root/userscripts/dpkg/libgl1-mesa-dev_2*arm64.deb
   dpkg -i /root/userscripts/dpkg/mesa-vulkan-drivers_2*arm64.deb
   dpkg -i /root/userscripts/dpkg/mesa-va-drivers_2*arm64.deb
   dpkg -i /root/userscripts/dpkg/mesa-vdpau-drivers_2*arm64.deb
   dpkg -i /root/userscripts/dpkg/mesa-opencl-icd_2*arm64.deb
-
-
-
-  # install kernel
-  stage2_kernel
 
 
 
@@ -61,16 +105,6 @@ run_function2 (){
   dpkg -i /root/userscripts/dpkg/ethercat-master_1.5.2-33_arm64.deb
   systemctl enable ethercat.service
   echo 'KERNEL=="EtherCAT[0-9]", MODE="0777"' > /etc/udev/rules.d/99-ethercat.rules
-
-
-
-  # LinuxCNC
-  echo ""
-  echo "Installing LinuxCNC ..."
-  sleep 1s
-  apt install -y linuxcnc-uspace linuxcnc-uspace-dev mesaflash
-  dpkg -i /root/userscripts/dpkg/linuxcnc-uspace_*arm64.deb
-  dpkg -i /root/userscripts/dpkg/linuxcnc-uspace-dev_*arm64.deb
 
 
 
@@ -88,31 +122,12 @@ run_function2 (){
 
 
 
-  # Qtpyvcp support
-  echo ""
-  echo "Installing qtpyvcp ..."
-  sleep 1s
-  apt install python3-pyqt5 python3-dbus.mainloop.pyqt5 python3-pyqt5.qtopengl python3-pyqt5.qsci \
-    python3-pyqt5.qtmultimedia python3-pyqt5.qtquick qml-module-qtquick-controls gstreamer1.0-plugins-bad \
-    libqt5multimedia5-plugins pyqt5-dev-tools python3-dev python3-setuptools python3-wheel python3-pip \
-    python3-six python3-docopt python3-qtpy python3-pyudev python3-psutil python3-markupsafe python3-opengl \
-    python3-vtk9 python3-pyqtgraph python3-simpleeval python3-jinja2 python3-deepdiff python3-sqlalchemy git
-  pip install /root/userscripts/vtk-*.whl
-  cd /home/${USERNAME}/dev
-  git clone https://github.com/kcjengr/qtpyvcp
-  cd qtpyvcp
-  cp scripts/.xsessionrc /home/${USERNAME}/
-  chown -R ${USERNAME}:${USERNAME} /home/${USERNAME}
-  sudo -u ${USERNAME} python3 -m pip install -e .
-  cp -r linuxcnc /home/${USERNAME}/
-  
-  
-  
   # Tidy up
   echo ""
   echo "Tidying up"
   sleep 1s  
   chown -R ${USERNAME}:${USERNAME} /home/${USERNAME}
+  apt -y autoremove
   apt -y clean
   apt -y autoclean
 }

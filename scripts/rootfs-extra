@@ -34,16 +34,12 @@ if [[ "$DISTRO" == "debian" ]]; then
 	apt install -y openbox;
 	apt install -y lightdm;
 	apt install -y onboard;
-	apt install -y --no-install-recommends lxqt-core;
-	apt install -y lxqt-admin lximage-qt lxqt-powermanagement;
-	apt install -y pcmanfm-qt qps screengrab obconf-qt qterminal lxqt-archiver;
-	apt -y clean;
-	apt -y autoclean;
-	apt -y install -y featherpad geany firefox-esr;
-	apt -y clean;
-	apt -y autoclean;
-	apt -y install -y python3-dev python3-setuptools python3-wheel python3-pip python3-deepdiff;
-	apt -y install --no-install-recommends dkms equivs devscripts meson ninja-build libdistro-info-perl;
+	apt install -y --no-install-recommends lxqt;
+	apt install -y screengrab obconf-qt lxqt-archiver;
+	apt install -y geany firefox-esr;
+	apt install -y python3-dev python3-wheel python3-pip python3-deepdiff;
+	apt install -y --no-install-recommends dkms equivs devscripts meson ninja-build libdistro-info-perl;
+	apt install -y network-manager-gnome;
 	echo "export QT_STYLE_OVERRIDE=kvantum" >> /etc/environment;
 fi
 if [[ "$DISTRO" == "devuan" ]]; then
