@@ -1,0 +1,142 @@
+Format: 1.8
+Date: Wed, 06 Jul 2022 09:00:49 +0300
+Source: mesa
+Binary: libd3dadapter9-mesa libd3dadapter9-mesa-dbgsym libd3dadapter9-mesa-dev libegl-mesa0 libegl-mesa0-dbgsym libegl1-mesa libegl1-mesa-dev libgbm-dev libgbm1 libgbm1-dbgsym libgl1-mesa-dev libgl1-mesa-dri libgl1-mesa-dri-dbgsym libgl1-mesa-glx libglapi-mesa libglapi-mesa-dbgsym libgles2-mesa libgles2-mesa-dev libglx-mesa0 libglx-mesa0-dbgsym libosmesa6 libosmesa6-dbgsym libosmesa6-dev libwayland-egl1-mesa mesa-common-dev mesa-opencl-icd mesa-opencl-icd-dbgsym mesa-va-drivers mesa-va-drivers-dbgsym mesa-vdpau-drivers mesa-vdpau-drivers-dbgsym mesa-vulkan-drivers mesa-vulkan-drivers-dbgsym
+Architecture: arm64
+Version: 22.1.3-1
+Distribution: unstable
+Urgency: medium
+Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Changed-By: Timo Aaltonen <tjaalton@debian.org>
+Description:
+ libd3dadapter9-mesa - state-tracker for Direct3D9
+ libd3dadapter9-mesa-dev - state-tracker for Direct3D9 -- development files
+ libegl-mesa0 - free implementation of the EGL API -- Mesa vendor library
+ libegl1-mesa - transitional dummy package
+ libegl1-mesa-dev - free implementation of the EGL API -- development files
+ libgbm-dev - generic buffer management API -- development files
+ libgbm1    - generic buffer management API -- runtime
+ libgl1-mesa-dev - transitional dummy package
+ libgl1-mesa-dri - free implementation of the OpenGL API -- DRI modules
+ libgl1-mesa-glx - transitional dummy package
+ libglapi-mesa - free implementation of the GL API -- shared library
+ libgles2-mesa - transitional dummy package
+ libgles2-mesa-dev - transitional dummy package
+ libglx-mesa0 - free implementation of the OpenGL API -- GLX vendor library
+ libosmesa6 - Mesa Off-screen rendering extension
+ libosmesa6-dev - Mesa Off-screen rendering extension -- development files
+ libwayland-egl1-mesa - transitional dummy package
+ mesa-common-dev - Developer documentation for Mesa
+ mesa-opencl-icd - free implementation of the OpenCL API -- ICD runtime
+ mesa-va-drivers - Mesa VA-API video acceleration drivers
+ mesa-vdpau-drivers - Mesa VDPAU video acceleration drivers
+ mesa-vulkan-drivers - Mesa Vulkan graphics drivers
+Changes:
+ mesa (22.1.3-1) unstable; urgency=medium
+ .
+   * New upstream release.
+Checksums-Sha1:
+ 83cecbe46fc4a4ecf8a7ce761a93cbe9b6d3678f 23855944 libd3dadapter9-mesa-dbgsym_22.1.3-1_arm64.deb
+ 4968adfb563ebc28adbe208f7de285972600aa7f 58740 libd3dadapter9-mesa-dev_22.1.3-1_arm64.deb
+ bc6e497c6f63e8e453fe807ebfe7e59c9962ec02 3259688 libd3dadapter9-mesa_22.1.3-1_arm64.deb
+ 31a6984fa4707a3163d32a81083c2b0f9f76f3c7 446076 libegl-mesa0-dbgsym_22.1.3-1_arm64.deb
+ dc3a78aa14f85707335b40b2903d5f6beb685a7d 143796 libegl-mesa0_22.1.3-1_arm64.deb
+ 03b1f97f53781a649ef4e97dd444d30319707d94 56152 libegl1-mesa-dev_22.1.3-1_arm64.deb
+ c69dfe6a2218b18e3c808234f48cc29d63c1389e 54748 libegl1-mesa_22.1.3-1_arm64.deb
+ 65ecad59615f64ef346c0bcfe1e714cf13e5ff8d 58504 libgbm-dev_22.1.3-1_arm64.deb
+ 5fe63aed0e232b963c2269093eb89deff7b199ff 106380 libgbm1-dbgsym_22.1.3-1_arm64.deb
+ 78bc735c4622eb9db6ee94de9b94e6740c641bd0 77272 libgbm1_22.1.3-1_arm64.deb
+ 0d059ee371ea67c6d3af8433bbac8362aa0479b9 54756 libgl1-mesa-dev_22.1.3-1_arm64.deb
+ d2a3e427688c5d3bb04d334a385540d90f1bab64 41069816 libgl1-mesa-dri-dbgsym_22.1.3-1_arm64.deb
+ e50082e9a6ea061b836d9259480846b971d58933 5982372 libgl1-mesa-dri_22.1.3-1_arm64.deb
+ 7373f9084ef387b9afdd8492e93d4d85d4f59bdd 54760 libgl1-mesa-glx_22.1.3-1_arm64.deb
+ 40ce2a9ac6802084d7dadbdac9bdf309495ec414 259000 libglapi-mesa-dbgsym_22.1.3-1_arm64.deb
+ 2a0ec9c9daa88ec54b9667861599d320c4a963e4 101016 libglapi-mesa_22.1.3-1_arm64.deb
+ ea01d9de2aa21aeb9c58b44eac9d520fdad61a98 54760 libgles2-mesa-dev_22.1.3-1_arm64.deb
+ 440dd31355d02a7c4b644484705dbcf939c2a0cc 54748 libgles2-mesa_22.1.3-1_arm64.deb
+ 662cefc6d4849b02bf00bc069a1a6c58ff435068 692276 libglx-mesa0-dbgsym_22.1.3-1_arm64.deb
+ 8a5550952faacbefddbdb67d0a9f66e9a890e67b 185284 libglx-mesa0_22.1.3-1_arm64.deb
+ 15465dbf1ae9e6b1b82a4e560c391ce156ef4a59 15292836 libosmesa6-dbgsym_22.1.3-1_arm64.deb
+ 15a5a14d6e631e98516c519e7a4a4b3fb6221a46 58160 libosmesa6-dev_22.1.3-1_arm64.deb
+ 738f64b14f1064c0fb59e117981475d72a4711c0 2623932 libosmesa6_22.1.3-1_arm64.deb
+ 2247b46ffd431eac8af282eb049f822113caa4c5 54760 libwayland-egl1-mesa_22.1.3-1_arm64.deb
+ 1611630f4f9a46eaae789fc7056e0f769ae490b3 1793588 mesa-common-dev_22.1.3-1_arm64.deb
+ a1b151c232cb4c1dbfbb62d7a974c33b9284ae1b 64213880 mesa-opencl-icd-dbgsym_22.1.3-1_arm64.deb
+ 4e788a5aca1431578bb12f0af0f675b73ea7ee26 5911188 mesa-opencl-icd_22.1.3-1_arm64.deb
+ 760c295a0d444ba67ae0c27b1f5dfbb9cd3bbd50 20776840 mesa-va-drivers-dbgsym_22.1.3-1_arm64.deb
+ b43c10fd04c1b8d84ea70ba23853dc0eae9c5082 2672336 mesa-va-drivers_22.1.3-1_arm64.deb
+ 674a963f127b9959e3743895917cf8f859690f41 21193632 mesa-vdpau-drivers-dbgsym_22.1.3-1_arm64.deb
+ 5ba191e3da46e531a24f664b0ceedfdfebe72e6f 2778036 mesa-vdpau-drivers_22.1.3-1_arm64.deb
+ 06022773b1c2bc6ed745e6d2ae0945a262767565 31368224 mesa-vulkan-drivers-dbgsym_22.1.3-1_arm64.deb
+ 1be88fd86640131a08f5a5ef7bd09375a945200c 3493616 mesa-vulkan-drivers_22.1.3-1_arm64.deb
+ 57161ff0369632494c95481faa67510c6c3b2a60 19649 mesa_22.1.3-1_arm64.buildinfo
+Checksums-Sha256:
+ 33b379503abbfee36d8bfa920dd82569b93d7efedd7a83a735f24569ce2200a3 23855944 libd3dadapter9-mesa-dbgsym_22.1.3-1_arm64.deb
+ fc777b2be734afd50f309c7a829932bf3122227be1db93e0fd4fdc35c6d1ad65 58740 libd3dadapter9-mesa-dev_22.1.3-1_arm64.deb
+ 57204edc593b0bec483946200317d8cb705f3df1826c8eef656fce1adeb20c6c 3259688 libd3dadapter9-mesa_22.1.3-1_arm64.deb
+ 69a55b1188ce3a84302d6fad4edcf65b5ee318be3da81111b7b625eab2385f71 446076 libegl-mesa0-dbgsym_22.1.3-1_arm64.deb
+ e7882d5ce0e3b300dce5ff3cc997061f7cafd05716723554fd87dd6f81dba414 143796 libegl-mesa0_22.1.3-1_arm64.deb
+ 25067b0950eef448247b751547eeab052aa28f79bc3683f0e1455475444d1bb5 56152 libegl1-mesa-dev_22.1.3-1_arm64.deb
+ 6efb1bf20de1f37ad8493ad80bfd7950e5bd8f66b22fdb0cd809495e09dd1a8c 54748 libegl1-mesa_22.1.3-1_arm64.deb
+ ec7f7e7505efa2a2f8506f71ed367e73f02c94cb827c3529ec456a9c8f414668 58504 libgbm-dev_22.1.3-1_arm64.deb
+ 164bfdc69d06062883c9150a99cdeb7591ef77016178bc807c5b818c78c2c024 106380 libgbm1-dbgsym_22.1.3-1_arm64.deb
+ 3104d3f8538e990301a855c272fce33f88154e93290f143a97c681a11f125439 77272 libgbm1_22.1.3-1_arm64.deb
+ 09163cc9a4979a959c046b5a20dfb3cdc3a9c13720aa523912eb50d74a83b206 54756 libgl1-mesa-dev_22.1.3-1_arm64.deb
+ d3bd559519125c7233d7f3824ea68484e340ab46b2ecace1ee33c33ee138c93e 41069816 libgl1-mesa-dri-dbgsym_22.1.3-1_arm64.deb
+ bf484738f6bad5d6326d9eff8e5b03e2da865a1f4401335e23a0254aaec61bb0 5982372 libgl1-mesa-dri_22.1.3-1_arm64.deb
+ 9b1650fd10f654c5931c4bf8ec4d55791b3656c43887d00c95b303dd6a4a84e6 54760 libgl1-mesa-glx_22.1.3-1_arm64.deb
+ 2f5e7c633d52f534bfffea6dfcbd0803f1fbf3c4d12f500d5937064d4fe14a50 259000 libglapi-mesa-dbgsym_22.1.3-1_arm64.deb
+ 7ee6eb8979efea90a808410eb158c17525bc90b3cdc998a90053255f106687e5 101016 libglapi-mesa_22.1.3-1_arm64.deb
+ aaef206351ca2d012ff4fc77755c245a6ed3a1e7104e2b4e868d7202ca1be2d2 54760 libgles2-mesa-dev_22.1.3-1_arm64.deb
+ 72040edd9441662c531da05af94ff74027f5c9b3fb77d925c910449e0353c21d 54748 libgles2-mesa_22.1.3-1_arm64.deb
+ 2547e38b69a2efd944c1574ec254b2fd62fb6ee0d6c824f125079b916cc5f2b3 692276 libglx-mesa0-dbgsym_22.1.3-1_arm64.deb
+ 6dcce58795fdd8337d688e762700af95548276532b18e7659fd839cb1b1a8b65 185284 libglx-mesa0_22.1.3-1_arm64.deb
+ 0f09edf8c19cdd0d28b1fbe716b962a7c3bc9f339a7c0c4f1bf147af79ac9944 15292836 libosmesa6-dbgsym_22.1.3-1_arm64.deb
+ 0d9e564ebe29ca9363dfaedce86019539bb46b9f23431b770a4c0f1824c44646 58160 libosmesa6-dev_22.1.3-1_arm64.deb
+ e981767aa9da52067250baa29f26849e2abef8b9e6bfd5bd029570230ed74634 2623932 libosmesa6_22.1.3-1_arm64.deb
+ fb7629e699402843f0487b63f4b57ad2660528d709acc7ee31e9f7f7508af104 54760 libwayland-egl1-mesa_22.1.3-1_arm64.deb
+ 418efe87c9840acde78899f1583c6de6b959304c111818a9f8626b4224a063e6 1793588 mesa-common-dev_22.1.3-1_arm64.deb
+ a1ed93e8caefdac6dc7045a23186105a821334250f81992e3eecdd30eeba54a0 64213880 mesa-opencl-icd-dbgsym_22.1.3-1_arm64.deb
+ 020626628502e71ef31fdda50b898c58ea6461d696ee2df763e43ac94e4cb885 5911188 mesa-opencl-icd_22.1.3-1_arm64.deb
+ 15e55096576237dc543d47716d9d2fad24f300191613602a4c762d0c12e54724 20776840 mesa-va-drivers-dbgsym_22.1.3-1_arm64.deb
+ 3c1f9dd79febb252e589b73500adbb415ec561ef87d4f48f90cb1bcf9869435b 2672336 mesa-va-drivers_22.1.3-1_arm64.deb
+ fd7290853cdcd4ecc6f06761fb5fb4ed0b53c2dc6636a2b69dbab73bb58c1ead 21193632 mesa-vdpau-drivers-dbgsym_22.1.3-1_arm64.deb
+ aa0b0c31fb0cac9f68b17fc8dbe5b0405c274e652ba5d02abf0c1c2f31baec58 2778036 mesa-vdpau-drivers_22.1.3-1_arm64.deb
+ 6c1d8e93854ee16c7ce26b999bf713292bd79494f3af9cd81980fa08c7a96cd1 31368224 mesa-vulkan-drivers-dbgsym_22.1.3-1_arm64.deb
+ 38688cf5f4c926f1ef0e5b3cd9812cd305b58824c0a23e5a6ae51c2ec886c26e 3493616 mesa-vulkan-drivers_22.1.3-1_arm64.deb
+ 03cd0673bbf7cfbe69a33b785f8da10513d5f6dff1d130b983e229ad8266af67 19649 mesa_22.1.3-1_arm64.buildinfo
+Files:
+ 204ff6150dd1fac1ad1224ec8211e188 23855944 debug optional libd3dadapter9-mesa-dbgsym_22.1.3-1_arm64.deb
+ a1bccd19ea7490f16ad872b2b220fbdd 58740 libdevel optional libd3dadapter9-mesa-dev_22.1.3-1_arm64.deb
+ 8619e8a06b655ff59fa983e4a10095b7 3259688 libs optional libd3dadapter9-mesa_22.1.3-1_arm64.deb
+ 49b28cc1c4a3a3a90c74881682c57757 446076 debug optional libegl-mesa0-dbgsym_22.1.3-1_arm64.deb
+ c4aaa8e69c40f9bdd20f444cea7ac2c9 143796 libs optional libegl-mesa0_22.1.3-1_arm64.deb
+ 50430f496b7b6207af634d75ec5ade50 56152 libdevel optional libegl1-mesa-dev_22.1.3-1_arm64.deb
+ 6a7e8ebbc6684b176877933924c28bd2 54748 oldlibs optional libegl1-mesa_22.1.3-1_arm64.deb
+ 7df2f8759fffe458378ba2813fa19f64 58504 libdevel optional libgbm-dev_22.1.3-1_arm64.deb
+ 6409d684dea42ce000e940dec9d05a48 106380 debug optional libgbm1-dbgsym_22.1.3-1_arm64.deb
+ 8b487bb57dadc4904be9931d9b8b7882 77272 libs optional libgbm1_22.1.3-1_arm64.deb
+ e72de04335a66d68b90dce48115e8d94 54756 oldlibs optional libgl1-mesa-dev_22.1.3-1_arm64.deb
+ 21506a2f3a9706acfd52eee5135b858a 41069816 debug optional libgl1-mesa-dri-dbgsym_22.1.3-1_arm64.deb
+ beda3727d9bd390f56d2e956f2d5fd53 5982372 libs optional libgl1-mesa-dri_22.1.3-1_arm64.deb
+ ea5015a9d6c96935b7b2c98033257a9b 54760 oldlibs optional libgl1-mesa-glx_22.1.3-1_arm64.deb
+ c88b9f5db5d540234e453f8a2761b771 259000 debug optional libglapi-mesa-dbgsym_22.1.3-1_arm64.deb
+ e2eee69347c60971f4527475b1b68bfa 101016 libs optional libglapi-mesa_22.1.3-1_arm64.deb
+ fdd20bbebe5dc1ce8b198f036fef1e4e 54760 oldlibs optional libgles2-mesa-dev_22.1.3-1_arm64.deb
+ 50b2db14f8f51ea1532317bd1af4c6c8 54748 oldlibs optional libgles2-mesa_22.1.3-1_arm64.deb
+ 388a39d6ffc2ef9ba9cc0063d48ef81f 692276 debug optional libglx-mesa0-dbgsym_22.1.3-1_arm64.deb
+ 396a6ff797f18361c0d923a4b7aade4b 185284 libs optional libglx-mesa0_22.1.3-1_arm64.deb
+ 57b2a0c77297238683f70f42ae5ed1a3 15292836 debug optional libosmesa6-dbgsym_22.1.3-1_arm64.deb
+ abc1e727396e38eebc3c6e9893d4f240 58160 libdevel optional libosmesa6-dev_22.1.3-1_arm64.deb
+ 637cd27abe706b2d410ff564b3fe69ab 2623932 libs optional libosmesa6_22.1.3-1_arm64.deb
+ e9b531d38edc3fda690fa918f116ba17 54760 oldlibs optional libwayland-egl1-mesa_22.1.3-1_arm64.deb
+ 5c0831f5829a5d4abff5de11d68d4cf3 1793588 libdevel optional mesa-common-dev_22.1.3-1_arm64.deb
+ cf77770ea7c1eaf003de97ab7bd3bfda 64213880 debug optional mesa-opencl-icd-dbgsym_22.1.3-1_arm64.deb
+ 40ed55c8c7b435642a717332edf6e477 5911188 libs optional mesa-opencl-icd_22.1.3-1_arm64.deb
+ 62f4c54afe7b81517eda2d87d5b0af9c 20776840 debug optional mesa-va-drivers-dbgsym_22.1.3-1_arm64.deb
+ a8ca7a758c5e699774fc1de369bdbc42 2672336 libs optional mesa-va-drivers_22.1.3-1_arm64.deb
+ d225d889cf3d7b043ddc0aa4d2330b21 21193632 debug optional mesa-vdpau-drivers-dbgsym_22.1.3-1_arm64.deb
+ 9a363281459f8e922e4fd05804be33ed 2778036 libs optional mesa-vdpau-drivers_22.1.3-1_arm64.deb
+ ab236dcd08ec3e5e4fb3eeafbaca7d89 31368224 debug optional mesa-vulkan-drivers-dbgsym_22.1.3-1_arm64.deb
+ 9709e0e514cf33f3785243e32943018b 3493616 libs optional mesa-vulkan-drivers_22.1.3-1_arm64.deb
+ eb899335aa95a22c45185faa07d6f5a5 19649 graphics optional mesa_22.1.3-1_arm64.buildinfo
