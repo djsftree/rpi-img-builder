@@ -91,7 +91,9 @@ run_function2 (){
   dpkg -i /root/userscripts/dpkg/mesa-va-drivers_2*arm64.deb
   dpkg -i /root/userscripts/dpkg/mesa-vdpau-drivers_2*arm64.deb
   dpkg -i /root/userscripts/dpkg/mesa-opencl-icd_2*arm64.deb
-
+  dpkg -i /root/userscripts/dpkg/libosmesa6_2*arm64.deb
+  dpkg -i /root/userscripts/dpkg/libosmesa6-dev_2*arm64.deb
+  dpkg -i /root/userscripts/dpkg/libglapi-mesa_2*arm64.deb
 
 
   # install EtherCAT 1.5.2-33
