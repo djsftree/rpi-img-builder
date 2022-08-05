@@ -5,7 +5,7 @@
 ```
 Notes
 5.19 from https://github.com/raspberrypi/linux/tree/rpi-5.19.y
-5.19-rc3-rt4 patch - patches/userpatches/
+5.19-rc3-rt5-1 patch - patches/userpatches/
 Kernel config - defconfig/rt64_defconfig
 Package install -  userscripts/uscripts
 lightdm, openbox, LXQt 1.1.0, Qt5 Creator, VTK 9.1 wheel and bindings preset for QtPyVCP projects
@@ -26,7 +26,7 @@ PASSWORD="cnc"
 rootpasswd=1 --- 'toor' please change after booting!
 ```
 
-#### Build 5.19-rc3-rt4 kernel
+#### Build 5.19-rc3-rt5-1 kernel
 this step is optional - for RPI4 I have included debs in /output/bcm2711
 ```sh
 make kernel board=bcm2711	# linux source pulled from raspberrypi/linux/5.19y
@@ -49,9 +49,14 @@ make rootfs board=bcm2711
 make image board=bcm2711
 ```
 
-
 ---
-
+---
+---
+---
+---
+---
+---
+---
 
 <img src="https://socialify.git.ci/pyavitz/rpi-img-builder/image?description=1&font=KoHo&forks=1&issues=1&logo=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fde%2Fthumb%2Fc%2Fcb%2FRaspberry_Pi_Logo.svg%2F475px-Raspberry_Pi_Logo.svg.png&owner=1&pattern=Charlie%20Brown&stargazers=1&theme=Dark" alt="rpi-img-builder" width="640" height="320" />
 
