@@ -1,0 +1,46 @@
+Format: 1.8
+Date: Sun, 10 Jul 2022 04:35:38 -0500
+Source: pavucontrol-qt
+Binary: pavucontrol-qt pavucontrol-qt-dbgsym pavucontrol-qt-l10n
+Architecture: arm64 all
+Version: 1.1.0-1
+Distribution: experimental
+Urgency: medium
+Maintainer: LXQt Packaging Team <pkg-lxqt-devel@lists.alioth.debian.org>
+Changed-By: Aaron Rainbolt <arraybolt3@gmail.com>
+Description:
+ pavucontrol-qt - Qt port of volume control pavucontrol
+ pavucontrol-qt-l10n - Language package for pavucontrol-qt
+Changes:
+ pavucontrol-qt (1.1.0-1) experimental; urgency=medium
+ .
+   [ Aaron Rainbolt ]
+   * New upstream release 1.1.0.
+   * Removed obsolete debian/compat file.
+   * Switched to GBP.
+   * Upstreamed non-Ubuntu-specific packaging changes from Ubuntu, modifying
+     the following files:
+     - control
+     - copyright
+     - lintian-overrides
+     - *.install
+     - rules
+     - upstream/*
+ .
+   [ djsftree ]
+   * compiled by djsftree
+Checksums-Sha1:
+ 3929be735280bd74c6353b361956ac1a3bd3d456 1874276 pavucontrol-qt-dbgsym_1.1.0-1_arm64.deb
+ 4ba7e75d3a9c770f3f9ba0a656bbdeff72b1a476 89764 pavucontrol-qt-l10n_1.1.0-1_all.deb
+ 3747d75471dff603ab7332d534c1c2462200d11f 12751 pavucontrol-qt_1.1.0-1_arm64.buildinfo
+ cb0e2bad3ec76132de4c7f5e89b7b9ea7dae6b02 68508 pavucontrol-qt_1.1.0-1_arm64.deb
+Checksums-Sha256:
+ fef3060582c4eb2aaf67113f9dbc1b80294c839c2e739ffd9897a718b0a8cf4b 1874276 pavucontrol-qt-dbgsym_1.1.0-1_arm64.deb
+ a52006287f82c06a32534a441e55f7d324ebd88c450afbdafb230602dde7a78d 89764 pavucontrol-qt-l10n_1.1.0-1_all.deb
+ 90a77afb2dd3c6f8c273a9e5a8890dd5740ebb714d2a7a4bae7151de695f86a5 12751 pavucontrol-qt_1.1.0-1_arm64.buildinfo
+ 4bdba919a64a27c18f906a56b3c5f8b0f48e6ce0ef117e6643a721e5cf97338e 68508 pavucontrol-qt_1.1.0-1_arm64.deb
+Files:
+ 348acfd4c7c5956a92c2714f83919653 1874276 debug optional pavucontrol-qt-dbgsym_1.1.0-1_arm64.deb
+ 85de1e70843c827c3be76d4cf956ec1c 89764 localization optional pavucontrol-qt-l10n_1.1.0-1_all.deb
+ b1ac434546b4ff1b10b4cf5664cb9761 12751 utils optional pavucontrol-qt_1.1.0-1_arm64.buildinfo
+ ea3bd84f59276b1d856ad5f48d861a44 68508 utils optional pavucontrol-qt_1.1.0-1_arm64.deb

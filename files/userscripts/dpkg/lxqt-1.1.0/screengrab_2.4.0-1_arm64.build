@@ -1,0 +1,686 @@
+ dpkg-buildpackage -us -uc -ui -i -b
+dpkg-buildpackage: info: source package screengrab
+dpkg-buildpackage: info: source version 2.4.0-1
+dpkg-buildpackage: info: source distribution experimental
+dpkg-buildpackage: info: source changed by suman rajan <suman@protonmail.com>
+ dpkg-source -i --before-build .
+dpkg-buildpackage: info: host architecture arm64
+dpkg-source: info: using options from screengrab-2.4.0/debian/source/options: --tar-ignore=.gitignore
+ debian/rules clean
+dh clean --buildsystem=cmake
+   dh_auto_clean -O--buildsystem=cmake
+   dh_autoreconf_clean -O--buildsystem=cmake
+   dh_clean -O--buildsystem=cmake
+ debian/rules build
+dh build --buildsystem=cmake
+   dh_update_autotools_config -O--buildsystem=cmake
+   dh_autoreconf -O--buildsystem=cmake
+   debian/rules override_dh_auto_configure
+make[1]: Entering directory '/home/cnc/lxqt-dev/screengrab-2.4.0'
+dh_auto_configure -- \
+    -DSG_DBUS_NOTIFY=ON \
+    -DSG_EXT_EDIT=ON \
+    -DSG_GLOBALSHORTCUTS=OFF \
+    -DUPDATE_TRANSLATIONS=OFF \
+    -DCMAKE_BUILD_TYPE=RelWithDebInfo
+	cd obj-aarch64-linux-gnu && cmake -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=None -DCMAKE_INSTALL_SYSCONFDIR=/etc -DCMAKE_INSTALL_LOCALSTATEDIR=/var -DCMAKE_EXPORT_NO_PACKAGE_REGISTRY=ON -DCMAKE_FIND_USE_PACKAGE_REGISTRY=OFF -DCMAKE_FIND_PACKAGE_NO_PACKAGE_REGISTRY=ON -DFETCHCONTENT_FULLY_DISCONNECTED=ON -DCMAKE_INSTALL_RUNSTATEDIR=/run "-GUnix Makefiles" -DCMAKE_VERBOSE_MAKEFILE=ON -DCMAKE_INSTALL_LIBDIR=lib/aarch64-linux-gnu -DSG_DBUS_NOTIFY=ON -DSG_EXT_EDIT=ON -DSG_GLOBALSHORTCUTS=OFF -DUPDATE_TRANSLATIONS=OFF -DCMAKE_BUILD_TYPE=RelWithDebInfo ..
+-- The C compiler identification is GNU 11.3.0
+-- The CXX compiler identification is GNU 11.3.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found X11: /usr/include   
+-- Looking for XOpenDisplay in /usr/lib/aarch64-linux-gnu/libX11.so;/usr/lib/aarch64-linux-gnu/libXext.so
+-- Looking for XOpenDisplay in /usr/lib/aarch64-linux-gnu/libX11.so;/usr/lib/aarch64-linux-gnu/libXext.so - found
+-- Looking for gethostbyname
+-- Looking for gethostbyname - found
+-- Looking for connect
+-- Looking for connect - found
+-- Looking for remove
+-- Looking for remove - found
+-- Looking for shmat
+-- Looking for shmat - found
+-- Looking for IceConnectionNumber in ICE
+-- Looking for IceConnectionNumber in ICE - found
+-- Found PkgConfig: /usr/bin/pkg-config (found version "0.29.2") 
+-- XCB[XCB]: Found component XCB
+CMake Warning (dev) at /usr/share/cmake-3.23/Modules/FindPackageHandleStandardArgs.cmake:438 (message):
+  The package name passed to `find_package_handle_standard_args` (XCB_XCB)
+  does not match the name of the calling package (XCB).  This can lead to
+  problems in calling code that expects `find_package` result variables
+  (e.g., `_FOUND`) to follow a certain pattern.
+Call Stack (most recent call first):
+  cmake/FindXCB.cmake:207 (find_package_handle_standard_args)
+  cmake/FindXCB.cmake:226 (_xcb_handle_component)
+  CMakeLists.txt:32 (find_package)
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+-- Found XCB_XCB: /usr/lib/aarch64-linux-gnu/libxcb.so  
+-- XCB[SHAPE]: Found component SHAPE
+CMake Warning (dev) at /usr/share/cmake-3.23/Modules/FindPackageHandleStandardArgs.cmake:438 (message):
+  The package name passed to `find_package_handle_standard_args` (XCB_SHAPE)
+  does not match the name of the calling package (XCB).  This can lead to
+  problems in calling code that expects `find_package` result variables
+  (e.g., `_FOUND`) to follow a certain pattern.
+Call Stack (most recent call first):
+  cmake/FindXCB.cmake:207 (find_package_handle_standard_args)
+  cmake/FindXCB.cmake:226 (_xcb_handle_component)
+  CMakeLists.txt:32 (find_package)
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+-- Found XCB_SHAPE: /usr/lib/aarch64-linux-gnu/libxcb-shape.so  
+-- XCB[XFIXES]: Found component XFIXES
+CMake Warning (dev) at /usr/share/cmake-3.23/Modules/FindPackageHandleStandardArgs.cmake:438 (message):
+  The package name passed to `find_package_handle_standard_args` (XCB_XFIXES)
+  does not match the name of the calling package (XCB).  This can lead to
+  problems in calling code that expects `find_package` result variables
+  (e.g., `_FOUND`) to follow a certain pattern.
+Call Stack (most recent call first):
+  cmake/FindXCB.cmake:207 (find_package_handle_standard_args)
+  cmake/FindXCB.cmake:226 (_xcb_handle_component)
+  CMakeLists.txt:32 (find_package)
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+-- Found XCB_XFIXES: /usr/lib/aarch64-linux-gnu/libxcb-xfixes.so  
+-- Found XCB: /usr/lib/aarch64-linux-gnu/libxcb.so;/usr/lib/aarch64-linux-gnu/libxcb-shape.so;/usr/lib/aarch64-linux-gnu/libxcb-xfixes.so  
+-- Found X11_XCB: /usr/lib/aarch64-linux-gnu/libX11-xcb.so  
+-- Build type: RelWithDebInfo
+-- Install prefix: /usr
+-- Library path: /usr/lib/aarch64-linux-gnu/screengrab
+CMake Deprecation Warning at cmake/LXQtTranslateTs.cmake:59 (cmake_minimum_required):
+  Compatibility with CMake < 2.8.12 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value or use a ...<max> suffix to tell
+  CMake that the project does not need compatibility with older versions.
+Call Stack (most recent call first):
+  CMakeLists.txt:75 (include)
+
+
+-- Found Perl: /usr/bin/perl (found version "5.34.0") 
+-- Editing screenshots in external editor support: ON
+-- Enable D-Bus notifications: ON
+-- Use system Qxt Library: 
+-- Update source translation translations/*.ts files: OFF
+-- Documentation directory: /usr/share/doc/screengrab
+-- Generating localize ...
+-- Configuring done
+-- Generating done
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    CMAKE_EXPORT_NO_PACKAGE_REGISTRY
+    CMAKE_FIND_PACKAGE_NO_PACKAGE_REGISTRY
+    FETCHCONTENT_FULLY_DISCONNECTED
+    SG_GLOBALSHORTCUTS
+
+
+-- Build files have been written to: /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu
+make[1]: Leaving directory '/home/cnc/lxqt-dev/screengrab-2.4.0'
+   dh_auto_build -O--buildsystem=cmake
+	cd obj-aarch64-linux-gnu && make -j4 "INSTALL=install --strip-program=true" VERBOSE=1
+make[1]: Entering directory '/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu'
+/usr/bin/cmake -S/home/cnc/lxqt-dev/screengrab-2.4.0 -B/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu --check-build-system CMakeFiles/Makefile.cmake 0
+/usr/bin/cmake -E cmake_progress_start /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/CMakeFiles /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu//CMakeFiles/progress.marks
+make  -f CMakeFiles/Makefile2 all
+make[2]: Entering directory '/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu'
+make  -f src/modules/extedit/CMakeFiles/extedit_autogen.dir/build.make src/modules/extedit/CMakeFiles/extedit_autogen.dir/depend
+make  -f src/common/qkeysequencewidget/CMakeFiles/qkeysequencewidget_autogen.dir/build.make src/common/qkeysequencewidget/CMakeFiles/qkeysequencewidget_autogen.dir/depend
+make[3]: Entering directory '/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu'
+cd /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/cnc/lxqt-dev/screengrab-2.4.0 /home/cnc/lxqt-dev/screengrab-2.4.0/src/modules/extedit /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/src/modules/extedit /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/src/modules/extedit/CMakeFiles/extedit_autogen.dir/DependInfo.cmake --color=
+make[3]: Entering directory '/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu'
+cd /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/cnc/lxqt-dev/screengrab-2.4.0 /home/cnc/lxqt-dev/screengrab-2.4.0/src/common/qkeysequencewidget /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/src/common/qkeysequencewidget /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/src/common/qkeysequencewidget/CMakeFiles/qkeysequencewidget_autogen.dir/DependInfo.cmake --color=
+make[3]: Leaving directory '/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu'
+make  -f src/modules/extedit/CMakeFiles/extedit_autogen.dir/build.make src/modules/extedit/CMakeFiles/extedit_autogen.dir/build
+make[3]: Entering directory '/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu'
+make[3]: Leaving directory '/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu'
+make  -f src/common/qkeysequencewidget/CMakeFiles/qkeysequencewidget_autogen.dir/build.make src/common/qkeysequencewidget/CMakeFiles/qkeysequencewidget_autogen.dir/build
+make[3]: Entering directory '/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu'
+[  1%] Automatic MOC and UIC for target extedit
+cd /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/src/modules/extedit && /usr/bin/cmake -E cmake_autogen /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/src/modules/extedit/CMakeFiles/extedit_autogen.dir/AutogenInfo.json RelWithDebInfo
+AutoGen: Refreshing parse cache because it doesn't exist.
+AutoMoc: Generating "SRC:/obj-aarch64-linux-gnu/src/modules/extedit/extedit_autogen/moc_predefs.h", because it doesn't exist.
+/usr/bin/c++ -dM -E -c /usr/share/cmake-3.23/Modules/CMakeCXXCompilerABI.cpp -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_SVG_LIB -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DQT_XML_LIB "-DSG_DBUS_NOTIFY=\"1\"" "-DSG_DOCDIR=\"/usr/share/doc/screengrab\"" "-DSG_EXT_EDIT=\"1\"" "-DSG_ICONPATH=\"/usr/share/icons/hicolor/scalable/apps/screengrab.svg\"" "-DVERSION=\"2.4.0\"" -Dextedit_EXPORTS -I/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/src/modules/extedit -I/home/cnc/lxqt-dev/screengrab-2.4.0/src/modules/extedit -I/home/cnc/lxqt-dev/screengrab-2.4.0/src -I/home/cnc/lxqt-dev/screengrab-2.4.0/src/common/qkeysequencewidget/src -I/usr/include/aarch64-linux-gnu/qt5 -I/usr/include/aarch64-linux-gnu/qt5/QtWidgets -I/usr/include/aarch64-linux-gnu/qt5/QtGui -I/usr/include/aarch64-linux-gnu/qt5/QtCore -I/usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -I/usr/include/aarch64-linux-gnu/qt5/QtX11Extras -I/usr/include/qt5xdg -I/usr/include/aarch64-linux-gnu/qt5/QtXml -I/usr/include/aarch64-linux-gnu/qt5/QtDBus -I/usr/include/qt5xdgiconloader -I/usr/include/qt5xdgiconloader/3.9.1 -I/usr/include/aarch64-linux-gnu/qt5/QtSvg -I/usr/include -I/usr/include/c++/11 -I/usr/include/aarch64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/aarch64-linux-gnu/11/include -I/usr/local/include -I/usr/include/aarch64-linux-gnu
+[  3%] Automatic MOC and UIC for target qkeysequencewidget
+cd /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/src/common/qkeysequencewidget && /usr/bin/cmake -E cmake_autogen /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/src/common/qkeysequencewidget/CMakeFiles/qkeysequencewidget_autogen.dir/AutogenInfo.json RelWithDebInfo
+AutoGen: Parsing "SRC:/src/modules/extedit/extedit.h"
+AutoGen: Parsing "SRC:/src/modules/extedit/moduleextedit.h"
+AutoGen: Parsing "SRC:/obj-aarch64-linux-gnu/src/modules/extedit/Qt5TranslationLoader.cpp"
+AutoGen: Parsing "SRC:/src/modules/extedit/extedit.cpp"
+AutoGen: Parsing "SRC:/src/modules/extedit/moduleextedit.cpp"
+AutoMoc: Generating "SRC:/obj-aarch64-linux-gnu/src/modules/extedit/extedit_autogen/EWIEGA46WW/moc_extedit.cpp", because it doesn't exist, from "SRC:/src/modules/extedit/extedit.h"
+/usr/lib/qt5/bin/moc -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_SVG_LIB -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DQT_XML_LIB "-DSG_DBUS_NOTIFY=\"1\"" "-DSG_DOCDIR=\"/usr/share/doc/screengrab\"" "-DSG_EXT_EDIT=\"1\"" "-DSG_ICONPATH=\"/usr/share/icons/hicolor/scalable/apps/screengrab.svg\"" "-DVERSION=\"2.4.0\"" -Dextedit_EXPORTS -I/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/src/modules/extedit -I/home/cnc/lxqt-dev/screengrab-2.4.0/src/modules/extedit -I/home/cnc/lxqt-dev/screengrab-2.4.0/src -I/home/cnc/lxqt-dev/screengrab-2.4.0/src/common/qkeysequencewidget/src -I/usr/include/aarch64-linux-gnu/qt5 -I/usr/include/aarch64-linux-gnu/qt5/QtWidgets -I/usr/include/aarch64-linux-gnu/qt5/QtGui -I/usr/include/aarch64-linux-gnu/qt5/QtCore -I/usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -I/usr/include/aarch64-linux-gnu/qt5/QtX11Extras -I/usr/include/qt5xdg -I/usr/include/aarch64-linux-gnu/qt5/QtXml -I/usr/include/aarch64-linux-gnu/qt5/QtDBus -I/usr/include/qt5xdgiconloader -I/usr/include/qt5xdgiconloader/3.9.1 -I/usr/include/aarch64-linux-gnu/qt5/QtSvg -I/usr/include -I/usr/include/c++/11 -I/usr/include/aarch64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/aarch64-linux-gnu/11/include -I/usr/local/include -I/usr/include/aarch64-linux-gnu --include /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/src/modules/extedit/extedit_autogen/moc_predefs.h --output-dep-file -o /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/src/modules/extedit/extedit_autogen/EWIEGA46WW/moc_extedit.cpp /home/cnc/lxqt-dev/screengrab-2.4.0/src/modules/extedit/extedit.h
+AutoGen: Refreshing parse cache because it doesn't exist.
+AutoMoc: Generating "SRC:/obj-aarch64-linux-gnu/src/common/qkeysequencewidget/qkeysequencewidget_autogen/moc_predefs.h", because it doesn't exist.
+/usr/bin/c++ -dM -E -c /usr/share/cmake-3.23/Modules/CMakeCXXCompilerABI.cpp -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_WIDGETS_LIB "-DSG_DBUS_NOTIFY=\"1\"" "-DSG_DOCDIR=\"/usr/share/doc/screengrab\"" "-DSG_EXT_EDIT=\"1\"" "-DSG_ICONPATH=\"/usr/share/icons/hicolor/scalable/apps/screengrab.svg\"" "-DVERSION=\"2.4.0\"" -I/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/src/common/qkeysequencewidget -I/home/cnc/lxqt-dev/screengrab-2.4.0/src/common/qkeysequencewidget -I/home/cnc/lxqt-dev/screengrab-2.4.0/src -I/home/cnc/lxqt-dev/screengrab-2.4.0/src/common/qkeysequencewidget/src -I/usr/include/aarch64-linux-gnu/qt5 -I/usr/include/aarch64-linux-gnu/qt5/QtWidgets -I/usr/include/aarch64-linux-gnu/qt5/QtGui -I/usr/include/aarch64-linux-gnu/qt5/QtCore -I/usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -I/usr/include/c++/11 -I/usr/include/aarch64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/aarch64-linux-gnu/11/include -I/usr/local/include -I/usr/include/aarch64-linux-gnu -I/usr/include
+AutoGen: Parsing "SRC:/src/common/qkeysequencewidget/src/qkeysequencewidget.h"
+AutoGen: Parsing "SRC:/src/common/qkeysequencewidget/src/qkeysequencewidget_p.h"
+AutoGen: Parsing "SRC:/src/common/qkeysequencewidget/src/qkeysequencewidget.cpp"
+AutoMoc: Generating "SRC:/obj-aarch64-linux-gnu/src/common/qkeysequencewidget/qkeysequencewidget_autogen/UVLADIE3JM/moc_qkeysequencewidget.cpp", because it doesn't exist, from "SRC:/src/common/qkeysequencewidget/src/qkeysequencewidget.h"
+/usr/lib/qt5/bin/moc -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_WIDGETS_LIB "-DSG_DBUS_NOTIFY=\"1\"" "-DSG_DOCDIR=\"/usr/share/doc/screengrab\"" "-DSG_EXT_EDIT=\"1\"" "-DSG_ICONPATH=\"/usr/share/icons/hicolor/scalable/apps/screengrab.svg\"" "-DVERSION=\"2.4.0\"" -I/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/src/common/qkeysequencewidget -I/home/cnc/lxqt-dev/screengrab-2.4.0/src/common/qkeysequencewidget -I/home/cnc/lxqt-dev/screengrab-2.4.0/src -I/home/cnc/lxqt-dev/screengrab-2.4.0/src/common/qkeysequencewidget/src -I/usr/include/aarch64-linux-gnu/qt5 -I/usr/include/aarch64-linux-gnu/qt5/QtWidgets -I/usr/include/aarch64-linux-gnu/qt5/QtGui -I/usr/include/aarch64-linux-gnu/qt5/QtCore -I/usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -I/usr/include/c++/11 -I/usr/include/aarch64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/aarch64-linux-gnu/11/include -I/usr/local/include -I/usr/include/aarch64-linux-gnu -I/usr/include --include /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/src/common/qkeysequencewidget/qkeysequencewidget_autogen/moc_predefs.h --output-dep-file -o /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/src/common/qkeysequencewidget/qkeysequencewidget_autogen/UVLADIE3JM/moc_qkeysequencewidget.cpp /home/cnc/lxqt-dev/screengrab-2.4.0/src/common/qkeysequencewidget/src/qkeysequencewidget.h
+AutoMoc: Reading dependencies from "SRC:/obj-aarch64-linux-gnu/src/modules/extedit/extedit_autogen/EWIEGA46WW/moc_extedit.cpp.d"
+AutoMoc: Generating MOC compilation "SRC:/obj-aarch64-linux-gnu/src/modules/extedit/extedit_autogen/mocs_compilation.cpp"
+AutoGen: Writing the parse cache file "SRC:/obj-aarch64-linux-gnu/src/modules/extedit/CMakeFiles/extedit_autogen.dir/ParseCache.txt"
+AutoGen: Writing the settings file "SRC:/obj-aarch64-linux-gnu/src/modules/extedit/CMakeFiles/extedit_autogen.dir/AutogenUsed.txt"
+make[3]: Leaving directory '/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu'
+[  3%] Built target extedit_autogen
+AutoMoc: Reading dependencies from "SRC:/obj-aarch64-linux-gnu/src/common/qkeysequencewidget/qkeysequencewidget_autogen/UVLADIE3JM/moc_qkeysequencewidget.cpp.d"
+make  -f src/modules/extedit/CMakeFiles/extedit.dir/build.make src/modules/extedit/CMakeFiles/extedit.dir/depend
+AutoMoc: Generating "SRC:/obj-aarch64-linux-gnu/src/common/qkeysequencewidget/qkeysequencewidget_autogen/UVLADIE3JM/moc_qkeysequencewidget_p.cpp", because it doesn't exist, from "SRC:/src/common/qkeysequencewidget/src/qkeysequencewidget_p.h"
+/usr/lib/qt5/bin/moc -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_WIDGETS_LIB "-DSG_DBUS_NOTIFY=\"1\"" "-DSG_DOCDIR=\"/usr/share/doc/screengrab\"" "-DSG_EXT_EDIT=\"1\"" "-DSG_ICONPATH=\"/usr/share/icons/hicolor/scalable/apps/screengrab.svg\"" "-DVERSION=\"2.4.0\"" -I/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/src/common/qkeysequencewidget -I/home/cnc/lxqt-dev/screengrab-2.4.0/src/common/qkeysequencewidget -I/home/cnc/lxqt-dev/screengrab-2.4.0/src -I/home/cnc/lxqt-dev/screengrab-2.4.0/src/common/qkeysequencewidget/src -I/usr/include/aarch64-linux-gnu/qt5 -I/usr/include/aarch64-linux-gnu/qt5/QtWidgets -I/usr/include/aarch64-linux-gnu/qt5/QtGui -I/usr/include/aarch64-linux-gnu/qt5/QtCore -I/usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -I/usr/include/c++/11 -I/usr/include/aarch64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/aarch64-linux-gnu/11/include -I/usr/local/include -I/usr/include/aarch64-linux-gnu -I/usr/include --include /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/src/common/qkeysequencewidget/qkeysequencewidget_autogen/moc_predefs.h --output-dep-file -o /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/src/common/qkeysequencewidget/qkeysequencewidget_autogen/UVLADIE3JM/moc_qkeysequencewidget_p.cpp /home/cnc/lxqt-dev/screengrab-2.4.0/src/common/qkeysequencewidget/src/qkeysequencewidget_p.h
+make[3]: Entering directory '/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu'
+cd /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/cnc/lxqt-dev/screengrab-2.4.0 /home/cnc/lxqt-dev/screengrab-2.4.0/src/modules/extedit /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/src/modules/extedit /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/src/modules/extedit/CMakeFiles/extedit.dir/DependInfo.cmake --color=
+make[3]: Leaving directory '/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu'
+make  -f src/modules/extedit/CMakeFiles/extedit.dir/build.make src/modules/extedit/CMakeFiles/extedit.dir/build
+make[3]: Entering directory '/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu'
+[  4%] Building CXX object src/modules/extedit/CMakeFiles/extedit.dir/extedit_autogen/mocs_compilation.cpp.o
+cd /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/src/modules/extedit && /usr/bin/c++ -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_SVG_LIB -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DQT_XML_LIB -DSG_DBUS_NOTIFY=\"1\" -DSG_DOCDIR=\"/usr/share/doc/screengrab\" -DSG_EXT_EDIT=\"1\" -DSG_ICONPATH=\"/usr/share/icons/hicolor/scalable/apps/screengrab.svg\" -DVERSION=\"2.4.0\" -Dextedit_EXPORTS -I/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/src/modules/extedit -I/home/cnc/lxqt-dev/screengrab-2.4.0/src/modules/extedit -I/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/src/modules/extedit/extedit_autogen/include -I/home/cnc/lxqt-dev/screengrab-2.4.0/src -I/home/cnc/lxqt-dev/screengrab-2.4.0/src/common/qkeysequencewidget/src -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/aarch64-linux-gnu/qt5/QtX11Extras -isystem /usr/include/qt5xdg -isystem /usr/include/aarch64-linux-gnu/qt5/QtXml -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/qt5xdgiconloader -isystem /usr/include/qt5xdgiconloader/3.9.1 -isystem /usr/include/aarch64-linux-gnu/qt5/QtSvg -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/screengrab-2.4.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -Wnon-virtual-dtor -Woverloaded-virtual -Wall -Wextra -O2 -g -DNDEBUG -fPIC -fPIC -MD -MT src/modules/extedit/CMakeFiles/extedit.dir/extedit_autogen/mocs_compilation.cpp.o -MF CMakeFiles/extedit.dir/extedit_autogen/mocs_compilation.cpp.o.d -o CMakeFiles/extedit.dir/extedit_autogen/mocs_compilation.cpp.o -c /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/src/modules/extedit/extedit_autogen/mocs_compilation.cpp
+[  6%] Building CXX object src/modules/extedit/CMakeFiles/extedit.dir/extedit.cpp.o
+[  7%] Building CXX object src/modules/extedit/CMakeFiles/extedit.dir/moduleextedit.cpp.o
+cd /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/src/modules/extedit && /usr/bin/c++ -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_SVG_LIB -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DQT_XML_LIB -DSG_DBUS_NOTIFY=\"1\" -DSG_DOCDIR=\"/usr/share/doc/screengrab\" -DSG_EXT_EDIT=\"1\" -DSG_ICONPATH=\"/usr/share/icons/hicolor/scalable/apps/screengrab.svg\" -DVERSION=\"2.4.0\" -Dextedit_EXPORTS -I/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/src/modules/extedit -I/home/cnc/lxqt-dev/screengrab-2.4.0/src/modules/extedit -I/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/src/modules/extedit/extedit_autogen/include -I/home/cnc/lxqt-dev/screengrab-2.4.0/src -I/home/cnc/lxqt-dev/screengrab-2.4.0/src/common/qkeysequencewidget/src -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/aarch64-linux-gnu/qt5/QtX11Extras -isystem /usr/include/qt5xdg -isystem /usr/include/aarch64-linux-gnu/qt5/QtXml -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/qt5xdgiconloader -isystem /usr/include/qt5xdgiconloader/3.9.1 -isystem /usr/include/aarch64-linux-gnu/qt5/QtSvg -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/screengrab-2.4.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -Wnon-virtual-dtor -Woverloaded-virtual -Wall -Wextra -O2 -g -DNDEBUG -fPIC -fPIC -MD -MT src/modules/extedit/CMakeFiles/extedit.dir/moduleextedit.cpp.o -MF CMakeFiles/extedit.dir/moduleextedit.cpp.o.d -o CMakeFiles/extedit.dir/moduleextedit.cpp.o -c /home/cnc/lxqt-dev/screengrab-2.4.0/src/modules/extedit/moduleextedit.cpp
+cd /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/src/modules/extedit && /usr/bin/c++ -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_SVG_LIB -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DQT_XML_LIB -DSG_DBUS_NOTIFY=\"1\" -DSG_DOCDIR=\"/usr/share/doc/screengrab\" -DSG_EXT_EDIT=\"1\" -DSG_ICONPATH=\"/usr/share/icons/hicolor/scalable/apps/screengrab.svg\" -DVERSION=\"2.4.0\" -Dextedit_EXPORTS -I/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/src/modules/extedit -I/home/cnc/lxqt-dev/screengrab-2.4.0/src/modules/extedit -I/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/src/modules/extedit/extedit_autogen/include -I/home/cnc/lxqt-dev/screengrab-2.4.0/src -I/home/cnc/lxqt-dev/screengrab-2.4.0/src/common/qkeysequencewidget/src -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/aarch64-linux-gnu/qt5/QtX11Extras -isystem /usr/include/qt5xdg -isystem /usr/include/aarch64-linux-gnu/qt5/QtXml -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/qt5xdgiconloader -isystem /usr/include/qt5xdgiconloader/3.9.1 -isystem /usr/include/aarch64-linux-gnu/qt5/QtSvg -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/screengrab-2.4.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -Wnon-virtual-dtor -Woverloaded-virtual -Wall -Wextra -O2 -g -DNDEBUG -fPIC -fPIC -MD -MT src/modules/extedit/CMakeFiles/extedit.dir/extedit.cpp.o -MF CMakeFiles/extedit.dir/extedit.cpp.o.d -o CMakeFiles/extedit.dir/extedit.cpp.o -c /home/cnc/lxqt-dev/screengrab-2.4.0/src/modules/extedit/extedit.cpp
+AutoMoc: Reading dependencies from "SRC:/obj-aarch64-linux-gnu/src/common/qkeysequencewidget/qkeysequencewidget_autogen/UVLADIE3JM/moc_qkeysequencewidget_p.cpp.d"
+AutoMoc: Generating MOC compilation "SRC:/obj-aarch64-linux-gnu/src/common/qkeysequencewidget/qkeysequencewidget_autogen/mocs_compilation.cpp"
+AutoGen: Writing the parse cache file "SRC:/obj-aarch64-linux-gnu/src/common/qkeysequencewidget/CMakeFiles/qkeysequencewidget_autogen.dir/ParseCache.txt"
+AutoGen: Writing the settings file "SRC:/obj-aarch64-linux-gnu/src/common/qkeysequencewidget/CMakeFiles/qkeysequencewidget_autogen.dir/AutogenUsed.txt"
+make[3]: Leaving directory '/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu'
+[  7%] Built target qkeysequencewidget_autogen
+make  -f src/common/qkeysequencewidget/CMakeFiles/qkeysequencewidget.dir/build.make src/common/qkeysequencewidget/CMakeFiles/qkeysequencewidget.dir/depend
+make[3]: Entering directory '/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu'
+[  9%] Generating qrc_qkeysequencewidget.cpp
+cd /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/src/common/qkeysequencewidget && /usr/lib/qt5/bin/rcc --name qkeysequencewidget --output /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/src/common/qkeysequencewidget/qrc_qkeysequencewidget.cpp /home/cnc/lxqt-dev/screengrab-2.4.0/src/common/qkeysequencewidget/qkeysequencewidget.qrc
+cd /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/cnc/lxqt-dev/screengrab-2.4.0 /home/cnc/lxqt-dev/screengrab-2.4.0/src/common/qkeysequencewidget /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/src/common/qkeysequencewidget /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/src/common/qkeysequencewidget/CMakeFiles/qkeysequencewidget.dir/DependInfo.cmake --color=
+make[3]: Leaving directory '/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu'
+make  -f src/common/qkeysequencewidget/CMakeFiles/qkeysequencewidget.dir/build.make src/common/qkeysequencewidget/CMakeFiles/qkeysequencewidget.dir/build
+make[3]: Entering directory '/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu'
+[ 10%] Building CXX object src/common/qkeysequencewidget/CMakeFiles/qkeysequencewidget.dir/qkeysequencewidget_autogen/mocs_compilation.cpp.o
+cd /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/src/common/qkeysequencewidget && /usr/bin/c++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_WIDGETS_LIB -DSG_DBUS_NOTIFY=\"1\" -DSG_DOCDIR=\"/usr/share/doc/screengrab\" -DSG_EXT_EDIT=\"1\" -DSG_ICONPATH=\"/usr/share/icons/hicolor/scalable/apps/screengrab.svg\" -DVERSION=\"2.4.0\" -I/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/src/common/qkeysequencewidget -I/home/cnc/lxqt-dev/screengrab-2.4.0/src/common/qkeysequencewidget -I/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/src/common/qkeysequencewidget/qkeysequencewidget_autogen/include -I/home/cnc/lxqt-dev/screengrab-2.4.0/src -I/home/cnc/lxqt-dev/screengrab-2.4.0/src/common/qkeysequencewidget/src -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/screengrab-2.4.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -Wnon-virtual-dtor -Woverloaded-virtual -Wall -Wextra -O2 -g -DNDEBUG -fPIC -MD -MT src/common/qkeysequencewidget/CMakeFiles/qkeysequencewidget.dir/qkeysequencewidget_autogen/mocs_compilation.cpp.o -MF CMakeFiles/qkeysequencewidget.dir/qkeysequencewidget_autogen/mocs_compilation.cpp.o.d -o CMakeFiles/qkeysequencewidget.dir/qkeysequencewidget_autogen/mocs_compilation.cpp.o -c /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/src/common/qkeysequencewidget/qkeysequencewidget_autogen/mocs_compilation.cpp
+[ 12%] Building CXX object src/common/qkeysequencewidget/CMakeFiles/qkeysequencewidget.dir/src/qkeysequencewidget.cpp.o
+cd /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/src/common/qkeysequencewidget && /usr/bin/c++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_WIDGETS_LIB -DSG_DBUS_NOTIFY=\"1\" -DSG_DOCDIR=\"/usr/share/doc/screengrab\" -DSG_EXT_EDIT=\"1\" -DSG_ICONPATH=\"/usr/share/icons/hicolor/scalable/apps/screengrab.svg\" -DVERSION=\"2.4.0\" -I/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/src/common/qkeysequencewidget -I/home/cnc/lxqt-dev/screengrab-2.4.0/src/common/qkeysequencewidget -I/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/src/common/qkeysequencewidget/qkeysequencewidget_autogen/include -I/home/cnc/lxqt-dev/screengrab-2.4.0/src -I/home/cnc/lxqt-dev/screengrab-2.4.0/src/common/qkeysequencewidget/src -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/screengrab-2.4.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -Wnon-virtual-dtor -Woverloaded-virtual -Wall -Wextra -O2 -g -DNDEBUG -fPIC -MD -MT src/common/qkeysequencewidget/CMakeFiles/qkeysequencewidget.dir/src/qkeysequencewidget.cpp.o -MF CMakeFiles/qkeysequencewidget.dir/src/qkeysequencewidget.cpp.o.d -o CMakeFiles/qkeysequencewidget.dir/src/qkeysequencewidget.cpp.o -c /home/cnc/lxqt-dev/screengrab-2.4.0/src/common/qkeysequencewidget/src/qkeysequencewidget.cpp
+[ 13%] Building CXX object src/common/qkeysequencewidget/CMakeFiles/qkeysequencewidget.dir/qrc_qkeysequencewidget.cpp.o
+cd /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/src/common/qkeysequencewidget && /usr/bin/c++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_WIDGETS_LIB -DSG_DBUS_NOTIFY=\"1\" -DSG_DOCDIR=\"/usr/share/doc/screengrab\" -DSG_EXT_EDIT=\"1\" -DSG_ICONPATH=\"/usr/share/icons/hicolor/scalable/apps/screengrab.svg\" -DVERSION=\"2.4.0\" -I/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/src/common/qkeysequencewidget -I/home/cnc/lxqt-dev/screengrab-2.4.0/src/common/qkeysequencewidget -I/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/src/common/qkeysequencewidget/qkeysequencewidget_autogen/include -I/home/cnc/lxqt-dev/screengrab-2.4.0/src -I/home/cnc/lxqt-dev/screengrab-2.4.0/src/common/qkeysequencewidget/src -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/screengrab-2.4.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -Wnon-virtual-dtor -Woverloaded-virtual -Wall -Wextra -O2 -g -DNDEBUG -fPIC -MD -MT src/common/qkeysequencewidget/CMakeFiles/qkeysequencewidget.dir/qrc_qkeysequencewidget.cpp.o -MF CMakeFiles/qkeysequencewidget.dir/qrc_qkeysequencewidget.cpp.o.d -o CMakeFiles/qkeysequencewidget.dir/qrc_qkeysequencewidget.cpp.o -c /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/src/common/qkeysequencewidget/qrc_qkeysequencewidget.cpp
+[ 15%] Linking CXX static library libqkeysequencewidget.a
+cd /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/src/common/qkeysequencewidget && /usr/bin/cmake -P CMakeFiles/qkeysequencewidget.dir/cmake_clean_target.cmake
+cd /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/src/common/qkeysequencewidget && /usr/bin/cmake -E cmake_link_script CMakeFiles/qkeysequencewidget.dir/link.txt --verbose=1
+/usr/bin/ar qc libqkeysequencewidget.a CMakeFiles/qkeysequencewidget.dir/qkeysequencewidget_autogen/mocs_compilation.cpp.o CMakeFiles/qkeysequencewidget.dir/src/qkeysequencewidget.cpp.o CMakeFiles/qkeysequencewidget.dir/qrc_qkeysequencewidget.cpp.o
+/usr/bin/ranlib libqkeysequencewidget.a
+[ 16%] Building CXX object src/modules/extedit/CMakeFiles/extedit.dir/Qt5TranslationLoader.cpp.o
+cd /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/src/modules/extedit && /usr/bin/c++ -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_SVG_LIB -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DQT_XML_LIB -DSG_DBUS_NOTIFY=\"1\" -DSG_DOCDIR=\"/usr/share/doc/screengrab\" -DSG_EXT_EDIT=\"1\" -DSG_ICONPATH=\"/usr/share/icons/hicolor/scalable/apps/screengrab.svg\" -DVERSION=\"2.4.0\" -Dextedit_EXPORTS -I/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/src/modules/extedit -I/home/cnc/lxqt-dev/screengrab-2.4.0/src/modules/extedit -I/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/src/modules/extedit/extedit_autogen/include -I/home/cnc/lxqt-dev/screengrab-2.4.0/src -I/home/cnc/lxqt-dev/screengrab-2.4.0/src/common/qkeysequencewidget/src -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/aarch64-linux-gnu/qt5/QtX11Extras -isystem /usr/include/qt5xdg -isystem /usr/include/aarch64-linux-gnu/qt5/QtXml -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/qt5xdgiconloader -isystem /usr/include/qt5xdgiconloader/3.9.1 -isystem /usr/include/aarch64-linux-gnu/qt5/QtSvg -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/screengrab-2.4.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -Wnon-virtual-dtor -Woverloaded-virtual -Wall -Wextra -O2 -g -DNDEBUG -fPIC -fPIC -MD -MT src/modules/extedit/CMakeFiles/extedit.dir/Qt5TranslationLoader.cpp.o -MF CMakeFiles/extedit.dir/Qt5TranslationLoader.cpp.o.d -o CMakeFiles/extedit.dir/Qt5TranslationLoader.cpp.o -c /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/src/modules/extedit/Qt5TranslationLoader.cpp
+make[3]: Leaving directory '/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu'
+[ 16%] Built target qkeysequencewidget
+[ 18%] Linking CXX shared library libextedit.so
+cd /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/src/modules/extedit && /usr/bin/cmake -E cmake_link_script CMakeFiles/extedit.dir/link.txt --verbose=1
+/usr/bin/c++ -fPIC -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/screengrab-2.4.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -Wnon-virtual-dtor -Woverloaded-virtual -Wall -Wextra -O2 -g -DNDEBUG -Wl,-z,relro -Wl,-z,now -Wl,--as-needed -shared -Wl,-soname,libextedit.so.1.0.0 -o libextedit.so.1.0.0 CMakeFiles/extedit.dir/extedit_autogen/mocs_compilation.cpp.o CMakeFiles/extedit.dir/moduleextedit.cpp.o CMakeFiles/extedit.dir/extedit.cpp.o CMakeFiles/extedit.dir/Qt5TranslationLoader.cpp.o  -Wl,-rpath,::::::::::::::::::::::::::::::::::::: /usr/lib/aarch64-linux-gnu/libQt5X11Extras.so.5.15.4 /usr/lib/aarch64-linux-gnu/libQt5Xdg.so.3.9.1 /usr/lib/aarch64-linux-gnu/libQt5Xml.so.5.15.4 /usr/lib/aarch64-linux-gnu/libQt5DBus.so.5.15.4 /usr/lib/aarch64-linux-gnu/libQt5XdgIconLoader.so.3.9.1 /usr/lib/aarch64-linux-gnu/libQt5Svg.so.5.15.4 /usr/lib/aarch64-linux-gnu/libQt5Widgets.so.5.15.4 /usr/lib/aarch64-linux-gnu/libQt5Gui.so.5.15.4 /usr/lib/aarch64-linux-gnu/libQt5Core.so.5.15.4 -lglib-2.0 -lgobject-2.0 -lgio-2.0 
+cd /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/src/modules/extedit && /usr/bin/cmake -E cmake_symlink_library libextedit.so.1.0.0 libextedit.so.1.0.0 libextedit.so
+make[3]: Leaving directory '/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu'
+[ 18%] Built target extedit
+make  -f CMakeFiles/screengrab_autogen.dir/build.make CMakeFiles/screengrab_autogen.dir/depend
+make[3]: Entering directory '/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu'
+cd /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/cnc/lxqt-dev/screengrab-2.4.0 /home/cnc/lxqt-dev/screengrab-2.4.0 /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/CMakeFiles/screengrab_autogen.dir/DependInfo.cmake --color=
+make[3]: Leaving directory '/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu'
+make  -f CMakeFiles/screengrab_autogen.dir/build.make CMakeFiles/screengrab_autogen.dir/build
+make[3]: Entering directory '/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu'
+[ 19%] Automatic MOC and UIC for target screengrab
+/usr/bin/cmake -E cmake_autogen /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/CMakeFiles/screengrab_autogen.dir/AutogenInfo.json RelWithDebInfo
+AutoGen: Refreshing parse cache because it doesn't exist.
+AutoMoc: Generating "SRC:/obj-aarch64-linux-gnu/screengrab_autogen/moc_predefs.h", because it doesn't exist.
+/usr/bin/c++ -dM -E -c /usr/share/cmake-3.23/Modules/CMakeCXXCompilerABI.cpp -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_SVG_LIB -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DQT_XML_LIB "-DSG_DBUS_NOTIFY=\"1\"" "-DSG_DOCDIR=\"/usr/share/doc/screengrab\"" "-DSG_EXT_EDIT=\"1\"" "-DSG_ICONPATH=\"/usr/share/icons/hicolor/scalable/apps/screengrab.svg\"" "-DVERSION=\"2.4.0\"" "-DX11_XCB_FOUND=\"1\"" "-DXCB_SHAPE_FOUND=\"1\"" "-DXCB_XCB_FOUND=\"1\"" "-DXCB_XFOXES_FOUND=\"1\"" -I/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu -I/home/cnc/lxqt-dev/screengrab-2.4.0 -I/home/cnc/lxqt-dev/screengrab-2.4.0/src -I/home/cnc/lxqt-dev/screengrab-2.4.0/src/common/qkeysequencewidget/src -I/home/cnc/lxqt-dev/screengrab-2.4.0/src/modules/extedit -I/usr/include/aarch64-linux-gnu/qt5 -I/usr/include/aarch64-linux-gnu/qt5/QtWidgets -I/usr/include/aarch64-linux-gnu/qt5/QtGui -I/usr/include/aarch64-linux-gnu/qt5/QtCore -I/usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -I/usr/include/aarch64-linux-gnu/qt5/QtX11Extras -I/usr/include/qt5xdg -I/usr/include/aarch64-linux-gnu/qt5/QtXml -I/usr/include/aarch64-linux-gnu/qt5/QtDBus -I/usr/include/qt5xdgiconloader -I/usr/include/qt5xdgiconloader/3.9.1 -I/usr/include/aarch64-linux-gnu/qt5/QtSvg -I/usr/include/KF5/KWindowSystem -I/usr/include/KF5 -I/usr/include/aarch64-linux-gnu/qt5/QtNetwork -I/usr/include -I/usr/include/c++/11 -I/usr/include/aarch64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/aarch64-linux-gnu/11/include -I/usr/local/include -I/usr/include/aarch64-linux-gnu
+AutoGen: Parsing "SRC:/src/core/config.h"
+AutoGen: Parsing "SRC:/src/core/core.h"
+AutoGen: Parsing "SRC:/src/core/dbusnotifier.h"
+AutoGen: Parsing "SRC:/src/core/modulemanager.h"
+AutoGen: Parsing "SRC:/src/core/regionselect.h"
+AutoGen: Parsing "SRC:/src/core/shortcutmanager.h"
+AutoGen: Parsing "SRC:/src/core/singleapp.h"
+AutoGen: Parsing "SRC:/src/core/ui/about.h"
+AutoGen: Parsing "SRC:/src/core/ui/configwidget.h"
+AutoGen: Parsing "SRC:/src/core/ui/mainwindow.h"
+AutoGen: Parsing "SRC:/src/core/x11utils.h"
+AutoGen: Parsing "SRC:/obj-aarch64-linux-gnu/Qt5TranslationLoader.cpp"
+AutoGen: Parsing "SRC:/src/core/config.cpp"
+AutoGen: Parsing "SRC:/src/core/core.cpp"
+AutoGen: Parsing "SRC:/src/core/dbusnotifier.cpp"
+AutoGen: Parsing "SRC:/src/core/main.cpp"
+AutoGen: Parsing "SRC:/src/core/modulemanager.cpp"
+AutoGen: Parsing "SRC:/src/core/regionselect.cpp"
+AutoGen: Parsing "SRC:/src/core/shortcutmanager.cpp"
+AutoGen: Parsing "SRC:/src/core/singleapp.cpp"
+AutoGen: Parsing "SRC:/src/core/ui/about.cpp"
+AutoGen: Parsing "SRC:/src/core/ui/configwidget.cpp"
+AutoGen: Parsing "SRC:/src/core/ui/mainwindow.cpp"
+AutoGen: Parsing "SRC:/src/core/x11utils.cpp"
+AutoMoc: Generating "SRC:/obj-aarch64-linux-gnu/screengrab_autogen/PRMOGMWJPH/moc_config.cpp", because it doesn't exist, from "SRC:/src/core/config.h"
+/usr/lib/qt5/bin/moc -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_SVG_LIB -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DQT_XML_LIB "-DSG_DBUS_NOTIFY=\"1\"" "-DSG_DOCDIR=\"/usr/share/doc/screengrab\"" "-DSG_EXT_EDIT=\"1\"" "-DSG_ICONPATH=\"/usr/share/icons/hicolor/scalable/apps/screengrab.svg\"" "-DVERSION=\"2.4.0\"" "-DX11_XCB_FOUND=\"1\"" "-DXCB_SHAPE_FOUND=\"1\"" "-DXCB_XCB_FOUND=\"1\"" "-DXCB_XFOXES_FOUND=\"1\"" -I/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu -I/home/cnc/lxqt-dev/screengrab-2.4.0 -I/home/cnc/lxqt-dev/screengrab-2.4.0/src -I/home/cnc/lxqt-dev/screengrab-2.4.0/src/common/qkeysequencewidget/src -I/home/cnc/lxqt-dev/screengrab-2.4.0/src/modules/extedit -I/usr/include/aarch64-linux-gnu/qt5 -I/usr/include/aarch64-linux-gnu/qt5/QtWidgets -I/usr/include/aarch64-linux-gnu/qt5/QtGui -I/usr/include/aarch64-linux-gnu/qt5/QtCore -I/usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -I/usr/include/aarch64-linux-gnu/qt5/QtX11Extras -I/usr/include/qt5xdg -I/usr/include/aarch64-linux-gnu/qt5/QtXml -I/usr/include/aarch64-linux-gnu/qt5/QtDBus -I/usr/include/qt5xdgiconloader -I/usr/include/qt5xdgiconloader/3.9.1 -I/usr/include/aarch64-linux-gnu/qt5/QtSvg -I/usr/include/KF5/KWindowSystem -I/usr/include/KF5 -I/usr/include/aarch64-linux-gnu/qt5/QtNetwork -I/usr/include -I/usr/include/c++/11 -I/usr/include/aarch64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/aarch64-linux-gnu/11/include -I/usr/local/include -I/usr/include/aarch64-linux-gnu --include /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/screengrab_autogen/moc_predefs.h --output-dep-file -o /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/screengrab_autogen/PRMOGMWJPH/moc_config.cpp /home/cnc/lxqt-dev/screengrab-2.4.0/src/core/config.h
+AutoMoc: Reading dependencies from "SRC:/obj-aarch64-linux-gnu/screengrab_autogen/PRMOGMWJPH/moc_config.cpp.d"
+AutoMoc: Generating "SRC:/obj-aarch64-linux-gnu/screengrab_autogen/PRMOGMWJPH/moc_core.cpp", because it doesn't exist, from "SRC:/src/core/core.h"
+/usr/lib/qt5/bin/moc -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_SVG_LIB -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DQT_XML_LIB "-DSG_DBUS_NOTIFY=\"1\"" "-DSG_DOCDIR=\"/usr/share/doc/screengrab\"" "-DSG_EXT_EDIT=\"1\"" "-DSG_ICONPATH=\"/usr/share/icons/hicolor/scalable/apps/screengrab.svg\"" "-DVERSION=\"2.4.0\"" "-DX11_XCB_FOUND=\"1\"" "-DXCB_SHAPE_FOUND=\"1\"" "-DXCB_XCB_FOUND=\"1\"" "-DXCB_XFOXES_FOUND=\"1\"" -I/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu -I/home/cnc/lxqt-dev/screengrab-2.4.0 -I/home/cnc/lxqt-dev/screengrab-2.4.0/src -I/home/cnc/lxqt-dev/screengrab-2.4.0/src/common/qkeysequencewidget/src -I/home/cnc/lxqt-dev/screengrab-2.4.0/src/modules/extedit -I/usr/include/aarch64-linux-gnu/qt5 -I/usr/include/aarch64-linux-gnu/qt5/QtWidgets -I/usr/include/aarch64-linux-gnu/qt5/QtGui -I/usr/include/aarch64-linux-gnu/qt5/QtCore -I/usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -I/usr/include/aarch64-linux-gnu/qt5/QtX11Extras -I/usr/include/qt5xdg -I/usr/include/aarch64-linux-gnu/qt5/QtXml -I/usr/include/aarch64-linux-gnu/qt5/QtDBus -I/usr/include/qt5xdgiconloader -I/usr/include/qt5xdgiconloader/3.9.1 -I/usr/include/aarch64-linux-gnu/qt5/QtSvg -I/usr/include/KF5/KWindowSystem -I/usr/include/KF5 -I/usr/include/aarch64-linux-gnu/qt5/QtNetwork -I/usr/include -I/usr/include/c++/11 -I/usr/include/aarch64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/aarch64-linux-gnu/11/include -I/usr/local/include -I/usr/include/aarch64-linux-gnu --include /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/screengrab_autogen/moc_predefs.h --output-dep-file -o /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/screengrab_autogen/PRMOGMWJPH/moc_core.cpp /home/cnc/lxqt-dev/screengrab-2.4.0/src/core/core.h
+AutoMoc: Reading dependencies from "SRC:/obj-aarch64-linux-gnu/screengrab_autogen/PRMOGMWJPH/moc_core.cpp.d"
+AutoMoc: Generating "SRC:/obj-aarch64-linux-gnu/screengrab_autogen/PRMOGMWJPH/moc_dbusnotifier.cpp", because it doesn't exist, from "SRC:/src/core/dbusnotifier.h"
+/usr/lib/qt5/bin/moc -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_SVG_LIB -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DQT_XML_LIB "-DSG_DBUS_NOTIFY=\"1\"" "-DSG_DOCDIR=\"/usr/share/doc/screengrab\"" "-DSG_EXT_EDIT=\"1\"" "-DSG_ICONPATH=\"/usr/share/icons/hicolor/scalable/apps/screengrab.svg\"" "-DVERSION=\"2.4.0\"" "-DX11_XCB_FOUND=\"1\"" "-DXCB_SHAPE_FOUND=\"1\"" "-DXCB_XCB_FOUND=\"1\"" "-DXCB_XFOXES_FOUND=\"1\"" -I/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu -I/home/cnc/lxqt-dev/screengrab-2.4.0 -I/home/cnc/lxqt-dev/screengrab-2.4.0/src -I/home/cnc/lxqt-dev/screengrab-2.4.0/src/common/qkeysequencewidget/src -I/home/cnc/lxqt-dev/screengrab-2.4.0/src/modules/extedit -I/usr/include/aarch64-linux-gnu/qt5 -I/usr/include/aarch64-linux-gnu/qt5/QtWidgets -I/usr/include/aarch64-linux-gnu/qt5/QtGui -I/usr/include/aarch64-linux-gnu/qt5/QtCore -I/usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -I/usr/include/aarch64-linux-gnu/qt5/QtX11Extras -I/usr/include/qt5xdg -I/usr/include/aarch64-linux-gnu/qt5/QtXml -I/usr/include/aarch64-linux-gnu/qt5/QtDBus -I/usr/include/qt5xdgiconloader -I/usr/include/qt5xdgiconloader/3.9.1 -I/usr/include/aarch64-linux-gnu/qt5/QtSvg -I/usr/include/KF5/KWindowSystem -I/usr/include/KF5 -I/usr/include/aarch64-linux-gnu/qt5/QtNetwork -I/usr/include -I/usr/include/c++/11 -I/usr/include/aarch64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/aarch64-linux-gnu/11/include -I/usr/local/include -I/usr/include/aarch64-linux-gnu --include /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/screengrab_autogen/moc_predefs.h --output-dep-file -o /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/screengrab_autogen/PRMOGMWJPH/moc_dbusnotifier.cpp /home/cnc/lxqt-dev/screengrab-2.4.0/src/core/dbusnotifier.h
+AutoMoc: Reading dependencies from "SRC:/obj-aarch64-linux-gnu/screengrab_autogen/PRMOGMWJPH/moc_dbusnotifier.cpp.d"
+AutoMoc: Generating "SRC:/obj-aarch64-linux-gnu/screengrab_autogen/PRMOGMWJPH/moc_regionselect.cpp", because it doesn't exist, from "SRC:/src/core/regionselect.h"
+/usr/lib/qt5/bin/moc -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_SVG_LIB -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DQT_XML_LIB "-DSG_DBUS_NOTIFY=\"1\"" "-DSG_DOCDIR=\"/usr/share/doc/screengrab\"" "-DSG_EXT_EDIT=\"1\"" "-DSG_ICONPATH=\"/usr/share/icons/hicolor/scalable/apps/screengrab.svg\"" "-DVERSION=\"2.4.0\"" "-DX11_XCB_FOUND=\"1\"" "-DXCB_SHAPE_FOUND=\"1\"" "-DXCB_XCB_FOUND=\"1\"" "-DXCB_XFOXES_FOUND=\"1\"" -I/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu -I/home/cnc/lxqt-dev/screengrab-2.4.0 -I/home/cnc/lxqt-dev/screengrab-2.4.0/src -I/home/cnc/lxqt-dev/screengrab-2.4.0/src/common/qkeysequencewidget/src -I/home/cnc/lxqt-dev/screengrab-2.4.0/src/modules/extedit -I/usr/include/aarch64-linux-gnu/qt5 -I/usr/include/aarch64-linux-gnu/qt5/QtWidgets -I/usr/include/aarch64-linux-gnu/qt5/QtGui -I/usr/include/aarch64-linux-gnu/qt5/QtCore -I/usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -I/usr/include/aarch64-linux-gnu/qt5/QtX11Extras -I/usr/include/qt5xdg -I/usr/include/aarch64-linux-gnu/qt5/QtXml -I/usr/include/aarch64-linux-gnu/qt5/QtDBus -I/usr/include/qt5xdgiconloader -I/usr/include/qt5xdgiconloader/3.9.1 -I/usr/include/aarch64-linux-gnu/qt5/QtSvg -I/usr/include/KF5/KWindowSystem -I/usr/include/KF5 -I/usr/include/aarch64-linux-gnu/qt5/QtNetwork -I/usr/include -I/usr/include/c++/11 -I/usr/include/aarch64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/aarch64-linux-gnu/11/include -I/usr/local/include -I/usr/include/aarch64-linux-gnu --include /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/screengrab_autogen/moc_predefs.h --output-dep-file -o /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/screengrab_autogen/PRMOGMWJPH/moc_regionselect.cpp /home/cnc/lxqt-dev/screengrab-2.4.0/src/core/regionselect.h
+AutoMoc: Reading dependencies from "SRC:/obj-aarch64-linux-gnu/screengrab_autogen/PRMOGMWJPH/moc_regionselect.cpp.d"
+AutoMoc: Generating "SRC:/obj-aarch64-linux-gnu/screengrab_autogen/PRMOGMWJPH/moc_singleapp.cpp", because it doesn't exist, from "SRC:/src/core/singleapp.h"
+/usr/lib/qt5/bin/moc -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_SVG_LIB -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DQT_XML_LIB "-DSG_DBUS_NOTIFY=\"1\"" "-DSG_DOCDIR=\"/usr/share/doc/screengrab\"" "-DSG_EXT_EDIT=\"1\"" "-DSG_ICONPATH=\"/usr/share/icons/hicolor/scalable/apps/screengrab.svg\"" "-DVERSION=\"2.4.0\"" "-DX11_XCB_FOUND=\"1\"" "-DXCB_SHAPE_FOUND=\"1\"" "-DXCB_XCB_FOUND=\"1\"" "-DXCB_XFOXES_FOUND=\"1\"" -I/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu -I/home/cnc/lxqt-dev/screengrab-2.4.0 -I/home/cnc/lxqt-dev/screengrab-2.4.0/src -I/home/cnc/lxqt-dev/screengrab-2.4.0/src/common/qkeysequencewidget/src -I/home/cnc/lxqt-dev/screengrab-2.4.0/src/modules/extedit -I/usr/include/aarch64-linux-gnu/qt5 -I/usr/include/aarch64-linux-gnu/qt5/QtWidgets -I/usr/include/aarch64-linux-gnu/qt5/QtGui -I/usr/include/aarch64-linux-gnu/qt5/QtCore -I/usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -I/usr/include/aarch64-linux-gnu/qt5/QtX11Extras -I/usr/include/qt5xdg -I/usr/include/aarch64-linux-gnu/qt5/QtXml -I/usr/include/aarch64-linux-gnu/qt5/QtDBus -I/usr/include/qt5xdgiconloader -I/usr/include/qt5xdgiconloader/3.9.1 -I/usr/include/aarch64-linux-gnu/qt5/QtSvg -I/usr/include/KF5/KWindowSystem -I/usr/include/KF5 -I/usr/include/aarch64-linux-gnu/qt5/QtNetwork -I/usr/include -I/usr/include/c++/11 -I/usr/include/aarch64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/aarch64-linux-gnu/11/include -I/usr/local/include -I/usr/include/aarch64-linux-gnu --include /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/screengrab_autogen/moc_predefs.h --output-dep-file -o /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/screengrab_autogen/PRMOGMWJPH/moc_singleapp.cpp /home/cnc/lxqt-dev/screengrab-2.4.0/src/core/singleapp.h
+AutoMoc: Reading dependencies from "SRC:/obj-aarch64-linux-gnu/screengrab_autogen/PRMOGMWJPH/moc_singleapp.cpp.d"
+AutoMoc: Generating "SRC:/obj-aarch64-linux-gnu/screengrab_autogen/H4IQC4G222/moc_about.cpp", because it doesn't exist, from "SRC:/src/core/ui/about.h"
+/usr/lib/qt5/bin/moc -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_SVG_LIB -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DQT_XML_LIB "-DSG_DBUS_NOTIFY=\"1\"" "-DSG_DOCDIR=\"/usr/share/doc/screengrab\"" "-DSG_EXT_EDIT=\"1\"" "-DSG_ICONPATH=\"/usr/share/icons/hicolor/scalable/apps/screengrab.svg\"" "-DVERSION=\"2.4.0\"" "-DX11_XCB_FOUND=\"1\"" "-DXCB_SHAPE_FOUND=\"1\"" "-DXCB_XCB_FOUND=\"1\"" "-DXCB_XFOXES_FOUND=\"1\"" -I/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu -I/home/cnc/lxqt-dev/screengrab-2.4.0 -I/home/cnc/lxqt-dev/screengrab-2.4.0/src -I/home/cnc/lxqt-dev/screengrab-2.4.0/src/common/qkeysequencewidget/src -I/home/cnc/lxqt-dev/screengrab-2.4.0/src/modules/extedit -I/usr/include/aarch64-linux-gnu/qt5 -I/usr/include/aarch64-linux-gnu/qt5/QtWidgets -I/usr/include/aarch64-linux-gnu/qt5/QtGui -I/usr/include/aarch64-linux-gnu/qt5/QtCore -I/usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -I/usr/include/aarch64-linux-gnu/qt5/QtX11Extras -I/usr/include/qt5xdg -I/usr/include/aarch64-linux-gnu/qt5/QtXml -I/usr/include/aarch64-linux-gnu/qt5/QtDBus -I/usr/include/qt5xdgiconloader -I/usr/include/qt5xdgiconloader/3.9.1 -I/usr/include/aarch64-linux-gnu/qt5/QtSvg -I/usr/include/KF5/KWindowSystem -I/usr/include/KF5 -I/usr/include/aarch64-linux-gnu/qt5/QtNetwork -I/usr/include -I/usr/include/c++/11 -I/usr/include/aarch64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/aarch64-linux-gnu/11/include -I/usr/local/include -I/usr/include/aarch64-linux-gnu --include /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/screengrab_autogen/moc_predefs.h --output-dep-file -o /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/screengrab_autogen/H4IQC4G222/moc_about.cpp /home/cnc/lxqt-dev/screengrab-2.4.0/src/core/ui/about.h
+AutoMoc: Reading dependencies from "SRC:/obj-aarch64-linux-gnu/screengrab_autogen/H4IQC4G222/moc_about.cpp.d"
+AutoMoc: Generating "SRC:/obj-aarch64-linux-gnu/screengrab_autogen/H4IQC4G222/moc_configwidget.cpp", because it doesn't exist, from "SRC:/src/core/ui/configwidget.h"
+/usr/lib/qt5/bin/moc -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_SVG_LIB -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DQT_XML_LIB "-DSG_DBUS_NOTIFY=\"1\"" "-DSG_DOCDIR=\"/usr/share/doc/screengrab\"" "-DSG_EXT_EDIT=\"1\"" "-DSG_ICONPATH=\"/usr/share/icons/hicolor/scalable/apps/screengrab.svg\"" "-DVERSION=\"2.4.0\"" "-DX11_XCB_FOUND=\"1\"" "-DXCB_SHAPE_FOUND=\"1\"" "-DXCB_XCB_FOUND=\"1\"" "-DXCB_XFOXES_FOUND=\"1\"" -I/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu -I/home/cnc/lxqt-dev/screengrab-2.4.0 -I/home/cnc/lxqt-dev/screengrab-2.4.0/src -I/home/cnc/lxqt-dev/screengrab-2.4.0/src/common/qkeysequencewidget/src -I/home/cnc/lxqt-dev/screengrab-2.4.0/src/modules/extedit -I/usr/include/aarch64-linux-gnu/qt5 -I/usr/include/aarch64-linux-gnu/qt5/QtWidgets -I/usr/include/aarch64-linux-gnu/qt5/QtGui -I/usr/include/aarch64-linux-gnu/qt5/QtCore -I/usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -I/usr/include/aarch64-linux-gnu/qt5/QtX11Extras -I/usr/include/qt5xdg -I/usr/include/aarch64-linux-gnu/qt5/QtXml -I/usr/include/aarch64-linux-gnu/qt5/QtDBus -I/usr/include/qt5xdgiconloader -I/usr/include/qt5xdgiconloader/3.9.1 -I/usr/include/aarch64-linux-gnu/qt5/QtSvg -I/usr/include/KF5/KWindowSystem -I/usr/include/KF5 -I/usr/include/aarch64-linux-gnu/qt5/QtNetwork -I/usr/include -I/usr/include/c++/11 -I/usr/include/aarch64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/aarch64-linux-gnu/11/include -I/usr/local/include -I/usr/include/aarch64-linux-gnu --include /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/screengrab_autogen/moc_predefs.h --output-dep-file -o /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/screengrab_autogen/H4IQC4G222/moc_configwidget.cpp /home/cnc/lxqt-dev/screengrab-2.4.0/src/core/ui/configwidget.h
+AutoMoc: Reading dependencies from "SRC:/obj-aarch64-linux-gnu/screengrab_autogen/H4IQC4G222/moc_configwidget.cpp.d"
+AutoMoc: Generating "SRC:/obj-aarch64-linux-gnu/screengrab_autogen/H4IQC4G222/moc_mainwindow.cpp", because it doesn't exist, from "SRC:/src/core/ui/mainwindow.h"
+/usr/lib/qt5/bin/moc -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_SVG_LIB -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DQT_XML_LIB "-DSG_DBUS_NOTIFY=\"1\"" "-DSG_DOCDIR=\"/usr/share/doc/screengrab\"" "-DSG_EXT_EDIT=\"1\"" "-DSG_ICONPATH=\"/usr/share/icons/hicolor/scalable/apps/screengrab.svg\"" "-DVERSION=\"2.4.0\"" "-DX11_XCB_FOUND=\"1\"" "-DXCB_SHAPE_FOUND=\"1\"" "-DXCB_XCB_FOUND=\"1\"" "-DXCB_XFOXES_FOUND=\"1\"" -I/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu -I/home/cnc/lxqt-dev/screengrab-2.4.0 -I/home/cnc/lxqt-dev/screengrab-2.4.0/src -I/home/cnc/lxqt-dev/screengrab-2.4.0/src/common/qkeysequencewidget/src -I/home/cnc/lxqt-dev/screengrab-2.4.0/src/modules/extedit -I/usr/include/aarch64-linux-gnu/qt5 -I/usr/include/aarch64-linux-gnu/qt5/QtWidgets -I/usr/include/aarch64-linux-gnu/qt5/QtGui -I/usr/include/aarch64-linux-gnu/qt5/QtCore -I/usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -I/usr/include/aarch64-linux-gnu/qt5/QtX11Extras -I/usr/include/qt5xdg -I/usr/include/aarch64-linux-gnu/qt5/QtXml -I/usr/include/aarch64-linux-gnu/qt5/QtDBus -I/usr/include/qt5xdgiconloader -I/usr/include/qt5xdgiconloader/3.9.1 -I/usr/include/aarch64-linux-gnu/qt5/QtSvg -I/usr/include/KF5/KWindowSystem -I/usr/include/KF5 -I/usr/include/aarch64-linux-gnu/qt5/QtNetwork -I/usr/include -I/usr/include/c++/11 -I/usr/include/aarch64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/aarch64-linux-gnu/11/include -I/usr/local/include -I/usr/include/aarch64-linux-gnu --include /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/screengrab_autogen/moc_predefs.h --output-dep-file -o /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/screengrab_autogen/H4IQC4G222/moc_mainwindow.cpp /home/cnc/lxqt-dev/screengrab-2.4.0/src/core/ui/mainwindow.h
+AutoMoc: Reading dependencies from "SRC:/obj-aarch64-linux-gnu/screengrab_autogen/H4IQC4G222/moc_mainwindow.cpp.d"
+AutoUic: Generating "SRC:/obj-aarch64-linux-gnu/screengrab_autogen/include/ui_aboutwidget.h", because it doesn't exist, from "SRC:/src/core/ui/aboutwidget.ui"
+/usr/lib/qt5/bin/uic -o /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/screengrab_autogen/include/ui_aboutwidget.h /home/cnc/lxqt-dev/screengrab-2.4.0/src/core/ui/aboutwidget.ui
+AutoUic: Generating "SRC:/obj-aarch64-linux-gnu/screengrab_autogen/include/ui_configwidget.h", because it doesn't exist, from "SRC:/src/core/ui/configwidget.ui"
+/usr/lib/qt5/bin/uic -o /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/screengrab_autogen/include/ui_configwidget.h /home/cnc/lxqt-dev/screengrab-2.4.0/src/core/ui/configwidget.ui
+AutoUic: Generating "SRC:/obj-aarch64-linux-gnu/screengrab_autogen/include/ui_mainwindow.h", because it doesn't exist, from "SRC:/src/core/ui/mainwindow.ui"
+/usr/lib/qt5/bin/uic -o /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/screengrab_autogen/include/ui_mainwindow.h /home/cnc/lxqt-dev/screengrab-2.4.0/src/core/ui/mainwindow.ui
+AutoMoc: Generating MOC compilation "SRC:/obj-aarch64-linux-gnu/screengrab_autogen/mocs_compilation.cpp"
+AutoGen: Writing the parse cache file "SRC:/obj-aarch64-linux-gnu/CMakeFiles/screengrab_autogen.dir/ParseCache.txt"
+AutoGen: Writing the settings file "SRC:/obj-aarch64-linux-gnu/CMakeFiles/screengrab_autogen.dir/AutogenUsed.txt"
+make[3]: Leaving directory '/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu'
+[ 19%] Built target screengrab_autogen
+make  -f CMakeFiles/screengrab.dir/build.make CMakeFiles/screengrab.dir/depend
+make[3]: Entering directory '/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu'
+[ 21%] Generating screengrab_zh_TW.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/screengrab-2.4.0/translations/screengrab_zh_TW.ts -qm /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/screengrab_zh_TW.qm
+[ 22%] Generating qrc_screengrab.cpp
+[ 24%] Generating screengrab.desktop
+/usr/lib/qt5/bin/rcc --name screengrab --output /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/qrc_screengrab.cpp /home/cnc/lxqt-dev/screengrab-2.4.0/screengrab.qrc
+/usr/bin/perl /home/cnc/lxqt-dev/screengrab-2.4.0/cmake/LXQtTranslateDesktopYaml.pl /home/cnc/lxqt-dev/screengrab-2.4.0/screengrab.desktop.in screengrab "/home/cnc/lxqt-dev/screengrab-2.4.0/translations/screengrab[_.]*desktop.yaml" >> /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/screengrab.desktop
+[ 25%] Generating screengrab_arn.qm
+Updating '/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/screengrab_zh_TW.qm'...
+    Generated 140 translation(s) (139 finished and 1 unfinished)
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/screengrab-2.4.0/translations/screengrab_arn.ts -qm /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/screengrab_arn.qm
+Updating '/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/screengrab_arn.qm'...
+    Generated 0 translation(s) (0 finished and 0 unfinished)
+    Ignored 140 untranslated source text(s)
+[ 27%] Generating screengrab_ast.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/screengrab-2.4.0/translations/screengrab_ast.ts -qm /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/screengrab_ast.qm
+[ 28%] Generating screengrab_bg.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/screengrab-2.4.0/translations/screengrab_bg.ts -qm /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/screengrab_bg.qm
+Updating '/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/screengrab_ast.qm'...
+    Generated 0 translation(s) (0 finished and 0 unfinished)
+    Ignored 140 untranslated source text(s)
+Updating '/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/screengrab_bg.qm'...
+    Generated 140 translation(s) (140 finished and 0 unfinished)
+[ 30%] Generating screengrab_ca.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/screengrab-2.4.0/translations/screengrab_ca.ts -qm /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/screengrab_ca.qm
+[ 31%] Generating screengrab_cs.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/screengrab-2.4.0/translations/screengrab_cs.ts -qm /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/screengrab_cs.qm
+Updating '/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/screengrab_ca.qm'...
+    Generated 140 translation(s) (140 finished and 0 unfinished)
+Updating '/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/screengrab_cs.qm'...
+    Generated 140 translation(s) (140 finished and 0 unfinished)
+[ 33%] Generating screengrab_cy.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/screengrab-2.4.0/translations/screengrab_cy.ts -qm /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/screengrab_cy.qm
+[ 34%] Generating screengrab_el.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/screengrab-2.4.0/translations/screengrab_el.ts -qm /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/screengrab_el.qm
+[ 36%] Generating screengrab_de.qm
+Updating '/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/screengrab_cy.qm'...
+    Generated 136 translation(s) (136 finished and 0 unfinished)
+    Ignored 4 untranslated source text(s)
+Updating '/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/screengrab_el.qm'...
+    Generated 140 translation(s) (140 finished and 0 unfinished)
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/screengrab-2.4.0/translations/screengrab_de.ts -qm /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/screengrab_de.qm
+[ 37%] Generating screengrab_es.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/screengrab-2.4.0/translations/screengrab_es.ts -qm /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/screengrab_es.qm
+Updating '/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/screengrab_de.qm'...
+    Generated 140 translation(s) (140 finished and 0 unfinished)
+Updating '/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/screengrab_es.qm'...
+    Generated 140 translation(s) (140 finished and 0 unfinished)
+[ 39%] Generating screengrab_et.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/screengrab-2.4.0/translations/screengrab_et.ts -qm /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/screengrab_et.qm
+[ 40%] Generating screengrab_fr.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/screengrab-2.4.0/translations/screengrab_fr.ts -qm /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/screengrab_fr.qm
+[ 42%] Generating screengrab_he.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/screengrab-2.4.0/translations/screengrab_he.ts -qm /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/screengrab_he.qm
+Updating '/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/screengrab_et.qm'...
+    Generated 140 translation(s) (140 finished and 0 unfinished)
+[ 43%] Generating screengrab_gl.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/screengrab-2.4.0/translations/screengrab_gl.ts -qm /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/screengrab_gl.qm
+Updating '/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/screengrab_fr.qm'...
+    Generated 140 translation(s) (140 finished and 0 unfinished)
+Updating '/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/screengrab_he.qm'...
+    Generated 140 translation(s) (140 finished and 0 unfinished)
+Updating '/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/screengrab_gl.qm'...
+    Generated 140 translation(s) (140 finished and 0 unfinished)
+[ 45%] Generating screengrab_hr.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/screengrab-2.4.0/translations/screengrab_hr.ts -qm /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/screengrab_hr.qm
+[ 46%] Generating screengrab_hu.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/screengrab-2.4.0/translations/screengrab_hu.ts -qm /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/screengrab_hu.qm
+Updating '/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/screengrab_hr.qm'...
+    Generated 140 translation(s) (140 finished and 0 unfinished)
+[ 48%] Generating screengrab_ja.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/screengrab-2.4.0/translations/screengrab_ja.ts -qm /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/screengrab_ja.qm
+[ 50%] Generating screengrab_it.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/screengrab-2.4.0/translations/screengrab_it.ts -qm /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/screengrab_it.qm
+Updating '/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/screengrab_hu.qm'...
+    Generated 140 translation(s) (140 finished and 0 unfinished)
+Updating '/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/screengrab_ja.qm'...
+    Generated 140 translation(s) (140 finished and 0 unfinished)
+[ 51%] Generating screengrab_ko.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/screengrab-2.4.0/translations/screengrab_ko.ts -qm /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/screengrab_ko.qm
+Updating '/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/screengrab_it.qm'...
+    Generated 140 translation(s) (140 finished and 0 unfinished)
+[ 53%] Generating screengrab_nb_NO.qm
+Updating '/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/screengrab_ko.qm'...
+    Generated 140 translation(s) (140 finished and 0 unfinished)
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/screengrab-2.4.0/translations/screengrab_nb_NO.ts -qm /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/screengrab_nb_NO.qm
+[ 54%] Generating screengrab_lt.qm
+Updating '/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/screengrab_nb_NO.qm'...
+    Generated 140 translation(s) (140 finished and 0 unfinished)
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/screengrab-2.4.0/translations/screengrab_lt.ts -qm /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/screengrab_lt.qm
+[ 56%] Generating screengrab_nl.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/screengrab-2.4.0/translations/screengrab_nl.ts -qm /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/screengrab_nl.qm
+[ 57%] Generating screengrab_oc.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/screengrab-2.4.0/translations/screengrab_oc.ts -qm /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/screengrab_oc.qm
+Updating '/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/screengrab_lt.qm'...
+    Generated 140 translation(s) (140 finished and 0 unfinished)
+Updating '/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/screengrab_nl.qm'...
+    Generated 140 translation(s) (140 finished and 0 unfinished)
+Updating '/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/screengrab_oc.qm'...
+    Generated 8 translation(s) (8 finished and 0 unfinished)
+    Ignored 132 untranslated source text(s)
+[ 59%] Generating screengrab_pl.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/screengrab-2.4.0/translations/screengrab_pl.ts -qm /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/screengrab_pl.qm
+[ 60%] Generating screengrab_pt.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/screengrab-2.4.0/translations/screengrab_pt.ts -qm /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/screengrab_pt.qm
+[ 62%] Generating screengrab_pt_BR.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/screengrab-2.4.0/translations/screengrab_pt_BR.ts -qm /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/screengrab_pt_BR.qm
+Updating '/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/screengrab_pl.qm'...
+    Generated 140 translation(s) (140 finished and 0 unfinished)
+[ 63%] Generating screengrab_ru.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/screengrab-2.4.0/translations/screengrab_ru.ts -qm /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/screengrab_ru.qm
+Updating '/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/screengrab_pt.qm'...
+    Generated 140 translation(s) (140 finished and 0 unfinished)
+Updating '/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/screengrab_pt_BR.qm'...
+    Generated 140 translation(s) (140 finished and 0 unfinished)
+Updating '/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/screengrab_ru.qm'...
+    Generated 140 translation(s) (140 finished and 0 unfinished)
+[ 65%] Generating screengrab_si.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/screengrab-2.4.0/translations/screengrab_si.ts -qm /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/screengrab_si.qm
+Updating '/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/screengrab_si.qm'...
+    Generated 2 translation(s) (2 finished and 0 unfinished)
+    Ignored 138 untranslated source text(s)
+[ 66%] Generating screengrab_sk.qm
+[ 68%] Generating screengrab_sv.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/screengrab-2.4.0/translations/screengrab_sk.ts -qm /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/screengrab_sk.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/screengrab-2.4.0/translations/screengrab_sv.ts -qm /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/screengrab_sv.qm
+Updating '/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/screengrab_sk.qm'...
+    Generated 140 translation(s) (140 finished and 0 unfinished)
+[ 69%] Generating screengrab_sl.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/screengrab-2.4.0/translations/screengrab_sl.ts -qm /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/screengrab_sl.qm
+Updating '/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/screengrab_sv.qm'...
+    Generated 140 translation(s) (140 finished and 0 unfinished)
+[ 71%] Generating screengrab_tr.qm
+Updating '/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/screengrab_sl.qm'...
+[ 72%] Generating screengrab_uk.qm
+    Generated 0 translation(s) (0 finished and 0 unfinished)
+    Ignored 140 untranslated source text(s)
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/screengrab-2.4.0/translations/screengrab_tr.ts -qm /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/screengrab_tr.qm
+Updating '/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/screengrab_tr.qm'...
+    Generated 140 translation(s) (140 finished and 0 unfinished)
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/screengrab-2.4.0/translations/screengrab_uk.ts -qm /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/screengrab_uk.qm
+[ 74%] Generating screengrab_vi.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/screengrab-2.4.0/translations/screengrab_vi.ts -qm /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/screengrab_vi.qm
+Updating '/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/screengrab_uk.qm'...
+    Generated 140 translation(s) (140 finished and 0 unfinished)
+[ 75%] Generating screengrab_zh_CN.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/screengrab-2.4.0/translations/screengrab_zh_CN.ts -qm /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/screengrab_zh_CN.qm
+Updating '/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/screengrab_vi.qm'...
+    Generated 0 translation(s) (0 finished and 0 unfinished)
+    Ignored 140 untranslated source text(s)
+Updating '/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/screengrab_zh_CN.qm'...
+    Generated 140 translation(s) (140 finished and 0 unfinished)
+cd /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/cnc/lxqt-dev/screengrab-2.4.0 /home/cnc/lxqt-dev/screengrab-2.4.0 /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/CMakeFiles/screengrab.dir/DependInfo.cmake --color=
+make[3]: Leaving directory '/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu'
+make  -f CMakeFiles/screengrab.dir/build.make CMakeFiles/screengrab.dir/build
+make[3]: Entering directory '/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu'
+[ 77%] Building CXX object CMakeFiles/screengrab.dir/screengrab_autogen/mocs_compilation.cpp.o
+/usr/bin/c++ -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_SVG_LIB -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DQT_XML_LIB -DSG_DBUS_NOTIFY=\"1\" -DSG_DOCDIR=\"/usr/share/doc/screengrab\" -DSG_EXT_EDIT=\"1\" -DSG_ICONPATH=\"/usr/share/icons/hicolor/scalable/apps/screengrab.svg\" -DVERSION=\"2.4.0\" -DX11_XCB_FOUND=\"1\" -DXCB_SHAPE_FOUND=\"1\" -DXCB_XCB_FOUND=\"1\" -DXCB_XFOXES_FOUND=\"1\" -I/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu -I/home/cnc/lxqt-dev/screengrab-2.4.0 -I/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/screengrab_autogen/include -I/home/cnc/lxqt-dev/screengrab-2.4.0/src -I/home/cnc/lxqt-dev/screengrab-2.4.0/src/common/qkeysequencewidget/src -I/home/cnc/lxqt-dev/screengrab-2.4.0/src/modules/extedit -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/aarch64-linux-gnu/qt5/QtX11Extras -isystem /usr/include/qt5xdg -isystem /usr/include/aarch64-linux-gnu/qt5/QtXml -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/qt5xdgiconloader -isystem /usr/include/qt5xdgiconloader/3.9.1 -isystem /usr/include/aarch64-linux-gnu/qt5/QtSvg -isystem /usr/include/KF5/KWindowSystem -isystem /usr/include/KF5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtNetwork -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/screengrab-2.4.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -Wnon-virtual-dtor -Woverloaded-virtual -Wall -Wextra -O2 -g -DNDEBUG -fPIC -MD -MT CMakeFiles/screengrab.dir/screengrab_autogen/mocs_compilation.cpp.o -MF CMakeFiles/screengrab.dir/screengrab_autogen/mocs_compilation.cpp.o.d -o CMakeFiles/screengrab.dir/screengrab_autogen/mocs_compilation.cpp.o -c /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/screengrab_autogen/mocs_compilation.cpp
+[ 78%] Building CXX object CMakeFiles/screengrab.dir/src/core/singleapp.cpp.o
+[ 80%] Building CXX object CMakeFiles/screengrab.dir/src/core/core.cpp.o
+/usr/bin/c++ -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_SVG_LIB -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DQT_XML_LIB -DSG_DBUS_NOTIFY=\"1\" -DSG_DOCDIR=\"/usr/share/doc/screengrab\" -DSG_EXT_EDIT=\"1\" -DSG_ICONPATH=\"/usr/share/icons/hicolor/scalable/apps/screengrab.svg\" -DVERSION=\"2.4.0\" -DX11_XCB_FOUND=\"1\" -DXCB_SHAPE_FOUND=\"1\" -DXCB_XCB_FOUND=\"1\" -DXCB_XFOXES_FOUND=\"1\" -I/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu -I/home/cnc/lxqt-dev/screengrab-2.4.0 -I/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/screengrab_autogen/include -I/home/cnc/lxqt-dev/screengrab-2.4.0/src -I/home/cnc/lxqt-dev/screengrab-2.4.0/src/common/qkeysequencewidget/src -I/home/cnc/lxqt-dev/screengrab-2.4.0/src/modules/extedit -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/aarch64-linux-gnu/qt5/QtX11Extras -isystem /usr/include/qt5xdg -isystem /usr/include/aarch64-linux-gnu/qt5/QtXml -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/qt5xdgiconloader -isystem /usr/include/qt5xdgiconloader/3.9.1 -isystem /usr/include/aarch64-linux-gnu/qt5/QtSvg -isystem /usr/include/KF5/KWindowSystem -isystem /usr/include/KF5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtNetwork -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/screengrab-2.4.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -Wnon-virtual-dtor -Woverloaded-virtual -Wall -Wextra -O2 -g -DNDEBUG -fPIC -MD -MT CMakeFiles/screengrab.dir/src/core/singleapp.cpp.o -MF CMakeFiles/screengrab.dir/src/core/singleapp.cpp.o.d -o CMakeFiles/screengrab.dir/src/core/singleapp.cpp.o -c /home/cnc/lxqt-dev/screengrab-2.4.0/src/core/singleapp.cpp
+[ 81%] Building CXX object CMakeFiles/screengrab.dir/src/core/main.cpp.o
+/usr/bin/c++ -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_SVG_LIB -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DQT_XML_LIB -DSG_DBUS_NOTIFY=\"1\" -DSG_DOCDIR=\"/usr/share/doc/screengrab\" -DSG_EXT_EDIT=\"1\" -DSG_ICONPATH=\"/usr/share/icons/hicolor/scalable/apps/screengrab.svg\" -DVERSION=\"2.4.0\" -DX11_XCB_FOUND=\"1\" -DXCB_SHAPE_FOUND=\"1\" -DXCB_XCB_FOUND=\"1\" -DXCB_XFOXES_FOUND=\"1\" -I/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu -I/home/cnc/lxqt-dev/screengrab-2.4.0 -I/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/screengrab_autogen/include -I/home/cnc/lxqt-dev/screengrab-2.4.0/src -I/home/cnc/lxqt-dev/screengrab-2.4.0/src/common/qkeysequencewidget/src -I/home/cnc/lxqt-dev/screengrab-2.4.0/src/modules/extedit -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/aarch64-linux-gnu/qt5/QtX11Extras -isystem /usr/include/qt5xdg -isystem /usr/include/aarch64-linux-gnu/qt5/QtXml -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/qt5xdgiconloader -isystem /usr/include/qt5xdgiconloader/3.9.1 -isystem /usr/include/aarch64-linux-gnu/qt5/QtSvg -isystem /usr/include/KF5/KWindowSystem -isystem /usr/include/KF5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtNetwork -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/screengrab-2.4.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -Wnon-virtual-dtor -Woverloaded-virtual -Wall -Wextra -O2 -g -DNDEBUG -fPIC -MD -MT CMakeFiles/screengrab.dir/src/core/core.cpp.o -MF CMakeFiles/screengrab.dir/src/core/core.cpp.o.d -o CMakeFiles/screengrab.dir/src/core/core.cpp.o -c /home/cnc/lxqt-dev/screengrab-2.4.0/src/core/core.cpp
+/usr/bin/c++ -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_SVG_LIB -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DQT_XML_LIB -DSG_DBUS_NOTIFY=\"1\" -DSG_DOCDIR=\"/usr/share/doc/screengrab\" -DSG_EXT_EDIT=\"1\" -DSG_ICONPATH=\"/usr/share/icons/hicolor/scalable/apps/screengrab.svg\" -DVERSION=\"2.4.0\" -DX11_XCB_FOUND=\"1\" -DXCB_SHAPE_FOUND=\"1\" -DXCB_XCB_FOUND=\"1\" -DXCB_XFOXES_FOUND=\"1\" -I/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu -I/home/cnc/lxqt-dev/screengrab-2.4.0 -I/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/screengrab_autogen/include -I/home/cnc/lxqt-dev/screengrab-2.4.0/src -I/home/cnc/lxqt-dev/screengrab-2.4.0/src/common/qkeysequencewidget/src -I/home/cnc/lxqt-dev/screengrab-2.4.0/src/modules/extedit -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/aarch64-linux-gnu/qt5/QtX11Extras -isystem /usr/include/qt5xdg -isystem /usr/include/aarch64-linux-gnu/qt5/QtXml -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/qt5xdgiconloader -isystem /usr/include/qt5xdgiconloader/3.9.1 -isystem /usr/include/aarch64-linux-gnu/qt5/QtSvg -isystem /usr/include/KF5/KWindowSystem -isystem /usr/include/KF5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtNetwork -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/screengrab-2.4.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -Wnon-virtual-dtor -Woverloaded-virtual -Wall -Wextra -O2 -g -DNDEBUG -fPIC -MD -MT CMakeFiles/screengrab.dir/src/core/main.cpp.o -MF CMakeFiles/screengrab.dir/src/core/main.cpp.o.d -o CMakeFiles/screengrab.dir/src/core/main.cpp.o -c /home/cnc/lxqt-dev/screengrab-2.4.0/src/core/main.cpp
+[ 83%] Building CXX object CMakeFiles/screengrab.dir/src/core/config.cpp.o
+/usr/bin/c++ -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_SVG_LIB -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DQT_XML_LIB -DSG_DBUS_NOTIFY=\"1\" -DSG_DOCDIR=\"/usr/share/doc/screengrab\" -DSG_EXT_EDIT=\"1\" -DSG_ICONPATH=\"/usr/share/icons/hicolor/scalable/apps/screengrab.svg\" -DVERSION=\"2.4.0\" -DX11_XCB_FOUND=\"1\" -DXCB_SHAPE_FOUND=\"1\" -DXCB_XCB_FOUND=\"1\" -DXCB_XFOXES_FOUND=\"1\" -I/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu -I/home/cnc/lxqt-dev/screengrab-2.4.0 -I/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/screengrab_autogen/include -I/home/cnc/lxqt-dev/screengrab-2.4.0/src -I/home/cnc/lxqt-dev/screengrab-2.4.0/src/common/qkeysequencewidget/src -I/home/cnc/lxqt-dev/screengrab-2.4.0/src/modules/extedit -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/aarch64-linux-gnu/qt5/QtX11Extras -isystem /usr/include/qt5xdg -isystem /usr/include/aarch64-linux-gnu/qt5/QtXml -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/qt5xdgiconloader -isystem /usr/include/qt5xdgiconloader/3.9.1 -isystem /usr/include/aarch64-linux-gnu/qt5/QtSvg -isystem /usr/include/KF5/KWindowSystem -isystem /usr/include/KF5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtNetwork -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/screengrab-2.4.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -Wnon-virtual-dtor -Woverloaded-virtual -Wall -Wextra -O2 -g -DNDEBUG -fPIC -MD -MT CMakeFiles/screengrab.dir/src/core/config.cpp.o -MF CMakeFiles/screengrab.dir/src/core/config.cpp.o.d -o CMakeFiles/screengrab.dir/src/core/config.cpp.o -c /home/cnc/lxqt-dev/screengrab-2.4.0/src/core/config.cpp
+[ 84%] Building CXX object CMakeFiles/screengrab.dir/src/core/regionselect.cpp.o
+/usr/bin/c++ -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_SVG_LIB -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DQT_XML_LIB -DSG_DBUS_NOTIFY=\"1\" -DSG_DOCDIR=\"/usr/share/doc/screengrab\" -DSG_EXT_EDIT=\"1\" -DSG_ICONPATH=\"/usr/share/icons/hicolor/scalable/apps/screengrab.svg\" -DVERSION=\"2.4.0\" -DX11_XCB_FOUND=\"1\" -DXCB_SHAPE_FOUND=\"1\" -DXCB_XCB_FOUND=\"1\" -DXCB_XFOXES_FOUND=\"1\" -I/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu -I/home/cnc/lxqt-dev/screengrab-2.4.0 -I/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/screengrab_autogen/include -I/home/cnc/lxqt-dev/screengrab-2.4.0/src -I/home/cnc/lxqt-dev/screengrab-2.4.0/src/common/qkeysequencewidget/src -I/home/cnc/lxqt-dev/screengrab-2.4.0/src/modules/extedit -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/aarch64-linux-gnu/qt5/QtX11Extras -isystem /usr/include/qt5xdg -isystem /usr/include/aarch64-linux-gnu/qt5/QtXml -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/qt5xdgiconloader -isystem /usr/include/qt5xdgiconloader/3.9.1 -isystem /usr/include/aarch64-linux-gnu/qt5/QtSvg -isystem /usr/include/KF5/KWindowSystem -isystem /usr/include/KF5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtNetwork -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/screengrab-2.4.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -Wnon-virtual-dtor -Woverloaded-virtual -Wall -Wextra -O2 -g -DNDEBUG -fPIC -MD -MT CMakeFiles/screengrab.dir/src/core/regionselect.cpp.o -MF CMakeFiles/screengrab.dir/src/core/regionselect.cpp.o.d -o CMakeFiles/screengrab.dir/src/core/regionselect.cpp.o -c /home/cnc/lxqt-dev/screengrab-2.4.0/src/core/regionselect.cpp
+[ 86%] Building CXX object CMakeFiles/screengrab.dir/src/core/shortcutmanager.cpp.o
+/usr/bin/c++ -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_SVG_LIB -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DQT_XML_LIB -DSG_DBUS_NOTIFY=\"1\" -DSG_DOCDIR=\"/usr/share/doc/screengrab\" -DSG_EXT_EDIT=\"1\" -DSG_ICONPATH=\"/usr/share/icons/hicolor/scalable/apps/screengrab.svg\" -DVERSION=\"2.4.0\" -DX11_XCB_FOUND=\"1\" -DXCB_SHAPE_FOUND=\"1\" -DXCB_XCB_FOUND=\"1\" -DXCB_XFOXES_FOUND=\"1\" -I/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu -I/home/cnc/lxqt-dev/screengrab-2.4.0 -I/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/screengrab_autogen/include -I/home/cnc/lxqt-dev/screengrab-2.4.0/src -I/home/cnc/lxqt-dev/screengrab-2.4.0/src/common/qkeysequencewidget/src -I/home/cnc/lxqt-dev/screengrab-2.4.0/src/modules/extedit -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/aarch64-linux-gnu/qt5/QtX11Extras -isystem /usr/include/qt5xdg -isystem /usr/include/aarch64-linux-gnu/qt5/QtXml -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/qt5xdgiconloader -isystem /usr/include/qt5xdgiconloader/3.9.1 -isystem /usr/include/aarch64-linux-gnu/qt5/QtSvg -isystem /usr/include/KF5/KWindowSystem -isystem /usr/include/KF5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtNetwork -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/screengrab-2.4.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -Wnon-virtual-dtor -Woverloaded-virtual -Wall -Wextra -O2 -g -DNDEBUG -fPIC -MD -MT CMakeFiles/screengrab.dir/src/core/shortcutmanager.cpp.o -MF CMakeFiles/screengrab.dir/src/core/shortcutmanager.cpp.o.d -o CMakeFiles/screengrab.dir/src/core/shortcutmanager.cpp.o -c /home/cnc/lxqt-dev/screengrab-2.4.0/src/core/shortcutmanager.cpp
+[ 87%] Building CXX object CMakeFiles/screengrab.dir/src/core/modulemanager.cpp.o
+/usr/bin/c++ -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_SVG_LIB -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DQT_XML_LIB -DSG_DBUS_NOTIFY=\"1\" -DSG_DOCDIR=\"/usr/share/doc/screengrab\" -DSG_EXT_EDIT=\"1\" -DSG_ICONPATH=\"/usr/share/icons/hicolor/scalable/apps/screengrab.svg\" -DVERSION=\"2.4.0\" -DX11_XCB_FOUND=\"1\" -DXCB_SHAPE_FOUND=\"1\" -DXCB_XCB_FOUND=\"1\" -DXCB_XFOXES_FOUND=\"1\" -I/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu -I/home/cnc/lxqt-dev/screengrab-2.4.0 -I/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/screengrab_autogen/include -I/home/cnc/lxqt-dev/screengrab-2.4.0/src -I/home/cnc/lxqt-dev/screengrab-2.4.0/src/common/qkeysequencewidget/src -I/home/cnc/lxqt-dev/screengrab-2.4.0/src/modules/extedit -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/aarch64-linux-gnu/qt5/QtX11Extras -isystem /usr/include/qt5xdg -isystem /usr/include/aarch64-linux-gnu/qt5/QtXml -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/qt5xdgiconloader -isystem /usr/include/qt5xdgiconloader/3.9.1 -isystem /usr/include/aarch64-linux-gnu/qt5/QtSvg -isystem /usr/include/KF5/KWindowSystem -isystem /usr/include/KF5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtNetwork -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/screengrab-2.4.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -Wnon-virtual-dtor -Woverloaded-virtual -Wall -Wextra -O2 -g -DNDEBUG -fPIC -MD -MT CMakeFiles/screengrab.dir/src/core/modulemanager.cpp.o -MF CMakeFiles/screengrab.dir/src/core/modulemanager.cpp.o.d -o CMakeFiles/screengrab.dir/src/core/modulemanager.cpp.o -c /home/cnc/lxqt-dev/screengrab-2.4.0/src/core/modulemanager.cpp
+[ 89%] Building CXX object CMakeFiles/screengrab.dir/src/core/ui/configwidget.cpp.o
+/usr/bin/c++ -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_SVG_LIB -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DQT_XML_LIB -DSG_DBUS_NOTIFY=\"1\" -DSG_DOCDIR=\"/usr/share/doc/screengrab\" -DSG_EXT_EDIT=\"1\" -DSG_ICONPATH=\"/usr/share/icons/hicolor/scalable/apps/screengrab.svg\" -DVERSION=\"2.4.0\" -DX11_XCB_FOUND=\"1\" -DXCB_SHAPE_FOUND=\"1\" -DXCB_XCB_FOUND=\"1\" -DXCB_XFOXES_FOUND=\"1\" -I/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu -I/home/cnc/lxqt-dev/screengrab-2.4.0 -I/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/screengrab_autogen/include -I/home/cnc/lxqt-dev/screengrab-2.4.0/src -I/home/cnc/lxqt-dev/screengrab-2.4.0/src/common/qkeysequencewidget/src -I/home/cnc/lxqt-dev/screengrab-2.4.0/src/modules/extedit -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/aarch64-linux-gnu/qt5/QtX11Extras -isystem /usr/include/qt5xdg -isystem /usr/include/aarch64-linux-gnu/qt5/QtXml -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/qt5xdgiconloader -isystem /usr/include/qt5xdgiconloader/3.9.1 -isystem /usr/include/aarch64-linux-gnu/qt5/QtSvg -isystem /usr/include/KF5/KWindowSystem -isystem /usr/include/KF5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtNetwork -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/screengrab-2.4.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -Wnon-virtual-dtor -Woverloaded-virtual -Wall -Wextra -O2 -g -DNDEBUG -fPIC -MD -MT CMakeFiles/screengrab.dir/src/core/ui/configwidget.cpp.o -MF CMakeFiles/screengrab.dir/src/core/ui/configwidget.cpp.o.d -o CMakeFiles/screengrab.dir/src/core/ui/configwidget.cpp.o -c /home/cnc/lxqt-dev/screengrab-2.4.0/src/core/ui/configwidget.cpp
+[ 90%] Building CXX object CMakeFiles/screengrab.dir/src/core/ui/about.cpp.o
+/usr/bin/c++ -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_SVG_LIB -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DQT_XML_LIB -DSG_DBUS_NOTIFY=\"1\" -DSG_DOCDIR=\"/usr/share/doc/screengrab\" -DSG_EXT_EDIT=\"1\" -DSG_ICONPATH=\"/usr/share/icons/hicolor/scalable/apps/screengrab.svg\" -DVERSION=\"2.4.0\" -DX11_XCB_FOUND=\"1\" -DXCB_SHAPE_FOUND=\"1\" -DXCB_XCB_FOUND=\"1\" -DXCB_XFOXES_FOUND=\"1\" -I/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu -I/home/cnc/lxqt-dev/screengrab-2.4.0 -I/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/screengrab_autogen/include -I/home/cnc/lxqt-dev/screengrab-2.4.0/src -I/home/cnc/lxqt-dev/screengrab-2.4.0/src/common/qkeysequencewidget/src -I/home/cnc/lxqt-dev/screengrab-2.4.0/src/modules/extedit -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/aarch64-linux-gnu/qt5/QtX11Extras -isystem /usr/include/qt5xdg -isystem /usr/include/aarch64-linux-gnu/qt5/QtXml -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/qt5xdgiconloader -isystem /usr/include/qt5xdgiconloader/3.9.1 -isystem /usr/include/aarch64-linux-gnu/qt5/QtSvg -isystem /usr/include/KF5/KWindowSystem -isystem /usr/include/KF5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtNetwork -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/screengrab-2.4.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -Wnon-virtual-dtor -Woverloaded-virtual -Wall -Wextra -O2 -g -DNDEBUG -fPIC -MD -MT CMakeFiles/screengrab.dir/src/core/ui/about.cpp.o -MF CMakeFiles/screengrab.dir/src/core/ui/about.cpp.o.d -o CMakeFiles/screengrab.dir/src/core/ui/about.cpp.o -c /home/cnc/lxqt-dev/screengrab-2.4.0/src/core/ui/about.cpp
+[ 92%] Building CXX object CMakeFiles/screengrab.dir/src/core/ui/mainwindow.cpp.o
+/usr/bin/c++ -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_SVG_LIB -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DQT_XML_LIB -DSG_DBUS_NOTIFY=\"1\" -DSG_DOCDIR=\"/usr/share/doc/screengrab\" -DSG_EXT_EDIT=\"1\" -DSG_ICONPATH=\"/usr/share/icons/hicolor/scalable/apps/screengrab.svg\" -DVERSION=\"2.4.0\" -DX11_XCB_FOUND=\"1\" -DXCB_SHAPE_FOUND=\"1\" -DXCB_XCB_FOUND=\"1\" -DXCB_XFOXES_FOUND=\"1\" -I/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu -I/home/cnc/lxqt-dev/screengrab-2.4.0 -I/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/screengrab_autogen/include -I/home/cnc/lxqt-dev/screengrab-2.4.0/src -I/home/cnc/lxqt-dev/screengrab-2.4.0/src/common/qkeysequencewidget/src -I/home/cnc/lxqt-dev/screengrab-2.4.0/src/modules/extedit -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/aarch64-linux-gnu/qt5/QtX11Extras -isystem /usr/include/qt5xdg -isystem /usr/include/aarch64-linux-gnu/qt5/QtXml -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/qt5xdgiconloader -isystem /usr/include/qt5xdgiconloader/3.9.1 -isystem /usr/include/aarch64-linux-gnu/qt5/QtSvg -isystem /usr/include/KF5/KWindowSystem -isystem /usr/include/KF5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtNetwork -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/screengrab-2.4.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -Wnon-virtual-dtor -Woverloaded-virtual -Wall -Wextra -O2 -g -DNDEBUG -fPIC -MD -MT CMakeFiles/screengrab.dir/src/core/ui/mainwindow.cpp.o -MF CMakeFiles/screengrab.dir/src/core/ui/mainwindow.cpp.o.d -o CMakeFiles/screengrab.dir/src/core/ui/mainwindow.cpp.o -c /home/cnc/lxqt-dev/screengrab-2.4.0/src/core/ui/mainwindow.cpp
+[ 93%] Building CXX object CMakeFiles/screengrab.dir/src/core/dbusnotifier.cpp.o
+/usr/bin/c++ -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_SVG_LIB -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DQT_XML_LIB -DSG_DBUS_NOTIFY=\"1\" -DSG_DOCDIR=\"/usr/share/doc/screengrab\" -DSG_EXT_EDIT=\"1\" -DSG_ICONPATH=\"/usr/share/icons/hicolor/scalable/apps/screengrab.svg\" -DVERSION=\"2.4.0\" -DX11_XCB_FOUND=\"1\" -DXCB_SHAPE_FOUND=\"1\" -DXCB_XCB_FOUND=\"1\" -DXCB_XFOXES_FOUND=\"1\" -I/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu -I/home/cnc/lxqt-dev/screengrab-2.4.0 -I/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/screengrab_autogen/include -I/home/cnc/lxqt-dev/screengrab-2.4.0/src -I/home/cnc/lxqt-dev/screengrab-2.4.0/src/common/qkeysequencewidget/src -I/home/cnc/lxqt-dev/screengrab-2.4.0/src/modules/extedit -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/aarch64-linux-gnu/qt5/QtX11Extras -isystem /usr/include/qt5xdg -isystem /usr/include/aarch64-linux-gnu/qt5/QtXml -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/qt5xdgiconloader -isystem /usr/include/qt5xdgiconloader/3.9.1 -isystem /usr/include/aarch64-linux-gnu/qt5/QtSvg -isystem /usr/include/KF5/KWindowSystem -isystem /usr/include/KF5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtNetwork -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/screengrab-2.4.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -Wnon-virtual-dtor -Woverloaded-virtual -Wall -Wextra -O2 -g -DNDEBUG -fPIC -MD -MT CMakeFiles/screengrab.dir/src/core/dbusnotifier.cpp.o -MF CMakeFiles/screengrab.dir/src/core/dbusnotifier.cpp.o.d -o CMakeFiles/screengrab.dir/src/core/dbusnotifier.cpp.o -c /home/cnc/lxqt-dev/screengrab-2.4.0/src/core/dbusnotifier.cpp
+[ 95%] Building CXX object CMakeFiles/screengrab.dir/src/core/x11utils.cpp.o
+/usr/bin/c++ -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_SVG_LIB -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DQT_XML_LIB -DSG_DBUS_NOTIFY=\"1\" -DSG_DOCDIR=\"/usr/share/doc/screengrab\" -DSG_EXT_EDIT=\"1\" -DSG_ICONPATH=\"/usr/share/icons/hicolor/scalable/apps/screengrab.svg\" -DVERSION=\"2.4.0\" -DX11_XCB_FOUND=\"1\" -DXCB_SHAPE_FOUND=\"1\" -DXCB_XCB_FOUND=\"1\" -DXCB_XFOXES_FOUND=\"1\" -I/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu -I/home/cnc/lxqt-dev/screengrab-2.4.0 -I/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/screengrab_autogen/include -I/home/cnc/lxqt-dev/screengrab-2.4.0/src -I/home/cnc/lxqt-dev/screengrab-2.4.0/src/common/qkeysequencewidget/src -I/home/cnc/lxqt-dev/screengrab-2.4.0/src/modules/extedit -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/aarch64-linux-gnu/qt5/QtX11Extras -isystem /usr/include/qt5xdg -isystem /usr/include/aarch64-linux-gnu/qt5/QtXml -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/qt5xdgiconloader -isystem /usr/include/qt5xdgiconloader/3.9.1 -isystem /usr/include/aarch64-linux-gnu/qt5/QtSvg -isystem /usr/include/KF5/KWindowSystem -isystem /usr/include/KF5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtNetwork -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/screengrab-2.4.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -Wnon-virtual-dtor -Woverloaded-virtual -Wall -Wextra -O2 -g -DNDEBUG -fPIC -MD -MT CMakeFiles/screengrab.dir/src/core/x11utils.cpp.o -MF CMakeFiles/screengrab.dir/src/core/x11utils.cpp.o.d -o CMakeFiles/screengrab.dir/src/core/x11utils.cpp.o -c /home/cnc/lxqt-dev/screengrab-2.4.0/src/core/x11utils.cpp
+[ 96%] Building CXX object CMakeFiles/screengrab.dir/qrc_screengrab.cpp.o
+/usr/bin/c++ -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_SVG_LIB -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DQT_XML_LIB -DSG_DBUS_NOTIFY=\"1\" -DSG_DOCDIR=\"/usr/share/doc/screengrab\" -DSG_EXT_EDIT=\"1\" -DSG_ICONPATH=\"/usr/share/icons/hicolor/scalable/apps/screengrab.svg\" -DVERSION=\"2.4.0\" -DX11_XCB_FOUND=\"1\" -DXCB_SHAPE_FOUND=\"1\" -DXCB_XCB_FOUND=\"1\" -DXCB_XFOXES_FOUND=\"1\" -I/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu -I/home/cnc/lxqt-dev/screengrab-2.4.0 -I/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/screengrab_autogen/include -I/home/cnc/lxqt-dev/screengrab-2.4.0/src -I/home/cnc/lxqt-dev/screengrab-2.4.0/src/common/qkeysequencewidget/src -I/home/cnc/lxqt-dev/screengrab-2.4.0/src/modules/extedit -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/aarch64-linux-gnu/qt5/QtX11Extras -isystem /usr/include/qt5xdg -isystem /usr/include/aarch64-linux-gnu/qt5/QtXml -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/qt5xdgiconloader -isystem /usr/include/qt5xdgiconloader/3.9.1 -isystem /usr/include/aarch64-linux-gnu/qt5/QtSvg -isystem /usr/include/KF5/KWindowSystem -isystem /usr/include/KF5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtNetwork -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/screengrab-2.4.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -Wnon-virtual-dtor -Woverloaded-virtual -Wall -Wextra -O2 -g -DNDEBUG -fPIC -MD -MT CMakeFiles/screengrab.dir/qrc_screengrab.cpp.o -MF CMakeFiles/screengrab.dir/qrc_screengrab.cpp.o.d -o CMakeFiles/screengrab.dir/qrc_screengrab.cpp.o -c /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/qrc_screengrab.cpp
+[ 98%] Building CXX object CMakeFiles/screengrab.dir/Qt5TranslationLoader.cpp.o
+/usr/bin/c++ -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_SVG_LIB -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DQT_XML_LIB -DSG_DBUS_NOTIFY=\"1\" -DSG_DOCDIR=\"/usr/share/doc/screengrab\" -DSG_EXT_EDIT=\"1\" -DSG_ICONPATH=\"/usr/share/icons/hicolor/scalable/apps/screengrab.svg\" -DVERSION=\"2.4.0\" -DX11_XCB_FOUND=\"1\" -DXCB_SHAPE_FOUND=\"1\" -DXCB_XCB_FOUND=\"1\" -DXCB_XFOXES_FOUND=\"1\" -I/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu -I/home/cnc/lxqt-dev/screengrab-2.4.0 -I/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/screengrab_autogen/include -I/home/cnc/lxqt-dev/screengrab-2.4.0/src -I/home/cnc/lxqt-dev/screengrab-2.4.0/src/common/qkeysequencewidget/src -I/home/cnc/lxqt-dev/screengrab-2.4.0/src/modules/extedit -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/aarch64-linux-gnu/qt5/QtX11Extras -isystem /usr/include/qt5xdg -isystem /usr/include/aarch64-linux-gnu/qt5/QtXml -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/qt5xdgiconloader -isystem /usr/include/qt5xdgiconloader/3.9.1 -isystem /usr/include/aarch64-linux-gnu/qt5/QtSvg -isystem /usr/include/KF5/KWindowSystem -isystem /usr/include/KF5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtNetwork -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/screengrab-2.4.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -Wnon-virtual-dtor -Woverloaded-virtual -Wall -Wextra -O2 -g -DNDEBUG -fPIC -MD -MT CMakeFiles/screengrab.dir/Qt5TranslationLoader.cpp.o -MF CMakeFiles/screengrab.dir/Qt5TranslationLoader.cpp.o.d -o CMakeFiles/screengrab.dir/Qt5TranslationLoader.cpp.o -c /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/Qt5TranslationLoader.cpp
+/home/cnc/lxqt-dev/screengrab-2.4.0/src/core/ui/mainwindow.cpp: In member function ‘virtual void MainWindow::resizeEvent(QResizeEvent*)’:
+/home/cnc/lxqt-dev/screengrab-2.4.0/src/core/ui/mainwindow.cpp:145:31: warning: ‘const QPixmap* QLabel::pixmap() const’ is deprecated: Use the other overload which returns QPixmap by-value [-Wdeprecated-declarations]
+  145 |     if (!_ui->scrLabel->pixmap() || scaleSize != _ui->scrLabel->pixmap()->size())
+      |          ~~~~~~~~~~~~~~~~~~~~~^~
+In file included from /usr/include/aarch64-linux-gnu/qt5/QtWidgets/QLabel:1,
+                 from /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/screengrab_autogen/include/ui_mainwindow.h:17,
+                 from /home/cnc/lxqt-dev/screengrab-2.4.0/src/core/ui/mainwindow.cpp:20:
+/usr/include/aarch64-linux-gnu/qt5/QtWidgets/qlabel.h:78:20: note: declared here
+   78 |     const QPixmap *pixmap() const; // ### Qt 7: Remove function
+      |                    ^~~~~~
+/home/cnc/lxqt-dev/screengrab-2.4.0/src/core/ui/mainwindow.cpp:145:71: warning: ‘const QPixmap* QLabel::pixmap() const’ is deprecated: Use the other overload which returns QPixmap by-value [-Wdeprecated-declarations]
+  145 |     if (!_ui->scrLabel->pixmap() || scaleSize != _ui->scrLabel->pixmap()->size())
+      |                                                  ~~~~~~~~~~~~~~~~~~~~~^~
+In file included from /usr/include/aarch64-linux-gnu/qt5/QtWidgets/QLabel:1,
+                 from /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/screengrab_autogen/include/ui_mainwindow.h:17,
+                 from /home/cnc/lxqt-dev/screengrab-2.4.0/src/core/ui/mainwindow.cpp:20:
+/usr/include/aarch64-linux-gnu/qt5/QtWidgets/qlabel.h:78:20: note: declared here
+   78 |     const QPixmap *pixmap() const; // ### Qt 7: Remove function
+      |                    ^~~~~~
+[100%] Linking CXX executable screengrab
+/usr/bin/cmake -E cmake_link_script CMakeFiles/screengrab.dir/link.txt --verbose=1
+/usr/bin/c++ -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/screengrab-2.4.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -Wnon-virtual-dtor -Woverloaded-virtual -Wall -Wextra -O2 -g -DNDEBUG -Wl,-z,relro -Wl,-z,now -Wl,--as-needed -rdynamic CMakeFiles/screengrab.dir/screengrab_autogen/mocs_compilation.cpp.o CMakeFiles/screengrab.dir/src/core/main.cpp.o CMakeFiles/screengrab.dir/src/core/singleapp.cpp.o CMakeFiles/screengrab.dir/src/core/core.cpp.o CMakeFiles/screengrab.dir/src/core/config.cpp.o CMakeFiles/screengrab.dir/src/core/regionselect.cpp.o CMakeFiles/screengrab.dir/src/core/shortcutmanager.cpp.o CMakeFiles/screengrab.dir/src/core/modulemanager.cpp.o CMakeFiles/screengrab.dir/src/core/ui/configwidget.cpp.o CMakeFiles/screengrab.dir/src/core/ui/about.cpp.o CMakeFiles/screengrab.dir/src/core/ui/mainwindow.cpp.o CMakeFiles/screengrab.dir/src/core/dbusnotifier.cpp.o CMakeFiles/screengrab.dir/src/core/x11utils.cpp.o CMakeFiles/screengrab.dir/qrc_screengrab.cpp.o CMakeFiles/screengrab.dir/Qt5TranslationLoader.cpp.o -o screengrab  -Wl,-rpath,/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/src/modules/extedit: src/modules/extedit/libextedit.so.1.0.0 -lX11-xcb -lxcb -lxcb-shape -lxcb-xfixes src/common/qkeysequencewidget/libqkeysequencewidget.a /usr/lib/aarch64-linux-gnu/libKF5WindowSystem.so.5.96.0 /usr/lib/aarch64-linux-gnu/libQt5X11Extras.so.5.15.4 /usr/lib/aarch64-linux-gnu/libQt5Network.so.5.15.4 -lSM -lICE -lX11 -lXext /usr/lib/aarch64-linux-gnu/libQt5Xdg.so.3.9.1 /usr/lib/aarch64-linux-gnu/libQt5DBus.so.5.15.4 /usr/lib/aarch64-linux-gnu/libQt5Xml.so.5.15.4 /usr/lib/aarch64-linux-gnu/libQt5XdgIconLoader.so.3.9.1 /usr/lib/aarch64-linux-gnu/libQt5Svg.so.5.15.4 -lglib-2.0 -lgobject-2.0 -lgio-2.0 /usr/lib/aarch64-linux-gnu/libQt5Widgets.so.5.15.4 /usr/lib/aarch64-linux-gnu/libQt5Gui.so.5.15.4 /usr/lib/aarch64-linux-gnu/libX11.so /usr/lib/aarch64-linux-gnu/libQt5Core.so.5.15.4 
+make[3]: Leaving directory '/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu'
+[100%] Built target screengrab
+make[2]: Leaving directory '/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu'
+/usr/bin/cmake -E cmake_progress_start /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/CMakeFiles 0
+make[1]: Leaving directory '/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu'
+   dh_auto_test -O--buildsystem=cmake
+   create-stamp debian/debhelper-build-stamp
+ debian/rules binary
+dh binary --buildsystem=cmake
+   dh_testroot -O--buildsystem=cmake
+   dh_prep -O--buildsystem=cmake
+   dh_auto_install --destdir=debian/screengrab/ -O--buildsystem=cmake
+	cd obj-aarch64-linux-gnu && make -j4 install DESTDIR=/home/cnc/lxqt-dev/screengrab-2.4.0/debian/screengrab AM_UPDATE_INFO_DIR=no "INSTALL=install --strip-program=true"
+make[1]: Entering directory '/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu'
+/usr/bin/cmake -S/home/cnc/lxqt-dev/screengrab-2.4.0 -B/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu --check-build-system CMakeFiles/Makefile.cmake 0
+/usr/bin/cmake -E cmake_progress_start /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/CMakeFiles /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu//CMakeFiles/progress.marks
+make  -f CMakeFiles/Makefile2 all
+make[2]: Entering directory '/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu'
+make  -f src/modules/extedit/CMakeFiles/extedit_autogen.dir/build.make src/modules/extedit/CMakeFiles/extedit_autogen.dir/depend
+make  -f src/common/qkeysequencewidget/CMakeFiles/qkeysequencewidget_autogen.dir/build.make src/common/qkeysequencewidget/CMakeFiles/qkeysequencewidget_autogen.dir/depend
+make[3]: Entering directory '/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu'
+cd /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/cnc/lxqt-dev/screengrab-2.4.0 /home/cnc/lxqt-dev/screengrab-2.4.0/src/modules/extedit /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/src/modules/extedit /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/src/modules/extedit/CMakeFiles/extedit_autogen.dir/DependInfo.cmake --color=
+make[3]: Entering directory '/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu'
+cd /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/cnc/lxqt-dev/screengrab-2.4.0 /home/cnc/lxqt-dev/screengrab-2.4.0/src/common/qkeysequencewidget /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/src/common/qkeysequencewidget /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/src/common/qkeysequencewidget/CMakeFiles/qkeysequencewidget_autogen.dir/DependInfo.cmake --color=
+make[3]: Leaving directory '/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu'
+make  -f src/modules/extedit/CMakeFiles/extedit_autogen.dir/build.make src/modules/extedit/CMakeFiles/extedit_autogen.dir/build
+make[3]: Entering directory '/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu'
+make[3]: Leaving directory '/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu'
+make  -f src/common/qkeysequencewidget/CMakeFiles/qkeysequencewidget_autogen.dir/build.make src/common/qkeysequencewidget/CMakeFiles/qkeysequencewidget_autogen.dir/build
+make[3]: Entering directory '/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu'
+[  1%] Automatic MOC and UIC for target extedit
+cd /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/src/modules/extedit && /usr/bin/cmake -E cmake_autogen /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/src/modules/extedit/CMakeFiles/extedit_autogen.dir/AutogenInfo.json RelWithDebInfo
+[  3%] Automatic MOC and UIC for target qkeysequencewidget
+cd /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/src/common/qkeysequencewidget && /usr/bin/cmake -E cmake_autogen /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/src/common/qkeysequencewidget/CMakeFiles/qkeysequencewidget_autogen.dir/AutogenInfo.json RelWithDebInfo
+make[3]: Leaving directory '/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu'
+[  3%] Built target extedit_autogen
+make  -f src/modules/extedit/CMakeFiles/extedit.dir/build.make src/modules/extedit/CMakeFiles/extedit.dir/depend
+make[3]: Entering directory '/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu'
+cd /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/cnc/lxqt-dev/screengrab-2.4.0 /home/cnc/lxqt-dev/screengrab-2.4.0/src/modules/extedit /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/src/modules/extedit /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/src/modules/extedit/CMakeFiles/extedit.dir/DependInfo.cmake --color=
+make[3]: Leaving directory '/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu'
+[  3%] Built target qkeysequencewidget_autogen
+make  -f src/common/qkeysequencewidget/CMakeFiles/qkeysequencewidget.dir/build.make src/common/qkeysequencewidget/CMakeFiles/qkeysequencewidget.dir/depend
+make[3]: Entering directory '/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu'
+cd /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/cnc/lxqt-dev/screengrab-2.4.0 /home/cnc/lxqt-dev/screengrab-2.4.0/src/common/qkeysequencewidget /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/src/common/qkeysequencewidget /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/src/common/qkeysequencewidget/CMakeFiles/qkeysequencewidget.dir/DependInfo.cmake --color=
+Consolidate compiler generated dependencies of target extedit
+make[3]: Leaving directory '/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu'
+make  -f src/modules/extedit/CMakeFiles/extedit.dir/build.make src/modules/extedit/CMakeFiles/extedit.dir/build
+make[3]: Entering directory '/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu'
+make[3]: Nothing to be done for 'src/modules/extedit/CMakeFiles/extedit.dir/build'.
+make[3]: Leaving directory '/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu'
+Consolidate compiler generated dependencies of target qkeysequencewidget
+make[3]: Leaving directory '/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu'
+make  -f src/common/qkeysequencewidget/CMakeFiles/qkeysequencewidget.dir/build.make src/common/qkeysequencewidget/CMakeFiles/qkeysequencewidget.dir/build
+make[3]: Entering directory '/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu'
+make[3]: Nothing to be done for 'src/common/qkeysequencewidget/CMakeFiles/qkeysequencewidget.dir/build'.
+make[3]: Leaving directory '/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu'
+[ 10%] Built target extedit
+[ 18%] Built target qkeysequencewidget
+make  -f CMakeFiles/screengrab_autogen.dir/build.make CMakeFiles/screengrab_autogen.dir/depend
+make[3]: Entering directory '/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu'
+cd /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/cnc/lxqt-dev/screengrab-2.4.0 /home/cnc/lxqt-dev/screengrab-2.4.0 /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/CMakeFiles/screengrab_autogen.dir/DependInfo.cmake --color=
+make[3]: Leaving directory '/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu'
+make  -f CMakeFiles/screengrab_autogen.dir/build.make CMakeFiles/screengrab_autogen.dir/build
+make[3]: Entering directory '/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu'
+[ 19%] Automatic MOC and UIC for target screengrab
+/usr/bin/cmake -E cmake_autogen /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/CMakeFiles/screengrab_autogen.dir/AutogenInfo.json RelWithDebInfo
+make[3]: Leaving directory '/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu'
+[ 19%] Built target screengrab_autogen
+make  -f CMakeFiles/screengrab.dir/build.make CMakeFiles/screengrab.dir/depend
+make[3]: Entering directory '/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu'
+cd /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/cnc/lxqt-dev/screengrab-2.4.0 /home/cnc/lxqt-dev/screengrab-2.4.0 /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/CMakeFiles/screengrab.dir/DependInfo.cmake --color=
+Consolidate compiler generated dependencies of target screengrab
+make[3]: Leaving directory '/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu'
+make  -f CMakeFiles/screengrab.dir/build.make CMakeFiles/screengrab.dir/build
+make[3]: Entering directory '/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu'
+make[3]: Nothing to be done for 'CMakeFiles/screengrab.dir/build'.
+make[3]: Leaving directory '/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu'
+[100%] Built target screengrab
+make[2]: Leaving directory '/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu'
+/usr/bin/cmake -E cmake_progress_start /home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu/CMakeFiles 0
+make  -f CMakeFiles/Makefile2 preinstall
+make[2]: Entering directory '/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu'
+make[2]: Nothing to be done for 'preinstall'.
+make[2]: Leaving directory '/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu'
+Install the project...
+/usr/bin/cmake -P cmake_install.cmake
+-- Install configuration: "RelWithDebInfo"
+-- Installing: /home/cnc/lxqt-dev/screengrab-2.4.0/debian/screengrab/usr/share/screengrab/translations/screengrab_arn.qm
+-- Installing: /home/cnc/lxqt-dev/screengrab-2.4.0/debian/screengrab/usr/share/screengrab/translations/screengrab_ast.qm
+-- Installing: /home/cnc/lxqt-dev/screengrab-2.4.0/debian/screengrab/usr/share/screengrab/translations/screengrab_bg.qm
+-- Installing: /home/cnc/lxqt-dev/screengrab-2.4.0/debian/screengrab/usr/share/screengrab/translations/screengrab_ca.qm
+-- Installing: /home/cnc/lxqt-dev/screengrab-2.4.0/debian/screengrab/usr/share/screengrab/translations/screengrab_cs.qm
+-- Installing: /home/cnc/lxqt-dev/screengrab-2.4.0/debian/screengrab/usr/share/screengrab/translations/screengrab_cy.qm
+-- Installing: /home/cnc/lxqt-dev/screengrab-2.4.0/debian/screengrab/usr/share/screengrab/translations/screengrab_de.qm
+-- Installing: /home/cnc/lxqt-dev/screengrab-2.4.0/debian/screengrab/usr/share/screengrab/translations/screengrab_el.qm
+-- Installing: /home/cnc/lxqt-dev/screengrab-2.4.0/debian/screengrab/usr/share/screengrab/translations/screengrab_es.qm
+-- Installing: /home/cnc/lxqt-dev/screengrab-2.4.0/debian/screengrab/usr/share/screengrab/translations/screengrab_et.qm
+-- Installing: /home/cnc/lxqt-dev/screengrab-2.4.0/debian/screengrab/usr/share/screengrab/translations/screengrab_fr.qm
+-- Installing: /home/cnc/lxqt-dev/screengrab-2.4.0/debian/screengrab/usr/share/screengrab/translations/screengrab_gl.qm
+-- Installing: /home/cnc/lxqt-dev/screengrab-2.4.0/debian/screengrab/usr/share/screengrab/translations/screengrab_he.qm
+-- Installing: /home/cnc/lxqt-dev/screengrab-2.4.0/debian/screengrab/usr/share/screengrab/translations/screengrab_hr.qm
+-- Installing: /home/cnc/lxqt-dev/screengrab-2.4.0/debian/screengrab/usr/share/screengrab/translations/screengrab_hu.qm
+-- Installing: /home/cnc/lxqt-dev/screengrab-2.4.0/debian/screengrab/usr/share/screengrab/translations/screengrab_it.qm
+-- Installing: /home/cnc/lxqt-dev/screengrab-2.4.0/debian/screengrab/usr/share/screengrab/translations/screengrab_ja.qm
+-- Installing: /home/cnc/lxqt-dev/screengrab-2.4.0/debian/screengrab/usr/share/screengrab/translations/screengrab_ko.qm
+-- Installing: /home/cnc/lxqt-dev/screengrab-2.4.0/debian/screengrab/usr/share/screengrab/translations/screengrab_lt.qm
+-- Installing: /home/cnc/lxqt-dev/screengrab-2.4.0/debian/screengrab/usr/share/screengrab/translations/screengrab_nb_NO.qm
+-- Installing: /home/cnc/lxqt-dev/screengrab-2.4.0/debian/screengrab/usr/share/screengrab/translations/screengrab_nl.qm
+-- Installing: /home/cnc/lxqt-dev/screengrab-2.4.0/debian/screengrab/usr/share/screengrab/translations/screengrab_oc.qm
+-- Installing: /home/cnc/lxqt-dev/screengrab-2.4.0/debian/screengrab/usr/share/screengrab/translations/screengrab_pl.qm
+-- Installing: /home/cnc/lxqt-dev/screengrab-2.4.0/debian/screengrab/usr/share/screengrab/translations/screengrab_pt.qm
+-- Installing: /home/cnc/lxqt-dev/screengrab-2.4.0/debian/screengrab/usr/share/screengrab/translations/screengrab_pt_BR.qm
+-- Installing: /home/cnc/lxqt-dev/screengrab-2.4.0/debian/screengrab/usr/share/screengrab/translations/screengrab_ru.qm
+-- Installing: /home/cnc/lxqt-dev/screengrab-2.4.0/debian/screengrab/usr/share/screengrab/translations/screengrab_si.qm
+-- Installing: /home/cnc/lxqt-dev/screengrab-2.4.0/debian/screengrab/usr/share/screengrab/translations/screengrab_sk.qm
+-- Installing: /home/cnc/lxqt-dev/screengrab-2.4.0/debian/screengrab/usr/share/screengrab/translations/screengrab_sl.qm
+-- Installing: /home/cnc/lxqt-dev/screengrab-2.4.0/debian/screengrab/usr/share/screengrab/translations/screengrab_sv.qm
+-- Installing: /home/cnc/lxqt-dev/screengrab-2.4.0/debian/screengrab/usr/share/screengrab/translations/screengrab_tr.qm
+-- Installing: /home/cnc/lxqt-dev/screengrab-2.4.0/debian/screengrab/usr/share/screengrab/translations/screengrab_uk.qm
+-- Installing: /home/cnc/lxqt-dev/screengrab-2.4.0/debian/screengrab/usr/share/screengrab/translations/screengrab_vi.qm
+-- Installing: /home/cnc/lxqt-dev/screengrab-2.4.0/debian/screengrab/usr/share/screengrab/translations/screengrab_zh_CN.qm
+-- Installing: /home/cnc/lxqt-dev/screengrab-2.4.0/debian/screengrab/usr/share/screengrab/translations/screengrab_zh_TW.qm
+-- Installing: /home/cnc/lxqt-dev/screengrab-2.4.0/debian/screengrab/usr/bin/screengrab
+-- Set runtime path of "/home/cnc/lxqt-dev/screengrab-2.4.0/debian/screengrab/usr/bin/screengrab" to "/usr/lib/aarch64-linux-gnu/screengrab"
+-- Installing: /home/cnc/lxqt-dev/screengrab-2.4.0/debian/screengrab/usr/share/doc/screengrab/html
+-- Installing: /home/cnc/lxqt-dev/screengrab-2.4.0/debian/screengrab/usr/share/doc/screengrab/html/default.css
+-- Installing: /home/cnc/lxqt-dev/screengrab-2.4.0/debian/screengrab/usr/share/doc/screengrab/html/pt_BR
+-- Installing: /home/cnc/lxqt-dev/screengrab-2.4.0/debian/screengrab/usr/share/doc/screengrab/html/pt_BR/index.html
+-- Installing: /home/cnc/lxqt-dev/screengrab-2.4.0/debian/screengrab/usr/share/doc/screengrab/html/ru
+-- Installing: /home/cnc/lxqt-dev/screengrab-2.4.0/debian/screengrab/usr/share/doc/screengrab/html/ru/index.html
+-- Installing: /home/cnc/lxqt-dev/screengrab-2.4.0/debian/screengrab/usr/share/doc/screengrab/html/en
+-- Installing: /home/cnc/lxqt-dev/screengrab-2.4.0/debian/screengrab/usr/share/doc/screengrab/html/en/index.html
+-- Installing: /home/cnc/lxqt-dev/screengrab-2.4.0/debian/screengrab/usr/share/screengrab/screengrab.conf
+-- Installing: /home/cnc/lxqt-dev/screengrab-2.4.0/debian/screengrab/usr/share/applications/screengrab.desktop
+-- Installing: /home/cnc/lxqt-dev/screengrab-2.4.0/debian/screengrab/usr/share/icons/hicolor/scalable/apps/screengrab.svg
+-- Installing: /home/cnc/lxqt-dev/screengrab-2.4.0/debian/screengrab/usr/share/metainfo/screengrab.metainfo.xml
+-- Installing: /home/cnc/lxqt-dev/screengrab-2.4.0/debian/screengrab/usr/lib/aarch64-linux-gnu/screengrab/libextedit.so.1.0.0
+-- Set runtime path of "/home/cnc/lxqt-dev/screengrab-2.4.0/debian/screengrab/usr/lib/aarch64-linux-gnu/screengrab/libextedit.so.1.0.0" to "/usr/lib/aarch64-linux-gnu/screengrab"
+-- Installing: /home/cnc/lxqt-dev/screengrab-2.4.0/debian/screengrab/usr/lib/aarch64-linux-gnu/screengrab/libextedit.so
+make[1]: Leaving directory '/home/cnc/lxqt-dev/screengrab-2.4.0/obj-aarch64-linux-gnu'
+   debian/rules override_dh_install
+make[1]: Entering directory '/home/cnc/lxqt-dev/screengrab-2.4.0'
+rm -f /debian/screengrab/usr/share/doc/screengrab/LICENSE.txt
+dh_install
+make[1]: Leaving directory '/home/cnc/lxqt-dev/screengrab-2.4.0'
+   dh_installdocs -O--buildsystem=cmake
+   dh_installchangelogs -O--buildsystem=cmake
+   dh_installinit -O--buildsystem=cmake
+   dh_installsystemduser -O--buildsystem=cmake
+   dh_lintian -O--buildsystem=cmake
+   dh_icons -O--buildsystem=cmake
+   dh_perl -O--buildsystem=cmake
+   dh_link -O--buildsystem=cmake
+   dh_strip_nondeterminism -O--buildsystem=cmake
+   dh_compress -O--buildsystem=cmake
+   dh_fixperms -O--buildsystem=cmake
+   dh_missing -O--buildsystem=cmake
+   dh_dwz -O--buildsystem=cmake
+   dh_strip -O--buildsystem=cmake
+   debian/rules override_dh_makeshlibs
+make[1]: Entering directory '/home/cnc/lxqt-dev/screengrab-2.4.0'
+# do nothing
+make[1]: Leaving directory '/home/cnc/lxqt-dev/screengrab-2.4.0'
+   dh_shlibdeps -O--buildsystem=cmake
+dpkg-shlibdeps: warning: debian/screengrab/usr/lib/aarch64-linux-gnu/screengrab/libextedit.so.1.0.0 contains an unresolvable reference to symbol _ZN4Core11writeScreenER7QStringS1_b: it's probably a plugin
+dpkg-shlibdeps: warning: 5 other similar warnings have been skipped (use -v to see them all)
+   dh_installdeb -O--buildsystem=cmake
+   dh_gencontrol -O--buildsystem=cmake
+   dh_md5sums -O--buildsystem=cmake
+   dh_builddeb -O--buildsystem=cmake
+dpkg-deb: building package 'screengrab' in '../screengrab_2.4.0-1_arm64.deb'.
+dpkg-deb: building package 'screengrab-dbgsym' in '../screengrab-dbgsym_2.4.0-1_arm64.deb'.
+ dpkg-genbuildinfo --build=binary -O../screengrab_2.4.0-1_arm64.buildinfo
+ dpkg-genchanges --build=binary -O../screengrab_2.4.0-1_arm64.changes
+dpkg-genchanges: info: binary-only upload (no source code included)
+ dpkg-source -i --after-build .
+dpkg-source: info: using options from screengrab-2.4.0/debian/source/options: --tar-ignore=.gitignore
+dpkg-buildpackage: info: binary-only upload (no source included)
+Now running lintian screengrab_2.4.0-1_arm64.changes ...
+running with root privileges is not recommended!
+W: screengrab: mismatched-override binary-without-manpage usr/bin/screengrab [usr/share/lintian/overrides/screengrab:2]
+W: screengrab: no-manual-page [usr/bin/screengrab]
+N: 0 hints overridden; 1 unused override
+Finished running lintian.

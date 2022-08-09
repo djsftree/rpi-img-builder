@@ -1,0 +1,206 @@
+ dpkg-buildpackage -us -uc -ui -i -b
+dpkg-buildpackage: info: source package libsysstat
+dpkg-buildpackage: info: source version 0.4.6-1
+dpkg-buildpackage: info: source distribution unstable
+dpkg-buildpackage: info: source changed by ChangZhuo Chen (陳昌倬) <czchen@debian.org>
+ dpkg-source -i --before-build .
+dpkg-buildpackage: info: host architecture arm64
+dpkg-source: info: using options from libsysstat-0.4.6/debian/source/options: --tar-ignore=.gitignore
+ debian/rules clean
+dh clean --buildsystem cmake
+   dh_auto_clean -O--buildsystem=cmake
+   dh_autoreconf_clean -O--buildsystem=cmake
+   dh_clean -O--buildsystem=cmake
+ debian/rules binary
+dh binary --buildsystem cmake
+   dh_update_autotools_config -O--buildsystem=cmake
+   dh_autoreconf -O--buildsystem=cmake
+   debian/rules override_dh_auto_configure
+make[1]: Entering directory '/home/cnc/lxqt-dev/libsysstat-0.4.6'
+dh_auto_configure -- \
+	-DCMAKE_BUILD_TYPE=RelWithDebInfo
+	cd obj-aarch64-linux-gnu && cmake -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=None -DCMAKE_INSTALL_SYSCONFDIR=/etc -DCMAKE_INSTALL_LOCALSTATEDIR=/var -DCMAKE_EXPORT_NO_PACKAGE_REGISTRY=ON -DCMAKE_FIND_USE_PACKAGE_REGISTRY=OFF -DCMAKE_FIND_PACKAGE_NO_PACKAGE_REGISTRY=ON -DFETCHCONTENT_FULLY_DISCONNECTED=ON -DCMAKE_INSTALL_RUNSTATEDIR=/run -DCMAKE_SKIP_INSTALL_ALL_DEPENDENCY=ON "-GUnix Makefiles" -DCMAKE_VERBOSE_MAKEFILE=ON -DCMAKE_INSTALL_LIBDIR=lib/aarch64-linux-gnu -DCMAKE_BUILD_TYPE=RelWithDebInfo ..
+-- The C compiler identification is GNU 11.3.0
+-- The CXX compiler identification is GNU 11.3.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Building libsysstat with Qt 5.15.4
+-- Configuring done
+-- Generating done
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    CMAKE_EXPORT_NO_PACKAGE_REGISTRY
+    CMAKE_FIND_PACKAGE_NO_PACKAGE_REGISTRY
+    FETCHCONTENT_FULLY_DISCONNECTED
+
+
+-- Build files have been written to: /home/cnc/lxqt-dev/libsysstat-0.4.6/obj-aarch64-linux-gnu
+make[1]: Leaving directory '/home/cnc/lxqt-dev/libsysstat-0.4.6'
+   dh_auto_build -O--buildsystem=cmake
+	cd obj-aarch64-linux-gnu && make -j4 "INSTALL=install --strip-program=true" VERBOSE=1
+make[1]: Entering directory '/home/cnc/lxqt-dev/libsysstat-0.4.6/obj-aarch64-linux-gnu'
+/usr/bin/cmake -S/home/cnc/lxqt-dev/libsysstat-0.4.6 -B/home/cnc/lxqt-dev/libsysstat-0.4.6/obj-aarch64-linux-gnu --check-build-system CMakeFiles/Makefile.cmake 0
+/usr/bin/cmake -E cmake_progress_start /home/cnc/lxqt-dev/libsysstat-0.4.6/obj-aarch64-linux-gnu/CMakeFiles /home/cnc/lxqt-dev/libsysstat-0.4.6/obj-aarch64-linux-gnu//CMakeFiles/progress.marks
+make  -f CMakeFiles/Makefile2 all
+make[2]: Entering directory '/home/cnc/lxqt-dev/libsysstat-0.4.6/obj-aarch64-linux-gnu'
+make  -f CMakeFiles/sysstat-qt5_autogen.dir/build.make CMakeFiles/sysstat-qt5_autogen.dir/depend
+make[3]: Entering directory '/home/cnc/lxqt-dev/libsysstat-0.4.6/obj-aarch64-linux-gnu'
+cd /home/cnc/lxqt-dev/libsysstat-0.4.6/obj-aarch64-linux-gnu && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/cnc/lxqt-dev/libsysstat-0.4.6 /home/cnc/lxqt-dev/libsysstat-0.4.6 /home/cnc/lxqt-dev/libsysstat-0.4.6/obj-aarch64-linux-gnu /home/cnc/lxqt-dev/libsysstat-0.4.6/obj-aarch64-linux-gnu /home/cnc/lxqt-dev/libsysstat-0.4.6/obj-aarch64-linux-gnu/CMakeFiles/sysstat-qt5_autogen.dir/DependInfo.cmake --color=
+make[3]: Leaving directory '/home/cnc/lxqt-dev/libsysstat-0.4.6/obj-aarch64-linux-gnu'
+make  -f CMakeFiles/sysstat-qt5_autogen.dir/build.make CMakeFiles/sysstat-qt5_autogen.dir/build
+make[3]: Entering directory '/home/cnc/lxqt-dev/libsysstat-0.4.6/obj-aarch64-linux-gnu'
+[ 12%] Automatic MOC for target sysstat-qt5
+/usr/bin/cmake -E cmake_autogen /home/cnc/lxqt-dev/libsysstat-0.4.6/obj-aarch64-linux-gnu/CMakeFiles/sysstat-qt5_autogen.dir/AutogenInfo.json RelWithDebInfo
+AutoGen: Refreshing parse cache because it doesn't exist.
+AutoMoc: Generating "SRC:/obj-aarch64-linux-gnu/sysstat-qt5_autogen/moc_predefs.h", because it doesn't exist.
+/usr/bin/c++ -dM -E -c /usr/share/cmake-3.23/Modules/CMakeCXXCompilerABI.cpp -DMAJOR_VERSION=0 -DMINOR_VERSION=4 -DPATCH_VERSION=6 -DQT_CORE_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_USE_QSTRINGBUILDER -DSYSSTAT_LIBRARY -Dsysstat_qt5_EXPORTS -I/home/cnc/lxqt-dev/libsysstat-0.4.6/obj-aarch64-linux-gnu -I/home/cnc/lxqt-dev/libsysstat-0.4.6 -I/usr/include/aarch64-linux-gnu/qt5 -I/usr/include/aarch64-linux-gnu/qt5/QtCore -I/usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -I/usr/include/c++/11 -I/usr/include/aarch64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/aarch64-linux-gnu/11/include -I/usr/local/include -I/usr/include/aarch64-linux-gnu -I/usr/include
+AutoGen: Parsing "SRC:/basestat.h"
+AutoGen: Parsing "SRC:/basestat_p.h"
+AutoGen: Parsing "SRC:/cpustat.h"
+AutoGen: Parsing "SRC:/cpustat_p.h"
+AutoGen: Parsing "SRC:/memstat.h"
+AutoGen: Parsing "SRC:/memstat_p.h"
+AutoGen: Parsing "SRC:/netstat.h"
+AutoGen: Parsing "SRC:/netstat_p.h"
+AutoGen: Parsing "SRC:/sysstat_global.h"
+AutoGen: Parsing "SRC:/version.h"
+AutoGen: Parsing "SRC:/version_p.h"
+AutoGen: Parsing "SRC:/basestat.cpp"
+AutoGen: Parsing "SRC:/cpustat.cpp"
+AutoGen: Parsing "SRC:/memstat.cpp"
+AutoGen: Parsing "SRC:/netstat.cpp"
+AutoGen: Parsing "SRC:/version.cpp"
+AutoMoc: Generating "SRC:/obj-aarch64-linux-gnu/sysstat-qt5_autogen/EWIEGA46WW/moc_basestat.cpp", because it doesn't exist, from "SRC:/basestat.h"
+/usr/lib/qt5/bin/moc -DMAJOR_VERSION=0 -DMINOR_VERSION=4 -DPATCH_VERSION=6 -DQT_CORE_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_USE_QSTRINGBUILDER -DSYSSTAT_LIBRARY -Dsysstat_qt5_EXPORTS -I/home/cnc/lxqt-dev/libsysstat-0.4.6/obj-aarch64-linux-gnu -I/home/cnc/lxqt-dev/libsysstat-0.4.6 -I/usr/include/aarch64-linux-gnu/qt5 -I/usr/include/aarch64-linux-gnu/qt5/QtCore -I/usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -I/usr/include/c++/11 -I/usr/include/aarch64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/aarch64-linux-gnu/11/include -I/usr/local/include -I/usr/include/aarch64-linux-gnu -I/usr/include --include /home/cnc/lxqt-dev/libsysstat-0.4.6/obj-aarch64-linux-gnu/sysstat-qt5_autogen/moc_predefs.h --output-dep-file -o /home/cnc/lxqt-dev/libsysstat-0.4.6/obj-aarch64-linux-gnu/sysstat-qt5_autogen/EWIEGA46WW/moc_basestat.cpp /home/cnc/lxqt-dev/libsysstat-0.4.6/basestat.h
+AutoMoc: Reading dependencies from "SRC:/obj-aarch64-linux-gnu/sysstat-qt5_autogen/EWIEGA46WW/moc_basestat.cpp.d"
+AutoMoc: Generating "SRC:/obj-aarch64-linux-gnu/sysstat-qt5_autogen/EWIEGA46WW/moc_basestat_p.cpp", because it doesn't exist, from "SRC:/basestat_p.h"
+/usr/lib/qt5/bin/moc -DMAJOR_VERSION=0 -DMINOR_VERSION=4 -DPATCH_VERSION=6 -DQT_CORE_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_USE_QSTRINGBUILDER -DSYSSTAT_LIBRARY -Dsysstat_qt5_EXPORTS -I/home/cnc/lxqt-dev/libsysstat-0.4.6/obj-aarch64-linux-gnu -I/home/cnc/lxqt-dev/libsysstat-0.4.6 -I/usr/include/aarch64-linux-gnu/qt5 -I/usr/include/aarch64-linux-gnu/qt5/QtCore -I/usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -I/usr/include/c++/11 -I/usr/include/aarch64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/aarch64-linux-gnu/11/include -I/usr/local/include -I/usr/include/aarch64-linux-gnu -I/usr/include --include /home/cnc/lxqt-dev/libsysstat-0.4.6/obj-aarch64-linux-gnu/sysstat-qt5_autogen/moc_predefs.h --output-dep-file -o /home/cnc/lxqt-dev/libsysstat-0.4.6/obj-aarch64-linux-gnu/sysstat-qt5_autogen/EWIEGA46WW/moc_basestat_p.cpp /home/cnc/lxqt-dev/libsysstat-0.4.6/basestat_p.h
+AutoMoc: Reading dependencies from "SRC:/obj-aarch64-linux-gnu/sysstat-qt5_autogen/EWIEGA46WW/moc_basestat_p.cpp.d"
+AutoMoc: Generating "SRC:/obj-aarch64-linux-gnu/sysstat-qt5_autogen/EWIEGA46WW/moc_cpustat.cpp", because it doesn't exist, from "SRC:/cpustat.h"
+/usr/lib/qt5/bin/moc -DMAJOR_VERSION=0 -DMINOR_VERSION=4 -DPATCH_VERSION=6 -DQT_CORE_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_USE_QSTRINGBUILDER -DSYSSTAT_LIBRARY -Dsysstat_qt5_EXPORTS -I/home/cnc/lxqt-dev/libsysstat-0.4.6/obj-aarch64-linux-gnu -I/home/cnc/lxqt-dev/libsysstat-0.4.6 -I/usr/include/aarch64-linux-gnu/qt5 -I/usr/include/aarch64-linux-gnu/qt5/QtCore -I/usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -I/usr/include/c++/11 -I/usr/include/aarch64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/aarch64-linux-gnu/11/include -I/usr/local/include -I/usr/include/aarch64-linux-gnu -I/usr/include --include /home/cnc/lxqt-dev/libsysstat-0.4.6/obj-aarch64-linux-gnu/sysstat-qt5_autogen/moc_predefs.h --output-dep-file -o /home/cnc/lxqt-dev/libsysstat-0.4.6/obj-aarch64-linux-gnu/sysstat-qt5_autogen/EWIEGA46WW/moc_cpustat.cpp /home/cnc/lxqt-dev/libsysstat-0.4.6/cpustat.h
+AutoMoc: Reading dependencies from "SRC:/obj-aarch64-linux-gnu/sysstat-qt5_autogen/EWIEGA46WW/moc_cpustat.cpp.d"
+AutoMoc: Generating "SRC:/obj-aarch64-linux-gnu/sysstat-qt5_autogen/EWIEGA46WW/moc_cpustat_p.cpp", because it doesn't exist, from "SRC:/cpustat_p.h"
+/usr/lib/qt5/bin/moc -DMAJOR_VERSION=0 -DMINOR_VERSION=4 -DPATCH_VERSION=6 -DQT_CORE_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_USE_QSTRINGBUILDER -DSYSSTAT_LIBRARY -Dsysstat_qt5_EXPORTS -I/home/cnc/lxqt-dev/libsysstat-0.4.6/obj-aarch64-linux-gnu -I/home/cnc/lxqt-dev/libsysstat-0.4.6 -I/usr/include/aarch64-linux-gnu/qt5 -I/usr/include/aarch64-linux-gnu/qt5/QtCore -I/usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -I/usr/include/c++/11 -I/usr/include/aarch64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/aarch64-linux-gnu/11/include -I/usr/local/include -I/usr/include/aarch64-linux-gnu -I/usr/include --include /home/cnc/lxqt-dev/libsysstat-0.4.6/obj-aarch64-linux-gnu/sysstat-qt5_autogen/moc_predefs.h --output-dep-file -o /home/cnc/lxqt-dev/libsysstat-0.4.6/obj-aarch64-linux-gnu/sysstat-qt5_autogen/EWIEGA46WW/moc_cpustat_p.cpp /home/cnc/lxqt-dev/libsysstat-0.4.6/cpustat_p.h
+AutoMoc: Reading dependencies from "SRC:/obj-aarch64-linux-gnu/sysstat-qt5_autogen/EWIEGA46WW/moc_cpustat_p.cpp.d"
+AutoMoc: Generating "SRC:/obj-aarch64-linux-gnu/sysstat-qt5_autogen/EWIEGA46WW/moc_memstat.cpp", because it doesn't exist, from "SRC:/memstat.h"
+/usr/lib/qt5/bin/moc -DMAJOR_VERSION=0 -DMINOR_VERSION=4 -DPATCH_VERSION=6 -DQT_CORE_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_USE_QSTRINGBUILDER -DSYSSTAT_LIBRARY -Dsysstat_qt5_EXPORTS -I/home/cnc/lxqt-dev/libsysstat-0.4.6/obj-aarch64-linux-gnu -I/home/cnc/lxqt-dev/libsysstat-0.4.6 -I/usr/include/aarch64-linux-gnu/qt5 -I/usr/include/aarch64-linux-gnu/qt5/QtCore -I/usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -I/usr/include/c++/11 -I/usr/include/aarch64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/aarch64-linux-gnu/11/include -I/usr/local/include -I/usr/include/aarch64-linux-gnu -I/usr/include --include /home/cnc/lxqt-dev/libsysstat-0.4.6/obj-aarch64-linux-gnu/sysstat-qt5_autogen/moc_predefs.h --output-dep-file -o /home/cnc/lxqt-dev/libsysstat-0.4.6/obj-aarch64-linux-gnu/sysstat-qt5_autogen/EWIEGA46WW/moc_memstat.cpp /home/cnc/lxqt-dev/libsysstat-0.4.6/memstat.h
+AutoMoc: Reading dependencies from "SRC:/obj-aarch64-linux-gnu/sysstat-qt5_autogen/EWIEGA46WW/moc_memstat.cpp.d"
+AutoMoc: Generating "SRC:/obj-aarch64-linux-gnu/sysstat-qt5_autogen/EWIEGA46WW/moc_memstat_p.cpp", because it doesn't exist, from "SRC:/memstat_p.h"
+/usr/lib/qt5/bin/moc -DMAJOR_VERSION=0 -DMINOR_VERSION=4 -DPATCH_VERSION=6 -DQT_CORE_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_USE_QSTRINGBUILDER -DSYSSTAT_LIBRARY -Dsysstat_qt5_EXPORTS -I/home/cnc/lxqt-dev/libsysstat-0.4.6/obj-aarch64-linux-gnu -I/home/cnc/lxqt-dev/libsysstat-0.4.6 -I/usr/include/aarch64-linux-gnu/qt5 -I/usr/include/aarch64-linux-gnu/qt5/QtCore -I/usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -I/usr/include/c++/11 -I/usr/include/aarch64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/aarch64-linux-gnu/11/include -I/usr/local/include -I/usr/include/aarch64-linux-gnu -I/usr/include --include /home/cnc/lxqt-dev/libsysstat-0.4.6/obj-aarch64-linux-gnu/sysstat-qt5_autogen/moc_predefs.h --output-dep-file -o /home/cnc/lxqt-dev/libsysstat-0.4.6/obj-aarch64-linux-gnu/sysstat-qt5_autogen/EWIEGA46WW/moc_memstat_p.cpp /home/cnc/lxqt-dev/libsysstat-0.4.6/memstat_p.h
+AutoMoc: Reading dependencies from "SRC:/obj-aarch64-linux-gnu/sysstat-qt5_autogen/EWIEGA46WW/moc_memstat_p.cpp.d"
+AutoMoc: Generating "SRC:/obj-aarch64-linux-gnu/sysstat-qt5_autogen/EWIEGA46WW/moc_netstat.cpp", because it doesn't exist, from "SRC:/netstat.h"
+/usr/lib/qt5/bin/moc -DMAJOR_VERSION=0 -DMINOR_VERSION=4 -DPATCH_VERSION=6 -DQT_CORE_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_USE_QSTRINGBUILDER -DSYSSTAT_LIBRARY -Dsysstat_qt5_EXPORTS -I/home/cnc/lxqt-dev/libsysstat-0.4.6/obj-aarch64-linux-gnu -I/home/cnc/lxqt-dev/libsysstat-0.4.6 -I/usr/include/aarch64-linux-gnu/qt5 -I/usr/include/aarch64-linux-gnu/qt5/QtCore -I/usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -I/usr/include/c++/11 -I/usr/include/aarch64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/aarch64-linux-gnu/11/include -I/usr/local/include -I/usr/include/aarch64-linux-gnu -I/usr/include --include /home/cnc/lxqt-dev/libsysstat-0.4.6/obj-aarch64-linux-gnu/sysstat-qt5_autogen/moc_predefs.h --output-dep-file -o /home/cnc/lxqt-dev/libsysstat-0.4.6/obj-aarch64-linux-gnu/sysstat-qt5_autogen/EWIEGA46WW/moc_netstat.cpp /home/cnc/lxqt-dev/libsysstat-0.4.6/netstat.h
+AutoMoc: Reading dependencies from "SRC:/obj-aarch64-linux-gnu/sysstat-qt5_autogen/EWIEGA46WW/moc_netstat.cpp.d"
+AutoMoc: Generating "SRC:/obj-aarch64-linux-gnu/sysstat-qt5_autogen/EWIEGA46WW/moc_netstat_p.cpp", because it doesn't exist, from "SRC:/netstat_p.h"
+/usr/lib/qt5/bin/moc -DMAJOR_VERSION=0 -DMINOR_VERSION=4 -DPATCH_VERSION=6 -DQT_CORE_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_USE_QSTRINGBUILDER -DSYSSTAT_LIBRARY -Dsysstat_qt5_EXPORTS -I/home/cnc/lxqt-dev/libsysstat-0.4.6/obj-aarch64-linux-gnu -I/home/cnc/lxqt-dev/libsysstat-0.4.6 -I/usr/include/aarch64-linux-gnu/qt5 -I/usr/include/aarch64-linux-gnu/qt5/QtCore -I/usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -I/usr/include/c++/11 -I/usr/include/aarch64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/aarch64-linux-gnu/11/include -I/usr/local/include -I/usr/include/aarch64-linux-gnu -I/usr/include --include /home/cnc/lxqt-dev/libsysstat-0.4.6/obj-aarch64-linux-gnu/sysstat-qt5_autogen/moc_predefs.h --output-dep-file -o /home/cnc/lxqt-dev/libsysstat-0.4.6/obj-aarch64-linux-gnu/sysstat-qt5_autogen/EWIEGA46WW/moc_netstat_p.cpp /home/cnc/lxqt-dev/libsysstat-0.4.6/netstat_p.h
+AutoMoc: Reading dependencies from "SRC:/obj-aarch64-linux-gnu/sysstat-qt5_autogen/EWIEGA46WW/moc_netstat_p.cpp.d"
+AutoMoc: Generating MOC compilation "SRC:/obj-aarch64-linux-gnu/sysstat-qt5_autogen/mocs_compilation.cpp"
+AutoGen: Writing the parse cache file "SRC:/obj-aarch64-linux-gnu/CMakeFiles/sysstat-qt5_autogen.dir/ParseCache.txt"
+AutoGen: Writing the settings file "SRC:/obj-aarch64-linux-gnu/CMakeFiles/sysstat-qt5_autogen.dir/AutogenUsed.txt"
+make[3]: Leaving directory '/home/cnc/lxqt-dev/libsysstat-0.4.6/obj-aarch64-linux-gnu'
+[ 12%] Built target sysstat-qt5_autogen
+make  -f CMakeFiles/sysstat-qt5.dir/build.make CMakeFiles/sysstat-qt5.dir/depend
+make[3]: Entering directory '/home/cnc/lxqt-dev/libsysstat-0.4.6/obj-aarch64-linux-gnu'
+cd /home/cnc/lxqt-dev/libsysstat-0.4.6/obj-aarch64-linux-gnu && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/cnc/lxqt-dev/libsysstat-0.4.6 /home/cnc/lxqt-dev/libsysstat-0.4.6 /home/cnc/lxqt-dev/libsysstat-0.4.6/obj-aarch64-linux-gnu /home/cnc/lxqt-dev/libsysstat-0.4.6/obj-aarch64-linux-gnu /home/cnc/lxqt-dev/libsysstat-0.4.6/obj-aarch64-linux-gnu/CMakeFiles/sysstat-qt5.dir/DependInfo.cmake --color=
+make[3]: Leaving directory '/home/cnc/lxqt-dev/libsysstat-0.4.6/obj-aarch64-linux-gnu'
+make  -f CMakeFiles/sysstat-qt5.dir/build.make CMakeFiles/sysstat-qt5.dir/build
+make[3]: Entering directory '/home/cnc/lxqt-dev/libsysstat-0.4.6/obj-aarch64-linux-gnu'
+[ 25%] Building CXX object CMakeFiles/sysstat-qt5.dir/basestat.cpp.o
+/usr/bin/c++ -DMAJOR_VERSION=0 -DMINOR_VERSION=4 -DPATCH_VERSION=6 -DQT_CORE_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_USE_QSTRINGBUILDER -DSYSSTAT_LIBRARY -Dsysstat_qt5_EXPORTS -I/home/cnc/lxqt-dev/libsysstat-0.4.6/obj-aarch64-linux-gnu -I/home/cnc/lxqt-dev/libsysstat-0.4.6 -I/home/cnc/lxqt-dev/libsysstat-0.4.6/obj-aarch64-linux-gnu/sysstat-qt5_autogen/include -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/libsysstat-0.4.6=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -fPIC -fvisibility=hidden -fvisibility-inlines-hidden -fPIC -std=c++14 -MD -MT CMakeFiles/sysstat-qt5.dir/basestat.cpp.o -MF CMakeFiles/sysstat-qt5.dir/basestat.cpp.o.d -o CMakeFiles/sysstat-qt5.dir/basestat.cpp.o -c /home/cnc/lxqt-dev/libsysstat-0.4.6/basestat.cpp
+[ 37%] Building CXX object CMakeFiles/sysstat-qt5.dir/sysstat-qt5_autogen/mocs_compilation.cpp.o
+[ 50%] Building CXX object CMakeFiles/sysstat-qt5.dir/version.cpp.o
+/usr/bin/c++ -DMAJOR_VERSION=0 -DMINOR_VERSION=4 -DPATCH_VERSION=6 -DQT_CORE_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_USE_QSTRINGBUILDER -DSYSSTAT_LIBRARY -Dsysstat_qt5_EXPORTS -I/home/cnc/lxqt-dev/libsysstat-0.4.6/obj-aarch64-linux-gnu -I/home/cnc/lxqt-dev/libsysstat-0.4.6 -I/home/cnc/lxqt-dev/libsysstat-0.4.6/obj-aarch64-linux-gnu/sysstat-qt5_autogen/include -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/libsysstat-0.4.6=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -fPIC -fvisibility=hidden -fvisibility-inlines-hidden -fPIC -std=c++14 -MD -MT CMakeFiles/sysstat-qt5.dir/sysstat-qt5_autogen/mocs_compilation.cpp.o -MF CMakeFiles/sysstat-qt5.dir/sysstat-qt5_autogen/mocs_compilation.cpp.o.d -o CMakeFiles/sysstat-qt5.dir/sysstat-qt5_autogen/mocs_compilation.cpp.o -c /home/cnc/lxqt-dev/libsysstat-0.4.6/obj-aarch64-linux-gnu/sysstat-qt5_autogen/mocs_compilation.cpp
+[ 62%] Building CXX object CMakeFiles/sysstat-qt5.dir/cpustat.cpp.o
+/usr/bin/c++ -DMAJOR_VERSION=0 -DMINOR_VERSION=4 -DPATCH_VERSION=6 -DQT_CORE_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_USE_QSTRINGBUILDER -DSYSSTAT_LIBRARY -Dsysstat_qt5_EXPORTS -I/home/cnc/lxqt-dev/libsysstat-0.4.6/obj-aarch64-linux-gnu -I/home/cnc/lxqt-dev/libsysstat-0.4.6 -I/home/cnc/lxqt-dev/libsysstat-0.4.6/obj-aarch64-linux-gnu/sysstat-qt5_autogen/include -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/libsysstat-0.4.6=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -fPIC -fvisibility=hidden -fvisibility-inlines-hidden -fPIC -std=c++14 -MD -MT CMakeFiles/sysstat-qt5.dir/version.cpp.o -MF CMakeFiles/sysstat-qt5.dir/version.cpp.o.d -o CMakeFiles/sysstat-qt5.dir/version.cpp.o -c /home/cnc/lxqt-dev/libsysstat-0.4.6/version.cpp
+/usr/bin/c++ -DMAJOR_VERSION=0 -DMINOR_VERSION=4 -DPATCH_VERSION=6 -DQT_CORE_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_USE_QSTRINGBUILDER -DSYSSTAT_LIBRARY -Dsysstat_qt5_EXPORTS -I/home/cnc/lxqt-dev/libsysstat-0.4.6/obj-aarch64-linux-gnu -I/home/cnc/lxqt-dev/libsysstat-0.4.6 -I/home/cnc/lxqt-dev/libsysstat-0.4.6/obj-aarch64-linux-gnu/sysstat-qt5_autogen/include -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/libsysstat-0.4.6=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -fPIC -fvisibility=hidden -fvisibility-inlines-hidden -fPIC -std=c++14 -MD -MT CMakeFiles/sysstat-qt5.dir/cpustat.cpp.o -MF CMakeFiles/sysstat-qt5.dir/cpustat.cpp.o.d -o CMakeFiles/sysstat-qt5.dir/cpustat.cpp.o -c /home/cnc/lxqt-dev/libsysstat-0.4.6/cpustat.cpp
+[ 75%] Building CXX object CMakeFiles/sysstat-qt5.dir/memstat.cpp.o
+/usr/bin/c++ -DMAJOR_VERSION=0 -DMINOR_VERSION=4 -DPATCH_VERSION=6 -DQT_CORE_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_USE_QSTRINGBUILDER -DSYSSTAT_LIBRARY -Dsysstat_qt5_EXPORTS -I/home/cnc/lxqt-dev/libsysstat-0.4.6/obj-aarch64-linux-gnu -I/home/cnc/lxqt-dev/libsysstat-0.4.6 -I/home/cnc/lxqt-dev/libsysstat-0.4.6/obj-aarch64-linux-gnu/sysstat-qt5_autogen/include -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/libsysstat-0.4.6=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -fPIC -fvisibility=hidden -fvisibility-inlines-hidden -fPIC -std=c++14 -MD -MT CMakeFiles/sysstat-qt5.dir/memstat.cpp.o -MF CMakeFiles/sysstat-qt5.dir/memstat.cpp.o.d -o CMakeFiles/sysstat-qt5.dir/memstat.cpp.o -c /home/cnc/lxqt-dev/libsysstat-0.4.6/memstat.cpp
+[ 87%] Building CXX object CMakeFiles/sysstat-qt5.dir/netstat.cpp.o
+/usr/bin/c++ -DMAJOR_VERSION=0 -DMINOR_VERSION=4 -DPATCH_VERSION=6 -DQT_CORE_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_USE_QSTRINGBUILDER -DSYSSTAT_LIBRARY -Dsysstat_qt5_EXPORTS -I/home/cnc/lxqt-dev/libsysstat-0.4.6/obj-aarch64-linux-gnu -I/home/cnc/lxqt-dev/libsysstat-0.4.6 -I/home/cnc/lxqt-dev/libsysstat-0.4.6/obj-aarch64-linux-gnu/sysstat-qt5_autogen/include -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/libsysstat-0.4.6=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -fPIC -fvisibility=hidden -fvisibility-inlines-hidden -fPIC -std=c++14 -MD -MT CMakeFiles/sysstat-qt5.dir/netstat.cpp.o -MF CMakeFiles/sysstat-qt5.dir/netstat.cpp.o.d -o CMakeFiles/sysstat-qt5.dir/netstat.cpp.o -c /home/cnc/lxqt-dev/libsysstat-0.4.6/netstat.cpp
+[100%] Linking CXX shared library libsysstat-qt5.so
+/usr/bin/cmake -E cmake_link_script CMakeFiles/sysstat-qt5.dir/link.txt --verbose=1
+/usr/bin/c++ -fPIC -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/libsysstat-0.4.6=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -Wl,--no-undefined -Wl,-Bsymbolic-functions -Wl,-Bsymbolic -Wl,-z,relro -Wl,-z,now -Wl,--as-needed -shared -Wl,-soname,libsysstat-qt5.so.0 -o libsysstat-qt5.so.0.4.6 "CMakeFiles/sysstat-qt5.dir/sysstat-qt5_autogen/mocs_compilation.cpp.o" "CMakeFiles/sysstat-qt5.dir/version.cpp.o" "CMakeFiles/sysstat-qt5.dir/basestat.cpp.o" "CMakeFiles/sysstat-qt5.dir/cpustat.cpp.o" "CMakeFiles/sysstat-qt5.dir/memstat.cpp.o" "CMakeFiles/sysstat-qt5.dir/netstat.cpp.o"  /usr/lib/aarch64-linux-gnu/libQt5Core.so.5.15.4 
+/usr/bin/cmake -E cmake_symlink_library libsysstat-qt5.so.0.4.6 libsysstat-qt5.so.0 libsysstat-qt5.so
+make[3]: Leaving directory '/home/cnc/lxqt-dev/libsysstat-0.4.6/obj-aarch64-linux-gnu'
+[100%] Built target sysstat-qt5
+make[2]: Leaving directory '/home/cnc/lxqt-dev/libsysstat-0.4.6/obj-aarch64-linux-gnu'
+/usr/bin/cmake -E cmake_progress_start /home/cnc/lxqt-dev/libsysstat-0.4.6/obj-aarch64-linux-gnu/CMakeFiles 0
+make[1]: Leaving directory '/home/cnc/lxqt-dev/libsysstat-0.4.6/obj-aarch64-linux-gnu'
+   dh_auto_test -O--buildsystem=cmake
+   create-stamp debian/debhelper-build-stamp
+   dh_testroot -O--buildsystem=cmake
+   dh_prep -O--buildsystem=cmake
+   dh_auto_install -O--buildsystem=cmake
+	cd obj-aarch64-linux-gnu && make -j4 install DESTDIR=/home/cnc/lxqt-dev/libsysstat-0.4.6/debian/tmp AM_UPDATE_INFO_DIR=no "INSTALL=install --strip-program=true"
+make[1]: Entering directory '/home/cnc/lxqt-dev/libsysstat-0.4.6/obj-aarch64-linux-gnu'
+/usr/bin/cmake -S/home/cnc/lxqt-dev/libsysstat-0.4.6 -B/home/cnc/lxqt-dev/libsysstat-0.4.6/obj-aarch64-linux-gnu --check-build-system CMakeFiles/Makefile.cmake 0
+make  -f CMakeFiles/Makefile2 preinstall
+make[2]: Entering directory '/home/cnc/lxqt-dev/libsysstat-0.4.6/obj-aarch64-linux-gnu'
+make[2]: Nothing to be done for 'preinstall'.
+make[2]: Leaving directory '/home/cnc/lxqt-dev/libsysstat-0.4.6/obj-aarch64-linux-gnu'
+Install the project...
+/usr/bin/cmake -P cmake_install.cmake
+-- Install configuration: "RelWithDebInfo"
+-- Installing: /home/cnc/lxqt-dev/libsysstat-0.4.6/debian/tmp/usr/lib/aarch64-linux-gnu/libsysstat-qt5.so.0.4.6
+-- Installing: /home/cnc/lxqt-dev/libsysstat-0.4.6/debian/tmp/usr/lib/aarch64-linux-gnu/libsysstat-qt5.so.0
+-- Installing: /home/cnc/lxqt-dev/libsysstat-0.4.6/debian/tmp/usr/lib/aarch64-linux-gnu/libsysstat-qt5.so
+-- Installing: /home/cnc/lxqt-dev/libsysstat-0.4.6/debian/tmp/usr/include/sysstat-qt5/version.h
+-- Installing: /home/cnc/lxqt-dev/libsysstat-0.4.6/debian/tmp/usr/include/sysstat-qt5/sysstat_global.h
+-- Installing: /home/cnc/lxqt-dev/libsysstat-0.4.6/debian/tmp/usr/include/sysstat-qt5/basestat.h
+-- Installing: /home/cnc/lxqt-dev/libsysstat-0.4.6/debian/tmp/usr/include/sysstat-qt5/cpustat.h
+-- Installing: /home/cnc/lxqt-dev/libsysstat-0.4.6/debian/tmp/usr/include/sysstat-qt5/memstat.h
+-- Installing: /home/cnc/lxqt-dev/libsysstat-0.4.6/debian/tmp/usr/include/sysstat-qt5/netstat.h
+-- Installing: /home/cnc/lxqt-dev/libsysstat-0.4.6/debian/tmp/usr/include/sysstat-qt5/SysStat/Version
+-- Installing: /home/cnc/lxqt-dev/libsysstat-0.4.6/debian/tmp/usr/include/sysstat-qt5/SysStat/Global
+-- Installing: /home/cnc/lxqt-dev/libsysstat-0.4.6/debian/tmp/usr/include/sysstat-qt5/SysStat/BaseStat
+-- Installing: /home/cnc/lxqt-dev/libsysstat-0.4.6/debian/tmp/usr/include/sysstat-qt5/SysStat/CpuStat
+-- Installing: /home/cnc/lxqt-dev/libsysstat-0.4.6/debian/tmp/usr/include/sysstat-qt5/SysStat/MemStat
+-- Installing: /home/cnc/lxqt-dev/libsysstat-0.4.6/debian/tmp/usr/include/sysstat-qt5/SysStat/NetStat
+-- Installing: /home/cnc/lxqt-dev/libsysstat-0.4.6/debian/tmp/usr/lib/aarch64-linux-gnu/pkgconfig/sysstat-qt5.pc
+-- Installing: /home/cnc/lxqt-dev/libsysstat-0.4.6/debian/tmp/usr/share/cmake/sysstat-qt5/sysstat-qt5-config.cmake
+-- Installing: /home/cnc/lxqt-dev/libsysstat-0.4.6/debian/tmp/usr/share/cmake/sysstat-qt5/sysstat-qt5-config-version.cmake
+-- Installing: /home/cnc/lxqt-dev/libsysstat-0.4.6/debian/tmp/usr/share/cmake/sysstat-qt5/sysstat-qt5-targets.cmake
+-- Installing: /home/cnc/lxqt-dev/libsysstat-0.4.6/debian/tmp/usr/share/cmake/sysstat-qt5/sysstat-qt5-targets-relwithdebinfo.cmake
+make[1]: Leaving directory '/home/cnc/lxqt-dev/libsysstat-0.4.6/obj-aarch64-linux-gnu'
+   dh_install -O--buildsystem=cmake
+   dh_installdocs -O--buildsystem=cmake
+   dh_installchangelogs -O--buildsystem=cmake
+   dh_installsystemduser -O--buildsystem=cmake
+   dh_perl -O--buildsystem=cmake
+   dh_link -O--buildsystem=cmake
+   dh_strip_nondeterminism -O--buildsystem=cmake
+   dh_compress -O--buildsystem=cmake
+   dh_fixperms -O--buildsystem=cmake
+   debian/rules override_dh_missing
+make[1]: Entering directory '/home/cnc/lxqt-dev/libsysstat-0.4.6'
+dh_missing --fail-missing
+make[1]: Leaving directory '/home/cnc/lxqt-dev/libsysstat-0.4.6'
+   dh_dwz -a -O--buildsystem=cmake
+   dh_strip -a -O--buildsystem=cmake
+   dh_makeshlibs -a -O--buildsystem=cmake
+   dh_shlibdeps -a -O--buildsystem=cmake
+   dh_installdeb -O--buildsystem=cmake
+   dh_gencontrol -O--buildsystem=cmake
+   dh_md5sums -O--buildsystem=cmake
+   dh_builddeb -O--buildsystem=cmake
+dpkg-deb: building package 'libsysstat-qt5-0' in '../libsysstat-qt5-0_0.4.6-1_arm64.deb'.
+dpkg-deb: building package 'libsysstat-qt5-0-dev' in '../libsysstat-qt5-0-dev_0.4.6-1_arm64.deb'.
+dpkg-deb: building package 'libsysstat-qt5-0-dbgsym' in '../libsysstat-qt5-0-dbgsym_0.4.6-1_arm64.deb'.
+ dpkg-genbuildinfo --build=binary -O../libsysstat_0.4.6-1_arm64.buildinfo
+ dpkg-genchanges --build=binary -O../libsysstat_0.4.6-1_arm64.changes
+dpkg-genchanges: info: binary-only upload (no source code included)
+ dpkg-source -i --after-build .
+dpkg-source: info: using options from libsysstat-0.4.6/debian/source/options: --tar-ignore=.gitignore
+dpkg-buildpackage: info: binary-only upload (no source included)
+Now running lintian libsysstat_0.4.6-1_arm64.changes ...
+running with root privileges is not recommended!
+Finished running lintian.

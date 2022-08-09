@@ -1,0 +1,44 @@
+Format: 1.8
+Date: Tue, 12 Jul 2022 16:16:35 -0500
+Source: lxqt-admin
+Binary: lxqt-admin lxqt-admin-dbgsym lxqt-admin-l10n
+Architecture: arm64 all
+Version: 1.1.0-1
+Distribution: experimental
+Urgency: medium
+Maintainer: LXQt Packaging Team <pkg-lxqt-devel@lists.alioth.debian.org>
+Changed-By: Aaron Rainbolt <arraybolt3@gmail.com>
+Description:
+ lxqt-admin - Admin tools for LXQt
+ lxqt-admin-l10n - Language package for lxqt-admin
+Changes:
+ lxqt-admin (1.1.0-1) experimental; urgency=medium
+ .
+   [ Aaron Rainbolt ]
+   * New upstream release.
+   * Upstreamed compatible changes from Ubuntu, modifying the following files:
+     - control
+     - copyright
+     - docs
+     - lintian-overrides
+     - lxqt-admin-l10n.install
+     - rules
+     - upstream/*
+ .
+   [ djsftree ]
+   * compiled by djsftree
+Checksums-Sha1:
+ ec59478f5d3763cd8ca57d415ce1db55fa570def 1931388 lxqt-admin-dbgsym_1.1.0-1_arm64.deb
+ fdb5ad29d90ab0abc53eec64f72c3045d8b891e7 39084 lxqt-admin-l10n_1.1.0-1_all.deb
+ bb169e25d384b308763df165d81ed323985076a4 13662 lxqt-admin_1.1.0-1_arm64.buildinfo
+ 91263f59d83a1b1c76e27ec5af35ee4acb4a2109 59792 lxqt-admin_1.1.0-1_arm64.deb
+Checksums-Sha256:
+ 6f65121f8fe1f17bda03b87d7584db649ae614e9f27cb2cc1438f088a0e7c39c 1931388 lxqt-admin-dbgsym_1.1.0-1_arm64.deb
+ edd44ddd179c4a2242fcac0dacd58248c07c2ee718b6b3d3948618b38bf4fdca 39084 lxqt-admin-l10n_1.1.0-1_all.deb
+ 6663dc42f3afec1e09c6e6b18f8b02f96668a3e3c15cf09c9350faa4462dafcf 13662 lxqt-admin_1.1.0-1_arm64.buildinfo
+ fac648b332471143879f40f61ebd1fb94488f09e994e2bf225f990f36529ab2e 59792 lxqt-admin_1.1.0-1_arm64.deb
+Files:
+ 2b5e3005addb8c1ab8aac4e434332531 1931388 debug optional lxqt-admin-dbgsym_1.1.0-1_arm64.deb
+ 124dcd429690c0894d1d990bfa45167e 39084 localization optional lxqt-admin-l10n_1.1.0-1_all.deb
+ ab07dfcdb39b1d2afe7b977d06991c51 13662 x11 optional lxqt-admin_1.1.0-1_arm64.buildinfo
+ d1c4e584cea011c3d38ee68e8ef44458 59792 x11 optional lxqt-admin_1.1.0-1_arm64.deb

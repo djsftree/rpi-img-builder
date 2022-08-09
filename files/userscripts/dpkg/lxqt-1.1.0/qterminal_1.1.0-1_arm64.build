@@ -1,0 +1,489 @@
+ dpkg-buildpackage -us -uc -ui -i -b
+dpkg-buildpackage: info: source package qterminal
+dpkg-buildpackage: info: source version 1.1.0-1
+dpkg-buildpackage: info: source distribution experimental
+dpkg-buildpackage: info: source changed by Simon Quigley <tsimonq2@debian.org>
+ dpkg-source -i --before-build .
+dpkg-buildpackage: info: host architecture arm64
+dpkg-source: info: using options from qterminal-1.1.0/debian/source/options: --tar-ignore=.gitignore
+ debian/rules clean
+dh clean --buildsystem cmake
+   dh_auto_clean -O--buildsystem=cmake
+   dh_autoreconf_clean -O--buildsystem=cmake
+   dh_clean -O--buildsystem=cmake
+ debian/rules build
+dh build --buildsystem cmake
+   dh_update_autotools_config -O--buildsystem=cmake
+   dh_autoreconf -O--buildsystem=cmake
+   debian/rules override_dh_auto_configure
+make[1]: Entering directory '/home/cnc/lxqt-dev/qterminal-1.1.0'
+dh_auto_configure -- \
+	-DPULL_TRANSLATIONS=OFF \
+	-DUPDATE_TRANSLATIONS=OFF \
+	-DCMAKE_BUILD_TYPE=RelWithDebInfo
+	cd obj-aarch64-linux-gnu && cmake -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=None -DCMAKE_INSTALL_SYSCONFDIR=/etc -DCMAKE_INSTALL_LOCALSTATEDIR=/var -DCMAKE_EXPORT_NO_PACKAGE_REGISTRY=ON -DCMAKE_FIND_USE_PACKAGE_REGISTRY=OFF -DCMAKE_FIND_PACKAGE_NO_PACKAGE_REGISTRY=ON -DFETCHCONTENT_FULLY_DISCONNECTED=ON -DCMAKE_INSTALL_RUNSTATEDIR=/run -DCMAKE_SKIP_INSTALL_ALL_DEPENDENCY=ON "-GUnix Makefiles" -DCMAKE_VERBOSE_MAKEFILE=ON -DCMAKE_INSTALL_LIBDIR=lib/aarch64-linux-gnu -DPULL_TRANSLATIONS=OFF -DUPDATE_TRANSLATIONS=OFF -DCMAKE_BUILD_TYPE=RelWithDebInfo ..
+-- The C compiler identification is GNU 11.3.0
+-- The CXX compiler identification is GNU 11.3.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found Perl: /usr/bin/perl (found version "5.34.0") 
+-- Qt version: 5.15.4
+-- Using bundled Qxt...
+-- Found X11: /usr/include   
+-- Looking for XOpenDisplay in /usr/lib/aarch64-linux-gnu/libX11.so;/usr/lib/aarch64-linux-gnu/libXext.so
+-- Looking for XOpenDisplay in /usr/lib/aarch64-linux-gnu/libX11.so;/usr/lib/aarch64-linux-gnu/libXext.so - found
+-- Looking for gethostbyname
+-- Looking for gethostbyname - found
+-- Looking for connect
+-- Looking for connect - found
+-- Looking for remove
+-- Looking for remove - found
+-- Looking for shmat
+-- Looking for shmat - found
+-- Looking for IceConnectionNumber in ICE
+-- Looking for IceConnectionNumber in ICE - found
+-- X11_X11_LIB: /usr/lib/aarch64-linux-gnu/libX11.so
+-- Building with Qt5DBus support
+-- Configuring done
+-- Generating done
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    CMAKE_EXPORT_NO_PACKAGE_REGISTRY
+    CMAKE_FIND_PACKAGE_NO_PACKAGE_REGISTRY
+    FETCHCONTENT_FULLY_DISCONNECTED
+    PULL_TRANSLATIONS
+
+
+-- Build files have been written to: /home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu
+make[1]: Leaving directory '/home/cnc/lxqt-dev/qterminal-1.1.0'
+   dh_auto_build -O--buildsystem=cmake
+	cd obj-aarch64-linux-gnu && make -j4 "INSTALL=install --strip-program=true" VERBOSE=1
+make[1]: Entering directory '/home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu'
+/usr/bin/cmake -S/home/cnc/lxqt-dev/qterminal-1.1.0 -B/home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu --check-build-system CMakeFiles/Makefile.cmake 0
+/usr/bin/cmake -E cmake_progress_start /home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/CMakeFiles /home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu//CMakeFiles/progress.marks
+make  -f CMakeFiles/Makefile2 all
+make[2]: Entering directory '/home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu'
+make  -f CMakeFiles/qterminal.dir/build.make CMakeFiles/qterminal.dir/depend
+make[3]: Entering directory '/home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu'
+[  1%] Generating processadaptor.cpp, processadaptor.h
+/usr/lib/qt5/bin/qdbusxml2cpp -m -a processadaptor -i qterminalapp.h -l QTerminalApp /home/cnc/lxqt-dev/qterminal-1.1.0/src/org.lxqt.QTerminal.Process.xml
+[  2%] Generating windowadaptor.cpp, windowadaptor.h
+/usr/lib/qt5/bin/qdbusxml2cpp -m -a windowadaptor -i mainwindow.h -l MainWindow /home/cnc/lxqt-dev/qterminal-1.1.0/src/org.lxqt.QTerminal.Window.xml
+[  3%] Generating qrc_icons.cpp
+/usr/lib/qt5/bin/rcc --name icons --output /home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/qrc_icons.cpp /home/cnc/lxqt-dev/qterminal-1.1.0/src/icons.qrc
+[  4%] Generating qterminal-drop.desktop
+/usr/bin/perl /usr/share/cmake/lxqt-build-tools/modules//LXQtTranslateDesktopYaml.pl /home/cnc/lxqt-dev/qterminal-1.1.0/qterminal-drop.desktop.in qterminal-drop "/home/cnc/lxqt-dev/qterminal-1.1.0/src/translations/qterminal-drop[_.]*desktop.yaml" >> /home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/qterminal-drop.desktop
+[  5%] Generating qterminal.desktop
+/usr/bin/perl /usr/share/cmake/lxqt-build-tools/modules//LXQtTranslateDesktopYaml.pl /home/cnc/lxqt-dev/qterminal-1.1.0/qterminal.desktop.in qterminal "/home/cnc/lxqt-dev/qterminal-1.1.0/src/translations/qterminal[_.]*desktop.yaml" >> /home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/qterminal.desktop
+[  6%] Generating qterminal_arn.qm
+[  7%] Generating qterminal_ar.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/qterminal-1.1.0/src/translations/qterminal_ar.ts -qm /home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/qterminal_ar.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/qterminal-1.1.0/src/translations/qterminal_arn.ts -qm /home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/qterminal_arn.qm
+Updating '/home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/qterminal_arn.qm'...
+    Generated 0 translation(s) (0 finished and 0 unfinished)
+    Ignored 195 untranslated source text(s)
+Updating '/home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/qterminal_ar.qm'...
+    Generated 153 translation(s) (149 finished and 4 unfinished)
+    Ignored 42 untranslated source text(s)
+[  8%] Generating qterminal_ca.qm
+[  9%] Generating qterminal_ast.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/qterminal-1.1.0/src/translations/qterminal_ca.ts -qm /home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/qterminal_ca.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/qterminal-1.1.0/src/translations/qterminal_ast.ts -qm /home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/qterminal_ast.qm
+[ 10%] Generating qterminal_bg.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/qterminal-1.1.0/src/translations/qterminal_bg.ts -qm /home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/qterminal_bg.qm
+Updating '/home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/qterminal_ast.qm'...
+    Generated 0 translation(s) (0 finished and 0 unfinished)
+    Ignored 195 untranslated source text(s)
+Updating '/home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/qterminal_bg.qm'...
+Updating '/home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/qterminal_ca.qm'...
+    Generated 195 translation(s) (195 finished and 0 unfinished)
+    Generated 175 translation(s) (174 finished and 1 unfinished)
+    Ignored 20 untranslated source text(s)
+[ 11%] Generating qterminal_cy.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/qterminal-1.1.0/src/translations/qterminal_cy.ts -qm /home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/qterminal_cy.qm
+[ 12%] Generating qterminal_cs.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/qterminal-1.1.0/src/translations/qterminal_cs.ts -qm /home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/qterminal_cs.qm
+Updating '/home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/qterminal_cy.qm'...
+    Generated 141 translation(s) (141 finished and 0 unfinished)
+    Ignored 54 untranslated source text(s)
+[ 13%] Generating qterminal_de.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/qterminal-1.1.0/src/translations/qterminal_de.ts -qm /home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/qterminal_de.qm
+[ 14%] Generating qterminal_da.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/qterminal-1.1.0/src/translations/qterminal_da.ts -qm /home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/qterminal_da.qm
+Updating '/home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/qterminal_cs.qm'...
+    Generated 195 translation(s) (195 finished and 0 unfinished)
+Updating '/home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/qterminal_de.qm'...
+Updating '/home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/qterminal_da.qm'...
+    Generated 177 translation(s) (177 finished and 0 unfinished)
+    Ignored 18 untranslated source text(s)
+    Generated 177 translation(s) (177 finished and 0 unfinished)
+    Ignored 18 untranslated source text(s)
+[ 15%] Generating qterminal_de_CH.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/qterminal-1.1.0/src/translations/qterminal_de_CH.ts -qm /home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/qterminal_de_CH.qm
+[ 16%] Generating qterminal_et.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/qterminal-1.1.0/src/translations/qterminal_et.ts -qm /home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/qterminal_et.qm
+[ 17%] Generating qterminal_es.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/qterminal-1.1.0/src/translations/qterminal_es.ts -qm /home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/qterminal_es.qm
+Updating '/home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/qterminal_de_CH.qm'...
+[ 18%] Generating qterminal_el.qm
+    Generated 186 translation(s) (186 finished and 0 unfinished)
+    Ignored 9 untranslated source text(s)
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/qterminal-1.1.0/src/translations/qterminal_el.ts -qm /home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/qterminal_el.qm
+Updating '/home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/qterminal_es.qm'...
+    Generated 177 translation(s) (177 finished and 0 unfinished)
+    Ignored 18 untranslated source text(s)
+Updating '/home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/qterminal_et.qm'...
+    Generated 195 translation(s) (195 finished and 0 unfinished)
+[ 19%] Generating qterminal_fa.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/qterminal-1.1.0/src/translations/qterminal_fa.ts -qm /home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/qterminal_fa.qm
+Updating '/home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/qterminal_el.qm'...
+    Generated 195 translation(s) (195 finished and 0 unfinished)
+Updating '/home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/qterminal_fa.qm'...
+    Generated 177 translation(s) (177 finished and 0 unfinished)
+    Ignored 18 untranslated source text(s)
+[ 20%] Generating qterminal_fr.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/qterminal-1.1.0/src/translations/qterminal_fr.ts -qm /home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/qterminal_fr.qm
+[ 21%] Generating qterminal_fi.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/qterminal-1.1.0/src/translations/qterminal_fi.ts -qm /home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/qterminal_fi.qm
+Updating '/home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/qterminal_fr.qm'...
+    Generated 195 translation(s) (195 finished and 0 unfinished)
+[ 22%] Generating qterminal_he.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/qterminal-1.1.0/src/translations/qterminal_he.ts -qm /home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/qterminal_he.qm
+[ 23%] Generating qterminal_gl.qm
+Updating '/home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/qterminal_fi.qm'...
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/qterminal-1.1.0/src/translations/qterminal_gl.ts -qm /home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/qterminal_gl.qm
+    Generated 180 translation(s) (180 finished and 0 unfinished)
+    Ignored 15 untranslated source text(s)
+Updating '/home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/qterminal_he.qm'...
+    Generated 195 translation(s) (195 finished and 0 unfinished)
+[ 24%] Generating qterminal_hr.qm
+Updating '/home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/qterminal_gl.qm'...
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/qterminal-1.1.0/src/translations/qterminal_hr.ts -qm /home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/qterminal_hr.qm
+    Generated 155 translation(s) (154 finished and 1 unfinished)
+    Ignored 40 untranslated source text(s)
+Updating '/home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/qterminal_hr.qm'...
+    Generated 177 translation(s) (177 finished and 0 unfinished)
+    Ignored 18 untranslated source text(s)
+[ 25%] Generating qterminal_id.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/qterminal-1.1.0/src/translations/qterminal_id.ts -qm /home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/qterminal_id.qm
+[ 26%] Generating qterminal_hu.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/qterminal-1.1.0/src/translations/qterminal_hu.ts -qm /home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/qterminal_hu.qm
+Updating '/home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/qterminal_id.qm'...
+    Generated 150 translation(s) (149 finished and 1 unfinished)
+    Ignored 45 untranslated source text(s)
+[ 27%] Generating qterminal_it.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/qterminal-1.1.0/src/translations/qterminal_it.ts -qm /home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/qterminal_it.qm
+Updating '/home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/qterminal_it.qm'...
+    Generated 194 translation(s) (193 finished and 1 unfinished)
+    Ignored 1 untranslated source text(s)
+[ 28%] Generating qterminal_ja.qm
+Updating '/home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/qterminal_hu.qm'...
+    Generated 183 translation(s) (178 finished and 5 unfinished)
+    Ignored 12 untranslated source text(s)
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/qterminal-1.1.0/src/translations/qterminal_ja.ts -qm /home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/qterminal_ja.qm
+[ 29%] Generating qterminal_kk.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/qterminal-1.1.0/src/translations/qterminal_kk.ts -qm /home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/qterminal_kk.qm
+Updating '/home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/qterminal_ja.qm'...
+    Generated 177 translation(s) (177 finished and 0 unfinished)
+    Ignored 18 untranslated source text(s)
+[ 30%] Generating qterminal_ko_KR.qm
+Updating '/home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/qterminal_kk.qm'...
+    Generated 9 translation(s) (8 finished and 1 unfinished)
+    Ignored 186 untranslated source text(s)
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/qterminal-1.1.0/src/translations/qterminal_ko_KR.ts -qm /home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/qterminal_ko_KR.qm
+[ 31%] Generating qterminal_nl.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/qterminal-1.1.0/src/translations/qterminal_nl.ts -qm /home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/qterminal_nl.qm
+Updating '/home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/qterminal_ko_KR.qm'...
+[ 32%] Generating qterminal_lt.qm
+    Generated 195 translation(s) (195 finished and 0 unfinished)
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/qterminal-1.1.0/src/translations/qterminal_lt.ts -qm /home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/qterminal_lt.qm
+[ 33%] Generating qterminal_nb_NO.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/qterminal-1.1.0/src/translations/qterminal_nb_NO.ts -qm /home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/qterminal_nb_NO.qm
+Updating '/home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/qterminal_nl.qm'...
+    Generated 195 translation(s) (195 finished and 0 unfinished)
+Updating '/home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/qterminal_lt.qm'...
+    Generated 177 translation(s) (177 finished and 0 unfinished)
+    Ignored 18 untranslated source text(s)
+Updating '/home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/qterminal_nb_NO.qm'...
+    Generated 180 translation(s) (179 finished and 1 unfinished)
+    Ignored 15 untranslated source text(s)
+[ 34%] Generating qterminal_pt.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/qterminal-1.1.0/src/translations/qterminal_pt.ts -qm /home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/qterminal_pt.qm
+[ 35%] Generating qterminal_oc.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/qterminal-1.1.0/src/translations/qterminal_oc.ts -qm /home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/qterminal_oc.qm
+Updating '/home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/qterminal_pt.qm'...
+    Generated 195 translation(s) (195 finished and 0 unfinished)
+[ 37%] Generating qterminal_pt_BR.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/qterminal-1.1.0/src/translations/qterminal_pt_BR.ts -qm /home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/qterminal_pt_BR.qm
+[ 37%] Generating qterminal_pl.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/qterminal-1.1.0/src/translations/qterminal_pl.ts -qm /home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/qterminal_pl.qm
+Updating '/home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/qterminal_oc.qm'...
+    Generated 6 translation(s) (5 finished and 1 unfinished)
+    Ignored 189 untranslated source text(s)
+Updating '/home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/qterminal_pt_BR.qm'...
+    Generated 180 translation(s) (180 finished and 0 unfinished)
+    Ignored 15 untranslated source text(s)
+Updating '/home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/qterminal_pl.qm'...
+    Generated 153 translation(s) (153 finished and 0 unfinished)
+    Ignored 42 untranslated source text(s)
+[ 38%] Generating qterminal_ru.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/qterminal-1.1.0/src/translations/qterminal_ru.ts -qm /home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/qterminal_ru.qm
+Updating '/home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/qterminal_ru.qm'...
+    Generated 195 translation(s) (195 finished and 0 unfinished)
+[ 40%] Generating qterminal_tr.qm
+[ 40%] Generating qterminal_si.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/qterminal-1.1.0/src/translations/qterminal_tr.ts -qm /home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/qterminal_tr.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/qterminal-1.1.0/src/translations/qterminal_si.ts -qm /home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/qterminal_si.qm
+[ 41%] Generating qterminal_sk_SK.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/qterminal-1.1.0/src/translations/qterminal_sk_SK.ts -qm /home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/qterminal_sk_SK.qm
+Updating '/home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/qterminal_sk_SK.qm'...
+    Generated 186 translation(s) (186 finished and 0 unfinished)
+    Ignored 9 untranslated source text(s)
+Updating '/home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/qterminal_tr.qm'...
+    Generated 195 translation(s) (195 finished and 0 unfinished)
+[ 42%] Generating qterminal_uk.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/qterminal-1.1.0/src/translations/qterminal_uk.ts -qm /home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/qterminal_uk.qm
+Updating '/home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/qterminal_si.qm'...
+    Generated 3 translation(s) (3 finished and 0 unfinished)
+    Ignored 192 untranslated source text(s)
+Updating '/home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/qterminal_uk.qm'...
+    Generated 195 translation(s) (195 finished and 0 unfinished)
+[ 43%] Generating qterminal_zh_CN.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/qterminal-1.1.0/src/translations/qterminal_zh_CN.ts -qm /home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/qterminal_zh_CN.qm
+[ 44%] Generating qterminal_zh_TW.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/qterminal-1.1.0/src/translations/qterminal_zh_TW.ts -qm /home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/qterminal_zh_TW.qm
+[ 45%] Generating src/moc_bookmarkswidget.cpp
+Updating '/home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/qterminal_zh_CN.qm'...
+    Generated 177 translation(s) (177 finished and 0 unfinished)
+    Ignored 18 untranslated source text(s)
+cd /home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/src && /usr/lib/qt5/bin/moc @/home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/src/moc_bookmarkswidget.cpp_parameters
+Updating '/home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/qterminal_zh_TW.qm'...
+[ 46%] Generating src/moc_dbusaddressable.cpp
+    Generated 154 translation(s) (153 finished and 1 unfinished)
+    Ignored 41 untranslated source text(s)
+cd /home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/src && /usr/lib/qt5/bin/moc @/home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/src/moc_dbusaddressable.cpp_parameters
+[ 47%] Generating src/moc_fontdialog.cpp
+/home/cnc/lxqt-dev/qterminal-1.1.0/src/dbusaddressable.h:30: Note: No relevant classes found. No output generated.
+cd /home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/src && /usr/lib/qt5/bin/moc @/home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/src/moc_fontdialog.cpp_parameters
+[ 48%] Generating src/moc_mainwindow.cpp
+cd /home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/src && /usr/lib/qt5/bin/moc @/home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/src/moc_mainwindow.cpp_parameters
+[ 49%] Generating src/moc_propertiesdialog.cpp
+[ 50%] Generating src/moc_tab-switcher.cpp
+cd /home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/src && /usr/lib/qt5/bin/moc @/home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/src/moc_propertiesdialog.cpp_parameters
+cd /home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/src && /usr/lib/qt5/bin/moc @/home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/src/moc_tab-switcher.cpp_parameters
+[ 51%] Generating src/moc_qterminalapp.cpp
+cd /home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/src && /usr/lib/qt5/bin/moc @/home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/src/moc_qterminalapp.cpp_parameters
+[ 52%] Generating src/moc_tabwidget.cpp
+[ 53%] Generating src/moc_tabbar.cpp
+cd /home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/src && /usr/lib/qt5/bin/moc @/home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/src/moc_tabbar.cpp_parameters
+cd /home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/src && /usr/lib/qt5/bin/moc @/home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/src/moc_tabwidget.cpp_parameters
+[ 54%] Generating src/moc_termwidget.cpp
+cd /home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/src && /usr/lib/qt5/bin/moc @/home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/src/moc_termwidget.cpp_parameters
+[ 55%] Generating src/moc_termwidgetholder.cpp
+cd /home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/src && /usr/lib/qt5/bin/moc @/home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/src/moc_termwidgetholder.cpp_parameters
+[ 56%] Generating src/third-party/moc_qxtglobalshortcut.cpp
+cd /home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/src/third-party && /usr/lib/qt5/bin/moc @/home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/src/third-party/moc_qxtglobalshortcut.cpp_parameters
+[ 57%] Generating tabadaptor.cpp, tabadaptor.h
+[ 58%] Generating terminaladaptor.cpp, terminaladaptor.h
+/usr/lib/qt5/bin/qdbusxml2cpp -m -a tabadaptor -i termwidgetholder.h -l TermWidgetHolder /home/cnc/lxqt-dev/qterminal-1.1.0/src/org.lxqt.QTerminal.Tab.xml
+/usr/lib/qt5/bin/qdbusxml2cpp -m -a terminaladaptor -i termwidget.h -l TermWidget /home/cnc/lxqt-dev/qterminal-1.1.0/src/org.lxqt.QTerminal.Terminal.xml
+[ 59%] Generating ui_bookmarkswidget.h
+/usr/lib/qt5/bin/uic -o /home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/ui_bookmarkswidget.h /home/cnc/lxqt-dev/qterminal-1.1.0/src/forms/bookmarkswidget.ui
+[ 60%] Generating ui_fontdialog.h
+/usr/lib/qt5/bin/uic -o /home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/ui_fontdialog.h /home/cnc/lxqt-dev/qterminal-1.1.0/src/forms/fontdialog.ui
+[ 61%] Generating ui_propertiesdialog.h
+/usr/lib/qt5/bin/uic -o /home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/ui_propertiesdialog.h /home/cnc/lxqt-dev/qterminal-1.1.0/src/forms/propertiesdialog.ui
+[ 62%] Generating ui_qterminal.h
+/usr/lib/qt5/bin/uic -o /home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/ui_qterminal.h /home/cnc/lxqt-dev/qterminal-1.1.0/src/forms/qterminal.ui
+/home/cnc/lxqt-dev/qterminal-1.1.0/src/forms/propertiesdialog.ui: Warning: Tab-stop assignment: 'dropShortCutEdit' is not a valid widget.
+[ 63%] Generating processadaptor.moc
+/usr/lib/qt5/bin/moc @/home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/processadaptor.moc_parameters
+[ 64%] Generating windowadaptor.moc
+/usr/lib/qt5/bin/moc @/home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/windowadaptor.moc_parameters
+[ 65%] Generating tabadaptor.moc
+/usr/lib/qt5/bin/moc @/home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/tabadaptor.moc_parameters
+[ 66%] Generating terminaladaptor.moc
+/usr/lib/qt5/bin/moc @/home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/terminaladaptor.moc_parameters
+cd /home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/cnc/lxqt-dev/qterminal-1.1.0 /home/cnc/lxqt-dev/qterminal-1.1.0 /home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu /home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu /home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/CMakeFiles/qterminal.dir/DependInfo.cmake --color=
+make[3]: Leaving directory '/home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu'
+make  -f CMakeFiles/qterminal.dir/build.make CMakeFiles/qterminal.dir/build
+make[3]: Entering directory '/home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu'
+[ 67%] Building CXX object CMakeFiles/qterminal.dir/src/main.cpp.o
+[ 68%] Building CXX object CMakeFiles/qterminal.dir/src/mainwindow.cpp.o
+/usr/bin/c++ -DAPP_DIR=\"/usr/share/qterminal\" -DHAVE_QDBUS -DQTERMINAL_VERSION=\"1.1.0\" -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DTRANSLATIONS_DIR=\"/usr/share/qterminal/translations\" -I/home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu -I/home/cnc/lxqt-dev/qterminal-1.1.0 -I/home/cnc/lxqt-dev/qterminal-1.1.0/src -I/home/cnc/lxqt-dev/qterminal-1.1.0/src/third-party -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/qtermwidget5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/aarch64-linux-gnu/qt5/QtX11Extras -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/qterminal-1.1.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -fvisibility=hidden -fvisibility-inlines-hidden -fPIC -std=c++14 -MD -MT CMakeFiles/qterminal.dir/src/main.cpp.o -MF CMakeFiles/qterminal.dir/src/main.cpp.o.d -o CMakeFiles/qterminal.dir/src/main.cpp.o -c /home/cnc/lxqt-dev/qterminal-1.1.0/src/main.cpp
+[ 69%] Building CXX object CMakeFiles/qterminal.dir/src/tabbar.cpp.o
+/usr/bin/c++ -DAPP_DIR=\"/usr/share/qterminal\" -DHAVE_QDBUS -DQTERMINAL_VERSION=\"1.1.0\" -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DTRANSLATIONS_DIR=\"/usr/share/qterminal/translations\" -I/home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu -I/home/cnc/lxqt-dev/qterminal-1.1.0 -I/home/cnc/lxqt-dev/qterminal-1.1.0/src -I/home/cnc/lxqt-dev/qterminal-1.1.0/src/third-party -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/qtermwidget5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/aarch64-linux-gnu/qt5/QtX11Extras -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/qterminal-1.1.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -fvisibility=hidden -fvisibility-inlines-hidden -fPIC -std=c++14 -MD -MT CMakeFiles/qterminal.dir/src/mainwindow.cpp.o -MF CMakeFiles/qterminal.dir/src/mainwindow.cpp.o.d -o CMakeFiles/qterminal.dir/src/mainwindow.cpp.o -c /home/cnc/lxqt-dev/qterminal-1.1.0/src/mainwindow.cpp
+/usr/bin/c++ -DAPP_DIR=\"/usr/share/qterminal\" -DHAVE_QDBUS -DQTERMINAL_VERSION=\"1.1.0\" -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DTRANSLATIONS_DIR=\"/usr/share/qterminal/translations\" -I/home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu -I/home/cnc/lxqt-dev/qterminal-1.1.0 -I/home/cnc/lxqt-dev/qterminal-1.1.0/src -I/home/cnc/lxqt-dev/qterminal-1.1.0/src/third-party -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/qtermwidget5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/aarch64-linux-gnu/qt5/QtX11Extras -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/qterminal-1.1.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -fvisibility=hidden -fvisibility-inlines-hidden -fPIC -std=c++14 -MD -MT CMakeFiles/qterminal.dir/src/tabbar.cpp.o -MF CMakeFiles/qterminal.dir/src/tabbar.cpp.o.d -o CMakeFiles/qterminal.dir/src/tabbar.cpp.o -c /home/cnc/lxqt-dev/qterminal-1.1.0/src/tabbar.cpp
+[ 70%] Building CXX object CMakeFiles/qterminal.dir/src/tabwidget.cpp.o
+/usr/bin/c++ -DAPP_DIR=\"/usr/share/qterminal\" -DHAVE_QDBUS -DQTERMINAL_VERSION=\"1.1.0\" -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DTRANSLATIONS_DIR=\"/usr/share/qterminal/translations\" -I/home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu -I/home/cnc/lxqt-dev/qterminal-1.1.0 -I/home/cnc/lxqt-dev/qterminal-1.1.0/src -I/home/cnc/lxqt-dev/qterminal-1.1.0/src/third-party -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/qtermwidget5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/aarch64-linux-gnu/qt5/QtX11Extras -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/qterminal-1.1.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -fvisibility=hidden -fvisibility-inlines-hidden -fPIC -std=c++14 -MD -MT CMakeFiles/qterminal.dir/src/tabwidget.cpp.o -MF CMakeFiles/qterminal.dir/src/tabwidget.cpp.o.d -o CMakeFiles/qterminal.dir/src/tabwidget.cpp.o -c /home/cnc/lxqt-dev/qterminal-1.1.0/src/tabwidget.cpp
+[ 71%] Building CXX object CMakeFiles/qterminal.dir/src/termwidget.cpp.o
+/usr/bin/c++ -DAPP_DIR=\"/usr/share/qterminal\" -DHAVE_QDBUS -DQTERMINAL_VERSION=\"1.1.0\" -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DTRANSLATIONS_DIR=\"/usr/share/qterminal/translations\" -I/home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu -I/home/cnc/lxqt-dev/qterminal-1.1.0 -I/home/cnc/lxqt-dev/qterminal-1.1.0/src -I/home/cnc/lxqt-dev/qterminal-1.1.0/src/third-party -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/qtermwidget5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/aarch64-linux-gnu/qt5/QtX11Extras -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/qterminal-1.1.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -fvisibility=hidden -fvisibility-inlines-hidden -fPIC -std=c++14 -MD -MT CMakeFiles/qterminal.dir/src/termwidget.cpp.o -MF CMakeFiles/qterminal.dir/src/termwidget.cpp.o.d -o CMakeFiles/qterminal.dir/src/termwidget.cpp.o -c /home/cnc/lxqt-dev/qterminal-1.1.0/src/termwidget.cpp
+[ 72%] Building CXX object CMakeFiles/qterminal.dir/src/termwidgetholder.cpp.o
+/usr/bin/c++ -DAPP_DIR=\"/usr/share/qterminal\" -DHAVE_QDBUS -DQTERMINAL_VERSION=\"1.1.0\" -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DTRANSLATIONS_DIR=\"/usr/share/qterminal/translations\" -I/home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu -I/home/cnc/lxqt-dev/qterminal-1.1.0 -I/home/cnc/lxqt-dev/qterminal-1.1.0/src -I/home/cnc/lxqt-dev/qterminal-1.1.0/src/third-party -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/qtermwidget5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/aarch64-linux-gnu/qt5/QtX11Extras -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/qterminal-1.1.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -fvisibility=hidden -fvisibility-inlines-hidden -fPIC -std=c++14 -MD -MT CMakeFiles/qterminal.dir/src/termwidgetholder.cpp.o -MF CMakeFiles/qterminal.dir/src/termwidgetholder.cpp.o.d -o CMakeFiles/qterminal.dir/src/termwidgetholder.cpp.o -c /home/cnc/lxqt-dev/qterminal-1.1.0/src/termwidgetholder.cpp
+[ 73%] Building CXX object CMakeFiles/qterminal.dir/src/terminalconfig.cpp.o
+/usr/bin/c++ -DAPP_DIR=\"/usr/share/qterminal\" -DHAVE_QDBUS -DQTERMINAL_VERSION=\"1.1.0\" -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DTRANSLATIONS_DIR=\"/usr/share/qterminal/translations\" -I/home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu -I/home/cnc/lxqt-dev/qterminal-1.1.0 -I/home/cnc/lxqt-dev/qterminal-1.1.0/src -I/home/cnc/lxqt-dev/qterminal-1.1.0/src/third-party -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/qtermwidget5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/aarch64-linux-gnu/qt5/QtX11Extras -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/qterminal-1.1.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -fvisibility=hidden -fvisibility-inlines-hidden -fPIC -std=c++14 -MD -MT CMakeFiles/qterminal.dir/src/terminalconfig.cpp.o -MF CMakeFiles/qterminal.dir/src/terminalconfig.cpp.o.d -o CMakeFiles/qterminal.dir/src/terminalconfig.cpp.o -c /home/cnc/lxqt-dev/qterminal-1.1.0/src/terminalconfig.cpp
+[ 74%] Building CXX object CMakeFiles/qterminal.dir/src/properties.cpp.o
+/usr/bin/c++ -DAPP_DIR=\"/usr/share/qterminal\" -DHAVE_QDBUS -DQTERMINAL_VERSION=\"1.1.0\" -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DTRANSLATIONS_DIR=\"/usr/share/qterminal/translations\" -I/home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu -I/home/cnc/lxqt-dev/qterminal-1.1.0 -I/home/cnc/lxqt-dev/qterminal-1.1.0/src -I/home/cnc/lxqt-dev/qterminal-1.1.0/src/third-party -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/qtermwidget5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/aarch64-linux-gnu/qt5/QtX11Extras -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/qterminal-1.1.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -fvisibility=hidden -fvisibility-inlines-hidden -fPIC -std=c++14 -MD -MT CMakeFiles/qterminal.dir/src/properties.cpp.o -MF CMakeFiles/qterminal.dir/src/properties.cpp.o.d -o CMakeFiles/qterminal.dir/src/properties.cpp.o -c /home/cnc/lxqt-dev/qterminal-1.1.0/src/properties.cpp
+[ 75%] Building CXX object CMakeFiles/qterminal.dir/src/propertiesdialog.cpp.o
+/usr/bin/c++ -DAPP_DIR=\"/usr/share/qterminal\" -DHAVE_QDBUS -DQTERMINAL_VERSION=\"1.1.0\" -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DTRANSLATIONS_DIR=\"/usr/share/qterminal/translations\" -I/home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu -I/home/cnc/lxqt-dev/qterminal-1.1.0 -I/home/cnc/lxqt-dev/qterminal-1.1.0/src -I/home/cnc/lxqt-dev/qterminal-1.1.0/src/third-party -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/qtermwidget5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/aarch64-linux-gnu/qt5/QtX11Extras -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/qterminal-1.1.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -fvisibility=hidden -fvisibility-inlines-hidden -fPIC -std=c++14 -MD -MT CMakeFiles/qterminal.dir/src/propertiesdialog.cpp.o -MF CMakeFiles/qterminal.dir/src/propertiesdialog.cpp.o.d -o CMakeFiles/qterminal.dir/src/propertiesdialog.cpp.o -c /home/cnc/lxqt-dev/qterminal-1.1.0/src/propertiesdialog.cpp
+[ 76%] Building CXX object CMakeFiles/qterminal.dir/src/bookmarkswidget.cpp.o
+/usr/bin/c++ -DAPP_DIR=\"/usr/share/qterminal\" -DHAVE_QDBUS -DQTERMINAL_VERSION=\"1.1.0\" -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DTRANSLATIONS_DIR=\"/usr/share/qterminal/translations\" -I/home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu -I/home/cnc/lxqt-dev/qterminal-1.1.0 -I/home/cnc/lxqt-dev/qterminal-1.1.0/src -I/home/cnc/lxqt-dev/qterminal-1.1.0/src/third-party -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/qtermwidget5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/aarch64-linux-gnu/qt5/QtX11Extras -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/qterminal-1.1.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -fvisibility=hidden -fvisibility-inlines-hidden -fPIC -std=c++14 -MD -MT CMakeFiles/qterminal.dir/src/bookmarkswidget.cpp.o -MF CMakeFiles/qterminal.dir/src/bookmarkswidget.cpp.o.d -o CMakeFiles/qterminal.dir/src/bookmarkswidget.cpp.o -c /home/cnc/lxqt-dev/qterminal-1.1.0/src/bookmarkswidget.cpp
+[ 77%] Building CXX object CMakeFiles/qterminal.dir/src/fontdialog.cpp.o
+/usr/bin/c++ -DAPP_DIR=\"/usr/share/qterminal\" -DHAVE_QDBUS -DQTERMINAL_VERSION=\"1.1.0\" -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DTRANSLATIONS_DIR=\"/usr/share/qterminal/translations\" -I/home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu -I/home/cnc/lxqt-dev/qterminal-1.1.0 -I/home/cnc/lxqt-dev/qterminal-1.1.0/src -I/home/cnc/lxqt-dev/qterminal-1.1.0/src/third-party -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/qtermwidget5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/aarch64-linux-gnu/qt5/QtX11Extras -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/qterminal-1.1.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -fvisibility=hidden -fvisibility-inlines-hidden -fPIC -std=c++14 -MD -MT CMakeFiles/qterminal.dir/src/fontdialog.cpp.o -MF CMakeFiles/qterminal.dir/src/fontdialog.cpp.o.d -o CMakeFiles/qterminal.dir/src/fontdialog.cpp.o -c /home/cnc/lxqt-dev/qterminal-1.1.0/src/fontdialog.cpp
+[ 78%] Building CXX object CMakeFiles/qterminal.dir/src/dbusaddressable.cpp.o
+/usr/bin/c++ -DAPP_DIR=\"/usr/share/qterminal\" -DHAVE_QDBUS -DQTERMINAL_VERSION=\"1.1.0\" -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DTRANSLATIONS_DIR=\"/usr/share/qterminal/translations\" -I/home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu -I/home/cnc/lxqt-dev/qterminal-1.1.0 -I/home/cnc/lxqt-dev/qterminal-1.1.0/src -I/home/cnc/lxqt-dev/qterminal-1.1.0/src/third-party -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/qtermwidget5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/aarch64-linux-gnu/qt5/QtX11Extras -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/qterminal-1.1.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -fvisibility=hidden -fvisibility-inlines-hidden -fPIC -std=c++14 -MD -MT CMakeFiles/qterminal.dir/src/dbusaddressable.cpp.o -MF CMakeFiles/qterminal.dir/src/dbusaddressable.cpp.o.d -o CMakeFiles/qterminal.dir/src/dbusaddressable.cpp.o -c /home/cnc/lxqt-dev/qterminal-1.1.0/src/dbusaddressable.cpp
+[ 79%] Building CXX object CMakeFiles/qterminal.dir/src/tab-switcher.cpp.o
+/usr/bin/c++ -DAPP_DIR=\"/usr/share/qterminal\" -DHAVE_QDBUS -DQTERMINAL_VERSION=\"1.1.0\" -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DTRANSLATIONS_DIR=\"/usr/share/qterminal/translations\" -I/home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu -I/home/cnc/lxqt-dev/qterminal-1.1.0 -I/home/cnc/lxqt-dev/qterminal-1.1.0/src -I/home/cnc/lxqt-dev/qterminal-1.1.0/src/third-party -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/qtermwidget5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/aarch64-linux-gnu/qt5/QtX11Extras -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/qterminal-1.1.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -fvisibility=hidden -fvisibility-inlines-hidden -fPIC -std=c++14 -MD -MT CMakeFiles/qterminal.dir/src/tab-switcher.cpp.o -MF CMakeFiles/qterminal.dir/src/tab-switcher.cpp.o.d -o CMakeFiles/qterminal.dir/src/tab-switcher.cpp.o -c /home/cnc/lxqt-dev/qterminal-1.1.0/src/tab-switcher.cpp
+[ 80%] Building CXX object CMakeFiles/qterminal.dir/windowadaptor.cpp.o
+/usr/bin/c++ -DAPP_DIR=\"/usr/share/qterminal\" -DHAVE_QDBUS -DQTERMINAL_VERSION=\"1.1.0\" -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DTRANSLATIONS_DIR=\"/usr/share/qterminal/translations\" -I/home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu -I/home/cnc/lxqt-dev/qterminal-1.1.0 -I/home/cnc/lxqt-dev/qterminal-1.1.0/src -I/home/cnc/lxqt-dev/qterminal-1.1.0/src/third-party -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/qtermwidget5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/aarch64-linux-gnu/qt5/QtX11Extras -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/qterminal-1.1.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -fvisibility=hidden -fvisibility-inlines-hidden -fPIC -std=c++14 -MD -MT CMakeFiles/qterminal.dir/windowadaptor.cpp.o -MF CMakeFiles/qterminal.dir/windowadaptor.cpp.o.d -o CMakeFiles/qterminal.dir/windowadaptor.cpp.o -c /home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/windowadaptor.cpp
+[ 81%] Building CXX object CMakeFiles/qterminal.dir/tabadaptor.cpp.o
+/usr/bin/c++ -DAPP_DIR=\"/usr/share/qterminal\" -DHAVE_QDBUS -DQTERMINAL_VERSION=\"1.1.0\" -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DTRANSLATIONS_DIR=\"/usr/share/qterminal/translations\" -I/home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu -I/home/cnc/lxqt-dev/qterminal-1.1.0 -I/home/cnc/lxqt-dev/qterminal-1.1.0/src -I/home/cnc/lxqt-dev/qterminal-1.1.0/src/third-party -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/qtermwidget5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/aarch64-linux-gnu/qt5/QtX11Extras -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/qterminal-1.1.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -fvisibility=hidden -fvisibility-inlines-hidden -fPIC -std=c++14 -MD -MT CMakeFiles/qterminal.dir/tabadaptor.cpp.o -MF CMakeFiles/qterminal.dir/tabadaptor.cpp.o.d -o CMakeFiles/qterminal.dir/tabadaptor.cpp.o -c /home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/tabadaptor.cpp
+[ 82%] Building CXX object CMakeFiles/qterminal.dir/terminaladaptor.cpp.o
+/usr/bin/c++ -DAPP_DIR=\"/usr/share/qterminal\" -DHAVE_QDBUS -DQTERMINAL_VERSION=\"1.1.0\" -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DTRANSLATIONS_DIR=\"/usr/share/qterminal/translations\" -I/home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu -I/home/cnc/lxqt-dev/qterminal-1.1.0 -I/home/cnc/lxqt-dev/qterminal-1.1.0/src -I/home/cnc/lxqt-dev/qterminal-1.1.0/src/third-party -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/qtermwidget5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/aarch64-linux-gnu/qt5/QtX11Extras -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/qterminal-1.1.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -fvisibility=hidden -fvisibility-inlines-hidden -fPIC -std=c++14 -MD -MT CMakeFiles/qterminal.dir/terminaladaptor.cpp.o -MF CMakeFiles/qterminal.dir/terminaladaptor.cpp.o.d -o CMakeFiles/qterminal.dir/terminaladaptor.cpp.o -c /home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/terminaladaptor.cpp
+[ 83%] Building CXX object CMakeFiles/qterminal.dir/processadaptor.cpp.o
+/usr/bin/c++ -DAPP_DIR=\"/usr/share/qterminal\" -DHAVE_QDBUS -DQTERMINAL_VERSION=\"1.1.0\" -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DTRANSLATIONS_DIR=\"/usr/share/qterminal/translations\" -I/home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu -I/home/cnc/lxqt-dev/qterminal-1.1.0 -I/home/cnc/lxqt-dev/qterminal-1.1.0/src -I/home/cnc/lxqt-dev/qterminal-1.1.0/src/third-party -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/qtermwidget5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/aarch64-linux-gnu/qt5/QtX11Extras -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/qterminal-1.1.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -fvisibility=hidden -fvisibility-inlines-hidden -fPIC -std=c++14 -MD -MT CMakeFiles/qterminal.dir/processadaptor.cpp.o -MF CMakeFiles/qterminal.dir/processadaptor.cpp.o.d -o CMakeFiles/qterminal.dir/processadaptor.cpp.o -c /home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/processadaptor.cpp
+[ 84%] Building CXX object CMakeFiles/qterminal.dir/src/third-party/qxtglobalshortcut.cpp.o
+/usr/bin/c++ -DAPP_DIR=\"/usr/share/qterminal\" -DHAVE_QDBUS -DQTERMINAL_VERSION=\"1.1.0\" -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DTRANSLATIONS_DIR=\"/usr/share/qterminal/translations\" -I/home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu -I/home/cnc/lxqt-dev/qterminal-1.1.0 -I/home/cnc/lxqt-dev/qterminal-1.1.0/src -I/home/cnc/lxqt-dev/qterminal-1.1.0/src/third-party -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/qtermwidget5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/aarch64-linux-gnu/qt5/QtX11Extras -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/qterminal-1.1.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -fvisibility=hidden -fvisibility-inlines-hidden -fPIC -std=c++14 -MD -MT CMakeFiles/qterminal.dir/src/third-party/qxtglobalshortcut.cpp.o -MF CMakeFiles/qterminal.dir/src/third-party/qxtglobalshortcut.cpp.o.d -o CMakeFiles/qterminal.dir/src/third-party/qxtglobalshortcut.cpp.o -c /home/cnc/lxqt-dev/qterminal-1.1.0/src/third-party/qxtglobalshortcut.cpp
+[ 85%] Building CXX object CMakeFiles/qterminal.dir/src/third-party/qxtglobalshortcut_x11.cpp.o
+/usr/bin/c++ -DAPP_DIR=\"/usr/share/qterminal\" -DHAVE_QDBUS -DQTERMINAL_VERSION=\"1.1.0\" -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DTRANSLATIONS_DIR=\"/usr/share/qterminal/translations\" -I/home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu -I/home/cnc/lxqt-dev/qterminal-1.1.0 -I/home/cnc/lxqt-dev/qterminal-1.1.0/src -I/home/cnc/lxqt-dev/qterminal-1.1.0/src/third-party -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/qtermwidget5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/aarch64-linux-gnu/qt5/QtX11Extras -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/qterminal-1.1.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -fvisibility=hidden -fvisibility-inlines-hidden -fPIC -std=c++14 -MD -MT CMakeFiles/qterminal.dir/src/third-party/qxtglobalshortcut_x11.cpp.o -MF CMakeFiles/qterminal.dir/src/third-party/qxtglobalshortcut_x11.cpp.o.d -o CMakeFiles/qterminal.dir/src/third-party/qxtglobalshortcut_x11.cpp.o -c /home/cnc/lxqt-dev/qterminal-1.1.0/src/third-party/qxtglobalshortcut_x11.cpp
+[ 86%] Building CXX object CMakeFiles/qterminal.dir/src/moc_qterminalapp.cpp.o
+/usr/bin/c++ -DAPP_DIR=\"/usr/share/qterminal\" -DHAVE_QDBUS -DQTERMINAL_VERSION=\"1.1.0\" -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DTRANSLATIONS_DIR=\"/usr/share/qterminal/translations\" -I/home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu -I/home/cnc/lxqt-dev/qterminal-1.1.0 -I/home/cnc/lxqt-dev/qterminal-1.1.0/src -I/home/cnc/lxqt-dev/qterminal-1.1.0/src/third-party -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/qtermwidget5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/aarch64-linux-gnu/qt5/QtX11Extras -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/qterminal-1.1.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -fvisibility=hidden -fvisibility-inlines-hidden -fPIC -std=c++14 -MD -MT CMakeFiles/qterminal.dir/src/moc_qterminalapp.cpp.o -MF CMakeFiles/qterminal.dir/src/moc_qterminalapp.cpp.o.d -o CMakeFiles/qterminal.dir/src/moc_qterminalapp.cpp.o -c /home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/src/moc_qterminalapp.cpp
+[ 87%] Building CXX object CMakeFiles/qterminal.dir/src/moc_mainwindow.cpp.o
+/usr/bin/c++ -DAPP_DIR=\"/usr/share/qterminal\" -DHAVE_QDBUS -DQTERMINAL_VERSION=\"1.1.0\" -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DTRANSLATIONS_DIR=\"/usr/share/qterminal/translations\" -I/home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu -I/home/cnc/lxqt-dev/qterminal-1.1.0 -I/home/cnc/lxqt-dev/qterminal-1.1.0/src -I/home/cnc/lxqt-dev/qterminal-1.1.0/src/third-party -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/qtermwidget5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/aarch64-linux-gnu/qt5/QtX11Extras -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/qterminal-1.1.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -fvisibility=hidden -fvisibility-inlines-hidden -fPIC -std=c++14 -MD -MT CMakeFiles/qterminal.dir/src/moc_mainwindow.cpp.o -MF CMakeFiles/qterminal.dir/src/moc_mainwindow.cpp.o.d -o CMakeFiles/qterminal.dir/src/moc_mainwindow.cpp.o -c /home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/src/moc_mainwindow.cpp
+[ 88%] Building CXX object CMakeFiles/qterminal.dir/src/moc_tabbar.cpp.o
+/usr/bin/c++ -DAPP_DIR=\"/usr/share/qterminal\" -DHAVE_QDBUS -DQTERMINAL_VERSION=\"1.1.0\" -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DTRANSLATIONS_DIR=\"/usr/share/qterminal/translations\" -I/home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu -I/home/cnc/lxqt-dev/qterminal-1.1.0 -I/home/cnc/lxqt-dev/qterminal-1.1.0/src -I/home/cnc/lxqt-dev/qterminal-1.1.0/src/third-party -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/qtermwidget5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/aarch64-linux-gnu/qt5/QtX11Extras -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/qterminal-1.1.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -fvisibility=hidden -fvisibility-inlines-hidden -fPIC -std=c++14 -MD -MT CMakeFiles/qterminal.dir/src/moc_tabbar.cpp.o -MF CMakeFiles/qterminal.dir/src/moc_tabbar.cpp.o.d -o CMakeFiles/qterminal.dir/src/moc_tabbar.cpp.o -c /home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/src/moc_tabbar.cpp
+[ 89%] Building CXX object CMakeFiles/qterminal.dir/src/moc_tabwidget.cpp.o
+/usr/bin/c++ -DAPP_DIR=\"/usr/share/qterminal\" -DHAVE_QDBUS -DQTERMINAL_VERSION=\"1.1.0\" -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DTRANSLATIONS_DIR=\"/usr/share/qterminal/translations\" -I/home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu -I/home/cnc/lxqt-dev/qterminal-1.1.0 -I/home/cnc/lxqt-dev/qterminal-1.1.0/src -I/home/cnc/lxqt-dev/qterminal-1.1.0/src/third-party -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/qtermwidget5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/aarch64-linux-gnu/qt5/QtX11Extras -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/qterminal-1.1.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -fvisibility=hidden -fvisibility-inlines-hidden -fPIC -std=c++14 -MD -MT CMakeFiles/qterminal.dir/src/moc_tabwidget.cpp.o -MF CMakeFiles/qterminal.dir/src/moc_tabwidget.cpp.o.d -o CMakeFiles/qterminal.dir/src/moc_tabwidget.cpp.o -c /home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/src/moc_tabwidget.cpp
+[ 90%] Building CXX object CMakeFiles/qterminal.dir/src/moc_termwidget.cpp.o
+/usr/bin/c++ -DAPP_DIR=\"/usr/share/qterminal\" -DHAVE_QDBUS -DQTERMINAL_VERSION=\"1.1.0\" -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DTRANSLATIONS_DIR=\"/usr/share/qterminal/translations\" -I/home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu -I/home/cnc/lxqt-dev/qterminal-1.1.0 -I/home/cnc/lxqt-dev/qterminal-1.1.0/src -I/home/cnc/lxqt-dev/qterminal-1.1.0/src/third-party -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/qtermwidget5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/aarch64-linux-gnu/qt5/QtX11Extras -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/qterminal-1.1.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -fvisibility=hidden -fvisibility-inlines-hidden -fPIC -std=c++14 -MD -MT CMakeFiles/qterminal.dir/src/moc_termwidget.cpp.o -MF CMakeFiles/qterminal.dir/src/moc_termwidget.cpp.o.d -o CMakeFiles/qterminal.dir/src/moc_termwidget.cpp.o -c /home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/src/moc_termwidget.cpp
+[ 91%] Building CXX object CMakeFiles/qterminal.dir/src/moc_termwidgetholder.cpp.o
+/usr/bin/c++ -DAPP_DIR=\"/usr/share/qterminal\" -DHAVE_QDBUS -DQTERMINAL_VERSION=\"1.1.0\" -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DTRANSLATIONS_DIR=\"/usr/share/qterminal/translations\" -I/home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu -I/home/cnc/lxqt-dev/qterminal-1.1.0 -I/home/cnc/lxqt-dev/qterminal-1.1.0/src -I/home/cnc/lxqt-dev/qterminal-1.1.0/src/third-party -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/qtermwidget5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/aarch64-linux-gnu/qt5/QtX11Extras -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/qterminal-1.1.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -fvisibility=hidden -fvisibility-inlines-hidden -fPIC -std=c++14 -MD -MT CMakeFiles/qterminal.dir/src/moc_termwidgetholder.cpp.o -MF CMakeFiles/qterminal.dir/src/moc_termwidgetholder.cpp.o.d -o CMakeFiles/qterminal.dir/src/moc_termwidgetholder.cpp.o -c /home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/src/moc_termwidgetholder.cpp
+[ 92%] Building CXX object CMakeFiles/qterminal.dir/src/moc_propertiesdialog.cpp.o
+/usr/bin/c++ -DAPP_DIR=\"/usr/share/qterminal\" -DHAVE_QDBUS -DQTERMINAL_VERSION=\"1.1.0\" -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DTRANSLATIONS_DIR=\"/usr/share/qterminal/translations\" -I/home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu -I/home/cnc/lxqt-dev/qterminal-1.1.0 -I/home/cnc/lxqt-dev/qterminal-1.1.0/src -I/home/cnc/lxqt-dev/qterminal-1.1.0/src/third-party -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/qtermwidget5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/aarch64-linux-gnu/qt5/QtX11Extras -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/qterminal-1.1.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -fvisibility=hidden -fvisibility-inlines-hidden -fPIC -std=c++14 -MD -MT CMakeFiles/qterminal.dir/src/moc_propertiesdialog.cpp.o -MF CMakeFiles/qterminal.dir/src/moc_propertiesdialog.cpp.o.d -o CMakeFiles/qterminal.dir/src/moc_propertiesdialog.cpp.o -c /home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/src/moc_propertiesdialog.cpp
+[ 93%] Building CXX object CMakeFiles/qterminal.dir/src/moc_bookmarkswidget.cpp.o
+/usr/bin/c++ -DAPP_DIR=\"/usr/share/qterminal\" -DHAVE_QDBUS -DQTERMINAL_VERSION=\"1.1.0\" -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DTRANSLATIONS_DIR=\"/usr/share/qterminal/translations\" -I/home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu -I/home/cnc/lxqt-dev/qterminal-1.1.0 -I/home/cnc/lxqt-dev/qterminal-1.1.0/src -I/home/cnc/lxqt-dev/qterminal-1.1.0/src/third-party -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/qtermwidget5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/aarch64-linux-gnu/qt5/QtX11Extras -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/qterminal-1.1.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -fvisibility=hidden -fvisibility-inlines-hidden -fPIC -std=c++14 -MD -MT CMakeFiles/qterminal.dir/src/moc_bookmarkswidget.cpp.o -MF CMakeFiles/qterminal.dir/src/moc_bookmarkswidget.cpp.o.d -o CMakeFiles/qterminal.dir/src/moc_bookmarkswidget.cpp.o -c /home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/src/moc_bookmarkswidget.cpp
+[ 94%] Building CXX object CMakeFiles/qterminal.dir/src/moc_fontdialog.cpp.o
+/usr/bin/c++ -DAPP_DIR=\"/usr/share/qterminal\" -DHAVE_QDBUS -DQTERMINAL_VERSION=\"1.1.0\" -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DTRANSLATIONS_DIR=\"/usr/share/qterminal/translations\" -I/home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu -I/home/cnc/lxqt-dev/qterminal-1.1.0 -I/home/cnc/lxqt-dev/qterminal-1.1.0/src -I/home/cnc/lxqt-dev/qterminal-1.1.0/src/third-party -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/qtermwidget5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/aarch64-linux-gnu/qt5/QtX11Extras -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/qterminal-1.1.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -fvisibility=hidden -fvisibility-inlines-hidden -fPIC -std=c++14 -MD -MT CMakeFiles/qterminal.dir/src/moc_fontdialog.cpp.o -MF CMakeFiles/qterminal.dir/src/moc_fontdialog.cpp.o.d -o CMakeFiles/qterminal.dir/src/moc_fontdialog.cpp.o -c /home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/src/moc_fontdialog.cpp
+[ 95%] Building CXX object CMakeFiles/qterminal.dir/src/moc_tab-switcher.cpp.o
+/usr/bin/c++ -DAPP_DIR=\"/usr/share/qterminal\" -DHAVE_QDBUS -DQTERMINAL_VERSION=\"1.1.0\" -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DTRANSLATIONS_DIR=\"/usr/share/qterminal/translations\" -I/home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu -I/home/cnc/lxqt-dev/qterminal-1.1.0 -I/home/cnc/lxqt-dev/qterminal-1.1.0/src -I/home/cnc/lxqt-dev/qterminal-1.1.0/src/third-party -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/qtermwidget5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/aarch64-linux-gnu/qt5/QtX11Extras -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/qterminal-1.1.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -fvisibility=hidden -fvisibility-inlines-hidden -fPIC -std=c++14 -MD -MT CMakeFiles/qterminal.dir/src/moc_tab-switcher.cpp.o -MF CMakeFiles/qterminal.dir/src/moc_tab-switcher.cpp.o.d -o CMakeFiles/qterminal.dir/src/moc_tab-switcher.cpp.o -c /home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/src/moc_tab-switcher.cpp
+[ 96%] Building CXX object CMakeFiles/qterminal.dir/src/moc_dbusaddressable.cpp.o
+/usr/bin/c++ -DAPP_DIR=\"/usr/share/qterminal\" -DHAVE_QDBUS -DQTERMINAL_VERSION=\"1.1.0\" -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DTRANSLATIONS_DIR=\"/usr/share/qterminal/translations\" -I/home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu -I/home/cnc/lxqt-dev/qterminal-1.1.0 -I/home/cnc/lxqt-dev/qterminal-1.1.0/src -I/home/cnc/lxqt-dev/qterminal-1.1.0/src/third-party -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/qtermwidget5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/aarch64-linux-gnu/qt5/QtX11Extras -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/qterminal-1.1.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -fvisibility=hidden -fvisibility-inlines-hidden -fPIC -std=c++14 -MD -MT CMakeFiles/qterminal.dir/src/moc_dbusaddressable.cpp.o -MF CMakeFiles/qterminal.dir/src/moc_dbusaddressable.cpp.o.d -o CMakeFiles/qterminal.dir/src/moc_dbusaddressable.cpp.o -c /home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/src/moc_dbusaddressable.cpp
+[ 97%] Building CXX object CMakeFiles/qterminal.dir/src/third-party/moc_qxtglobalshortcut.cpp.o
+/usr/bin/c++ -DAPP_DIR=\"/usr/share/qterminal\" -DHAVE_QDBUS -DQTERMINAL_VERSION=\"1.1.0\" -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DTRANSLATIONS_DIR=\"/usr/share/qterminal/translations\" -I/home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu -I/home/cnc/lxqt-dev/qterminal-1.1.0 -I/home/cnc/lxqt-dev/qterminal-1.1.0/src -I/home/cnc/lxqt-dev/qterminal-1.1.0/src/third-party -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/qtermwidget5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/aarch64-linux-gnu/qt5/QtX11Extras -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/qterminal-1.1.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -fvisibility=hidden -fvisibility-inlines-hidden -fPIC -std=c++14 -MD -MT CMakeFiles/qterminal.dir/src/third-party/moc_qxtglobalshortcut.cpp.o -MF CMakeFiles/qterminal.dir/src/third-party/moc_qxtglobalshortcut.cpp.o.d -o CMakeFiles/qterminal.dir/src/third-party/moc_qxtglobalshortcut.cpp.o -c /home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/src/third-party/moc_qxtglobalshortcut.cpp
+[ 98%] Building CXX object CMakeFiles/qterminal.dir/qrc_icons.cpp.o
+/usr/bin/c++ -DAPP_DIR=\"/usr/share/qterminal\" -DHAVE_QDBUS -DQTERMINAL_VERSION=\"1.1.0\" -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DTRANSLATIONS_DIR=\"/usr/share/qterminal/translations\" -I/home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu -I/home/cnc/lxqt-dev/qterminal-1.1.0 -I/home/cnc/lxqt-dev/qterminal-1.1.0/src -I/home/cnc/lxqt-dev/qterminal-1.1.0/src/third-party -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/qtermwidget5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/aarch64-linux-gnu/qt5/QtX11Extras -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/qterminal-1.1.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -fvisibility=hidden -fvisibility-inlines-hidden -fPIC -std=c++14 -MD -MT CMakeFiles/qterminal.dir/qrc_icons.cpp.o -MF CMakeFiles/qterminal.dir/qrc_icons.cpp.o.d -o CMakeFiles/qterminal.dir/qrc_icons.cpp.o -c /home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/qrc_icons.cpp
+[100%] Linking CXX executable qterminal
+/usr/bin/cmake -E cmake_link_script CMakeFiles/qterminal.dir/link.txt --verbose=1
+/usr/bin/c++ -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/qterminal-1.1.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -Wl,-Bsymbolic-functions -Wl,-Bsymbolic -Wl,-z,relro -Wl,-z,now -Wl,--as-needed -rdynamic CMakeFiles/qterminal.dir/src/main.cpp.o CMakeFiles/qterminal.dir/src/mainwindow.cpp.o CMakeFiles/qterminal.dir/src/tabbar.cpp.o CMakeFiles/qterminal.dir/src/tabwidget.cpp.o CMakeFiles/qterminal.dir/src/termwidget.cpp.o CMakeFiles/qterminal.dir/src/termwidgetholder.cpp.o CMakeFiles/qterminal.dir/src/terminalconfig.cpp.o CMakeFiles/qterminal.dir/src/properties.cpp.o CMakeFiles/qterminal.dir/src/propertiesdialog.cpp.o CMakeFiles/qterminal.dir/src/bookmarkswidget.cpp.o CMakeFiles/qterminal.dir/src/fontdialog.cpp.o CMakeFiles/qterminal.dir/src/dbusaddressable.cpp.o "CMakeFiles/qterminal.dir/src/tab-switcher.cpp.o" CMakeFiles/qterminal.dir/windowadaptor.cpp.o CMakeFiles/qterminal.dir/tabadaptor.cpp.o CMakeFiles/qterminal.dir/terminaladaptor.cpp.o CMakeFiles/qterminal.dir/processadaptor.cpp.o "CMakeFiles/qterminal.dir/src/third-party/qxtglobalshortcut.cpp.o" "CMakeFiles/qterminal.dir/src/third-party/qxtglobalshortcut_x11.cpp.o" CMakeFiles/qterminal.dir/src/moc_qterminalapp.cpp.o CMakeFiles/qterminal.dir/src/moc_mainwindow.cpp.o CMakeFiles/qterminal.dir/src/moc_tabbar.cpp.o CMakeFiles/qterminal.dir/src/moc_tabwidget.cpp.o CMakeFiles/qterminal.dir/src/moc_termwidget.cpp.o CMakeFiles/qterminal.dir/src/moc_termwidgetholder.cpp.o CMakeFiles/qterminal.dir/src/moc_propertiesdialog.cpp.o CMakeFiles/qterminal.dir/src/moc_bookmarkswidget.cpp.o CMakeFiles/qterminal.dir/src/moc_fontdialog.cpp.o "CMakeFiles/qterminal.dir/src/moc_tab-switcher.cpp.o" CMakeFiles/qterminal.dir/src/moc_dbusaddressable.cpp.o "CMakeFiles/qterminal.dir/src/third-party/moc_qxtglobalshortcut.cpp.o" CMakeFiles/qterminal.dir/qrc_icons.cpp.o -o qterminal  /usr/lib/aarch64-linux-gnu/libqtermwidget5.so.1.1.0 -lutil /usr/lib/aarch64-linux-gnu/libQt5DBus.so.5.15.4 /usr/lib/aarch64-linux-gnu/libQt5X11Extras.so.5.15.4 -lX11 /usr/lib/aarch64-linux-gnu/libQt5Widgets.so.5.15.4 -lutf8proc /usr/lib/aarch64-linux-gnu/libQt5Gui.so.5.15.4 /usr/lib/aarch64-linux-gnu/libQt5Core.so.5.15.4 
+make[3]: Leaving directory '/home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu'
+[100%] Built target qterminal
+make[2]: Leaving directory '/home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu'
+/usr/bin/cmake -E cmake_progress_start /home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu/CMakeFiles 0
+make[1]: Leaving directory '/home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu'
+   dh_auto_test -O--buildsystem=cmake
+   create-stamp debian/debhelper-build-stamp
+ debian/rules binary
+dh binary --buildsystem cmake
+   dh_testroot -O--buildsystem=cmake
+   dh_prep -O--buildsystem=cmake
+   dh_auto_install -O--buildsystem=cmake
+	cd obj-aarch64-linux-gnu && make -j4 install DESTDIR=/home/cnc/lxqt-dev/qterminal-1.1.0/debian/tmp AM_UPDATE_INFO_DIR=no "INSTALL=install --strip-program=true"
+make[1]: Entering directory '/home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu'
+/usr/bin/cmake -S/home/cnc/lxqt-dev/qterminal-1.1.0 -B/home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu --check-build-system CMakeFiles/Makefile.cmake 0
+make  -f CMakeFiles/Makefile2 preinstall
+make[2]: Entering directory '/home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu'
+make[2]: Nothing to be done for 'preinstall'.
+make[2]: Leaving directory '/home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu'
+Install the project...
+/usr/bin/cmake -P cmake_install.cmake
+-- Install configuration: "RelWithDebInfo"
+-- Installing: /home/cnc/lxqt-dev/qterminal-1.1.0/debian/tmp/usr/share/applications/qterminal.desktop
+-- Installing: /home/cnc/lxqt-dev/qterminal-1.1.0/debian/tmp/usr/share/applications/qterminal-drop.desktop
+-- Installing: /home/cnc/lxqt-dev/qterminal-1.1.0/debian/tmp/usr/share/metainfo/qterminal.metainfo.xml
+-- Installing: /home/cnc/lxqt-dev/qterminal-1.1.0/debian/tmp/usr/share/qterminal/qterminal_bookmarks_example.xml
+-- Installing: /home/cnc/lxqt-dev/qterminal-1.1.0/debian/tmp/usr/bin/qterminal
+-- Installing: /home/cnc/lxqt-dev/qterminal-1.1.0/debian/tmp/usr/share/qterminal/translations/qterminal_ar.qm
+-- Installing: /home/cnc/lxqt-dev/qterminal-1.1.0/debian/tmp/usr/share/qterminal/translations/qterminal_arn.qm
+-- Installing: /home/cnc/lxqt-dev/qterminal-1.1.0/debian/tmp/usr/share/qterminal/translations/qterminal_ast.qm
+-- Installing: /home/cnc/lxqt-dev/qterminal-1.1.0/debian/tmp/usr/share/qterminal/translations/qterminal_bg.qm
+-- Installing: /home/cnc/lxqt-dev/qterminal-1.1.0/debian/tmp/usr/share/qterminal/translations/qterminal_ca.qm
+-- Installing: /home/cnc/lxqt-dev/qterminal-1.1.0/debian/tmp/usr/share/qterminal/translations/qterminal_cs.qm
+-- Installing: /home/cnc/lxqt-dev/qterminal-1.1.0/debian/tmp/usr/share/qterminal/translations/qterminal_cy.qm
+-- Installing: /home/cnc/lxqt-dev/qterminal-1.1.0/debian/tmp/usr/share/qterminal/translations/qterminal_da.qm
+-- Installing: /home/cnc/lxqt-dev/qterminal-1.1.0/debian/tmp/usr/share/qterminal/translations/qterminal_de.qm
+-- Installing: /home/cnc/lxqt-dev/qterminal-1.1.0/debian/tmp/usr/share/qterminal/translations/qterminal_de_CH.qm
+-- Installing: /home/cnc/lxqt-dev/qterminal-1.1.0/debian/tmp/usr/share/qterminal/translations/qterminal_el.qm
+-- Installing: /home/cnc/lxqt-dev/qterminal-1.1.0/debian/tmp/usr/share/qterminal/translations/qterminal_es.qm
+-- Installing: /home/cnc/lxqt-dev/qterminal-1.1.0/debian/tmp/usr/share/qterminal/translations/qterminal_et.qm
+-- Installing: /home/cnc/lxqt-dev/qterminal-1.1.0/debian/tmp/usr/share/qterminal/translations/qterminal_fa.qm
+-- Installing: /home/cnc/lxqt-dev/qterminal-1.1.0/debian/tmp/usr/share/qterminal/translations/qterminal_fi.qm
+-- Installing: /home/cnc/lxqt-dev/qterminal-1.1.0/debian/tmp/usr/share/qterminal/translations/qterminal_fr.qm
+-- Installing: /home/cnc/lxqt-dev/qterminal-1.1.0/debian/tmp/usr/share/qterminal/translations/qterminal_gl.qm
+-- Installing: /home/cnc/lxqt-dev/qterminal-1.1.0/debian/tmp/usr/share/qterminal/translations/qterminal_he.qm
+-- Installing: /home/cnc/lxqt-dev/qterminal-1.1.0/debian/tmp/usr/share/qterminal/translations/qterminal_hr.qm
+-- Installing: /home/cnc/lxqt-dev/qterminal-1.1.0/debian/tmp/usr/share/qterminal/translations/qterminal_hu.qm
+-- Installing: /home/cnc/lxqt-dev/qterminal-1.1.0/debian/tmp/usr/share/qterminal/translations/qterminal_id.qm
+-- Installing: /home/cnc/lxqt-dev/qterminal-1.1.0/debian/tmp/usr/share/qterminal/translations/qterminal_it.qm
+-- Installing: /home/cnc/lxqt-dev/qterminal-1.1.0/debian/tmp/usr/share/qterminal/translations/qterminal_ja.qm
+-- Installing: /home/cnc/lxqt-dev/qterminal-1.1.0/debian/tmp/usr/share/qterminal/translations/qterminal_kk.qm
+-- Installing: /home/cnc/lxqt-dev/qterminal-1.1.0/debian/tmp/usr/share/qterminal/translations/qterminal_ko_KR.qm
+-- Installing: /home/cnc/lxqt-dev/qterminal-1.1.0/debian/tmp/usr/share/qterminal/translations/qterminal_lt.qm
+-- Installing: /home/cnc/lxqt-dev/qterminal-1.1.0/debian/tmp/usr/share/qterminal/translations/qterminal_nb_NO.qm
+-- Installing: /home/cnc/lxqt-dev/qterminal-1.1.0/debian/tmp/usr/share/qterminal/translations/qterminal_nl.qm
+-- Installing: /home/cnc/lxqt-dev/qterminal-1.1.0/debian/tmp/usr/share/qterminal/translations/qterminal_oc.qm
+-- Installing: /home/cnc/lxqt-dev/qterminal-1.1.0/debian/tmp/usr/share/qterminal/translations/qterminal_pl.qm
+-- Installing: /home/cnc/lxqt-dev/qterminal-1.1.0/debian/tmp/usr/share/qterminal/translations/qterminal_pt.qm
+-- Installing: /home/cnc/lxqt-dev/qterminal-1.1.0/debian/tmp/usr/share/qterminal/translations/qterminal_pt_BR.qm
+-- Installing: /home/cnc/lxqt-dev/qterminal-1.1.0/debian/tmp/usr/share/qterminal/translations/qterminal_ru.qm
+-- Installing: /home/cnc/lxqt-dev/qterminal-1.1.0/debian/tmp/usr/share/qterminal/translations/qterminal_si.qm
+-- Installing: /home/cnc/lxqt-dev/qterminal-1.1.0/debian/tmp/usr/share/qterminal/translations/qterminal_sk_SK.qm
+-- Installing: /home/cnc/lxqt-dev/qterminal-1.1.0/debian/tmp/usr/share/qterminal/translations/qterminal_tr.qm
+-- Installing: /home/cnc/lxqt-dev/qterminal-1.1.0/debian/tmp/usr/share/qterminal/translations/qterminal_uk.qm
+-- Installing: /home/cnc/lxqt-dev/qterminal-1.1.0/debian/tmp/usr/share/qterminal/translations/qterminal_zh_CN.qm
+-- Installing: /home/cnc/lxqt-dev/qterminal-1.1.0/debian/tmp/usr/share/qterminal/translations/qterminal_zh_TW.qm
+-- Installing: /home/cnc/lxqt-dev/qterminal-1.1.0/debian/tmp/usr/share/icons/hicolor/64x64/apps/qterminal.png
+make[1]: Leaving directory '/home/cnc/lxqt-dev/qterminal-1.1.0/obj-aarch64-linux-gnu'
+   dh_install -O--buildsystem=cmake
+   dh_installdocs -O--buildsystem=cmake
+   dh_installchangelogs -O--buildsystem=cmake
+   dh_installman -O--buildsystem=cmake
+   dh_installsystemduser -O--buildsystem=cmake
+   dh_icons -O--buildsystem=cmake
+   dh_perl -O--buildsystem=cmake
+   dh_link -O--buildsystem=cmake
+   dh_strip_nondeterminism -O--buildsystem=cmake
+   dh_compress -O--buildsystem=cmake
+   dh_fixperms -O--buildsystem=cmake
+   debian/rules override_dh_missing
+make[1]: Entering directory '/home/cnc/lxqt-dev/qterminal-1.1.0'
+dh_missing --fail-missing
+make[1]: Leaving directory '/home/cnc/lxqt-dev/qterminal-1.1.0'
+   dh_dwz -a -O--buildsystem=cmake
+   dh_strip -a -O--buildsystem=cmake
+   dh_makeshlibs -a -O--buildsystem=cmake
+   dh_shlibdeps -a -O--buildsystem=cmake
+   dh_installdeb -O--buildsystem=cmake
+   dh_gencontrol -O--buildsystem=cmake
+   dh_md5sums -O--buildsystem=cmake
+   dh_builddeb -O--buildsystem=cmake
+dpkg-deb: building package 'qterminal-dbgsym' in '../qterminal-dbgsym_1.1.0-1_arm64.deb'.
+dpkg-deb: building package 'qterminal' in '../qterminal_1.1.0-1_arm64.deb'.
+dpkg-deb: building package 'qterminal-l10n' in '../qterminal-l10n_1.1.0-1_all.deb'.
+ dpkg-genbuildinfo --build=binary -O../qterminal_1.1.0-1_arm64.buildinfo
+ dpkg-genchanges --build=binary -O../qterminal_1.1.0-1_arm64.changes
+dpkg-genchanges: info: binary-only upload (no source code included)
+ dpkg-source -i --after-build .
+dpkg-source: info: using options from qterminal-1.1.0/debian/source/options: --tar-ignore=.gitignore
+dpkg-buildpackage: info: binary-only upload (no source included)
+Now running lintian qterminal_1.1.0-1_arm64.changes ...
+running with root privileges is not recommended!
+Finished running lintian.

@@ -1,0 +1,46 @@
+Format: 1.8
+Date: Wed, 13 Jul 2022 19:08:18 -0500
+Source: lxqt-notificationd
+Binary: lxqt-notificationd lxqt-notificationd-dbgsym lxqt-notificationd-l10n
+Architecture: arm64 all
+Version: 1.1.0-1
+Distribution: experimental
+Urgency: medium
+Maintainer: LXQt Packaging Team <pkg-lxqt-devel@lists.alioth.debian.org>
+Changed-By: Simon Quigley <tsimonq2@debian.org>
+Description:
+ lxqt-notificationd - LXQt notification daemon
+ lxqt-notificationd-l10n - Language package for lxqt-notificationd
+Changes:
+ lxqt-notificationd (1.1.0-1) experimental; urgency=medium
+ .
+   [ Andrew Lee (李健秋) ]
+   * New upstream release.
+ .
+   [ Simon Quigley ]
+   * New upstream release.
+   * Bump debhelper compat to 13, no changes needed.
+   * Bump Standards-version to 4.6.1, no changes needed.
+   * Bump build dependencies.
+   * Add my name to Uploaders.
+   * Run wrap-and-sort.
+   * Drop some old Breaks/Replaces.
+   * Grab some useful changes from Ubuntu so we can sync the package.
+ .
+   [ djsftree ]
+   * compiled by djsftree
+Checksums-Sha1:
+ 27da8cc3dfc7106c84785b692de92a7d727fb7b7 1879956 lxqt-notificationd-dbgsym_1.1.0-1_arm64.deb
+ 34624310874348f626751ea41ea779c9848de716 33808 lxqt-notificationd-l10n_1.1.0-1_all.deb
+ 51260571e8fb3a831b8d10c78184d8c5cb0bb86d 13508 lxqt-notificationd_1.1.0-1_arm64.buildinfo
+ 09947ff60e768d9e5e1d790febc4253437a6de55 65056 lxqt-notificationd_1.1.0-1_arm64.deb
+Checksums-Sha256:
+ 67f2657794b0f4157d4779a6c7980a454e7eec551dd6cbae8a921288d774820f 1879956 lxqt-notificationd-dbgsym_1.1.0-1_arm64.deb
+ 1021400e12c14f18e5c2747be602d9348361ba10ea65c118e55c5caa6f9b860c 33808 lxqt-notificationd-l10n_1.1.0-1_all.deb
+ b3b85162d967a7cd3db4ecfe19b5ade515a213c1138766a4b8856ddf151a46f8 13508 lxqt-notificationd_1.1.0-1_arm64.buildinfo
+ 8e988817aa3ed3ff79e8a164f870b1a91b7f15e75a1ccd184ba3679fb9a108f3 65056 lxqt-notificationd_1.1.0-1_arm64.deb
+Files:
+ 8341eb2a2c3e71fdcda44b907ee93849 1879956 debug optional lxqt-notificationd-dbgsym_1.1.0-1_arm64.deb
+ cebe1a90b9b6c61eb15655c484c897b2 33808 localization optional lxqt-notificationd-l10n_1.1.0-1_all.deb
+ 437ac14b84c21fd3ebf1780326dde0b1 13508 x11 optional lxqt-notificationd_1.1.0-1_arm64.buildinfo
+ b383b0ea18b21881cc157a2d84e5f22d 65056 x11 optional lxqt-notificationd_1.1.0-1_arm64.deb

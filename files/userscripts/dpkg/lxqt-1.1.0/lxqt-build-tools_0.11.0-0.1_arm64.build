@@ -1,0 +1,137 @@
+ dpkg-buildpackage -us -uc -ui -i -b
+dpkg-buildpackage: info: source package lxqt-build-tools
+dpkg-buildpackage: info: source version 0.11.0-0.1
+dpkg-buildpackage: info: source distribution unstable
+dpkg-buildpackage: info: source changed by Dmitry Shachnev <mitya57@debian.org>
+ dpkg-source -i --before-build .
+dpkg-buildpackage: info: host architecture arm64
+dpkg-source: info: using options from lxqt-build-tools-0.11.0/debian/source/options: --tar-ignore=.gitignore
+ debian/rules clean
+dh clean --buildsystem cmake
+   dh_auto_clean -O--buildsystem=cmake
+   dh_autoreconf_clean -O--buildsystem=cmake
+   dh_clean -O--buildsystem=cmake
+ debian/rules build
+dh build --buildsystem cmake
+   dh_update_autotools_config -O--buildsystem=cmake
+   dh_autoreconf -O--buildsystem=cmake
+   debian/rules override_dh_auto_configure
+make[1]: Entering directory '/home/cnc/lxqt-dev/lxqt-build-tools-0.11.0'
+dh_auto_configure -- -DCMAKE_BUILD_TYPE=RelWithDebInfo
+	cd obj-aarch64-linux-gnu && cmake -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=None -DCMAKE_INSTALL_SYSCONFDIR=/etc -DCMAKE_INSTALL_LOCALSTATEDIR=/var -DCMAKE_EXPORT_NO_PACKAGE_REGISTRY=ON -DCMAKE_FIND_USE_PACKAGE_REGISTRY=OFF -DCMAKE_FIND_PACKAGE_NO_PACKAGE_REGISTRY=ON -DFETCHCONTENT_FULLY_DISCONNECTED=ON -DCMAKE_INSTALL_RUNSTATEDIR=/run -DCMAKE_SKIP_INSTALL_ALL_DEPENDENCY=ON "-GUnix Makefiles" -DCMAKE_VERBOSE_MAKEFILE=ON -DCMAKE_INSTALL_LIBDIR=lib/aarch64-linux-gnu -DCMAKE_BUILD_TYPE=RelWithDebInfo ..
+-- The C compiler identification is GNU 11.3.0
+-- The CXX compiler identification is GNU 11.3.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- /usr/lib/aarch64-linux-gnu/qt5/bin/qmake
+-- LXQT_ETC_XDG_DIR autodetected as '/etc/xdg'
+-- You can set it manually with -DLXQT_ETC_XDG_DIR=<value>
+-- 
+-- Configuring done
+-- Generating done
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    CMAKE_EXPORT_NO_PACKAGE_REGISTRY
+    CMAKE_FIND_PACKAGE_NO_PACKAGE_REGISTRY
+    FETCHCONTENT_FULLY_DISCONNECTED
+
+
+-- Build files have been written to: /home/cnc/lxqt-dev/lxqt-build-tools-0.11.0/obj-aarch64-linux-gnu
+make[1]: Leaving directory '/home/cnc/lxqt-dev/lxqt-build-tools-0.11.0'
+   dh_auto_build -O--buildsystem=cmake
+	cd obj-aarch64-linux-gnu && make -j4 "INSTALL=install --strip-program=true" VERBOSE=1
+make[1]: Entering directory '/home/cnc/lxqt-dev/lxqt-build-tools-0.11.0/obj-aarch64-linux-gnu'
+/usr/bin/cmake -S/home/cnc/lxqt-dev/lxqt-build-tools-0.11.0 -B/home/cnc/lxqt-dev/lxqt-build-tools-0.11.0/obj-aarch64-linux-gnu --check-build-system CMakeFiles/Makefile.cmake 0
+/usr/bin/cmake -E cmake_progress_start /home/cnc/lxqt-dev/lxqt-build-tools-0.11.0/obj-aarch64-linux-gnu/CMakeFiles /home/cnc/lxqt-dev/lxqt-build-tools-0.11.0/obj-aarch64-linux-gnu//CMakeFiles/progress.marks
+make  -f CMakeFiles/Makefile2 all
+make[2]: Entering directory '/home/cnc/lxqt-dev/lxqt-build-tools-0.11.0/obj-aarch64-linux-gnu'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/home/cnc/lxqt-dev/lxqt-build-tools-0.11.0/obj-aarch64-linux-gnu'
+/usr/bin/cmake -E cmake_progress_start /home/cnc/lxqt-dev/lxqt-build-tools-0.11.0/obj-aarch64-linux-gnu/CMakeFiles 0
+make[1]: Leaving directory '/home/cnc/lxqt-dev/lxqt-build-tools-0.11.0/obj-aarch64-linux-gnu'
+   dh_auto_test -O--buildsystem=cmake
+   create-stamp debian/debhelper-build-stamp
+ debian/rules binary
+dh binary --buildsystem cmake
+   dh_testroot -O--buildsystem=cmake
+   dh_prep -O--buildsystem=cmake
+   dh_auto_install --destdir=debian/lxqt-build-tools/ -O--buildsystem=cmake
+	cd obj-aarch64-linux-gnu && make -j4 install DESTDIR=/home/cnc/lxqt-dev/lxqt-build-tools-0.11.0/debian/lxqt-build-tools AM_UPDATE_INFO_DIR=no "INSTALL=install --strip-program=true"
+make[1]: Entering directory '/home/cnc/lxqt-dev/lxqt-build-tools-0.11.0/obj-aarch64-linux-gnu'
+/usr/bin/cmake -S/home/cnc/lxqt-dev/lxqt-build-tools-0.11.0 -B/home/cnc/lxqt-dev/lxqt-build-tools-0.11.0/obj-aarch64-linux-gnu --check-build-system CMakeFiles/Makefile.cmake 0
+make  -f CMakeFiles/Makefile2 preinstall
+make[2]: Entering directory '/home/cnc/lxqt-dev/lxqt-build-tools-0.11.0/obj-aarch64-linux-gnu'
+make[2]: Nothing to be done for 'preinstall'.
+make[2]: Leaving directory '/home/cnc/lxqt-dev/lxqt-build-tools-0.11.0/obj-aarch64-linux-gnu'
+Install the project...
+/usr/bin/cmake -P cmake_install.cmake
+-- Install configuration: "RelWithDebInfo"
+-- Installing: /home/cnc/lxqt-dev/lxqt-build-tools-0.11.0/debian/lxqt-build-tools/usr/share/cmake/lxqt-build-tools/lxqt-build-tools-config.cmake
+-- Installing: /home/cnc/lxqt-dev/lxqt-build-tools-0.11.0/debian/lxqt-build-tools/usr/share/cmake/lxqt-build-tools/lxqt-build-tools-config-version.cmake
+-- Installing: /home/cnc/lxqt-dev/lxqt-build-tools-0.11.0/debian/lxqt-build-tools/usr/share/cmake/lxqt-build-tools/find-modules/FindClazy.cmake
+-- Installing: /home/cnc/lxqt-dev/lxqt-build-tools-0.11.0/debian/lxqt-build-tools/usr/share/cmake/lxqt-build-tools/find-modules/FindExif.cmake
+-- Installing: /home/cnc/lxqt-dev/lxqt-build-tools-0.11.0/debian/lxqt-build-tools/usr/share/cmake/lxqt-build-tools/find-modules/FindFontconfig.cmake
+-- Installing: /home/cnc/lxqt-dev/lxqt-build-tools-0.11.0/debian/lxqt-build-tools/usr/share/cmake/lxqt-build-tools/find-modules/FindGLIB.cmake
+-- Installing: /home/cnc/lxqt-dev/lxqt-build-tools-0.11.0/debian/lxqt-build-tools/usr/share/cmake/lxqt-build-tools/find-modules/FindMenuCache.cmake
+-- Installing: /home/cnc/lxqt-dev/lxqt-build-tools-0.11.0/debian/lxqt-build-tools/usr/share/cmake/lxqt-build-tools/find-modules/FindUDev.cmake
+-- Installing: /home/cnc/lxqt-dev/lxqt-build-tools-0.11.0/debian/lxqt-build-tools/usr/share/cmake/lxqt-build-tools/find-modules/FindXCB.cmake
+-- Installing: /home/cnc/lxqt-dev/lxqt-build-tools-0.11.0/debian/lxqt-build-tools/usr/share/cmake/lxqt-build-tools/find-modules/FindXKBCommon.cmake
+-- Installing: /home/cnc/lxqt-dev/lxqt-build-tools-0.11.0/debian/lxqt-build-tools/usr/share/cmake/lxqt-build-tools/find-modules/FindXTerm.cmake
+-- Installing: /home/cnc/lxqt-dev/lxqt-build-tools-0.11.0/debian/lxqt-build-tools/usr/share/cmake/lxqt-build-tools/find-modules/FindXdgEmail.cmake
+-- Installing: /home/cnc/lxqt-dev/lxqt-build-tools-0.11.0/debian/lxqt-build-tools/usr/share/cmake/lxqt-build-tools/find-modules/FindXdgMime.cmake
+-- Installing: /home/cnc/lxqt-dev/lxqt-build-tools-0.11.0/debian/lxqt-build-tools/usr/share/cmake/lxqt-build-tools/find-modules/FindXdgOpen.cmake
+-- Installing: /home/cnc/lxqt-dev/lxqt-build-tools-0.11.0/debian/lxqt-build-tools/usr/share/cmake/lxqt-build-tools/find-modules/FindXdgScreensaver.cmake
+-- Installing: /home/cnc/lxqt-dev/lxqt-build-tools-0.11.0/debian/lxqt-build-tools/usr/share/cmake/lxqt-build-tools/find-modules/FindXdgSettings.cmake
+-- Installing: /home/cnc/lxqt-dev/lxqt-build-tools-0.11.0/debian/lxqt-build-tools/usr/share/cmake/lxqt-build-tools/find-modules/FindXdgUserDirs.cmake
+-- Installing: /home/cnc/lxqt-dev/lxqt-build-tools-0.11.0/debian/lxqt-build-tools/usr/share/cmake/lxqt-build-tools/modules/ECMFindModuleHelpers.cmake
+-- Installing: /home/cnc/lxqt-dev/lxqt-build-tools-0.11.0/debian/lxqt-build-tools/usr/share/cmake/lxqt-build-tools/modules/LXQtAppTranslationLoader.cpp.in
+-- Installing: /home/cnc/lxqt-dev/lxqt-build-tools-0.11.0/debian/lxqt-build-tools/usr/share/cmake/lxqt-build-tools/modules/LXQtCompilerSettings.cmake
+-- Installing: /home/cnc/lxqt-dev/lxqt-build-tools-0.11.0/debian/lxqt-build-tools/usr/share/cmake/lxqt-build-tools/modules/LXQtCreatePkgConfigFile.cmake
+-- Installing: /home/cnc/lxqt-dev/lxqt-build-tools-0.11.0/debian/lxqt-build-tools/usr/share/cmake/lxqt-build-tools/modules/LXQtCreatePortableHeaders.cmake
+-- Installing: /home/cnc/lxqt-dev/lxqt-build-tools-0.11.0/debian/lxqt-build-tools/usr/share/cmake/lxqt-build-tools/modules/LXQtLibTranslationLoader.cpp.in
+-- Installing: /home/cnc/lxqt-dev/lxqt-build-tools-0.11.0/debian/lxqt-build-tools/usr/share/cmake/lxqt-build-tools/modules/LXQtPluginTranslationLoader.cpp.in
+-- Installing: /home/cnc/lxqt-dev/lxqt-build-tools-0.11.0/debian/lxqt-build-tools/usr/share/cmake/lxqt-build-tools/modules/LXQtPreventInSourceBuilds.cmake
+-- Installing: /home/cnc/lxqt-dev/lxqt-build-tools-0.11.0/debian/lxqt-build-tools/usr/share/cmake/lxqt-build-tools/modules/LXQtTranslate.cmake
+-- Installing: /home/cnc/lxqt-dev/lxqt-build-tools-0.11.0/debian/lxqt-build-tools/usr/share/cmake/lxqt-build-tools/modules/LXQtTranslateDesktop.cmake
+-- Installing: /home/cnc/lxqt-dev/lxqt-build-tools-0.11.0/debian/lxqt-build-tools/usr/share/cmake/lxqt-build-tools/modules/LXQtTranslationLoader.cmake
+-- Installing: /home/cnc/lxqt-dev/lxqt-build-tools-0.11.0/debian/lxqt-build-tools/usr/share/cmake/lxqt-build-tools/modules/Qt5TranslationLoader.cmake
+-- Installing: /home/cnc/lxqt-dev/lxqt-build-tools-0.11.0/debian/lxqt-build-tools/usr/share/cmake/lxqt-build-tools/modules/Qt5TranslationLoader.cpp.in
+-- Installing: /home/cnc/lxqt-dev/lxqt-build-tools-0.11.0/debian/lxqt-build-tools/usr/share/cmake/lxqt-build-tools/modules/LXQtTranslateDesktopYaml.pl
+-- Installing: /home/cnc/lxqt-dev/lxqt-build-tools-0.11.0/debian/lxqt-build-tools/usr/share/cmake/lxqt-build-tools/modules/LXQtConfigVars.cmake
+-- Installing: /home/cnc/lxqt-dev/lxqt-build-tools-0.11.0/debian/lxqt-build-tools/usr/share/cmake/lxqt-build-tools/modules/LXQtTranslateTs.cmake
+-- Installing: /home/cnc/lxqt-dev/lxqt-build-tools-0.11.0/debian/lxqt-build-tools/usr/bin/lxqt-transupdate
+make[1]: Leaving directory '/home/cnc/lxqt-dev/lxqt-build-tools-0.11.0/obj-aarch64-linux-gnu'
+   dh_install -O--buildsystem=cmake
+   dh_installdocs -O--buildsystem=cmake
+   dh_installchangelogs -O--buildsystem=cmake
+   dh_installsystemduser -O--buildsystem=cmake
+   dh_perl -O--buildsystem=cmake
+   dh_link -O--buildsystem=cmake
+   dh_strip_nondeterminism -O--buildsystem=cmake
+   dh_compress -O--buildsystem=cmake
+   dh_fixperms -O--buildsystem=cmake
+   dh_missing -O--buildsystem=cmake
+   dh_installdeb -O--buildsystem=cmake
+   dh_gencontrol -O--buildsystem=cmake
+   dh_md5sums -O--buildsystem=cmake
+   dh_builddeb -O--buildsystem=cmake
+dpkg-deb: building package 'lxqt-build-tools' in '../lxqt-build-tools_0.11.0-0.1_all.deb'.
+ dpkg-genbuildinfo --build=binary -O../lxqt-build-tools_0.11.0-0.1_arm64.buildinfo
+ dpkg-genchanges --build=binary -O../lxqt-build-tools_0.11.0-0.1_arm64.changes
+dpkg-genchanges: info: binary-only upload (no source code included)
+ dpkg-source -i --after-build .
+dpkg-source: info: using options from lxqt-build-tools-0.11.0/debian/source/options: --tar-ignore=.gitignore
+dpkg-buildpackage: info: binary-only upload (no source included)
+Now running lintian lxqt-build-tools_0.11.0-0.1_arm64.changes ...
+running with root privileges is not recommended!
+W: lxqt-build-tools: no-manual-page [usr/bin/lxqt-transupdate]
+Finished running lintian.

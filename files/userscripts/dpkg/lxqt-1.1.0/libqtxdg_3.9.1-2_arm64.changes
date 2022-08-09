@@ -1,0 +1,62 @@
+Format: 1.8
+Date: Tue, 28 Jun 2022 23:10:20 -0500
+Source: libqtxdg
+Binary: libqt5xdg-dev libqt5xdg3 libqt5xdg3-dbgsym libqt5xdgiconloader-dev libqt5xdgiconloader-dev-dbgsym libqt5xdgiconloader3 libqt5xdgiconloader3-dbgsym qtxdg-dev-tools qtxdg-dev-tools-dbgsym
+Architecture: arm64
+Version: 3.9.1-2
+Distribution: experimental
+Urgency: medium
+Maintainer: LXQt Packaging Team <pkg-lxqt-devel@lists.alioth.debian.org>
+Changed-By: Aaron Rainbolt <arraybolt3@gmail.com>
+Description:
+ libqt5xdg-dev - Development files for libqtxdg
+ libqt5xdg3 - Implementation of the XDG Specifications for Qt (shared lib)
+ libqt5xdgiconloader-dev - Development files for libqtxdgiconloader
+ libqt5xdgiconloader3 - Implementation of the XDG Iconloader for Qt (shared lib)
+ qtxdg-dev-tools - Tools for QtXdg
+Changes:
+ libqtxdg (3.9.1-2) experimental; urgency=medium
+ .
+   [ Aaron Rainbolt ]
+   * Bumped Standards-Version to 4.6.1, no change required.
+   * Upstreamed symbols file for libqt5xdgiconloader3 from Ubuntu.
+   * Changed "binary-without-manpage" to "no-manual-page" in
+     qtxdg-dev-tools.lintian-overrides.
+   * Upstreamed watch file from Ubuntu.
+   * Ran wrap-and-sort.
+ .
+   [ djsftree ]
+   * compiled by djsftree
+Checksums-Sha1:
+ 82c155dee672e3381679cc132bc1ee9ee82a6c68 28644 libqt5xdg-dev_3.9.1-2_arm64.deb
+ 95ec33f16125de655f3e0c70dece3abd030a0b36 2696224 libqt5xdg3-dbgsym_3.9.1-2_arm64.deb
+ be785e0a0de74ee4c0b78b9944b4c8d4f7ea04f6 104624 libqt5xdg3_3.9.1-2_arm64.deb
+ dfd5549afbaaece08da4013234a28458cd6333bd 264444 libqt5xdgiconloader-dev-dbgsym_3.9.1-2_arm64.deb
+ e5cf4cd0654a36c056a804c97c4a6d672e88c365 23592 libqt5xdgiconloader-dev_3.9.1-2_arm64.deb
+ 67ef75838eccc73e3c0e8cb339f16e1c88732686 509356 libqt5xdgiconloader3-dbgsym_3.9.1-2_arm64.deb
+ f0228ddeac2bbdea68780ff5f73c51d468e3c9b6 38960 libqt5xdgiconloader3_3.9.1-2_arm64.deb
+ 50afd144004ae864b34c3b53ab1a4d0634b0ad6f 14567 libqtxdg_3.9.1-2_arm64.buildinfo
+ 07b28c3f43266753a179d5a49b0f6430bcb6c498 313620 qtxdg-dev-tools-dbgsym_3.9.1-2_arm64.deb
+ b80ed6bc2466c4947bc9597b4b2e0ca1918f9960 22552 qtxdg-dev-tools_3.9.1-2_arm64.deb
+Checksums-Sha256:
+ fed94762c986ea5d20c86441fd6e57b91c485b4f16923fc03caf1e98223f0af9 28644 libqt5xdg-dev_3.9.1-2_arm64.deb
+ bbd0ed17011ac30e8dfc7c1bea4494ba4ba7c4ee4f15cba2045f1b8a594ace9d 2696224 libqt5xdg3-dbgsym_3.9.1-2_arm64.deb
+ fe4c9d45a157c6eeffd2b5320480872d2dd083b9ad997f7769693fdba690bfda 104624 libqt5xdg3_3.9.1-2_arm64.deb
+ 963c481c5a8f5849fb5f94a5af5adf02780c66ed8982341905389951d83d77d5 264444 libqt5xdgiconloader-dev-dbgsym_3.9.1-2_arm64.deb
+ 6e0fc481fa7d6e18a5dd811ea7d230ccd7309705f546d9572e19aec67718fed0 23592 libqt5xdgiconloader-dev_3.9.1-2_arm64.deb
+ babff643a5587b77966f243efb817e34ba27060cbd588979c4d1a033b314dff1 509356 libqt5xdgiconloader3-dbgsym_3.9.1-2_arm64.deb
+ 9c90193501f076c32ef76984815afa0e348f3eb311397a33850ea91277d08f59 38960 libqt5xdgiconloader3_3.9.1-2_arm64.deb
+ f224868565e09320960bf025f15b1fc6ef7c013f1c4c065f3b9a89785a7a7e9f 14567 libqtxdg_3.9.1-2_arm64.buildinfo
+ ac022c391bcbd47073c41de0fbaa604ae23474438bc629042f55abaaa0d3e322 313620 qtxdg-dev-tools-dbgsym_3.9.1-2_arm64.deb
+ 9ea55e78e26de813c62f32b5784085d4ceba3482546c961c9785f28dec31d492 22552 qtxdg-dev-tools_3.9.1-2_arm64.deb
+Files:
+ 5044528ebe440fb62e6684c3ae62f918 28644 libdevel optional libqt5xdg-dev_3.9.1-2_arm64.deb
+ 734790f9c7e5b089c69d1d6d81c21da1 2696224 debug optional libqt5xdg3-dbgsym_3.9.1-2_arm64.deb
+ 88218940765d6a41dc2fd9f775728af9 104624 libs optional libqt5xdg3_3.9.1-2_arm64.deb
+ e90572c738f0aca62f8e4b6b03324574 264444 debug optional libqt5xdgiconloader-dev-dbgsym_3.9.1-2_arm64.deb
+ 74bda10b00bd400d062e3104348a3807 23592 libdevel optional libqt5xdgiconloader-dev_3.9.1-2_arm64.deb
+ 20984bc5b4284f3dfce36372a00fb1de 509356 debug optional libqt5xdgiconloader3-dbgsym_3.9.1-2_arm64.deb
+ ae6f9684d02d9d8d5d692d08587ebde2 38960 libs optional libqt5xdgiconloader3_3.9.1-2_arm64.deb
+ cc6175f455b6f6463c874616de5f78c2 14567 libs optional libqtxdg_3.9.1-2_arm64.buildinfo
+ b3bdd0905e125a7fff8fb3cb809d0326 313620 debug optional qtxdg-dev-tools-dbgsym_3.9.1-2_arm64.deb
+ df56cdbca7504b89e35763bf84cab52c 22552 devel optional qtxdg-dev-tools_3.9.1-2_arm64.deb

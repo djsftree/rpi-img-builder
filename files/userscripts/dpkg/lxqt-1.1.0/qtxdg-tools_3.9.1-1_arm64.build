@@ -1,0 +1,254 @@
+ dpkg-buildpackage -us -uc -ui -i -b
+dpkg-buildpackage: info: source package qtxdg-tools
+dpkg-buildpackage: info: source version 3.9.1-1
+dpkg-buildpackage: info: source distribution experimental
+dpkg-buildpackage: info: source changed by Simon Quigley <tsimonq2@debian.org>
+ dpkg-source -i --before-build .
+dpkg-buildpackage: info: host architecture arm64
+dpkg-source: info: using options from qtxdg-tools-3.9.1/debian/source/options: --tar-ignore=.gitignore
+ debian/rules clean
+dh clean --buildsystem cmake
+   dh_auto_clean -O--buildsystem=cmake
+	install -d /home/cnc/lxqt-dev/qtxdg-tools-3.9.1/debian/.debhelper/generated/_source/home
+   dh_autoreconf_clean -O--buildsystem=cmake
+   dh_clean -O--buildsystem=cmake
+	rm -f debian/debhelper-build-stamp
+	rm -rf debian/.debhelper/
+	rm -f -- debian/qtxdg-tools.substvars debian/files
+	rm -fr -- debian/qtxdg-tools/ debian/tmp/
+	find .  \( \( \
+		\( -path .\*/.git -o -path .\*/.svn -o -path .\*/.bzr -o -path .\*/.hg -o -path .\*/CVS -o -path .\*/.pc -o -path .\*/_darcs \) -prune -o -type f -a \
+	        \( -name '#*#' -o -name '.*~' -o -name '*~' -o -name DEADJOE \
+		 -o -name '*.orig' -o -name '*.rej' -o -name '*.bak' \
+		 -o -name '.*.orig' -o -name .*.rej -o -name '.SUMS' \
+		 -o -name TAGS -o \( -path '*/.deps/*' -a -name '*.P' \) \
+		\) -exec rm -f {} + \) -o \
+		\( -type d -a -name autom4te.cache -prune -exec rm -rf {} + \) \)
+ debian/rules build
+dh build --buildsystem cmake
+   dh_update_autotools_config -O--buildsystem=cmake
+   dh_autoreconf -O--buildsystem=cmake
+   debian/rules override_dh_auto_configure
+make[1]: Entering directory '/home/cnc/lxqt-dev/qtxdg-tools-3.9.1'
+dh_auto_configure -- \
+	-DUPDATE_TRANSLATIONS=OFF \
+	-DCMAKE_BUILD_TYPE=RelWithDebInfo
+	install -d /home/cnc/lxqt-dev/qtxdg-tools-3.9.1/debian/.debhelper/generated/_source/home
+	install -d obj-aarch64-linux-gnu
+	cd obj-aarch64-linux-gnu && cmake -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=None -DCMAKE_INSTALL_SYSCONFDIR=/etc -DCMAKE_INSTALL_LOCALSTATEDIR=/var -DCMAKE_EXPORT_NO_PACKAGE_REGISTRY=ON -DCMAKE_FIND_USE_PACKAGE_REGISTRY=OFF -DCMAKE_FIND_PACKAGE_NO_PACKAGE_REGISTRY=ON -DFETCHCONTENT_FULLY_DISCONNECTED=ON -DCMAKE_INSTALL_RUNSTATEDIR=/run -DCMAKE_SKIP_INSTALL_ALL_DEPENDENCY=ON "-GUnix Makefiles" -DCMAKE_VERBOSE_MAKEFILE=ON -DCMAKE_INSTALL_LIBDIR=lib/aarch64-linux-gnu -DUPDATE_TRANSLATIONS=OFF -DCMAKE_BUILD_TYPE=RelWithDebInfo ..
+-- The C compiler identification is GNU 11.3.0
+-- The CXX compiler identification is GNU 11.3.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- The following REQUIRED packages have been found:
+
+ * lxqt-build-tools (required version >= 0.11.0)
+ * Qt5Core
+ * Qt5 (required version >= 5.15.0)
+ * Qt5Gui
+ * Qt5Xdg (required version >= 3.9.1)
+
+-- Configuring done
+-- Generating done
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    CMAKE_EXPORT_NO_PACKAGE_REGISTRY
+    CMAKE_FIND_PACKAGE_NO_PACKAGE_REGISTRY
+    FETCHCONTENT_FULLY_DISCONNECTED
+    UPDATE_TRANSLATIONS
+
+
+-- Build files have been written to: /home/cnc/lxqt-dev/qtxdg-tools-3.9.1/obj-aarch64-linux-gnu
+make[1]: Leaving directory '/home/cnc/lxqt-dev/qtxdg-tools-3.9.1'
+   dh_auto_build -O--buildsystem=cmake
+	cd obj-aarch64-linux-gnu && make -j4 "INSTALL=install --strip-program=true" VERBOSE=1
+make[1]: Entering directory '/home/cnc/lxqt-dev/qtxdg-tools-3.9.1/obj-aarch64-linux-gnu'
+/usr/bin/cmake -S/home/cnc/lxqt-dev/qtxdg-tools-3.9.1 -B/home/cnc/lxqt-dev/qtxdg-tools-3.9.1/obj-aarch64-linux-gnu --check-build-system CMakeFiles/Makefile.cmake 0
+/usr/bin/cmake -E cmake_progress_start /home/cnc/lxqt-dev/qtxdg-tools-3.9.1/obj-aarch64-linux-gnu/CMakeFiles /home/cnc/lxqt-dev/qtxdg-tools-3.9.1/obj-aarch64-linux-gnu//CMakeFiles/progress.marks
+make  -f CMakeFiles/Makefile2 all
+make[2]: Entering directory '/home/cnc/lxqt-dev/qtxdg-tools-3.9.1/obj-aarch64-linux-gnu'
+make  -f src/mat/CMakeFiles/qtxdg-mat_autogen.dir/build.make src/mat/CMakeFiles/qtxdg-mat_autogen.dir/depend
+make[3]: Entering directory '/home/cnc/lxqt-dev/qtxdg-tools-3.9.1/obj-aarch64-linux-gnu'
+cd /home/cnc/lxqt-dev/qtxdg-tools-3.9.1/obj-aarch64-linux-gnu && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/cnc/lxqt-dev/qtxdg-tools-3.9.1 /home/cnc/lxqt-dev/qtxdg-tools-3.9.1/src/mat /home/cnc/lxqt-dev/qtxdg-tools-3.9.1/obj-aarch64-linux-gnu /home/cnc/lxqt-dev/qtxdg-tools-3.9.1/obj-aarch64-linux-gnu/src/mat /home/cnc/lxqt-dev/qtxdg-tools-3.9.1/obj-aarch64-linux-gnu/src/mat/CMakeFiles/qtxdg-mat_autogen.dir/DependInfo.cmake --color=
+make[3]: Leaving directory '/home/cnc/lxqt-dev/qtxdg-tools-3.9.1/obj-aarch64-linux-gnu'
+make  -f src/mat/CMakeFiles/qtxdg-mat_autogen.dir/build.make src/mat/CMakeFiles/qtxdg-mat_autogen.dir/build
+make[3]: Entering directory '/home/cnc/lxqt-dev/qtxdg-tools-3.9.1/obj-aarch64-linux-gnu'
+[  7%] Automatic MOC for target qtxdg-mat
+cd /home/cnc/lxqt-dev/qtxdg-tools-3.9.1/obj-aarch64-linux-gnu/src/mat && /usr/bin/cmake -E cmake_autogen /home/cnc/lxqt-dev/qtxdg-tools-3.9.1/obj-aarch64-linux-gnu/src/mat/CMakeFiles/qtxdg-mat_autogen.dir/AutogenInfo.json RelWithDebInfo
+AutoGen: Refreshing parse cache because it doesn't exist.
+AutoMoc: Generating "SRC:/obj-aarch64-linux-gnu/src/mat/qtxdg-mat_autogen/moc_predefs.h", because it doesn't exist.
+/usr/bin/c++ -dM -E -c /usr/share/cmake-3.23/Modules/CMakeCXXCompilerABI.cpp "-DQTXDG_TOOLS_VERSION=\"3.9.1\"" -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_KEYWORDS -DQT_NO_URL_CAST_FROM_STRING -DQT_SVG_LIB -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_XML_LIB -I/home/cnc/lxqt-dev/qtxdg-tools-3.9.1/obj-aarch64-linux-gnu/src/mat -I/home/cnc/lxqt-dev/qtxdg-tools-3.9.1/src/mat -I/usr/include/aarch64-linux-gnu/qt5 -I/usr/include/aarch64-linux-gnu/qt5/QtCore -I/usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -I/usr/include/qt5xdg -I/usr/include/aarch64-linux-gnu/qt5/QtWidgets -I/usr/include/aarch64-linux-gnu/qt5/QtGui -I/usr/include/aarch64-linux-gnu/qt5/QtXml -I/usr/include/aarch64-linux-gnu/qt5/QtDBus -I/usr/include/qt5xdgiconloader -I/usr/include/qt5xdgiconloader/3.9.1 -I/usr/include/aarch64-linux-gnu/qt5/QtSvg -I/usr/include -I/usr/include/c++/11 -I/usr/include/aarch64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/aarch64-linux-gnu/11/include -I/usr/local/include -I/usr/include/aarch64-linux-gnu
+AutoGen: Parsing "SRC:/src/mat/defappmatcommand.h"
+AutoGen: Parsing "SRC:/src/mat/defemailclientmatcommand.h"
+AutoGen: Parsing "SRC:/src/mat/deffilemanagermatcommand.h"
+AutoGen: Parsing "SRC:/src/mat/defterminalmatcommand.h"
+AutoGen: Parsing "SRC:/src/mat/defwebbrowsermatcommand.h"
+AutoGen: Parsing "SRC:/src/mat/matcommandinterface.h"
+AutoGen: Parsing "SRC:/src/mat/matcommandmanager.h"
+AutoGen: Parsing "SRC:/src/mat/mimetypematcommand.h"
+AutoGen: Parsing "SRC:/src/mat/openmatcommand.h"
+AutoGen: Parsing "SRC:/src/mat/defappmatcommand.cpp"
+AutoGen: Parsing "SRC:/src/mat/defemailclientmatcommand.cpp"
+AutoGen: Parsing "SRC:/src/mat/deffilemanagermatcommand.cpp"
+AutoGen: Parsing "SRC:/src/mat/defterminalmatcommand.cpp"
+AutoGen: Parsing "SRC:/src/mat/defwebbrowsermatcommand.cpp"
+AutoGen: Parsing "SRC:/src/mat/matcommandinterface.cpp"
+AutoGen: Parsing "SRC:/src/mat/matcommandmanager.cpp"
+AutoGen: Parsing "SRC:/src/mat/mimetypematcommand.cpp"
+AutoGen: Parsing "SRC:/src/mat/openmatcommand.cpp"
+AutoGen: Parsing "SRC:/src/mat/qtxdg-mat.cpp"
+AutoMoc: Generating MOC compilation "SRC:/obj-aarch64-linux-gnu/src/mat/qtxdg-mat_autogen/mocs_compilation.cpp"
+AutoGen: Writing the parse cache file "SRC:/obj-aarch64-linux-gnu/src/mat/CMakeFiles/qtxdg-mat_autogen.dir/ParseCache.txt"
+AutoGen: Writing the settings file "SRC:/obj-aarch64-linux-gnu/src/mat/CMakeFiles/qtxdg-mat_autogen.dir/AutogenUsed.txt"
+make[3]: Leaving directory '/home/cnc/lxqt-dev/qtxdg-tools-3.9.1/obj-aarch64-linux-gnu'
+[  7%] Built target qtxdg-mat_autogen
+make  -f src/mat/CMakeFiles/qtxdg-mat.dir/build.make src/mat/CMakeFiles/qtxdg-mat.dir/depend
+make[3]: Entering directory '/home/cnc/lxqt-dev/qtxdg-tools-3.9.1/obj-aarch64-linux-gnu'
+cd /home/cnc/lxqt-dev/qtxdg-tools-3.9.1/obj-aarch64-linux-gnu && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/cnc/lxqt-dev/qtxdg-tools-3.9.1 /home/cnc/lxqt-dev/qtxdg-tools-3.9.1/src/mat /home/cnc/lxqt-dev/qtxdg-tools-3.9.1/obj-aarch64-linux-gnu /home/cnc/lxqt-dev/qtxdg-tools-3.9.1/obj-aarch64-linux-gnu/src/mat /home/cnc/lxqt-dev/qtxdg-tools-3.9.1/obj-aarch64-linux-gnu/src/mat/CMakeFiles/qtxdg-mat.dir/DependInfo.cmake --color=
+make[3]: Leaving directory '/home/cnc/lxqt-dev/qtxdg-tools-3.9.1/obj-aarch64-linux-gnu'
+make  -f src/mat/CMakeFiles/qtxdg-mat.dir/build.make src/mat/CMakeFiles/qtxdg-mat.dir/build
+make[3]: Entering directory '/home/cnc/lxqt-dev/qtxdg-tools-3.9.1/obj-aarch64-linux-gnu'
+[ 15%] Building CXX object src/mat/CMakeFiles/qtxdg-mat.dir/qtxdg-mat_autogen/mocs_compilation.cpp.o
+[ 23%] Building CXX object src/mat/CMakeFiles/qtxdg-mat.dir/defappmatcommand.cpp.o
+cd /home/cnc/lxqt-dev/qtxdg-tools-3.9.1/obj-aarch64-linux-gnu/src/mat && /usr/bin/c++ -DQTXDG_TOOLS_VERSION=\"3.9.1\" -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_KEYWORDS -DQT_NO_URL_CAST_FROM_STRING -DQT_SVG_LIB -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_XML_LIB -I/home/cnc/lxqt-dev/qtxdg-tools-3.9.1/obj-aarch64-linux-gnu/src/mat -I/home/cnc/lxqt-dev/qtxdg-tools-3.9.1/src/mat -I/home/cnc/lxqt-dev/qtxdg-tools-3.9.1/obj-aarch64-linux-gnu/src/mat/qtxdg-mat_autogen/include -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/qt5xdg -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtXml -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/qt5xdgiconloader -isystem /usr/include/qt5xdgiconloader/3.9.1 -isystem /usr/include/aarch64-linux-gnu/qt5/QtSvg -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/qtxdg-tools-3.9.1=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -fvisibility=hidden -fvisibility-inlines-hidden -fPIC -std=c++14 -MD -MT src/mat/CMakeFiles/qtxdg-mat.dir/qtxdg-mat_autogen/mocs_compilation.cpp.o -MF CMakeFiles/qtxdg-mat.dir/qtxdg-mat_autogen/mocs_compilation.cpp.o.d -o CMakeFiles/qtxdg-mat.dir/qtxdg-mat_autogen/mocs_compilation.cpp.o -c /home/cnc/lxqt-dev/qtxdg-tools-3.9.1/obj-aarch64-linux-gnu/src/mat/qtxdg-mat_autogen/mocs_compilation.cpp
+[ 30%] Building CXX object src/mat/CMakeFiles/qtxdg-mat.dir/matcommandmanager.cpp.o
+cd /home/cnc/lxqt-dev/qtxdg-tools-3.9.1/obj-aarch64-linux-gnu/src/mat && /usr/bin/c++ -DQTXDG_TOOLS_VERSION=\"3.9.1\" -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_KEYWORDS -DQT_NO_URL_CAST_FROM_STRING -DQT_SVG_LIB -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_XML_LIB -I/home/cnc/lxqt-dev/qtxdg-tools-3.9.1/obj-aarch64-linux-gnu/src/mat -I/home/cnc/lxqt-dev/qtxdg-tools-3.9.1/src/mat -I/home/cnc/lxqt-dev/qtxdg-tools-3.9.1/obj-aarch64-linux-gnu/src/mat/qtxdg-mat_autogen/include -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/qt5xdg -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtXml -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/qt5xdgiconloader -isystem /usr/include/qt5xdgiconloader/3.9.1 -isystem /usr/include/aarch64-linux-gnu/qt5/QtSvg -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/qtxdg-tools-3.9.1=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -fvisibility=hidden -fvisibility-inlines-hidden -fPIC -std=c++14 -MD -MT src/mat/CMakeFiles/qtxdg-mat.dir/matcommandmanager.cpp.o -MF CMakeFiles/qtxdg-mat.dir/matcommandmanager.cpp.o.d -o CMakeFiles/qtxdg-mat.dir/matcommandmanager.cpp.o -c /home/cnc/lxqt-dev/qtxdg-tools-3.9.1/src/mat/matcommandmanager.cpp
+[ 38%] Building CXX object src/mat/CMakeFiles/qtxdg-mat.dir/matcommandinterface.cpp.o
+cd /home/cnc/lxqt-dev/qtxdg-tools-3.9.1/obj-aarch64-linux-gnu/src/mat && /usr/bin/c++ -DQTXDG_TOOLS_VERSION=\"3.9.1\" -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_KEYWORDS -DQT_NO_URL_CAST_FROM_STRING -DQT_SVG_LIB -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_XML_LIB -I/home/cnc/lxqt-dev/qtxdg-tools-3.9.1/obj-aarch64-linux-gnu/src/mat -I/home/cnc/lxqt-dev/qtxdg-tools-3.9.1/src/mat -I/home/cnc/lxqt-dev/qtxdg-tools-3.9.1/obj-aarch64-linux-gnu/src/mat/qtxdg-mat_autogen/include -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/qt5xdg -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtXml -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/qt5xdgiconloader -isystem /usr/include/qt5xdgiconloader/3.9.1 -isystem /usr/include/aarch64-linux-gnu/qt5/QtSvg -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/qtxdg-tools-3.9.1=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -fvisibility=hidden -fvisibility-inlines-hidden -fPIC -std=c++14 -MD -MT src/mat/CMakeFiles/qtxdg-mat.dir/defappmatcommand.cpp.o -MF CMakeFiles/qtxdg-mat.dir/defappmatcommand.cpp.o.d -o CMakeFiles/qtxdg-mat.dir/defappmatcommand.cpp.o -c /home/cnc/lxqt-dev/qtxdg-tools-3.9.1/src/mat/defappmatcommand.cpp
+cd /home/cnc/lxqt-dev/qtxdg-tools-3.9.1/obj-aarch64-linux-gnu/src/mat && /usr/bin/c++ -DQTXDG_TOOLS_VERSION=\"3.9.1\" -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_KEYWORDS -DQT_NO_URL_CAST_FROM_STRING -DQT_SVG_LIB -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_XML_LIB -I/home/cnc/lxqt-dev/qtxdg-tools-3.9.1/obj-aarch64-linux-gnu/src/mat -I/home/cnc/lxqt-dev/qtxdg-tools-3.9.1/src/mat -I/home/cnc/lxqt-dev/qtxdg-tools-3.9.1/obj-aarch64-linux-gnu/src/mat/qtxdg-mat_autogen/include -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/qt5xdg -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtXml -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/qt5xdgiconloader -isystem /usr/include/qt5xdgiconloader/3.9.1 -isystem /usr/include/aarch64-linux-gnu/qt5/QtSvg -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/qtxdg-tools-3.9.1=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -fvisibility=hidden -fvisibility-inlines-hidden -fPIC -std=c++14 -MD -MT src/mat/CMakeFiles/qtxdg-mat.dir/matcommandinterface.cpp.o -MF CMakeFiles/qtxdg-mat.dir/matcommandinterface.cpp.o.d -o CMakeFiles/qtxdg-mat.dir/matcommandinterface.cpp.o -c /home/cnc/lxqt-dev/qtxdg-tools-3.9.1/src/mat/matcommandinterface.cpp
+[ 46%] Building CXX object src/mat/CMakeFiles/qtxdg-mat.dir/openmatcommand.cpp.o
+cd /home/cnc/lxqt-dev/qtxdg-tools-3.9.1/obj-aarch64-linux-gnu/src/mat && /usr/bin/c++ -DQTXDG_TOOLS_VERSION=\"3.9.1\" -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_KEYWORDS -DQT_NO_URL_CAST_FROM_STRING -DQT_SVG_LIB -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_XML_LIB -I/home/cnc/lxqt-dev/qtxdg-tools-3.9.1/obj-aarch64-linux-gnu/src/mat -I/home/cnc/lxqt-dev/qtxdg-tools-3.9.1/src/mat -I/home/cnc/lxqt-dev/qtxdg-tools-3.9.1/obj-aarch64-linux-gnu/src/mat/qtxdg-mat_autogen/include -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/qt5xdg -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtXml -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/qt5xdgiconloader -isystem /usr/include/qt5xdgiconloader/3.9.1 -isystem /usr/include/aarch64-linux-gnu/qt5/QtSvg -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/qtxdg-tools-3.9.1=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -fvisibility=hidden -fvisibility-inlines-hidden -fPIC -std=c++14 -MD -MT src/mat/CMakeFiles/qtxdg-mat.dir/openmatcommand.cpp.o -MF CMakeFiles/qtxdg-mat.dir/openmatcommand.cpp.o.d -o CMakeFiles/qtxdg-mat.dir/openmatcommand.cpp.o -c /home/cnc/lxqt-dev/qtxdg-tools-3.9.1/src/mat/openmatcommand.cpp
+[ 53%] Building CXX object src/mat/CMakeFiles/qtxdg-mat.dir/mimetypematcommand.cpp.o
+cd /home/cnc/lxqt-dev/qtxdg-tools-3.9.1/obj-aarch64-linux-gnu/src/mat && /usr/bin/c++ -DQTXDG_TOOLS_VERSION=\"3.9.1\" -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_KEYWORDS -DQT_NO_URL_CAST_FROM_STRING -DQT_SVG_LIB -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_XML_LIB -I/home/cnc/lxqt-dev/qtxdg-tools-3.9.1/obj-aarch64-linux-gnu/src/mat -I/home/cnc/lxqt-dev/qtxdg-tools-3.9.1/src/mat -I/home/cnc/lxqt-dev/qtxdg-tools-3.9.1/obj-aarch64-linux-gnu/src/mat/qtxdg-mat_autogen/include -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/qt5xdg -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtXml -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/qt5xdgiconloader -isystem /usr/include/qt5xdgiconloader/3.9.1 -isystem /usr/include/aarch64-linux-gnu/qt5/QtSvg -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/qtxdg-tools-3.9.1=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -fvisibility=hidden -fvisibility-inlines-hidden -fPIC -std=c++14 -MD -MT src/mat/CMakeFiles/qtxdg-mat.dir/mimetypematcommand.cpp.o -MF CMakeFiles/qtxdg-mat.dir/mimetypematcommand.cpp.o.d -o CMakeFiles/qtxdg-mat.dir/mimetypematcommand.cpp.o -c /home/cnc/lxqt-dev/qtxdg-tools-3.9.1/src/mat/mimetypematcommand.cpp
+[ 61%] Building CXX object src/mat/CMakeFiles/qtxdg-mat.dir/defwebbrowsermatcommand.cpp.o
+cd /home/cnc/lxqt-dev/qtxdg-tools-3.9.1/obj-aarch64-linux-gnu/src/mat && /usr/bin/c++ -DQTXDG_TOOLS_VERSION=\"3.9.1\" -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_KEYWORDS -DQT_NO_URL_CAST_FROM_STRING -DQT_SVG_LIB -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_XML_LIB -I/home/cnc/lxqt-dev/qtxdg-tools-3.9.1/obj-aarch64-linux-gnu/src/mat -I/home/cnc/lxqt-dev/qtxdg-tools-3.9.1/src/mat -I/home/cnc/lxqt-dev/qtxdg-tools-3.9.1/obj-aarch64-linux-gnu/src/mat/qtxdg-mat_autogen/include -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/qt5xdg -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtXml -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/qt5xdgiconloader -isystem /usr/include/qt5xdgiconloader/3.9.1 -isystem /usr/include/aarch64-linux-gnu/qt5/QtSvg -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/qtxdg-tools-3.9.1=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -fvisibility=hidden -fvisibility-inlines-hidden -fPIC -std=c++14 -MD -MT src/mat/CMakeFiles/qtxdg-mat.dir/defwebbrowsermatcommand.cpp.o -MF CMakeFiles/qtxdg-mat.dir/defwebbrowsermatcommand.cpp.o.d -o CMakeFiles/qtxdg-mat.dir/defwebbrowsermatcommand.cpp.o -c /home/cnc/lxqt-dev/qtxdg-tools-3.9.1/src/mat/defwebbrowsermatcommand.cpp
+[ 69%] Building CXX object src/mat/CMakeFiles/qtxdg-mat.dir/defemailclientmatcommand.cpp.o
+cd /home/cnc/lxqt-dev/qtxdg-tools-3.9.1/obj-aarch64-linux-gnu/src/mat && /usr/bin/c++ -DQTXDG_TOOLS_VERSION=\"3.9.1\" -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_KEYWORDS -DQT_NO_URL_CAST_FROM_STRING -DQT_SVG_LIB -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_XML_LIB -I/home/cnc/lxqt-dev/qtxdg-tools-3.9.1/obj-aarch64-linux-gnu/src/mat -I/home/cnc/lxqt-dev/qtxdg-tools-3.9.1/src/mat -I/home/cnc/lxqt-dev/qtxdg-tools-3.9.1/obj-aarch64-linux-gnu/src/mat/qtxdg-mat_autogen/include -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/qt5xdg -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtXml -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/qt5xdgiconloader -isystem /usr/include/qt5xdgiconloader/3.9.1 -isystem /usr/include/aarch64-linux-gnu/qt5/QtSvg -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/qtxdg-tools-3.9.1=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -fvisibility=hidden -fvisibility-inlines-hidden -fPIC -std=c++14 -MD -MT src/mat/CMakeFiles/qtxdg-mat.dir/defemailclientmatcommand.cpp.o -MF CMakeFiles/qtxdg-mat.dir/defemailclientmatcommand.cpp.o.d -o CMakeFiles/qtxdg-mat.dir/defemailclientmatcommand.cpp.o -c /home/cnc/lxqt-dev/qtxdg-tools-3.9.1/src/mat/defemailclientmatcommand.cpp
+[ 76%] Building CXX object src/mat/CMakeFiles/qtxdg-mat.dir/deffilemanagermatcommand.cpp.o
+cd /home/cnc/lxqt-dev/qtxdg-tools-3.9.1/obj-aarch64-linux-gnu/src/mat && /usr/bin/c++ -DQTXDG_TOOLS_VERSION=\"3.9.1\" -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_KEYWORDS -DQT_NO_URL_CAST_FROM_STRING -DQT_SVG_LIB -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_XML_LIB -I/home/cnc/lxqt-dev/qtxdg-tools-3.9.1/obj-aarch64-linux-gnu/src/mat -I/home/cnc/lxqt-dev/qtxdg-tools-3.9.1/src/mat -I/home/cnc/lxqt-dev/qtxdg-tools-3.9.1/obj-aarch64-linux-gnu/src/mat/qtxdg-mat_autogen/include -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/qt5xdg -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtXml -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/qt5xdgiconloader -isystem /usr/include/qt5xdgiconloader/3.9.1 -isystem /usr/include/aarch64-linux-gnu/qt5/QtSvg -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/qtxdg-tools-3.9.1=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -fvisibility=hidden -fvisibility-inlines-hidden -fPIC -std=c++14 -MD -MT src/mat/CMakeFiles/qtxdg-mat.dir/deffilemanagermatcommand.cpp.o -MF CMakeFiles/qtxdg-mat.dir/deffilemanagermatcommand.cpp.o.d -o CMakeFiles/qtxdg-mat.dir/deffilemanagermatcommand.cpp.o -c /home/cnc/lxqt-dev/qtxdg-tools-3.9.1/src/mat/deffilemanagermatcommand.cpp
+[ 84%] Building CXX object src/mat/CMakeFiles/qtxdg-mat.dir/defterminalmatcommand.cpp.o
+cd /home/cnc/lxqt-dev/qtxdg-tools-3.9.1/obj-aarch64-linux-gnu/src/mat && /usr/bin/c++ -DQTXDG_TOOLS_VERSION=\"3.9.1\" -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_KEYWORDS -DQT_NO_URL_CAST_FROM_STRING -DQT_SVG_LIB -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_XML_LIB -I/home/cnc/lxqt-dev/qtxdg-tools-3.9.1/obj-aarch64-linux-gnu/src/mat -I/home/cnc/lxqt-dev/qtxdg-tools-3.9.1/src/mat -I/home/cnc/lxqt-dev/qtxdg-tools-3.9.1/obj-aarch64-linux-gnu/src/mat/qtxdg-mat_autogen/include -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/qt5xdg -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtXml -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/qt5xdgiconloader -isystem /usr/include/qt5xdgiconloader/3.9.1 -isystem /usr/include/aarch64-linux-gnu/qt5/QtSvg -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/qtxdg-tools-3.9.1=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -fvisibility=hidden -fvisibility-inlines-hidden -fPIC -std=c++14 -MD -MT src/mat/CMakeFiles/qtxdg-mat.dir/defterminalmatcommand.cpp.o -MF CMakeFiles/qtxdg-mat.dir/defterminalmatcommand.cpp.o.d -o CMakeFiles/qtxdg-mat.dir/defterminalmatcommand.cpp.o -c /home/cnc/lxqt-dev/qtxdg-tools-3.9.1/src/mat/defterminalmatcommand.cpp
+[ 92%] Building CXX object src/mat/CMakeFiles/qtxdg-mat.dir/qtxdg-mat.cpp.o
+cd /home/cnc/lxqt-dev/qtxdg-tools-3.9.1/obj-aarch64-linux-gnu/src/mat && /usr/bin/c++ -DQTXDG_TOOLS_VERSION=\"3.9.1\" -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_KEYWORDS -DQT_NO_URL_CAST_FROM_STRING -DQT_SVG_LIB -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_XML_LIB -I/home/cnc/lxqt-dev/qtxdg-tools-3.9.1/obj-aarch64-linux-gnu/src/mat -I/home/cnc/lxqt-dev/qtxdg-tools-3.9.1/src/mat -I/home/cnc/lxqt-dev/qtxdg-tools-3.9.1/obj-aarch64-linux-gnu/src/mat/qtxdg-mat_autogen/include -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/qt5xdg -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtXml -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/qt5xdgiconloader -isystem /usr/include/qt5xdgiconloader/3.9.1 -isystem /usr/include/aarch64-linux-gnu/qt5/QtSvg -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/qtxdg-tools-3.9.1=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -fvisibility=hidden -fvisibility-inlines-hidden -fPIC -std=c++14 -MD -MT src/mat/CMakeFiles/qtxdg-mat.dir/qtxdg-mat.cpp.o -MF CMakeFiles/qtxdg-mat.dir/qtxdg-mat.cpp.o.d -o CMakeFiles/qtxdg-mat.dir/qtxdg-mat.cpp.o -c /home/cnc/lxqt-dev/qtxdg-tools-3.9.1/src/mat/qtxdg-mat.cpp
+[100%] Linking CXX executable qtxdg-mat
+cd /home/cnc/lxqt-dev/qtxdg-tools-3.9.1/obj-aarch64-linux-gnu/src/mat && /usr/bin/cmake -E cmake_link_script CMakeFiles/qtxdg-mat.dir/link.txt --verbose=1
+/usr/bin/c++ -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/qtxdg-tools-3.9.1=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -Wl,-Bsymbolic-functions -Wl,-Bsymbolic -Wl,-z,relro -Wl,-z,now -Wl,--as-needed -rdynamic "CMakeFiles/qtxdg-mat.dir/qtxdg-mat_autogen/mocs_compilation.cpp.o" "CMakeFiles/qtxdg-mat.dir/matcommandmanager.cpp.o" "CMakeFiles/qtxdg-mat.dir/matcommandinterface.cpp.o" "CMakeFiles/qtxdg-mat.dir/defappmatcommand.cpp.o" "CMakeFiles/qtxdg-mat.dir/openmatcommand.cpp.o" "CMakeFiles/qtxdg-mat.dir/mimetypematcommand.cpp.o" "CMakeFiles/qtxdg-mat.dir/defwebbrowsermatcommand.cpp.o" "CMakeFiles/qtxdg-mat.dir/defemailclientmatcommand.cpp.o" "CMakeFiles/qtxdg-mat.dir/deffilemanagermatcommand.cpp.o" "CMakeFiles/qtxdg-mat.dir/defterminalmatcommand.cpp.o" "CMakeFiles/qtxdg-mat.dir/qtxdg-mat.cpp.o" -o qtxdg-mat  /usr/lib/aarch64-linux-gnu/libQt5Xdg.so.3.9.1 /usr/lib/aarch64-linux-gnu/libQt5Xml.so.5.15.4 /usr/lib/aarch64-linux-gnu/libQt5DBus.so.5.15.4 /usr/lib/aarch64-linux-gnu/libQt5XdgIconLoader.so.3.9.1 /usr/lib/aarch64-linux-gnu/libQt5Svg.so.5.15.4 /usr/lib/aarch64-linux-gnu/libQt5Widgets.so.5.15.4 /usr/lib/aarch64-linux-gnu/libQt5Gui.so.5.15.4 /usr/lib/aarch64-linux-gnu/libQt5Core.so.5.15.4 -lglib-2.0 -lgobject-2.0 -lgio-2.0 
+make[3]: Leaving directory '/home/cnc/lxqt-dev/qtxdg-tools-3.9.1/obj-aarch64-linux-gnu'
+[100%] Built target qtxdg-mat
+make[2]: Leaving directory '/home/cnc/lxqt-dev/qtxdg-tools-3.9.1/obj-aarch64-linux-gnu'
+/usr/bin/cmake -E cmake_progress_start /home/cnc/lxqt-dev/qtxdg-tools-3.9.1/obj-aarch64-linux-gnu/CMakeFiles 0
+make[1]: Leaving directory '/home/cnc/lxqt-dev/qtxdg-tools-3.9.1/obj-aarch64-linux-gnu'
+   dh_auto_test -O--buildsystem=cmake
+	rm -fr -- /tmp/dh-xdg-rundir-D4bxb4GK
+   create-stamp debian/debhelper-build-stamp
+ debian/rules binary
+dh binary --buildsystem cmake
+   dh_testroot -O--buildsystem=cmake
+   dh_prep -O--buildsystem=cmake
+	rm -f -- debian/qtxdg-tools.substvars
+	rm -fr -- debian/.debhelper/generated/qtxdg-tools/ debian/qtxdg-tools/ debian/tmp/
+   dh_auto_install --destdir=debian/qtxdg-tools/ -O--buildsystem=cmake
+	install -d /home/cnc/lxqt-dev/qtxdg-tools-3.9.1/debian/qtxdg-tools
+	cd obj-aarch64-linux-gnu && make -j4 install DESTDIR=/home/cnc/lxqt-dev/qtxdg-tools-3.9.1/debian/qtxdg-tools AM_UPDATE_INFO_DIR=no "INSTALL=install --strip-program=true"
+make[1]: Entering directory '/home/cnc/lxqt-dev/qtxdg-tools-3.9.1/obj-aarch64-linux-gnu'
+/usr/bin/cmake -S/home/cnc/lxqt-dev/qtxdg-tools-3.9.1 -B/home/cnc/lxqt-dev/qtxdg-tools-3.9.1/obj-aarch64-linux-gnu --check-build-system CMakeFiles/Makefile.cmake 0
+make  -f CMakeFiles/Makefile2 preinstall
+make[2]: Entering directory '/home/cnc/lxqt-dev/qtxdg-tools-3.9.1/obj-aarch64-linux-gnu'
+make[2]: Nothing to be done for 'preinstall'.
+make[2]: Leaving directory '/home/cnc/lxqt-dev/qtxdg-tools-3.9.1/obj-aarch64-linux-gnu'
+Install the project...
+/usr/bin/cmake -P cmake_install.cmake
+-- Install configuration: "RelWithDebInfo"
+-- Installing: /home/cnc/lxqt-dev/qtxdg-tools-3.9.1/debian/qtxdg-tools/usr/share/cmake/qtxdg-tools/qtxdg-tools-config.cmake
+-- Installing: /home/cnc/lxqt-dev/qtxdg-tools-3.9.1/debian/qtxdg-tools/usr/share/cmake/qtxdg-tools/qtxdg-tools-config-version.cmake
+-- Installing: /home/cnc/lxqt-dev/qtxdg-tools-3.9.1/debian/qtxdg-tools/usr/share/cmake/qtxdg-tools/qtxdg-tools-targets.cmake
+-- Installing: /home/cnc/lxqt-dev/qtxdg-tools-3.9.1/debian/qtxdg-tools/usr/share/cmake/qtxdg-tools/qtxdg-tools-targets-relwithdebinfo.cmake
+-- Installing: /home/cnc/lxqt-dev/qtxdg-tools-3.9.1/debian/qtxdg-tools/usr/bin/qtxdg-mat
+make[1]: Leaving directory '/home/cnc/lxqt-dev/qtxdg-tools-3.9.1/obj-aarch64-linux-gnu'
+   dh_installdocs -O--buildsystem=cmake
+	install -d debian/qtxdg-tools/usr/share/doc/qtxdg-tools
+	install -d debian/.debhelper/generated/qtxdg-tools
+	cp --reflink=auto -a ./CHANGELOG debian/qtxdg-tools/usr/share/doc/qtxdg-tools
+	chown -R 0:0 debian/qtxdg-tools/usr/share/doc
+	chmod -R u\+rw,go=rX debian/qtxdg-tools/usr/share/doc
+	install -p -m0644 debian/copyright debian/qtxdg-tools/usr/share/doc/qtxdg-tools/copyright
+   dh_installchangelogs -O--buildsystem=cmake
+	install -p -m0644 debian/changelog debian/qtxdg-tools/usr/share/doc/qtxdg-tools/changelog.Debian
+	mv debian/qtxdg-tools/usr/share/doc/qtxdg-tools/CHANGELOG debian/qtxdg-tools/usr/share/doc/qtxdg-tools/changelog
+	chmod 0644 -- debian/qtxdg-tools/usr/share/doc/qtxdg-tools/changelog
+	chown 0:0 -- debian/qtxdg-tools/usr/share/doc/qtxdg-tools/changelog
+   dh_installsystemduser -O--buildsystem=cmake
+   dh_perl -O--buildsystem=cmake
+   dh_link -O--buildsystem=cmake
+   dh_strip_nondeterminism -O--buildsystem=cmake
+   dh_compress -O--buildsystem=cmake
+	cd debian/qtxdg-tools
+	chmod a-x usr/share/doc/qtxdg-tools/changelog usr/share/doc/qtxdg-tools/changelog.Debian
+	gzip -9nf usr/share/doc/qtxdg-tools/changelog usr/share/doc/qtxdg-tools/changelog.Debian
+	cd '/home/cnc/lxqt-dev/qtxdg-tools-3.9.1'
+   dh_fixperms -O--buildsystem=cmake
+	find debian/qtxdg-tools -true -print0 2>/dev/null | xargs -0r chown --no-dereference 0:0
+	find debian/qtxdg-tools ! -type l -a -true -a -true -print0 2>/dev/null | xargs -0r chmod go=rX,u+rw,a-s
+	find debian/qtxdg-tools/usr/share/doc -type f -a -true -a ! -regex 'debian/qtxdg-tools/usr/share/doc/[^/]*/examples/.*' -print0 2>/dev/null | xargs -0r chmod 0644
+	find debian/qtxdg-tools/usr/share/doc -type d -a -true -a -true -print0 2>/dev/null | xargs -0r chmod 0755
+	find debian/qtxdg-tools -type f \( -name '*.so.*' -o -name '*.so' -o -name '*.la' -o -name '*.a' -o -name '*.js' -o -name '*.css' -o -name '*.scss' -o -name '*.sass' -o -name '*.jpeg' -o -name '*.jpg' -o -name '*.png' -o -name '*.gif' -o -name '*.cmxs' -o -name '*.node' \) -a -true -a -true -print0 2>/dev/null | xargs -0r chmod 0644
+	find debian/qtxdg-tools/usr/bin -type f -a -true -a -true -print0 2>/dev/null | xargs -0r chmod a+x
+   dh_missing -O--buildsystem=cmake
+   dh_dwz -a -O--buildsystem=cmake
+	dwz -- debian/qtxdg-tools/usr/bin/qtxdg-mat
+   dh_strip -a -O--buildsystem=cmake
+	install -d debian/.debhelper/qtxdg-tools/dbgsym-root/usr/lib/debug/.build-id/b9
+	objcopy --only-keep-debug --compress-debug-sections debian/qtxdg-tools/usr/bin/qtxdg-mat debian/.debhelper/qtxdg-tools/dbgsym-root/usr/lib/debug/.build-id/b9/dbb4825479905e813cd7549677384c2fe43362.debug
+	chmod 0644 -- debian/.debhelper/qtxdg-tools/dbgsym-root/usr/lib/debug/.build-id/b9/dbb4825479905e813cd7549677384c2fe43362.debug
+	chown 0:0 -- debian/.debhelper/qtxdg-tools/dbgsym-root/usr/lib/debug/.build-id/b9/dbb4825479905e813cd7549677384c2fe43362.debug
+	strip --remove-section=.comment --remove-section=.note debian/qtxdg-tools/usr/bin/qtxdg-mat
+	objcopy --add-gnu-debuglink debian/.debhelper/qtxdg-tools/dbgsym-root/usr/lib/debug/.build-id/b9/dbb4825479905e813cd7549677384c2fe43362.debug debian/qtxdg-tools/usr/bin/qtxdg-mat
+	install -d debian/.debhelper/qtxdg-tools/dbgsym-root/usr/share/doc
+	ln -s qtxdg-tools debian/.debhelper/qtxdg-tools/dbgsym-root/usr/share/doc/qtxdg-tools-dbgsym
+   dh_makeshlibs -a -O--buildsystem=cmake
+	rm -f debian/qtxdg-tools/DEBIAN/shlibs
+   dh_shlibdeps -a -O--buildsystem=cmake
+	install -d debian/qtxdg-tools/DEBIAN
+	dpkg-shlibdeps -Tdebian/qtxdg-tools.substvars debian/qtxdg-tools/usr/bin/qtxdg-mat
+   dh_installdeb -O--buildsystem=cmake
+   dh_gencontrol -O--buildsystem=cmake
+	echo misc:Depends= >> debian/qtxdg-tools.substvars
+	echo misc:Pre-Depends= >> debian/qtxdg-tools.substvars
+	install -d debian/.debhelper/qtxdg-tools/dbgsym-root/DEBIAN
+	dpkg-gencontrol -pqtxdg-tools -ldebian/changelog -Tdebian/qtxdg-tools.substvars -Pdebian/.debhelper/qtxdg-tools/dbgsym-root -UPre-Depends -URecommends -USuggests -UEnhances -UProvides -UEssential -UConflicts -DPriority=optional -UHomepage -UImportant -UBuilt-Using -DAuto-Built-Package=debug-symbols -UProtected -DPackage=qtxdg-tools-dbgsym "-DDepends=qtxdg-tools (= \${binary:Version})" "-DDescription=debug symbols for qtxdg-tools" -DBuild-Ids=b9dbb4825479905e813cd7549677384c2fe43362 -DSection=debug -UMulti-Arch -UReplaces -UBreaks
+	chmod 0644 -- debian/.debhelper/qtxdg-tools/dbgsym-root/DEBIAN/control
+	chown 0:0 -- debian/.debhelper/qtxdg-tools/dbgsym-root/DEBIAN/control
+	dpkg-gencontrol -pqtxdg-tools -ldebian/changelog -Tdebian/qtxdg-tools.substvars -Pdebian/qtxdg-tools
+	chmod 0644 -- debian/qtxdg-tools/DEBIAN/control
+	chown 0:0 -- debian/qtxdg-tools/DEBIAN/control
+   dh_md5sums -O--buildsystem=cmake
+	cd debian/qtxdg-tools >/dev/null && xargs -r0 md5sum | perl -pe 'if (s@^\\@@) { s/\\\\/\\/g; }' > DEBIAN/md5sums
+	chmod 0644 -- debian/qtxdg-tools/DEBIAN/md5sums
+	chown 0:0 -- debian/qtxdg-tools/DEBIAN/md5sums
+	cd debian/.debhelper/qtxdg-tools/dbgsym-root >/dev/null && xargs -r0 md5sum | perl -pe 'if (s@^\\@@) { s/\\\\/\\/g; }' > DEBIAN/md5sums
+	chmod 0644 -- debian/.debhelper/qtxdg-tools/dbgsym-root/DEBIAN/md5sums
+	chown 0:0 -- debian/.debhelper/qtxdg-tools/dbgsym-root/DEBIAN/md5sums
+   dh_builddeb -O--buildsystem=cmake
+	dpkg-deb --build debian/qtxdg-tools ..
+	dpkg-deb --build debian/.debhelper/qtxdg-tools/dbgsym-root ..
+dpkg-deb: building package 'qtxdg-tools' in '../qtxdg-tools_3.9.1-1_arm64.deb'.
+dpkg-deb: building package 'qtxdg-tools-dbgsym' in '../qtxdg-tools-dbgsym_3.9.1-1_arm64.deb'.
+ dpkg-genbuildinfo --build=binary -O../qtxdg-tools_3.9.1-1_arm64.buildinfo
+ dpkg-genchanges --build=binary -O../qtxdg-tools_3.9.1-1_arm64.changes
+dpkg-genchanges: info: binary-only upload (no source code included)
+ dpkg-source -i --after-build .
+dpkg-source: info: using options from qtxdg-tools-3.9.1/debian/source/options: --tar-ignore=.gitignore
+dpkg-buildpackage: info: binary-only upload (no source included)
+Now running lintian qtxdg-tools_3.9.1-1_arm64.changes ...
+running with root privileges is not recommended!
+W: qtxdg-tools: no-manual-page [usr/bin/qtxdg-mat]
+Finished running lintian.

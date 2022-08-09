@@ -1,0 +1,44 @@
+Format: 1.8
+Date: Sat, 16 Jul 2022 17:56:21 +0200
+Source: qps
+Binary: qps qps-dbgsym
+Architecture: arm64
+Version: 2.5.0-1
+Distribution: experimental
+Urgency: medium
+Maintainer: LXQt Packaging Team <pkg-lxqt-devel@lists.alioth.debian.org>
+Changed-By: suman rajan <suman@cryptolab.net>
+Description:
+ qps        - Qt process manager
+Changes:
+ qps (2.5.0-1) experimental; urgency=medium
+ .
+   [ Andrew Lee (李健秋) ]
+   * Add debian/salsa-ci.yml file.
+   * Update debian/upstream/signing-key.asc.
+   * New upstream version 2.4.0
+ .
+   [ suman rajan ]
+   * New upstream version 2.5.0
+   * debian/upstream/metadata: Fixed Repository-Browse field
+   * debian/control: Bumped version for liblxqt1-dev
+   * debian/salsa-ci.yml: Added release for experimental
+   * debian/copyright: Fix license inconsistencies
+ .
+   [ Andrew Lee (李健秋) ]
+   * Build-deps on lxqt-build-tools (>= 0.11.0~).
+ .
+   [ djsftree ]
+   * compiled by djsftree
+Checksums-Sha1:
+ 0626d2a80574544b1f79b064731410b7bb9d067a 4429032 qps-dbgsym_2.5.0-1_arm64.deb
+ 64b8ee79854a7306f406ca42ede85e0f2c04ef4c 12535 qps_2.5.0-1_arm64.buildinfo
+ 9597a661f9a831829c7666d8e14b8b076e717ae8 283260 qps_2.5.0-1_arm64.deb
+Checksums-Sha256:
+ 4d8fd8a290db07239c46ce7e792b6b778d77ea6721293892bcee200d4af92ff4 4429032 qps-dbgsym_2.5.0-1_arm64.deb
+ b01230a1363dd358645962331a8b1d39c29d1ebb1cec5676971df1f67a9e21ea 12535 qps_2.5.0-1_arm64.buildinfo
+ b7da7f9a0d1e066def782ca12c78fc893358caf3c4f5be095a455d02bbd14eb7 283260 qps_2.5.0-1_arm64.deb
+Files:
+ 917c7b1362da43cbcf264b47d884ce9e 4429032 debug optional qps-dbgsym_2.5.0-1_arm64.deb
+ 8f9c3022ca17de662f9700935731c7a9 12535 x11 optional qps_2.5.0-1_arm64.buildinfo
+ 35cfbc7bbc11d986358e742fdd7038de 283260 x11 optional qps_2.5.0-1_arm64.deb

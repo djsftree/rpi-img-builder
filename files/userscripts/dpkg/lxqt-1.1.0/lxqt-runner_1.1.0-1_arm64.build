@@ -1,0 +1,504 @@
+ dpkg-buildpackage -us -uc -ui -i -b
+dpkg-buildpackage: info: source package lxqt-runner
+dpkg-buildpackage: info: source version 1.1.0-1
+dpkg-buildpackage: info: source distribution experimental
+dpkg-buildpackage: info: source changed by Andrew Lee (李健秋) <ajqlee@debian.org>
+ dpkg-source -i --before-build .
+dpkg-buildpackage: info: host architecture arm64
+dpkg-source: info: using options from lxqt-runner-1.1.0/debian/source/options: --tar-ignore=.gitignore
+ debian/rules clean
+dh clean --buildsystem cmake
+   dh_auto_clean -O--buildsystem=cmake
+   dh_autoreconf_clean -O--buildsystem=cmake
+   dh_clean -O--buildsystem=cmake
+ debian/rules build
+dh build --buildsystem cmake
+   dh_update_autotools_config -O--buildsystem=cmake
+   dh_autoreconf -O--buildsystem=cmake
+   debian/rules override_dh_auto_configure
+make[1]: Entering directory '/home/cnc/lxqt-dev/lxqt-runner-1.1.0'
+dh_auto_configure -- \
+	-DUPDATE_TRANSLATIONS=OFF \
+	-DUSE_MENU_CACHE=OFF \
+                -DRUNNER_MATH=ON \
+	-DCMAKE_BUILD_TYPE=RelWithDebInfo
+	cd obj-aarch64-linux-gnu && cmake -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=None -DCMAKE_INSTALL_SYSCONFDIR=/etc -DCMAKE_INSTALL_LOCALSTATEDIR=/var -DCMAKE_EXPORT_NO_PACKAGE_REGISTRY=ON -DCMAKE_FIND_USE_PACKAGE_REGISTRY=OFF -DCMAKE_FIND_PACKAGE_NO_PACKAGE_REGISTRY=ON -DFETCHCONTENT_FULLY_DISCONNECTED=ON -DCMAKE_INSTALL_RUNSTATEDIR=/run "-GUnix Makefiles" -DCMAKE_VERBOSE_MAKEFILE=ON -DCMAKE_INSTALL_LIBDIR=lib/aarch64-linux-gnu -DUPDATE_TRANSLATIONS=OFF -DUSE_MENU_CACHE=OFF -DRUNNER_MATH=ON -DCMAKE_BUILD_TYPE=RelWithDebInfo ..
+-- The C compiler identification is GNU 11.3.0
+-- The CXX compiler identification is GNU 11.3.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found X11: /usr/include   
+-- Looking for XOpenDisplay in /usr/lib/aarch64-linux-gnu/libX11.so;/usr/lib/aarch64-linux-gnu/libXext.so
+-- Looking for XOpenDisplay in /usr/lib/aarch64-linux-gnu/libX11.so;/usr/lib/aarch64-linux-gnu/libXext.so - found
+-- Looking for gethostbyname
+-- Looking for gethostbyname - found
+-- Looking for connect
+-- Looking for connect - found
+-- Looking for remove
+-- Looking for remove - found
+-- Looking for shmat
+-- Looking for shmat - found
+-- Looking for IceConnectionNumber in ICE
+-- Looking for IceConnectionNumber in ICE - found
+-- Building with Qt5.15.4
+-- Found PkgConfig: /usr/bin/pkg-config (found version "0.29.2") 
+-- Checking for module 'muparser'
+--   Found muparser, version 2.3.3
+-- Found Perl: /usr/bin/perl (found version "5.34.0") 
+-- Configuring done
+-- Generating done
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    CMAKE_EXPORT_NO_PACKAGE_REGISTRY
+    CMAKE_FIND_PACKAGE_NO_PACKAGE_REGISTRY
+    FETCHCONTENT_FULLY_DISCONNECTED
+
+
+-- Build files have been written to: /home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu
+make[1]: Leaving directory '/home/cnc/lxqt-dev/lxqt-runner-1.1.0'
+   dh_auto_build -O--buildsystem=cmake
+	cd obj-aarch64-linux-gnu && make -j4 "INSTALL=install --strip-program=true" VERBOSE=1
+make[1]: Entering directory '/home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu'
+/usr/bin/cmake -S/home/cnc/lxqt-dev/lxqt-runner-1.1.0 -B/home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu --check-build-system CMakeFiles/Makefile.cmake 0
+/usr/bin/cmake -E cmake_progress_start /home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/CMakeFiles /home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu//CMakeFiles/progress.marks
+make  -f CMakeFiles/Makefile2 all
+make[2]: Entering directory '/home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu'
+make  -f CMakeFiles/lxqt-runner_autogen.dir/build.make CMakeFiles/lxqt-runner_autogen.dir/depend
+make  -f autostart/CMakeFiles/lxq_runner_autostart_desktop_files.dir/build.make autostart/CMakeFiles/lxq_runner_autostart_desktop_files.dir/depend
+make[3]: Entering directory '/home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu'
+cd /home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/cnc/lxqt-dev/lxqt-runner-1.1.0 /home/cnc/lxqt-dev/lxqt-runner-1.1.0/autostart /home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu /home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/autostart /home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/autostart/CMakeFiles/lxq_runner_autostart_desktop_files.dir/DependInfo.cmake --color=
+make[3]: Entering directory '/home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu'
+cd /home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/cnc/lxqt-dev/lxqt-runner-1.1.0 /home/cnc/lxqt-dev/lxqt-runner-1.1.0 /home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu /home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu /home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/CMakeFiles/lxqt-runner_autogen.dir/DependInfo.cmake --color=
+make[3]: Leaving directory '/home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu'
+make  -f autostart/CMakeFiles/lxq_runner_autostart_desktop_files.dir/build.make autostart/CMakeFiles/lxq_runner_autostart_desktop_files.dir/build
+make[3]: Entering directory '/home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu'
+make[3]: Leaving directory '/home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu'
+make  -f CMakeFiles/lxqt-runner_autogen.dir/build.make CMakeFiles/lxqt-runner_autogen.dir/build
+make[3]: Entering directory '/home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu'
+[  1%] Automatic MOC and UIC for target lxqt-runner
+/usr/bin/cmake -E cmake_autogen /home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/CMakeFiles/lxqt-runner_autogen.dir/AutogenInfo.json RelWithDebInfo
+[  3%] Generating lxqt-runner.desktop
+cd /home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/autostart && /usr/bin/perl /usr/share/cmake/lxqt-build-tools/modules//LXQtTranslateDesktopYaml.pl /home/cnc/lxqt-dev/lxqt-runner-1.1.0/autostart/lxqt-runner.desktop.in lxqt-runner "/home/cnc/lxqt-dev/lxqt-runner-1.1.0/autostart/translations/lxqt-runner[_.]*desktop.yaml" >> /home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/autostart/lxqt-runner.desktop
+AutoGen: Refreshing parse cache because it doesn't exist.
+AutoMoc: Generating "SRC:/obj-aarch64-linux-gnu/lxqt-runner_autogen/moc_predefs.h", because it doesn't exist.
+/usr/bin/c++ -dM -E -c /usr/share/cmake-3.23/Modules/CMakeCXXCompilerABI.cpp "-DLXQT_DATA_DIR=\"/usr/share\"" "-DLXQT_ETC_XDG_DIR=\"/etc/xdg\"" "-DLXQT_GRAPHICS_DIR=\"/usr/share/lxqt/graphics\"" "-DLXQT_MAJOR_VERSION=\"1\"" "-DLXQT_MINOR_VERSION=\"1\"" "-DLXQT_PATCH_VERSION=\"0\"" "-DLXQT_RELATIVE_SHARE_DIR=\"lxqt\"" "-DLXQT_RELATIVE_SHARE_TRANSLATIONS_DIR=\"lxqt/translations\"" "-DLXQT_RUNNER_VERSION=\"1.1.0\"" "-DLXQT_SHARE_DIR=\"/usr/share/lxqt\"" "-DLXQT_SHARE_TRANSLATIONS_DIR=\"/usr/share/lxqt/translations\"" "-DLXQT_VERSION=\"1.1.0\"" -DMATH_ENABLED -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_SVG_LIB -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DQT_XML_LIB -DVBOX_ENABLED -I/home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu -I/home/cnc/lxqt-dev/lxqt-runner-1.1.0 -I/usr/include/lxqt -I/usr/include/lxqt/LXQt -I/usr/include/KF5/KWindowSystem -I/usr/include/KF5 -I/usr/include/aarch64-linux-gnu/qt5 -I/usr/include/aarch64-linux-gnu/qt5/QtGui -I/usr/include/aarch64-linux-gnu/qt5/QtCore -I/usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -I/usr/include/aarch64-linux-gnu/qt5/QtWidgets -I/usr/include/aarch64-linux-gnu/qt5/QtDBus -I/usr/include/qt5xdg -I/usr/include/aarch64-linux-gnu/qt5/QtXml -I/usr/include/qt5xdgiconloader -I/usr/include/qt5xdgiconloader/3.9.1 -I/usr/include/aarch64-linux-gnu/qt5/QtSvg -I/usr/include/aarch64-linux-gnu/qt5/QtX11Extras -I/usr/include/lxqt-globalkeys -I/usr/include/lxqt-globalkeys-ui -I/usr/include -I/usr/include/c++/11 -I/usr/include/aarch64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/aarch64-linux-gnu/11/include -I/usr/local/include -I/usr/include/aarch64-linux-gnu
+AutoGen: Parsing "SRC:/commanditemmodel.h"
+AutoGen: Parsing "SRC:/configuredialog/configuredialog.h"
+AutoGen: Parsing "SRC:/dialog.h"
+AutoGen: Parsing "SRC:/providers.h"
+AutoGen: Parsing "SRC:/widgets.h"
+AutoGen: Parsing "SRC:/yamlparser.h"
+AutoGen: Parsing "SRC:/commanditemmodel.cpp"
+make[3]: Leaving directory '/home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu'
+AutoGen: Parsing "SRC:/configuredialog/configuredialog.cpp"
+AutoGen: Parsing "SRC:/dialog.cpp"
+AutoGen: Parsing "SRC:/main.cpp"
+AutoGen: Parsing "SRC:/obj-aarch64-linux-gnu/LXQtAppTranslationLoader.cpp"
+AutoGen: Parsing "SRC:/providers.cpp"
+AutoGen: Parsing "SRC:/widgets.cpp"
+AutoGen: Parsing "SRC:/yamlparser.cpp"
+AutoMoc: Generating "SRC:/obj-aarch64-linux-gnu/lxqt-runner_autogen/EWIEGA46WW/moc_commanditemmodel.cpp", because it doesn't exist, from "SRC:/commanditemmodel.h"
+/usr/lib/qt5/bin/moc "-DLXQT_DATA_DIR=\"/usr/share\"" "-DLXQT_ETC_XDG_DIR=\"/etc/xdg\"" "-DLXQT_GRAPHICS_DIR=\"/usr/share/lxqt/graphics\"" "-DLXQT_MAJOR_VERSION=\"1\"" "-DLXQT_MINOR_VERSION=\"1\"" "-DLXQT_PATCH_VERSION=\"0\"" "-DLXQT_RELATIVE_SHARE_DIR=\"lxqt\"" "-DLXQT_RELATIVE_SHARE_TRANSLATIONS_DIR=\"lxqt/translations\"" "-DLXQT_RUNNER_VERSION=\"1.1.0\"" "-DLXQT_SHARE_DIR=\"/usr/share/lxqt\"" "-DLXQT_SHARE_TRANSLATIONS_DIR=\"/usr/share/lxqt/translations\"" "-DLXQT_VERSION=\"1.1.0\"" -DMATH_ENABLED -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_SVG_LIB -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DQT_XML_LIB -DVBOX_ENABLED -I/home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu -I/home/cnc/lxqt-dev/lxqt-runner-1.1.0 -I/usr/include/lxqt -I/usr/include/lxqt/LXQt -I/usr/include/KF5/KWindowSystem -I/usr/include/KF5 -I/usr/include/aarch64-linux-gnu/qt5 -I/usr/include/aarch64-linux-gnu/qt5/QtGui -I/usr/include/aarch64-linux-gnu/qt5/QtCore -I/usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -I/usr/include/aarch64-linux-gnu/qt5/QtWidgets -I/usr/include/aarch64-linux-gnu/qt5/QtDBus -I/usr/include/qt5xdg -I/usr/include/aarch64-linux-gnu/qt5/QtXml -I/usr/include/qt5xdgiconloader -I/usr/include/qt5xdgiconloader/3.9.1 -I/usr/include/aarch64-linux-gnu/qt5/QtSvg -I/usr/include/aarch64-linux-gnu/qt5/QtX11Extras -I/usr/include/lxqt-globalkeys -I/usr/include/lxqt-globalkeys-ui -I/usr/include -I/usr/include/c++/11 -I/usr/include/aarch64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/aarch64-linux-gnu/11/include -I/usr/local/include -I/usr/include/aarch64-linux-gnu --include /home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_autogen/moc_predefs.h --output-dep-file -o /home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_autogen/EWIEGA46WW/moc_commanditemmodel.cpp /home/cnc/lxqt-dev/lxqt-runner-1.1.0/commanditemmodel.h
+[  3%] Built target lxq_runner_autostart_desktop_files
+AutoMoc: Reading dependencies from "SRC:/obj-aarch64-linux-gnu/lxqt-runner_autogen/EWIEGA46WW/moc_commanditemmodel.cpp.d"
+AutoMoc: Generating "SRC:/obj-aarch64-linux-gnu/lxqt-runner_autogen/E7G742SRYA/moc_configuredialog.cpp", because it doesn't exist, from "SRC:/configuredialog/configuredialog.h"
+/usr/lib/qt5/bin/moc "-DLXQT_DATA_DIR=\"/usr/share\"" "-DLXQT_ETC_XDG_DIR=\"/etc/xdg\"" "-DLXQT_GRAPHICS_DIR=\"/usr/share/lxqt/graphics\"" "-DLXQT_MAJOR_VERSION=\"1\"" "-DLXQT_MINOR_VERSION=\"1\"" "-DLXQT_PATCH_VERSION=\"0\"" "-DLXQT_RELATIVE_SHARE_DIR=\"lxqt\"" "-DLXQT_RELATIVE_SHARE_TRANSLATIONS_DIR=\"lxqt/translations\"" "-DLXQT_RUNNER_VERSION=\"1.1.0\"" "-DLXQT_SHARE_DIR=\"/usr/share/lxqt\"" "-DLXQT_SHARE_TRANSLATIONS_DIR=\"/usr/share/lxqt/translations\"" "-DLXQT_VERSION=\"1.1.0\"" -DMATH_ENABLED -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_SVG_LIB -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DQT_XML_LIB -DVBOX_ENABLED -I/home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu -I/home/cnc/lxqt-dev/lxqt-runner-1.1.0 -I/usr/include/lxqt -I/usr/include/lxqt/LXQt -I/usr/include/KF5/KWindowSystem -I/usr/include/KF5 -I/usr/include/aarch64-linux-gnu/qt5 -I/usr/include/aarch64-linux-gnu/qt5/QtGui -I/usr/include/aarch64-linux-gnu/qt5/QtCore -I/usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -I/usr/include/aarch64-linux-gnu/qt5/QtWidgets -I/usr/include/aarch64-linux-gnu/qt5/QtDBus -I/usr/include/qt5xdg -I/usr/include/aarch64-linux-gnu/qt5/QtXml -I/usr/include/qt5xdgiconloader -I/usr/include/qt5xdgiconloader/3.9.1 -I/usr/include/aarch64-linux-gnu/qt5/QtSvg -I/usr/include/aarch64-linux-gnu/qt5/QtX11Extras -I/usr/include/lxqt-globalkeys -I/usr/include/lxqt-globalkeys-ui -I/usr/include -I/usr/include/c++/11 -I/usr/include/aarch64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/aarch64-linux-gnu/11/include -I/usr/local/include -I/usr/include/aarch64-linux-gnu --include /home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_autogen/moc_predefs.h --output-dep-file -o /home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_autogen/E7G742SRYA/moc_configuredialog.cpp /home/cnc/lxqt-dev/lxqt-runner-1.1.0/configuredialog/configuredialog.h
+AutoMoc: Reading dependencies from "SRC:/obj-aarch64-linux-gnu/lxqt-runner_autogen/E7G742SRYA/moc_configuredialog.cpp.d"
+AutoMoc: Generating "SRC:/obj-aarch64-linux-gnu/lxqt-runner_autogen/EWIEGA46WW/moc_dialog.cpp", because it doesn't exist, from "SRC:/dialog.h"
+/usr/lib/qt5/bin/moc "-DLXQT_DATA_DIR=\"/usr/share\"" "-DLXQT_ETC_XDG_DIR=\"/etc/xdg\"" "-DLXQT_GRAPHICS_DIR=\"/usr/share/lxqt/graphics\"" "-DLXQT_MAJOR_VERSION=\"1\"" "-DLXQT_MINOR_VERSION=\"1\"" "-DLXQT_PATCH_VERSION=\"0\"" "-DLXQT_RELATIVE_SHARE_DIR=\"lxqt\"" "-DLXQT_RELATIVE_SHARE_TRANSLATIONS_DIR=\"lxqt/translations\"" "-DLXQT_RUNNER_VERSION=\"1.1.0\"" "-DLXQT_SHARE_DIR=\"/usr/share/lxqt\"" "-DLXQT_SHARE_TRANSLATIONS_DIR=\"/usr/share/lxqt/translations\"" "-DLXQT_VERSION=\"1.1.0\"" -DMATH_ENABLED -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_SVG_LIB -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DQT_XML_LIB -DVBOX_ENABLED -I/home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu -I/home/cnc/lxqt-dev/lxqt-runner-1.1.0 -I/usr/include/lxqt -I/usr/include/lxqt/LXQt -I/usr/include/KF5/KWindowSystem -I/usr/include/KF5 -I/usr/include/aarch64-linux-gnu/qt5 -I/usr/include/aarch64-linux-gnu/qt5/QtGui -I/usr/include/aarch64-linux-gnu/qt5/QtCore -I/usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -I/usr/include/aarch64-linux-gnu/qt5/QtWidgets -I/usr/include/aarch64-linux-gnu/qt5/QtDBus -I/usr/include/qt5xdg -I/usr/include/aarch64-linux-gnu/qt5/QtXml -I/usr/include/qt5xdgiconloader -I/usr/include/qt5xdgiconloader/3.9.1 -I/usr/include/aarch64-linux-gnu/qt5/QtSvg -I/usr/include/aarch64-linux-gnu/qt5/QtX11Extras -I/usr/include/lxqt-globalkeys -I/usr/include/lxqt-globalkeys-ui -I/usr/include -I/usr/include/c++/11 -I/usr/include/aarch64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/aarch64-linux-gnu/11/include -I/usr/local/include -I/usr/include/aarch64-linux-gnu --include /home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_autogen/moc_predefs.h --output-dep-file -o /home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_autogen/EWIEGA46WW/moc_dialog.cpp /home/cnc/lxqt-dev/lxqt-runner-1.1.0/dialog.h
+AutoMoc: Reading dependencies from "SRC:/obj-aarch64-linux-gnu/lxqt-runner_autogen/EWIEGA46WW/moc_dialog.cpp.d"
+AutoMoc: Generating "SRC:/obj-aarch64-linux-gnu/lxqt-runner_autogen/EWIEGA46WW/moc_providers.cpp", because it doesn't exist, from "SRC:/providers.h"
+/usr/lib/qt5/bin/moc "-DLXQT_DATA_DIR=\"/usr/share\"" "-DLXQT_ETC_XDG_DIR=\"/etc/xdg\"" "-DLXQT_GRAPHICS_DIR=\"/usr/share/lxqt/graphics\"" "-DLXQT_MAJOR_VERSION=\"1\"" "-DLXQT_MINOR_VERSION=\"1\"" "-DLXQT_PATCH_VERSION=\"0\"" "-DLXQT_RELATIVE_SHARE_DIR=\"lxqt\"" "-DLXQT_RELATIVE_SHARE_TRANSLATIONS_DIR=\"lxqt/translations\"" "-DLXQT_RUNNER_VERSION=\"1.1.0\"" "-DLXQT_SHARE_DIR=\"/usr/share/lxqt\"" "-DLXQT_SHARE_TRANSLATIONS_DIR=\"/usr/share/lxqt/translations\"" "-DLXQT_VERSION=\"1.1.0\"" -DMATH_ENABLED -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_SVG_LIB -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DQT_XML_LIB -DVBOX_ENABLED -I/home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu -I/home/cnc/lxqt-dev/lxqt-runner-1.1.0 -I/usr/include/lxqt -I/usr/include/lxqt/LXQt -I/usr/include/KF5/KWindowSystem -I/usr/include/KF5 -I/usr/include/aarch64-linux-gnu/qt5 -I/usr/include/aarch64-linux-gnu/qt5/QtGui -I/usr/include/aarch64-linux-gnu/qt5/QtCore -I/usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -I/usr/include/aarch64-linux-gnu/qt5/QtWidgets -I/usr/include/aarch64-linux-gnu/qt5/QtDBus -I/usr/include/qt5xdg -I/usr/include/aarch64-linux-gnu/qt5/QtXml -I/usr/include/qt5xdgiconloader -I/usr/include/qt5xdgiconloader/3.9.1 -I/usr/include/aarch64-linux-gnu/qt5/QtSvg -I/usr/include/aarch64-linux-gnu/qt5/QtX11Extras -I/usr/include/lxqt-globalkeys -I/usr/include/lxqt-globalkeys-ui -I/usr/include -I/usr/include/c++/11 -I/usr/include/aarch64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/aarch64-linux-gnu/11/include -I/usr/local/include -I/usr/include/aarch64-linux-gnu --include /home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_autogen/moc_predefs.h --output-dep-file -o /home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_autogen/EWIEGA46WW/moc_providers.cpp /home/cnc/lxqt-dev/lxqt-runner-1.1.0/providers.h
+AutoMoc: Reading dependencies from "SRC:/obj-aarch64-linux-gnu/lxqt-runner_autogen/EWIEGA46WW/moc_providers.cpp.d"
+AutoMoc: Generating "SRC:/obj-aarch64-linux-gnu/lxqt-runner_autogen/EWIEGA46WW/moc_widgets.cpp", because it doesn't exist, from "SRC:/widgets.h"
+/usr/lib/qt5/bin/moc "-DLXQT_DATA_DIR=\"/usr/share\"" "-DLXQT_ETC_XDG_DIR=\"/etc/xdg\"" "-DLXQT_GRAPHICS_DIR=\"/usr/share/lxqt/graphics\"" "-DLXQT_MAJOR_VERSION=\"1\"" "-DLXQT_MINOR_VERSION=\"1\"" "-DLXQT_PATCH_VERSION=\"0\"" "-DLXQT_RELATIVE_SHARE_DIR=\"lxqt\"" "-DLXQT_RELATIVE_SHARE_TRANSLATIONS_DIR=\"lxqt/translations\"" "-DLXQT_RUNNER_VERSION=\"1.1.0\"" "-DLXQT_SHARE_DIR=\"/usr/share/lxqt\"" "-DLXQT_SHARE_TRANSLATIONS_DIR=\"/usr/share/lxqt/translations\"" "-DLXQT_VERSION=\"1.1.0\"" -DMATH_ENABLED -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_SVG_LIB -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DQT_XML_LIB -DVBOX_ENABLED -I/home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu -I/home/cnc/lxqt-dev/lxqt-runner-1.1.0 -I/usr/include/lxqt -I/usr/include/lxqt/LXQt -I/usr/include/KF5/KWindowSystem -I/usr/include/KF5 -I/usr/include/aarch64-linux-gnu/qt5 -I/usr/include/aarch64-linux-gnu/qt5/QtGui -I/usr/include/aarch64-linux-gnu/qt5/QtCore -I/usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -I/usr/include/aarch64-linux-gnu/qt5/QtWidgets -I/usr/include/aarch64-linux-gnu/qt5/QtDBus -I/usr/include/qt5xdg -I/usr/include/aarch64-linux-gnu/qt5/QtXml -I/usr/include/qt5xdgiconloader -I/usr/include/qt5xdgiconloader/3.9.1 -I/usr/include/aarch64-linux-gnu/qt5/QtSvg -I/usr/include/aarch64-linux-gnu/qt5/QtX11Extras -I/usr/include/lxqt-globalkeys -I/usr/include/lxqt-globalkeys-ui -I/usr/include -I/usr/include/c++/11 -I/usr/include/aarch64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/aarch64-linux-gnu/11/include -I/usr/local/include -I/usr/include/aarch64-linux-gnu --include /home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_autogen/moc_predefs.h --output-dep-file -o /home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_autogen/EWIEGA46WW/moc_widgets.cpp /home/cnc/lxqt-dev/lxqt-runner-1.1.0/widgets.h
+AutoMoc: Reading dependencies from "SRC:/obj-aarch64-linux-gnu/lxqt-runner_autogen/EWIEGA46WW/moc_widgets.cpp.d"
+AutoMoc: Generating "SRC:/obj-aarch64-linux-gnu/lxqt-runner_autogen/EWIEGA46WW/moc_yamlparser.cpp", because it doesn't exist, from "SRC:/yamlparser.h"
+/usr/lib/qt5/bin/moc "-DLXQT_DATA_DIR=\"/usr/share\"" "-DLXQT_ETC_XDG_DIR=\"/etc/xdg\"" "-DLXQT_GRAPHICS_DIR=\"/usr/share/lxqt/graphics\"" "-DLXQT_MAJOR_VERSION=\"1\"" "-DLXQT_MINOR_VERSION=\"1\"" "-DLXQT_PATCH_VERSION=\"0\"" "-DLXQT_RELATIVE_SHARE_DIR=\"lxqt\"" "-DLXQT_RELATIVE_SHARE_TRANSLATIONS_DIR=\"lxqt/translations\"" "-DLXQT_RUNNER_VERSION=\"1.1.0\"" "-DLXQT_SHARE_DIR=\"/usr/share/lxqt\"" "-DLXQT_SHARE_TRANSLATIONS_DIR=\"/usr/share/lxqt/translations\"" "-DLXQT_VERSION=\"1.1.0\"" -DMATH_ENABLED -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_SVG_LIB -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DQT_XML_LIB -DVBOX_ENABLED -I/home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu -I/home/cnc/lxqt-dev/lxqt-runner-1.1.0 -I/usr/include/lxqt -I/usr/include/lxqt/LXQt -I/usr/include/KF5/KWindowSystem -I/usr/include/KF5 -I/usr/include/aarch64-linux-gnu/qt5 -I/usr/include/aarch64-linux-gnu/qt5/QtGui -I/usr/include/aarch64-linux-gnu/qt5/QtCore -I/usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -I/usr/include/aarch64-linux-gnu/qt5/QtWidgets -I/usr/include/aarch64-linux-gnu/qt5/QtDBus -I/usr/include/qt5xdg -I/usr/include/aarch64-linux-gnu/qt5/QtXml -I/usr/include/qt5xdgiconloader -I/usr/include/qt5xdgiconloader/3.9.1 -I/usr/include/aarch64-linux-gnu/qt5/QtSvg -I/usr/include/aarch64-linux-gnu/qt5/QtX11Extras -I/usr/include/lxqt-globalkeys -I/usr/include/lxqt-globalkeys-ui -I/usr/include -I/usr/include/c++/11 -I/usr/include/aarch64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/aarch64-linux-gnu/11/include -I/usr/local/include -I/usr/include/aarch64-linux-gnu --include /home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_autogen/moc_predefs.h --output-dep-file -o /home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_autogen/EWIEGA46WW/moc_yamlparser.cpp /home/cnc/lxqt-dev/lxqt-runner-1.1.0/yamlparser.h
+AutoMoc: Reading dependencies from "SRC:/obj-aarch64-linux-gnu/lxqt-runner_autogen/EWIEGA46WW/moc_yamlparser.cpp.d"
+AutoUic: Generating "SRC:/obj-aarch64-linux-gnu/lxqt-runner_autogen/include/ui_configuredialog.h", because it doesn't exist, from "SRC:/configuredialog/configuredialog.ui"
+/usr/lib/qt5/bin/uic -o /home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_autogen/include/ui_configuredialog.h /home/cnc/lxqt-dev/lxqt-runner-1.1.0/configuredialog/configuredialog.ui
+AutoUic: Generating "SRC:/obj-aarch64-linux-gnu/lxqt-runner_autogen/include/ui_dialog.h", because it doesn't exist, from "SRC:/dialog.ui"
+/usr/lib/qt5/bin/uic -o /home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_autogen/include/ui_dialog.h /home/cnc/lxqt-dev/lxqt-runner-1.1.0/dialog.ui
+AutoMoc: Generating MOC compilation "SRC:/obj-aarch64-linux-gnu/lxqt-runner_autogen/mocs_compilation.cpp"
+AutoGen: Writing the parse cache file "SRC:/obj-aarch64-linux-gnu/CMakeFiles/lxqt-runner_autogen.dir/ParseCache.txt"
+AutoGen: Writing the settings file "SRC:/obj-aarch64-linux-gnu/CMakeFiles/lxqt-runner_autogen.dir/AutogenUsed.txt"
+make[3]: Leaving directory '/home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu'
+[  3%] Built target lxqt-runner_autogen
+make  -f CMakeFiles/lxqt-runner.dir/build.make CMakeFiles/lxqt-runner.dir/depend
+make[3]: Entering directory '/home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu'
+[  5%] Generating lxqt-runner_arn.qm
+[  6%] Generating lxqt-runner_zh_TW.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-runner-1.1.0/translations/lxqt-runner_arn.ts -qm /home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_arn.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-runner-1.1.0/translations/lxqt-runner_zh_TW.ts -qm /home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_zh_TW.qm
+[  8%] Generating lxqt-runner_ast.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-runner-1.1.0/translations/lxqt-runner_ast.ts -qm /home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_ast.qm
+[ 10%] Generating lxqt-runner_ar.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-runner-1.1.0/translations/lxqt-runner_ar.ts -qm /home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_ar.qm
+Updating '/home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_arn.qm'...
+Updating '/home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_ast.qm'...
+    Generated 0 translation(s) (0 finished and 0 unfinished)
+    Ignored 21 untranslated source text(s)
+    Generated 0 translation(s) (0 finished and 0 unfinished)
+    Ignored 21 untranslated source text(s)
+Updating '/home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_zh_TW.qm'...
+    Generated 20 translation(s) (20 finished and 0 unfinished)
+    Ignored 1 untranslated source text(s)
+Updating '/home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_ar.qm'...
+    Generated 20 translation(s) (20 finished and 0 unfinished)
+    Ignored 1 untranslated source text(s)
+[ 12%] Generating lxqt-runner_bg.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-runner-1.1.0/translations/lxqt-runner_bg.ts -qm /home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_bg.qm
+Updating '/home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_bg.qm'...
+    Generated 21 translation(s) (21 finished and 0 unfinished)
+[ 13%] Generating lxqt-runner_ca.qm
+[ 15%] Generating lxqt-runner_cs.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-runner-1.1.0/translations/lxqt-runner_ca.ts -qm /home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_ca.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-runner-1.1.0/translations/lxqt-runner_cs.ts -qm /home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_cs.qm
+[ 17%] Generating lxqt-runner_cy.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-runner-1.1.0/translations/lxqt-runner_cy.ts -qm /home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_cy.qm
+Updating '/home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_ca.qm'...
+    Generated 21 translation(s) (21 finished and 0 unfinished)
+Updating '/home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_cs.qm'...
+    Generated 21 translation(s) (21 finished and 0 unfinished)
+[ 18%] Generating lxqt-runner_da.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-runner-1.1.0/translations/lxqt-runner_da.ts -qm /home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_da.qm
+Updating '/home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_cy.qm'...
+    Generated 20 translation(s) (20 finished and 0 unfinished)
+    Ignored 1 untranslated source text(s)
+[ 20%] Generating lxqt-runner_el.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-runner-1.1.0/translations/lxqt-runner_el.ts -qm /home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_el.qm
+Updating '/home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_da.qm'...
+    Generated 21 translation(s) (21 finished and 0 unfinished)
+Updating '/home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_el.qm'...
+    Generated 21 translation(s) (21 finished and 0 unfinished)
+[ 22%] Generating lxqt-runner_es_VE.qm
+[ 24%] Generating lxqt-runner_de.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-runner-1.1.0/translations/lxqt-runner_es_VE.ts -qm /home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_es_VE.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-runner-1.1.0/translations/lxqt-runner_de.ts -qm /home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_de.qm
+[ 25%] Generating lxqt-runner_es.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-runner-1.1.0/translations/lxqt-runner_es.ts -qm /home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_es.qm
+[ 27%] Generating lxqt-runner_eo.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-runner-1.1.0/translations/lxqt-runner_eo.ts -qm /home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_eo.qm
+Updating '/home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_es_VE.qm'...
+    Generated 6 translation(s) (6 finished and 0 unfinished)
+    Ignored 15 untranslated source text(s)
+Updating '/home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_es.qm'...
+Updating '/home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_de.qm'...
+    Generated 21 translation(s) (21 finished and 0 unfinished)
+    Generated 21 translation(s) (21 finished and 0 unfinished)
+Updating '/home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_eo.qm'...
+    Generated 6 translation(s) (6 finished and 0 unfinished)
+    Ignored 15 untranslated source text(s)
+[ 29%] Generating lxqt-runner_fi.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-runner-1.1.0/translations/lxqt-runner_fi.ts -qm /home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_fi.qm
+Updating '/home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_fi.qm'...
+    Generated 21 translation(s) (21 finished and 0 unfinished)
+[ 31%] Generating lxqt-runner_eu.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-runner-1.1.0/translations/lxqt-runner_eu.ts -qm /home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_eu.qm
+[ 32%] Generating lxqt-runner_et.qm
+[ 34%] Generating lxqt-runner_fr.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-runner-1.1.0/translations/lxqt-runner_et.ts -qm /home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_et.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-runner-1.1.0/translations/lxqt-runner_fr.ts -qm /home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_fr.qm
+Updating '/home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_eu.qm'...
+    Generated 16 translation(s) (12 finished and 4 unfinished)
+    Ignored 5 untranslated source text(s)
+Updating '/home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_et.qm'...
+    Generated 21 translation(s) (21 finished and 0 unfinished)
+Updating '/home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_fr.qm'...
+    Generated 21 translation(s) (21 finished and 0 unfinished)
+[ 36%] Generating lxqt-runner_gl.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-runner-1.1.0/translations/lxqt-runner_gl.ts -qm /home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_gl.qm
+[ 37%] Generating lxqt-runner_hr.qm
+[ 39%] Generating lxqt-runner_he.qm
+Updating '/home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_gl.qm'...
+    Generated 20 translation(s) (20 finished and 0 unfinished)
+    Ignored 1 untranslated source text(s)
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-runner-1.1.0/translations/lxqt-runner_he.ts -qm /home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_he.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-runner-1.1.0/translations/lxqt-runner_hr.ts -qm /home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_hr.qm
+[ 41%] Generating lxqt-runner_hu.qm
+Updating '/home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_he.qm'...
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-runner-1.1.0/translations/lxqt-runner_hu.ts -qm /home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_hu.qm
+    Generated 21 translation(s) (21 finished and 0 unfinished)
+Updating '/home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_hr.qm'...
+    Generated 21 translation(s) (21 finished and 0 unfinished)
+[ 43%] Generating lxqt-runner_ia.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-runner-1.1.0/translations/lxqt-runner_ia.ts -qm /home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_ia.qm
+Updating '/home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_hu.qm'...
+    Generated 21 translation(s) (21 finished and 0 unfinished)
+Updating '/home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_ia.qm'...
+    Generated 0 translation(s) (0 finished and 0 unfinished)
+    Ignored 21 untranslated source text(s)
+[ 44%] Generating lxqt-runner_id.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-runner-1.1.0/translations/lxqt-runner_id.ts -qm /home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_id.qm
+[ 46%] Generating lxqt-runner_it.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-runner-1.1.0/translations/lxqt-runner_it.ts -qm /home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_it.qm
+[ 48%] Generating lxqt-runner_ko.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-runner-1.1.0/translations/lxqt-runner_ko.ts -qm /home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_ko.qm
+Updating '/home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_it.qm'...
+    Generated 21 translation(s) (21 finished and 0 unfinished)
+Updating '/home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_id.qm'...
+    Generated 21 translation(s) (21 finished and 0 unfinished)
+[ 50%] Generating lxqt-runner_ja.qm
+Updating '/home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_ko.qm'...
+    Generated 21 translation(s) (21 finished and 0 unfinished)
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-runner-1.1.0/translations/lxqt-runner_ja.ts -qm /home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_ja.qm
+Updating '/home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_ja.qm'...
+    Generated 21 translation(s) (21 finished and 0 unfinished)
+[ 51%] Generating lxqt-runner_lt.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-runner-1.1.0/translations/lxqt-runner_lt.ts -qm /home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_lt.qm
+[ 53%] Generating lxqt-runner_nb_NO.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-runner-1.1.0/translations/lxqt-runner_nb_NO.ts -qm /home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_nb_NO.qm
+[ 56%] Generating lxqt-runner_nl.qm
+[ 56%] Generating lxqt-runner_pl.qm
+Updating '/home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_lt.qm'...
+    Generated 21 translation(s) (21 finished and 0 unfinished)
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-runner-1.1.0/translations/lxqt-runner_nl.ts -qm /home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_nl.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-runner-1.1.0/translations/lxqt-runner_pl.ts -qm /home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_pl.qm
+Updating '/home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_nl.qm'...
+    Generated 21 translation(s) (21 finished and 0 unfinished)
+Updating '/home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_nb_NO.qm'...
+    Generated 21 translation(s) (21 finished and 0 unfinished)
+Updating '/home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_pl.qm'...
+    Generated 21 translation(s) (21 finished and 0 unfinished)
+[ 60%] Generating lxqt-runner_pt.qm
+[ 60%] Generating lxqt-runner_pt_BR.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-runner-1.1.0/translations/lxqt-runner_pt_BR.ts -qm /home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_pt_BR.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-runner-1.1.0/translations/lxqt-runner_pt.ts -qm /home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_pt.qm
+Updating '/home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_pt_BR.qm'...
+    Generated 21 translation(s) (21 finished and 0 unfinished)
+[ 62%] Generating lxqt-runner_ro_RO.qm
+[ 63%] Generating lxqt-runner_ru.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-runner-1.1.0/translations/lxqt-runner_ro_RO.ts -qm /home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_ro_RO.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-runner-1.1.0/translations/lxqt-runner_ru.ts -qm /home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_ru.qm
+Updating '/home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_pt.qm'...
+    Generated 21 translation(s) (21 finished and 0 unfinished)
+Updating '/home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_ro_RO.qm'...
+    Generated 19 translation(s) (19 finished and 0 unfinished)
+    Ignored 2 untranslated source text(s)
+Updating '/home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_ru.qm'...
+    Generated 21 translation(s) (21 finished and 0 unfinished)
+[ 65%] Generating lxqt-runner_si.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-runner-1.1.0/translations/lxqt-runner_si.ts -qm /home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_si.qm
+Updating '/home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_si.qm'...
+    Generated 0 translation(s) (0 finished and 0 unfinished)
+    Ignored 21 untranslated source text(s)
+[ 68%] Generating lxqt-runner_sk.qm
+[ 68%] Generating lxqt-runner_sr@latin.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-runner-1.1.0/translations/lxqt-runner_sr@latin.ts -qm /home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_sr@latin.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-runner-1.1.0/translations/lxqt-runner_sk.ts -qm /home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_sk.qm
+Updating '/home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_sr@latin.qm'...
+    Generated 0 translation(s) (0 finished and 0 unfinished)
+    Ignored 21 untranslated source text(s)
+[ 70%] Generating lxqt-runner_sr_BA.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-runner-1.1.0/translations/lxqt-runner_sr_BA.ts -qm /home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_sr_BA.qm
+[ 72%] Generating lxqt-runner_sl.qm
+Updating '/home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_sk.qm'...
+    Generated 21 translation(s) (21 finished and 0 unfinished)
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-runner-1.1.0/translations/lxqt-runner_sl.ts -qm /home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_sl.qm
+Updating '/home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_sr_BA.qm'...
+    Generated 6 translation(s) (6 finished and 0 unfinished)
+    Ignored 15 untranslated source text(s)
+[ 74%] Generating lxqt-runner_tr.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-runner-1.1.0/translations/lxqt-runner_tr.ts -qm /home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_tr.qm
+Updating '/home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_tr.qm'...
+    Generated 21 translation(s) (21 finished and 0 unfinished)
+Updating '/home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_sl.qm'...
+[ 75%] Generating lxqt-runner_sr_RS.qm
+    Generated 21 translation(s) (21 finished and 0 unfinished)
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-runner-1.1.0/translations/lxqt-runner_sr_RS.ts -qm /home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_sr_RS.qm
+[ 77%] Generating lxqt-runner_uk.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-runner-1.1.0/translations/lxqt-runner_uk.ts -qm /home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_uk.qm
+Updating '/home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_sr_RS.qm'...
+    Generated 6 translation(s) (6 finished and 0 unfinished)
+    Ignored 15 untranslated source text(s)
+[ 79%] Generating lxqt-runner_th_TH.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-runner-1.1.0/translations/lxqt-runner_th_TH.ts -qm /home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_th_TH.qm
+Updating '/home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_uk.qm'...
+    Generated 21 translation(s) (21 finished and 0 unfinished)
+Updating '/home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_th_TH.qm'...
+    Generated 6 translation(s) (6 finished and 0 unfinished)
+    Ignored 15 untranslated source text(s)
+[ 81%] Generating lxqt-runner_vi.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-runner-1.1.0/translations/lxqt-runner_vi.ts -qm /home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_vi.qm
+Updating '/home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_vi.qm'...
+    Generated 21 translation(s) (21 finished and 0 unfinished)
+[ 82%] Generating lxqt-runner_zh_CN.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-runner-1.1.0/translations/lxqt-runner_zh_CN.ts -qm /home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_zh_CN.qm
+Updating '/home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_zh_CN.qm'...
+    Generated 21 translation(s) (21 finished and 0 unfinished)
+cd /home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/cnc/lxqt-dev/lxqt-runner-1.1.0 /home/cnc/lxqt-dev/lxqt-runner-1.1.0 /home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu /home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu /home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/CMakeFiles/lxqt-runner.dir/DependInfo.cmake --color=
+make[3]: Leaving directory '/home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu'
+make  -f CMakeFiles/lxqt-runner.dir/build.make CMakeFiles/lxqt-runner.dir/build
+make[3]: Entering directory '/home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu'
+[ 84%] Building CXX object CMakeFiles/lxqt-runner.dir/lxqt-runner_autogen/mocs_compilation.cpp.o
+/usr/bin/c++ -DLXQT_DATA_DIR=\"/usr/share\" -DLXQT_ETC_XDG_DIR=\"/etc/xdg\" -DLXQT_GRAPHICS_DIR=\"/usr/share/lxqt/graphics\" -DLXQT_MAJOR_VERSION=\"1\" -DLXQT_MINOR_VERSION=\"1\" -DLXQT_PATCH_VERSION=\"0\" -DLXQT_RELATIVE_SHARE_DIR=\"lxqt\" -DLXQT_RELATIVE_SHARE_TRANSLATIONS_DIR=\"lxqt/translations\" -DLXQT_RUNNER_VERSION=\"1.1.0\" -DLXQT_SHARE_DIR=\"/usr/share/lxqt\" -DLXQT_SHARE_TRANSLATIONS_DIR=\"/usr/share/lxqt/translations\" -DLXQT_VERSION=\"1.1.0\" -DMATH_ENABLED -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_SVG_LIB -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DQT_XML_LIB -DVBOX_ENABLED -I/home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu -I/home/cnc/lxqt-dev/lxqt-runner-1.1.0 -I/home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_autogen/include -isystem /usr/include/lxqt -isystem /usr/include/lxqt/LXQt -isystem /usr/include/KF5/KWindowSystem -isystem /usr/include/KF5 -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/qt5xdg -isystem /usr/include/aarch64-linux-gnu/qt5/QtXml -isystem /usr/include/qt5xdgiconloader -isystem /usr/include/qt5xdgiconloader/3.9.1 -isystem /usr/include/aarch64-linux-gnu/qt5/QtSvg -isystem /usr/include/aarch64-linux-gnu/qt5/QtX11Extras -isystem /usr/include/lxqt-globalkeys -isystem /usr/include/lxqt-globalkeys-ui -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/lxqt-runner-1.1.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -fPIE -fvisibility=hidden -fvisibility-inlines-hidden -fexceptions -fPIC -std=c++14 -MD -MT CMakeFiles/lxqt-runner.dir/lxqt-runner_autogen/mocs_compilation.cpp.o -MF CMakeFiles/lxqt-runner.dir/lxqt-runner_autogen/mocs_compilation.cpp.o.d -o CMakeFiles/lxqt-runner.dir/lxqt-runner_autogen/mocs_compilation.cpp.o -c /home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_autogen/mocs_compilation.cpp
+[ 86%] Building CXX object CMakeFiles/lxqt-runner.dir/commanditemmodel.cpp.o
+[ 87%] Building CXX object CMakeFiles/lxqt-runner.dir/main.cpp.o
+/usr/bin/c++ -DLXQT_DATA_DIR=\"/usr/share\" -DLXQT_ETC_XDG_DIR=\"/etc/xdg\" -DLXQT_GRAPHICS_DIR=\"/usr/share/lxqt/graphics\" -DLXQT_MAJOR_VERSION=\"1\" -DLXQT_MINOR_VERSION=\"1\" -DLXQT_PATCH_VERSION=\"0\" -DLXQT_RELATIVE_SHARE_DIR=\"lxqt\" -DLXQT_RELATIVE_SHARE_TRANSLATIONS_DIR=\"lxqt/translations\" -DLXQT_RUNNER_VERSION=\"1.1.0\" -DLXQT_SHARE_DIR=\"/usr/share/lxqt\" -DLXQT_SHARE_TRANSLATIONS_DIR=\"/usr/share/lxqt/translations\" -DLXQT_VERSION=\"1.1.0\" -DMATH_ENABLED -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_SVG_LIB -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DQT_XML_LIB -DVBOX_ENABLED -I/home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu -I/home/cnc/lxqt-dev/lxqt-runner-1.1.0 -I/home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_autogen/include -isystem /usr/include/lxqt -isystem /usr/include/lxqt/LXQt -isystem /usr/include/KF5/KWindowSystem -isystem /usr/include/KF5 -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/qt5xdg -isystem /usr/include/aarch64-linux-gnu/qt5/QtXml -isystem /usr/include/qt5xdgiconloader -isystem /usr/include/qt5xdgiconloader/3.9.1 -isystem /usr/include/aarch64-linux-gnu/qt5/QtSvg -isystem /usr/include/aarch64-linux-gnu/qt5/QtX11Extras -isystem /usr/include/lxqt-globalkeys -isystem /usr/include/lxqt-globalkeys-ui -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/lxqt-runner-1.1.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -fPIE -fvisibility=hidden -fvisibility-inlines-hidden -fexceptions -fPIC -std=c++14 -MD -MT CMakeFiles/lxqt-runner.dir/commanditemmodel.cpp.o -MF CMakeFiles/lxqt-runner.dir/commanditemmodel.cpp.o.d -o CMakeFiles/lxqt-runner.dir/commanditemmodel.cpp.o -c /home/cnc/lxqt-dev/lxqt-runner-1.1.0/commanditemmodel.cpp
+[ 89%] Building CXX object CMakeFiles/lxqt-runner.dir/dialog.cpp.o
+/usr/bin/c++ -DLXQT_DATA_DIR=\"/usr/share\" -DLXQT_ETC_XDG_DIR=\"/etc/xdg\" -DLXQT_GRAPHICS_DIR=\"/usr/share/lxqt/graphics\" -DLXQT_MAJOR_VERSION=\"1\" -DLXQT_MINOR_VERSION=\"1\" -DLXQT_PATCH_VERSION=\"0\" -DLXQT_RELATIVE_SHARE_DIR=\"lxqt\" -DLXQT_RELATIVE_SHARE_TRANSLATIONS_DIR=\"lxqt/translations\" -DLXQT_RUNNER_VERSION=\"1.1.0\" -DLXQT_SHARE_DIR=\"/usr/share/lxqt\" -DLXQT_SHARE_TRANSLATIONS_DIR=\"/usr/share/lxqt/translations\" -DLXQT_VERSION=\"1.1.0\" -DMATH_ENABLED -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_SVG_LIB -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DQT_XML_LIB -DVBOX_ENABLED -I/home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu -I/home/cnc/lxqt-dev/lxqt-runner-1.1.0 -I/home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_autogen/include -isystem /usr/include/lxqt -isystem /usr/include/lxqt/LXQt -isystem /usr/include/KF5/KWindowSystem -isystem /usr/include/KF5 -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/qt5xdg -isystem /usr/include/aarch64-linux-gnu/qt5/QtXml -isystem /usr/include/qt5xdgiconloader -isystem /usr/include/qt5xdgiconloader/3.9.1 -isystem /usr/include/aarch64-linux-gnu/qt5/QtSvg -isystem /usr/include/aarch64-linux-gnu/qt5/QtX11Extras -isystem /usr/include/lxqt-globalkeys -isystem /usr/include/lxqt-globalkeys-ui -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/lxqt-runner-1.1.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -fPIE -fvisibility=hidden -fvisibility-inlines-hidden -fexceptions -fPIC -std=c++14 -MD -MT CMakeFiles/lxqt-runner.dir/main.cpp.o -MF CMakeFiles/lxqt-runner.dir/main.cpp.o.d -o CMakeFiles/lxqt-runner.dir/main.cpp.o -c /home/cnc/lxqt-dev/lxqt-runner-1.1.0/main.cpp
+/usr/bin/c++ -DLXQT_DATA_DIR=\"/usr/share\" -DLXQT_ETC_XDG_DIR=\"/etc/xdg\" -DLXQT_GRAPHICS_DIR=\"/usr/share/lxqt/graphics\" -DLXQT_MAJOR_VERSION=\"1\" -DLXQT_MINOR_VERSION=\"1\" -DLXQT_PATCH_VERSION=\"0\" -DLXQT_RELATIVE_SHARE_DIR=\"lxqt\" -DLXQT_RELATIVE_SHARE_TRANSLATIONS_DIR=\"lxqt/translations\" -DLXQT_RUNNER_VERSION=\"1.1.0\" -DLXQT_SHARE_DIR=\"/usr/share/lxqt\" -DLXQT_SHARE_TRANSLATIONS_DIR=\"/usr/share/lxqt/translations\" -DLXQT_VERSION=\"1.1.0\" -DMATH_ENABLED -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_SVG_LIB -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DQT_XML_LIB -DVBOX_ENABLED -I/home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu -I/home/cnc/lxqt-dev/lxqt-runner-1.1.0 -I/home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_autogen/include -isystem /usr/include/lxqt -isystem /usr/include/lxqt/LXQt -isystem /usr/include/KF5/KWindowSystem -isystem /usr/include/KF5 -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/qt5xdg -isystem /usr/include/aarch64-linux-gnu/qt5/QtXml -isystem /usr/include/qt5xdgiconloader -isystem /usr/include/qt5xdgiconloader/3.9.1 -isystem /usr/include/aarch64-linux-gnu/qt5/QtSvg -isystem /usr/include/aarch64-linux-gnu/qt5/QtX11Extras -isystem /usr/include/lxqt-globalkeys -isystem /usr/include/lxqt-globalkeys-ui -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/lxqt-runner-1.1.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -fPIE -fvisibility=hidden -fvisibility-inlines-hidden -fexceptions -fPIC -std=c++14 -MD -MT CMakeFiles/lxqt-runner.dir/dialog.cpp.o -MF CMakeFiles/lxqt-runner.dir/dialog.cpp.o.d -o CMakeFiles/lxqt-runner.dir/dialog.cpp.o -c /home/cnc/lxqt-dev/lxqt-runner-1.1.0/dialog.cpp
+[ 91%] Building CXX object CMakeFiles/lxqt-runner.dir/widgets.cpp.o
+/usr/bin/c++ -DLXQT_DATA_DIR=\"/usr/share\" -DLXQT_ETC_XDG_DIR=\"/etc/xdg\" -DLXQT_GRAPHICS_DIR=\"/usr/share/lxqt/graphics\" -DLXQT_MAJOR_VERSION=\"1\" -DLXQT_MINOR_VERSION=\"1\" -DLXQT_PATCH_VERSION=\"0\" -DLXQT_RELATIVE_SHARE_DIR=\"lxqt\" -DLXQT_RELATIVE_SHARE_TRANSLATIONS_DIR=\"lxqt/translations\" -DLXQT_RUNNER_VERSION=\"1.1.0\" -DLXQT_SHARE_DIR=\"/usr/share/lxqt\" -DLXQT_SHARE_TRANSLATIONS_DIR=\"/usr/share/lxqt/translations\" -DLXQT_VERSION=\"1.1.0\" -DMATH_ENABLED -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_SVG_LIB -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DQT_XML_LIB -DVBOX_ENABLED -I/home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu -I/home/cnc/lxqt-dev/lxqt-runner-1.1.0 -I/home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_autogen/include -isystem /usr/include/lxqt -isystem /usr/include/lxqt/LXQt -isystem /usr/include/KF5/KWindowSystem -isystem /usr/include/KF5 -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/qt5xdg -isystem /usr/include/aarch64-linux-gnu/qt5/QtXml -isystem /usr/include/qt5xdgiconloader -isystem /usr/include/qt5xdgiconloader/3.9.1 -isystem /usr/include/aarch64-linux-gnu/qt5/QtSvg -isystem /usr/include/aarch64-linux-gnu/qt5/QtX11Extras -isystem /usr/include/lxqt-globalkeys -isystem /usr/include/lxqt-globalkeys-ui -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/lxqt-runner-1.1.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -fPIE -fvisibility=hidden -fvisibility-inlines-hidden -fexceptions -fPIC -std=c++14 -MD -MT CMakeFiles/lxqt-runner.dir/widgets.cpp.o -MF CMakeFiles/lxqt-runner.dir/widgets.cpp.o.d -o CMakeFiles/lxqt-runner.dir/widgets.cpp.o -c /home/cnc/lxqt-dev/lxqt-runner-1.1.0/widgets.cpp
+[ 93%] Building CXX object CMakeFiles/lxqt-runner.dir/providers.cpp.o
+/usr/bin/c++ -DLXQT_DATA_DIR=\"/usr/share\" -DLXQT_ETC_XDG_DIR=\"/etc/xdg\" -DLXQT_GRAPHICS_DIR=\"/usr/share/lxqt/graphics\" -DLXQT_MAJOR_VERSION=\"1\" -DLXQT_MINOR_VERSION=\"1\" -DLXQT_PATCH_VERSION=\"0\" -DLXQT_RELATIVE_SHARE_DIR=\"lxqt\" -DLXQT_RELATIVE_SHARE_TRANSLATIONS_DIR=\"lxqt/translations\" -DLXQT_RUNNER_VERSION=\"1.1.0\" -DLXQT_SHARE_DIR=\"/usr/share/lxqt\" -DLXQT_SHARE_TRANSLATIONS_DIR=\"/usr/share/lxqt/translations\" -DLXQT_VERSION=\"1.1.0\" -DMATH_ENABLED -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_SVG_LIB -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DQT_XML_LIB -DVBOX_ENABLED -I/home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu -I/home/cnc/lxqt-dev/lxqt-runner-1.1.0 -I/home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_autogen/include -isystem /usr/include/lxqt -isystem /usr/include/lxqt/LXQt -isystem /usr/include/KF5/KWindowSystem -isystem /usr/include/KF5 -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/qt5xdg -isystem /usr/include/aarch64-linux-gnu/qt5/QtXml -isystem /usr/include/qt5xdgiconloader -isystem /usr/include/qt5xdgiconloader/3.9.1 -isystem /usr/include/aarch64-linux-gnu/qt5/QtSvg -isystem /usr/include/aarch64-linux-gnu/qt5/QtX11Extras -isystem /usr/include/lxqt-globalkeys -isystem /usr/include/lxqt-globalkeys-ui -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/lxqt-runner-1.1.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -fPIE -fvisibility=hidden -fvisibility-inlines-hidden -fexceptions -fPIC -std=c++14 -MD -MT CMakeFiles/lxqt-runner.dir/providers.cpp.o -MF CMakeFiles/lxqt-runner.dir/providers.cpp.o.d -o CMakeFiles/lxqt-runner.dir/providers.cpp.o -c /home/cnc/lxqt-dev/lxqt-runner-1.1.0/providers.cpp
+[ 94%] Building CXX object CMakeFiles/lxqt-runner.dir/yamlparser.cpp.o
+/usr/bin/c++ -DLXQT_DATA_DIR=\"/usr/share\" -DLXQT_ETC_XDG_DIR=\"/etc/xdg\" -DLXQT_GRAPHICS_DIR=\"/usr/share/lxqt/graphics\" -DLXQT_MAJOR_VERSION=\"1\" -DLXQT_MINOR_VERSION=\"1\" -DLXQT_PATCH_VERSION=\"0\" -DLXQT_RELATIVE_SHARE_DIR=\"lxqt\" -DLXQT_RELATIVE_SHARE_TRANSLATIONS_DIR=\"lxqt/translations\" -DLXQT_RUNNER_VERSION=\"1.1.0\" -DLXQT_SHARE_DIR=\"/usr/share/lxqt\" -DLXQT_SHARE_TRANSLATIONS_DIR=\"/usr/share/lxqt/translations\" -DLXQT_VERSION=\"1.1.0\" -DMATH_ENABLED -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_SVG_LIB -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DQT_XML_LIB -DVBOX_ENABLED -I/home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu -I/home/cnc/lxqt-dev/lxqt-runner-1.1.0 -I/home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_autogen/include -isystem /usr/include/lxqt -isystem /usr/include/lxqt/LXQt -isystem /usr/include/KF5/KWindowSystem -isystem /usr/include/KF5 -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/qt5xdg -isystem /usr/include/aarch64-linux-gnu/qt5/QtXml -isystem /usr/include/qt5xdgiconloader -isystem /usr/include/qt5xdgiconloader/3.9.1 -isystem /usr/include/aarch64-linux-gnu/qt5/QtSvg -isystem /usr/include/aarch64-linux-gnu/qt5/QtX11Extras -isystem /usr/include/lxqt-globalkeys -isystem /usr/include/lxqt-globalkeys-ui -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/lxqt-runner-1.1.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -fPIE -fvisibility=hidden -fvisibility-inlines-hidden -fexceptions -fPIC -std=c++14 -MD -MT CMakeFiles/lxqt-runner.dir/yamlparser.cpp.o -MF CMakeFiles/lxqt-runner.dir/yamlparser.cpp.o.d -o CMakeFiles/lxqt-runner.dir/yamlparser.cpp.o -c /home/cnc/lxqt-dev/lxqt-runner-1.1.0/yamlparser.cpp
+[ 96%] Building CXX object CMakeFiles/lxqt-runner.dir/configuredialog/configuredialog.cpp.o
+/usr/bin/c++ -DLXQT_DATA_DIR=\"/usr/share\" -DLXQT_ETC_XDG_DIR=\"/etc/xdg\" -DLXQT_GRAPHICS_DIR=\"/usr/share/lxqt/graphics\" -DLXQT_MAJOR_VERSION=\"1\" -DLXQT_MINOR_VERSION=\"1\" -DLXQT_PATCH_VERSION=\"0\" -DLXQT_RELATIVE_SHARE_DIR=\"lxqt\" -DLXQT_RELATIVE_SHARE_TRANSLATIONS_DIR=\"lxqt/translations\" -DLXQT_RUNNER_VERSION=\"1.1.0\" -DLXQT_SHARE_DIR=\"/usr/share/lxqt\" -DLXQT_SHARE_TRANSLATIONS_DIR=\"/usr/share/lxqt/translations\" -DLXQT_VERSION=\"1.1.0\" -DMATH_ENABLED -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_SVG_LIB -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DQT_XML_LIB -DVBOX_ENABLED -I/home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu -I/home/cnc/lxqt-dev/lxqt-runner-1.1.0 -I/home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_autogen/include -isystem /usr/include/lxqt -isystem /usr/include/lxqt/LXQt -isystem /usr/include/KF5/KWindowSystem -isystem /usr/include/KF5 -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/qt5xdg -isystem /usr/include/aarch64-linux-gnu/qt5/QtXml -isystem /usr/include/qt5xdgiconloader -isystem /usr/include/qt5xdgiconloader/3.9.1 -isystem /usr/include/aarch64-linux-gnu/qt5/QtSvg -isystem /usr/include/aarch64-linux-gnu/qt5/QtX11Extras -isystem /usr/include/lxqt-globalkeys -isystem /usr/include/lxqt-globalkeys-ui -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/lxqt-runner-1.1.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -fPIE -fvisibility=hidden -fvisibility-inlines-hidden -fexceptions -fPIC -std=c++14 -MD -MT CMakeFiles/lxqt-runner.dir/configuredialog/configuredialog.cpp.o -MF CMakeFiles/lxqt-runner.dir/configuredialog/configuredialog.cpp.o.d -o CMakeFiles/lxqt-runner.dir/configuredialog/configuredialog.cpp.o -c /home/cnc/lxqt-dev/lxqt-runner-1.1.0/configuredialog/configuredialog.cpp
+[ 98%] Building CXX object CMakeFiles/lxqt-runner.dir/LXQtAppTranslationLoader.cpp.o
+/usr/bin/c++ -DLXQT_DATA_DIR=\"/usr/share\" -DLXQT_ETC_XDG_DIR=\"/etc/xdg\" -DLXQT_GRAPHICS_DIR=\"/usr/share/lxqt/graphics\" -DLXQT_MAJOR_VERSION=\"1\" -DLXQT_MINOR_VERSION=\"1\" -DLXQT_PATCH_VERSION=\"0\" -DLXQT_RELATIVE_SHARE_DIR=\"lxqt\" -DLXQT_RELATIVE_SHARE_TRANSLATIONS_DIR=\"lxqt/translations\" -DLXQT_RUNNER_VERSION=\"1.1.0\" -DLXQT_SHARE_DIR=\"/usr/share/lxqt\" -DLXQT_SHARE_TRANSLATIONS_DIR=\"/usr/share/lxqt/translations\" -DLXQT_VERSION=\"1.1.0\" -DMATH_ENABLED -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_SVG_LIB -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DQT_XML_LIB -DVBOX_ENABLED -I/home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu -I/home/cnc/lxqt-dev/lxqt-runner-1.1.0 -I/home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/lxqt-runner_autogen/include -isystem /usr/include/lxqt -isystem /usr/include/lxqt/LXQt -isystem /usr/include/KF5/KWindowSystem -isystem /usr/include/KF5 -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/qt5xdg -isystem /usr/include/aarch64-linux-gnu/qt5/QtXml -isystem /usr/include/qt5xdgiconloader -isystem /usr/include/qt5xdgiconloader/3.9.1 -isystem /usr/include/aarch64-linux-gnu/qt5/QtSvg -isystem /usr/include/aarch64-linux-gnu/qt5/QtX11Extras -isystem /usr/include/lxqt-globalkeys -isystem /usr/include/lxqt-globalkeys-ui -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/lxqt-runner-1.1.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -fPIE -fvisibility=hidden -fvisibility-inlines-hidden -fexceptions -fPIC -std=c++14 -MD -MT CMakeFiles/lxqt-runner.dir/LXQtAppTranslationLoader.cpp.o -MF CMakeFiles/lxqt-runner.dir/LXQtAppTranslationLoader.cpp.o.d -o CMakeFiles/lxqt-runner.dir/LXQtAppTranslationLoader.cpp.o -c /home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/LXQtAppTranslationLoader.cpp
+[100%] Linking CXX executable lxqt-runner
+/usr/bin/cmake -E cmake_link_script CMakeFiles/lxqt-runner.dir/link.txt --verbose=1
+/usr/bin/c++ -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/lxqt-runner-1.1.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -Wl,-Bsymbolic-functions -Wl,-Bsymbolic -Wl,-z,relro -Wl,-z,now -Wl,--as-needed -rdynamic "CMakeFiles/lxqt-runner.dir/lxqt-runner_autogen/mocs_compilation.cpp.o" "CMakeFiles/lxqt-runner.dir/main.cpp.o" "CMakeFiles/lxqt-runner.dir/dialog.cpp.o" "CMakeFiles/lxqt-runner.dir/commanditemmodel.cpp.o" "CMakeFiles/lxqt-runner.dir/widgets.cpp.o" "CMakeFiles/lxqt-runner.dir/providers.cpp.o" "CMakeFiles/lxqt-runner.dir/yamlparser.cpp.o" "CMakeFiles/lxqt-runner.dir/configuredialog/configuredialog.cpp.o" "CMakeFiles/lxqt-runner.dir/LXQtAppTranslationLoader.cpp.o" -o lxqt-runner  /usr/lib/aarch64-linux-gnu/liblxqt.so.1.1.0 /usr/lib/aarch64-linux-gnu/liblxqt-globalkeys-ui.so.1.1.0 -L/usr/lib/aarch64-linux-gnu -lmuparser /usr/lib/aarch64-linux-gnu/libKF5WindowSystem.so.5.96.0 /usr/lib/aarch64-linux-gnu/libX11.so /usr/lib/aarch64-linux-gnu/libQt5Xdg.so.3.9.1 /usr/lib/aarch64-linux-gnu/libQt5Xml.so.5.15.4 /usr/lib/aarch64-linux-gnu/libQt5XdgIconLoader.so.3.9.1 /usr/lib/aarch64-linux-gnu/libQt5Svg.so.5.15.4 -lglib-2.0 -lgobject-2.0 -lgio-2.0 /usr/lib/aarch64-linux-gnu/libQt5X11Extras.so.5.15.4 /usr/lib/aarch64-linux-gnu/liblxqt-globalkeys.so.1.1.0 /usr/lib/aarch64-linux-gnu/libQt5Widgets.so.5.15.4 /usr/lib/aarch64-linux-gnu/libQt5Gui.so.5.15.4 /usr/lib/aarch64-linux-gnu/libQt5DBus.so.5.15.4 /usr/lib/aarch64-linux-gnu/libQt5Core.so.5.15.4 
+make[3]: Leaving directory '/home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu'
+[100%] Built target lxqt-runner
+make[2]: Leaving directory '/home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu'
+/usr/bin/cmake -E cmake_progress_start /home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/CMakeFiles 0
+make[1]: Leaving directory '/home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu'
+   dh_auto_test -O--buildsystem=cmake
+   create-stamp debian/debhelper-build-stamp
+ debian/rules binary
+dh binary --buildsystem cmake
+   dh_testroot -O--buildsystem=cmake
+   dh_prep -O--buildsystem=cmake
+   dh_auto_install -O--buildsystem=cmake
+	cd obj-aarch64-linux-gnu && make -j4 install DESTDIR=/home/cnc/lxqt-dev/lxqt-runner-1.1.0/debian/tmp AM_UPDATE_INFO_DIR=no "INSTALL=install --strip-program=true"
+make[1]: Entering directory '/home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu'
+/usr/bin/cmake -S/home/cnc/lxqt-dev/lxqt-runner-1.1.0 -B/home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu --check-build-system CMakeFiles/Makefile.cmake 0
+/usr/bin/cmake -E cmake_progress_start /home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/CMakeFiles /home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu//CMakeFiles/progress.marks
+make  -f CMakeFiles/Makefile2 all
+make[2]: Entering directory '/home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu'
+make  -f CMakeFiles/lxqt-runner_autogen.dir/build.make CMakeFiles/lxqt-runner_autogen.dir/depend
+make  -f autostart/CMakeFiles/lxq_runner_autostart_desktop_files.dir/build.make autostart/CMakeFiles/lxq_runner_autostart_desktop_files.dir/depend
+make[3]: Entering directory '/home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu'
+make[3]: Entering directory '/home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu'
+cd /home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/cnc/lxqt-dev/lxqt-runner-1.1.0 /home/cnc/lxqt-dev/lxqt-runner-1.1.0/autostart /home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu /home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/autostart /home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/autostart/CMakeFiles/lxq_runner_autostart_desktop_files.dir/DependInfo.cmake --color=
+cd /home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/cnc/lxqt-dev/lxqt-runner-1.1.0 /home/cnc/lxqt-dev/lxqt-runner-1.1.0 /home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu /home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu /home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/CMakeFiles/lxqt-runner_autogen.dir/DependInfo.cmake --color=
+make[3]: Leaving directory '/home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu'
+make  -f CMakeFiles/lxqt-runner_autogen.dir/build.make CMakeFiles/lxqt-runner_autogen.dir/build
+make[3]: Entering directory '/home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu'
+make[3]: Leaving directory '/home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu'
+make  -f autostart/CMakeFiles/lxq_runner_autostart_desktop_files.dir/build.make autostart/CMakeFiles/lxq_runner_autostart_desktop_files.dir/build
+make[3]: Entering directory '/home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu'
+make[3]: Nothing to be done for 'autostart/CMakeFiles/lxq_runner_autostart_desktop_files.dir/build'.
+make[3]: Leaving directory '/home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu'
+[  1%] Built target lxq_runner_autostart_desktop_files
+[  3%] Automatic MOC and UIC for target lxqt-runner
+/usr/bin/cmake -E cmake_autogen /home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/CMakeFiles/lxqt-runner_autogen.dir/AutogenInfo.json RelWithDebInfo
+make[3]: Leaving directory '/home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu'
+[  3%] Built target lxqt-runner_autogen
+make  -f CMakeFiles/lxqt-runner.dir/build.make CMakeFiles/lxqt-runner.dir/depend
+make[3]: Entering directory '/home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu'
+cd /home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/cnc/lxqt-dev/lxqt-runner-1.1.0 /home/cnc/lxqt-dev/lxqt-runner-1.1.0 /home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu /home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu /home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/CMakeFiles/lxqt-runner.dir/DependInfo.cmake --color=
+Consolidate compiler generated dependencies of target lxqt-runner
+make[3]: Leaving directory '/home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu'
+make  -f CMakeFiles/lxqt-runner.dir/build.make CMakeFiles/lxqt-runner.dir/build
+make[3]: Entering directory '/home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu'
+make[3]: Nothing to be done for 'CMakeFiles/lxqt-runner.dir/build'.
+make[3]: Leaving directory '/home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu'
+[100%] Built target lxqt-runner
+make[2]: Leaving directory '/home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu'
+/usr/bin/cmake -E cmake_progress_start /home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu/CMakeFiles 0
+make  -f CMakeFiles/Makefile2 preinstall
+make[2]: Entering directory '/home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu'
+make[2]: Nothing to be done for 'preinstall'.
+make[2]: Leaving directory '/home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu'
+Install the project...
+/usr/bin/cmake -P cmake_install.cmake
+-- Install configuration: "RelWithDebInfo"
+-- Installing: /home/cnc/lxqt-dev/lxqt-runner-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-runner/lxqt-runner_ar.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-runner-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-runner/lxqt-runner_arn.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-runner-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-runner/lxqt-runner_ast.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-runner-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-runner/lxqt-runner_bg.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-runner-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-runner/lxqt-runner_ca.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-runner-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-runner/lxqt-runner_cs.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-runner-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-runner/lxqt-runner_cy.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-runner-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-runner/lxqt-runner_da.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-runner-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-runner/lxqt-runner_de.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-runner-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-runner/lxqt-runner_el.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-runner-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-runner/lxqt-runner_eo.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-runner-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-runner/lxqt-runner_es.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-runner-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-runner/lxqt-runner_es_VE.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-runner-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-runner/lxqt-runner_et.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-runner-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-runner/lxqt-runner_eu.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-runner-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-runner/lxqt-runner_fi.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-runner-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-runner/lxqt-runner_fr.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-runner-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-runner/lxqt-runner_gl.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-runner-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-runner/lxqt-runner_he.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-runner-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-runner/lxqt-runner_hr.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-runner-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-runner/lxqt-runner_hu.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-runner-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-runner/lxqt-runner_ia.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-runner-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-runner/lxqt-runner_id.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-runner-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-runner/lxqt-runner_it.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-runner-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-runner/lxqt-runner_ja.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-runner-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-runner/lxqt-runner_ko.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-runner-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-runner/lxqt-runner_lt.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-runner-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-runner/lxqt-runner_nb_NO.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-runner-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-runner/lxqt-runner_nl.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-runner-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-runner/lxqt-runner_pl.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-runner-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-runner/lxqt-runner_pt.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-runner-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-runner/lxqt-runner_pt_BR.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-runner-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-runner/lxqt-runner_ro_RO.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-runner-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-runner/lxqt-runner_ru.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-runner-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-runner/lxqt-runner_si.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-runner-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-runner/lxqt-runner_sk.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-runner-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-runner/lxqt-runner_sl.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-runner-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-runner/lxqt-runner_sr@latin.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-runner-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-runner/lxqt-runner_sr_BA.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-runner-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-runner/lxqt-runner_sr_RS.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-runner-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-runner/lxqt-runner_th_TH.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-runner-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-runner/lxqt-runner_tr.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-runner-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-runner/lxqt-runner_uk.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-runner-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-runner/lxqt-runner_vi.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-runner-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-runner/lxqt-runner_zh_CN.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-runner-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-runner/lxqt-runner_zh_TW.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-runner-1.1.0/debian/tmp/usr/bin/lxqt-runner
+-- Installing: /home/cnc/lxqt-dev/lxqt-runner-1.1.0/debian/tmp/usr/share/man/man1/lxqt-runner.1
+-- Installing: /home/cnc/lxqt-dev/lxqt-runner-1.1.0/debian/tmp/etc/xdg/autostart/lxqt-runner.desktop
+make[1]: Leaving directory '/home/cnc/lxqt-dev/lxqt-runner-1.1.0/obj-aarch64-linux-gnu'
+   dh_install -O--buildsystem=cmake
+   dh_installdocs -O--buildsystem=cmake
+   dh_installchangelogs -O--buildsystem=cmake
+   dh_installman -O--buildsystem=cmake
+   dh_installinit -O--buildsystem=cmake
+   dh_installsystemduser -O--buildsystem=cmake
+   dh_perl -O--buildsystem=cmake
+   dh_link -O--buildsystem=cmake
+   dh_strip_nondeterminism -O--buildsystem=cmake
+   dh_compress -O--buildsystem=cmake
+   dh_fixperms -O--buildsystem=cmake
+   debian/rules override_dh_missing
+make[1]: Entering directory '/home/cnc/lxqt-dev/lxqt-runner-1.1.0'
+dh_missing --fail-missing
+make[1]: Leaving directory '/home/cnc/lxqt-dev/lxqt-runner-1.1.0'
+   dh_dwz -O--buildsystem=cmake
+   dh_strip -O--buildsystem=cmake
+   dh_makeshlibs -O--buildsystem=cmake
+   dh_shlibdeps -O--buildsystem=cmake
+   dh_installdeb -O--buildsystem=cmake
+   dh_gencontrol -O--buildsystem=cmake
+   dh_md5sums -O--buildsystem=cmake
+   dh_builddeb -O--buildsystem=cmake
+dpkg-deb: building package 'lxqt-runner' in '../lxqt-runner_1.1.0-1_arm64.deb'.
+dpkg-deb: building package 'lxqt-runner-l10n' in '../lxqt-runner-l10n_1.1.0-1_all.deb'.
+dpkg-deb: building package 'lxqt-runner-dbgsym' in '../lxqt-runner-dbgsym_1.1.0-1_arm64.deb'.
+ dpkg-genbuildinfo --build=binary -O../lxqt-runner_1.1.0-1_arm64.buildinfo
+ dpkg-genchanges --build=binary -O../lxqt-runner_1.1.0-1_arm64.changes
+dpkg-genchanges: info: binary-only upload (no source code included)
+ dpkg-source -i --after-build .
+dpkg-source: info: using options from lxqt-runner-1.1.0/debian/source/options: --tar-ignore=.gitignore
+dpkg-buildpackage: info: binary-only upload (no source included)
+Now running lintian lxqt-runner_1.1.0-1_arm64.changes ...
+running with root privileges is not recommended!
+Finished running lintian.

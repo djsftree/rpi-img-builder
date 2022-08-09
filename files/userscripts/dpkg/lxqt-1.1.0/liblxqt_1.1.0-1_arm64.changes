@@ -1,0 +1,45 @@
+Format: 1.8
+Date: Tue, 28 Jun 2022 23:54:37 -0500
+Source: liblxqt
+Binary: liblxqt-l10n liblxqt1 liblxqt1-dbgsym liblxqt1-dev
+Architecture: all arm64
+Version: 1.1.0-1
+Distribution: experimental
+Urgency: medium
+Maintainer: LXQt Packaging Team <pkg-lxqt-devel@lists.alioth.debian.org>
+Changed-By: Simon Quigley <tsimonq2@debian.org>
+Description:
+ liblxqt-l10n - Language package for liblxqt
+ liblxqt1   - Shared libraries for LXQt desktop environment (libs)
+ liblxqt1-dev - Shared libraries for LXQt desktop environment (dev)
+Changes:
+ liblxqt (1.1.0-1) experimental; urgency=medium
+ .
+   [ Simon Quigley ]
+   * New upstream release.
+   * Rename liblxqt0 -> liblxqt1.
+   * Bump Standards-version, no changes needed.
+   * Bump debhelper compat to 13, no changes needed.
+   * Add my name to Uploaders.
+   * Run wrap-and-sort.
+ .
+   [ djsftree ]
+   * compiled by djsftree
+Checksums-Sha1:
+ 0a29577089e3baa3f99727bb80cdc313e9202229 41468 liblxqt-l10n_1.1.0-1_all.deb
+ b42358a50bc33bb08b0d93fb44a972d77d100ca0 2951980 liblxqt1-dbgsym_1.1.0-1_arm64.deb
+ ad9c4853ae9fc37b768842cb8e036efefcf56c30 32032 liblxqt1-dev_1.1.0-1_arm64.deb
+ 5100a426b38ebe66337d4484780bb9e995fc5b6e 100988 liblxqt1_1.1.0-1_arm64.deb
+ 890ea00bcda7ff1041b17fc0cfdf229b6c82f5c4 13829 liblxqt_1.1.0-1_arm64.buildinfo
+Checksums-Sha256:
+ bf0baf1e8b05d4a746e8781ef7a2f3ade18ec8b9c17bd3749ef060cc5c86cf21 41468 liblxqt-l10n_1.1.0-1_all.deb
+ 9864ddb417819008e7dd3ead6a4702b251d9cc87937c15c6cdcc0451617d2269 2951980 liblxqt1-dbgsym_1.1.0-1_arm64.deb
+ f47318f478720d757610de2fe10fdc20b255118e2790c31bfc8a4c9d588e6a9a 32032 liblxqt1-dev_1.1.0-1_arm64.deb
+ 22f5497ff0188b88509398dc34cd01194e1777983f4a61be72003df15ba3c46d 100988 liblxqt1_1.1.0-1_arm64.deb
+ a9b6ce04c55546e53641a3e535d92221db7c07f7d0be787ee281954511e242d3 13829 liblxqt_1.1.0-1_arm64.buildinfo
+Files:
+ 06c812d6e12ec6b052c26a993a11cbb9 41468 localization optional liblxqt-l10n_1.1.0-1_all.deb
+ 5cf59d221058ce88a8bf04b63490f0fe 2951980 debug optional liblxqt1-dbgsym_1.1.0-1_arm64.deb
+ b1764c52a19b350cd887f8a075e11e45 32032 libdevel optional liblxqt1-dev_1.1.0-1_arm64.deb
+ db95a15547da1871fc7e69051da65546 100988 libs optional liblxqt1_1.1.0-1_arm64.deb
+ ffa5916161116a45f4fd12319ef0301a 13829 libs optional liblxqt_1.1.0-1_arm64.buildinfo

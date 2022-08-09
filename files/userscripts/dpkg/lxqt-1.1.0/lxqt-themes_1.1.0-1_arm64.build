@@ -1,0 +1,416 @@
+ dpkg-buildpackage -us -uc -ui -i -b
+dpkg-buildpackage: info: source package lxqt-themes
+dpkg-buildpackage: info: source version 1.1.0-1
+dpkg-buildpackage: info: source distribution experimental
+dpkg-buildpackage: info: source changed by Aaron Rainbolt <arraybolt3@gmail.com>
+ dpkg-source -i --before-build .
+dpkg-buildpackage: info: host architecture arm64
+dpkg-source: info: using options from lxqt-themes-1.1.0/debian/source/options: --tar-ignore=.gitignore
+ debian/rules clean
+dh clean --buildsystem cmake
+   dh_auto_clean -O--buildsystem=cmake
+   dh_autoreconf_clean -O--buildsystem=cmake
+   dh_clean -O--buildsystem=cmake
+ debian/rules binary
+dh binary --buildsystem cmake
+   dh_update_autotools_config -O--buildsystem=cmake
+   dh_autoreconf -O--buildsystem=cmake
+   dh_auto_configure -O--buildsystem=cmake
+	cd obj-aarch64-linux-gnu && cmake -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=None -DCMAKE_INSTALL_SYSCONFDIR=/etc -DCMAKE_INSTALL_LOCALSTATEDIR=/var -DCMAKE_EXPORT_NO_PACKAGE_REGISTRY=ON -DCMAKE_FIND_USE_PACKAGE_REGISTRY=OFF -DCMAKE_FIND_PACKAGE_NO_PACKAGE_REGISTRY=ON -DFETCHCONTENT_FULLY_DISCONNECTED=ON -DCMAKE_INSTALL_RUNSTATEDIR=/run -DCMAKE_SKIP_INSTALL_ALL_DEPENDENCY=ON "-GUnix Makefiles" -DCMAKE_VERBOSE_MAKEFILE=ON -DCMAKE_INSTALL_LIBDIR=lib/aarch64-linux-gnu ..
+-- The C compiler identification is GNU 11.3.0
+-- The CXX compiler identification is GNU 11.3.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found Perl: /usr/bin/perl (found version "5.34.0") 
+-- Configuring done
+-- Generating done
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    CMAKE_EXPORT_NO_PACKAGE_REGISTRY
+    CMAKE_FIND_PACKAGE_NO_PACKAGE_REGISTRY
+    FETCHCONTENT_FULLY_DISCONNECTED
+
+
+-- Build files have been written to: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/obj-aarch64-linux-gnu
+   dh_auto_build -O--buildsystem=cmake
+	cd obj-aarch64-linux-gnu && make -j4 "INSTALL=install --strip-program=true" VERBOSE=1
+make[1]: Entering directory '/home/cnc/lxqt-dev/lxqt-themes-1.1.0/obj-aarch64-linux-gnu'
+/usr/bin/cmake -S/home/cnc/lxqt-dev/lxqt-themes-1.1.0 -B/home/cnc/lxqt-dev/lxqt-themes-1.1.0/obj-aarch64-linux-gnu --check-build-system CMakeFiles/Makefile.cmake 0
+/usr/bin/cmake -E cmake_progress_start /home/cnc/lxqt-dev/lxqt-themes-1.1.0/obj-aarch64-linux-gnu/CMakeFiles /home/cnc/lxqt-dev/lxqt-themes-1.1.0/obj-aarch64-linux-gnu//CMakeFiles/progress.marks
+make  -f CMakeFiles/Makefile2 all
+make[2]: Entering directory '/home/cnc/lxqt-dev/lxqt-themes-1.1.0/obj-aarch64-linux-gnu'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/home/cnc/lxqt-dev/lxqt-themes-1.1.0/obj-aarch64-linux-gnu'
+/usr/bin/cmake -E cmake_progress_start /home/cnc/lxqt-dev/lxqt-themes-1.1.0/obj-aarch64-linux-gnu/CMakeFiles 0
+make[1]: Leaving directory '/home/cnc/lxqt-dev/lxqt-themes-1.1.0/obj-aarch64-linux-gnu'
+   dh_auto_test -O--buildsystem=cmake
+   create-stamp debian/debhelper-build-stamp
+   dh_testroot -O--buildsystem=cmake
+   dh_prep -O--buildsystem=cmake
+   dh_auto_install -O--buildsystem=cmake
+	cd obj-aarch64-linux-gnu && make -j4 install DESTDIR=/home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp AM_UPDATE_INFO_DIR=no "INSTALL=install --strip-program=true"
+make[1]: Entering directory '/home/cnc/lxqt-dev/lxqt-themes-1.1.0/obj-aarch64-linux-gnu'
+/usr/bin/cmake -S/home/cnc/lxqt-dev/lxqt-themes-1.1.0 -B/home/cnc/lxqt-dev/lxqt-themes-1.1.0/obj-aarch64-linux-gnu --check-build-system CMakeFiles/Makefile.cmake 0
+make  -f CMakeFiles/Makefile2 preinstall
+make[2]: Entering directory '/home/cnc/lxqt-dev/lxqt-themes-1.1.0/obj-aarch64-linux-gnu'
+make[2]: Nothing to be done for 'preinstall'.
+make[2]: Leaving directory '/home/cnc/lxqt-dev/lxqt-themes-1.1.0/obj-aarch64-linux-gnu'
+Install the project...
+/usr/bin/cmake -P cmake_install.cmake
+-- Install configuration: "None"
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/graphics
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/graphics/spacer-light-dots.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/graphics/helix_1120.png
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/graphics/helix_lxqt.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/graphics/helix_shadow.png
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/graphics/helix_blue_shadow.png
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/graphics/helix_150.png
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/graphics/helix-shadow-effect.png
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/graphics/lxqt_logo.png
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/graphics/lxqt_logo_doxygen.png
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/graphics/helix-lxqt-shadow.png
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/graphics/spacer-dark-line.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/graphics/spacer-dark-dots.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/graphics/helix_60.png
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/graphics/spacer-light-line.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/graphics/helix.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/graphics/helix_white_shadow.png
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/graphics/README
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/graphics/helix-bright.png
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/.
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./KDE-Plasma
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./KDE-Plasma/preview.png
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./KDE-Plasma/lxqt-runner.qss
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./KDE-Plasma/unchecked.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./KDE-Plasma/lxqt-runner
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./KDE-Plasma/lxqt-runner/close-32x32.png
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./KDE-Plasma/lxqt-runner/application-menu.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./KDE-Plasma/lxqt-runner/close-48x48.png
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./KDE-Plasma/lxqt-runner/window-close.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./KDE-Plasma/right-arrow.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./KDE-Plasma/lxqt-panel.qss
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./KDE-Plasma/wallpaper.cfg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./KDE-Plasma/mainmenu.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./KDE-Plasma/left-arrow.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./KDE-Plasma/spacer-plugin
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./KDE-Plasma/spacer-plugin/spacer-dots.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./KDE-Plasma/spacer-plugin/spacer-line.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./KDE-Plasma/checked.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./KDE-Plasma/lxqt-notificationd.qss
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./KDE-Plasma/lxqt-notificationd
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./KDE-Plasma/lxqt-notificationd/window-close.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./system
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./system/preview.png
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./system/lxqt-panel.qss
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./system/wallpaper.cfg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./system/mainmenu.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./system/spacer-plugin
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./system/spacer-plugin/spacer-dots.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./system/spacer-plugin/spacer-line.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./dark
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./dark/preview.png
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./dark/lxqt-runner.qss
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./dark/unchecked.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./dark/lxqt-runner
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./dark/lxqt-runner/close.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./dark/lxqt-runner/down-arrow.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./dark/lxqt-panel.qss
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./dark/arrow-right.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./dark/arrow-left.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./dark/wallpaper.cfg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./dark/mainmenu.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./dark/calendar-popup
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./dark/calendar-popup/right-arrow.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./dark/calendar-popup/left-arrow.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./dark/spacer-plugin
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./dark/spacer-plugin/spacer-dots.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./dark/spacer-plugin/spacer-line.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./dark/checked.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./dark/lxqt-notificationd.qss
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./dark/lxqt-notificationd
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./dark/lxqt-notificationd/cancel.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./Valendas
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./Valendas/preview.png
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./Valendas/arrow-right-selected.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./Valendas/lxqt-sudo.qss
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./Valendas/lxqt-runner
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./Valendas/lxqt-runner/close.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./Valendas/lxqt-runner/down-arrow.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./Valendas/lxqt-panel.qss
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./Valendas/arrow-right.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./Valendas/arrow-left.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./Valendas/wallpaper.cfg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./Valendas/mainmenu.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./Valendas/calendar-popup
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./Valendas/calendar-popup/right-arrow.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./Valendas/calendar-popup/left-arrow.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./Valendas/spacer-plugin
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./Valendas/spacer-plugin/spacer-dots.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./Valendas/spacer-plugin/spacer-line.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./Valendas/lxqt-notificationd.qss
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./Valendas/arrow-left-selected.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./frost
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./frost/preview.png
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./frost/lxqt-runner.qss
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./frost/lxqt-runner
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./frost/lxqt-runner/close.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./frost/lxqt-runner/down-arrow.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./frost/lxqt-panel.qss
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./frost/arrow-right.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./frost/volume-plugin
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./frost/volume-plugin/mixer.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./frost/arrow-left.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./frost/wallpaper.cfg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./frost/debug.png
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./frost/mainmenu.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./frost/calendar-popup
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./frost/calendar-popup/right-arrow.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./frost/calendar-popup/left-arrow.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./frost/spacer-plugin
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./frost/spacer-plugin/spacer-dots.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./frost/spacer-plugin/spacer-line.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./frost/lxqt-notificationd.qss
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./Leech
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./Leech/preview.png
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./Leech/lxqt-runner.qss
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./Leech/unchecked.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./Leech/lxqt-runner
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./Leech/lxqt-runner/close.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./Leech/lxqt-runner/down-arrow.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./Leech/lxqt-panel.qss
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./Leech/arrow-right.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./Leech/arrow-left.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./Leech/wallpaper.cfg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./Leech/mainmenu.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./Leech/calendar-popup
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./Leech/calendar-popup/right-arrow.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./Leech/calendar-popup/left-arrow.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./Leech/spacer-plugin
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./Leech/spacer-plugin/spacer-dots.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./Leech/spacer-plugin/spacer-line.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./Leech/checked.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./Leech/lxqt-notificationd.qss
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./Leech/lxqt-notificationd
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./Leech/lxqt-notificationd/cancel.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./Arch-Colors
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./Arch-Colors/preview.png
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./Arch-Colors/lxqt-runner.qss
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./Arch-Colors/arrow-right-selected.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./Arch-Colors/unchecked.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./Arch-Colors/lxqt-sudo.qss
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./Arch-Colors/lxqt-runner
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./Arch-Colors/lxqt-runner/close.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./Arch-Colors/lxqt-runner/down-arrow.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./Arch-Colors/mainmenu-arch.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./Arch-Colors/lxqt-panel.qss
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./Arch-Colors/color-picker.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./Arch-Colors/arrow-right.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./Arch-Colors/arrow-left.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./Arch-Colors/wallpaper.cfg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./Arch-Colors/mainmenu.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./Arch-Colors/calendar-popup
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./Arch-Colors/calendar-popup/right-arrow.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./Arch-Colors/calendar-popup/left-arrow.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./Arch-Colors/spacer-plugin
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./Arch-Colors/spacer-plugin/spacer-dots.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./Arch-Colors/spacer-plugin/spacer-line.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./Arch-Colors/checked.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./Arch-Colors/lxqt-notificationd.qss
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./Arch-Colors/arrow-left-selected.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./light
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./light/preview.png
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./light/lxqt-runner.qss
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./light/lxqt-lightdm-greeter
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./light/lxqt-lightdm-greeter/dropdown.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./light/lxqt-lightdm-greeter/leaveIcon.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./light/lxqt-runner
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./light/lxqt-runner/close-32x32.png
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./light/lxqt-runner/close-48x48.png
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./light/lxqt-panel.qss
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./light/lxqt-panel
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./light/lxqt-panel/plugin-handle-vertical.gif
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./light/lxqt-panel/plugin-handle-horizontal.gif
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./light/wallpaper.cfg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./light/mainmenu.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./light/spacer-plugin
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./light/spacer-plugin/spacer-dots.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./light/spacer-plugin/spacer-line.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./light/lxqt-notificationd.qss
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./ambiance
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./ambiance/preview.png
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./ambiance/lxqt-runner.qss
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./ambiance/unchecked.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./ambiance/lxqt-runner
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./ambiance/lxqt-runner/clear.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./ambiance/lxqt-runner/navigation-menu.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./ambiance/lxqt-panel.qss
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./ambiance/arrow-right.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./ambiance/arrow-left.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./ambiance/wallpaper.cfg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./ambiance/mainmenu.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./ambiance/spacer-plugin
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./ambiance/spacer-plugin/spacer-dots.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./ambiance/spacer-plugin/spacer-line.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./ambiance/checked.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./ambiance/lxqt-notificationd.qss
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./ambiance/lxqt-notificationd
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./ambiance/lxqt-notificationd/cancel.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./kvantum
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./kvantum/preview.png
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./kvantum/lxqt-runner.qss
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./kvantum/lxqt-runner
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./kvantum/lxqt-runner/close.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./kvantum/lxqt-runner/down.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./kvantum/lxqt-config.qss
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./kvantum/lxqt-panel.qss
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./kvantum/lxqt-panel
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./kvantum/lxqt-panel/arrow-up-selected.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./kvantum/lxqt-panel/arrow-right-selected.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./kvantum/lxqt-panel/unchecked.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./kvantum/lxqt-panel/arrow-down.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./kvantum/lxqt-panel/plugin-handle-horizontal.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./kvantum/lxqt-panel/radio-checked.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./kvantum/lxqt-panel/radio-unchecked.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./kvantum/lxqt-panel/arrow-right.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./kvantum/lxqt-panel/plugin-handle-vertical.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./kvantum/lxqt-panel/slidercursor.png
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./kvantum/lxqt-panel/arrow-left.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./kvantum/lxqt-panel/mainmenu.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./kvantum/lxqt-panel/arrow-up.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./kvantum/lxqt-panel/arrow-down-selected.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./kvantum/lxqt-panel/checked.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./kvantum/lxqt-panel/arrow-left-selected.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./kvantum/wallpaper.cfg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./kvantum/spacer-plugin
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./kvantum/spacer-plugin/spacer-dots.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./kvantum/spacer-plugin/spacer-line.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./kvantum/lxqt-notificationd.qss
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./Clearlooks
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./Clearlooks/preview.png
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./Clearlooks/lxqt-runner.qss
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./Clearlooks/arrow-right-selected.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./Clearlooks/unchecked.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./Clearlooks/checked-selected.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./Clearlooks/lxqt-runner
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./Clearlooks/lxqt-runner/close.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./Clearlooks/lxqt-runner/down-arrow.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./Clearlooks/lxqt-panel.qss
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./Clearlooks/arrow-right.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./Clearlooks/arrow-left.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./Clearlooks/unchecked-selected.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./Clearlooks/wallpaper.cfg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./Clearlooks/mainmenu.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./Clearlooks/calendar-popup
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./Clearlooks/calendar-popup/right-arrow.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./Clearlooks/calendar-popup/left-arrow.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./Clearlooks/spacer-plugin
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./Clearlooks/spacer-plugin/spacer-dots.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./Clearlooks/spacer-plugin/spacer-line.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./Clearlooks/checked.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./Clearlooks/lxqt-notificationd.qss
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./Clearlooks/arrow-left-selected.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./Clearlooks/lxqt-notificationd
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./Clearlooks/lxqt-notificationd/cancel.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./silver
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./silver/preview.png
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./silver/lxqt-runner.qss
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./silver/arrow-right-selected.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./silver/unchecked.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./silver/lxqt-sudo.qss
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./silver/lxqt-runner
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./silver/lxqt-runner/close.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./silver/lxqt-runner/down-arrow.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./silver/beam.png
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./silver/lxqt-panel.qss
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./silver/arrow-right.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./silver/arrow-left.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./silver/wallpaper.cfg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./silver/mainmenu.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./silver/calendar-popup
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./silver/calendar-popup/right-arrow.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./silver/calendar-popup/left-arrow.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./silver/spacer-plugin
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./silver/spacer-plugin/spacer-dots.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./silver/spacer-plugin/spacer-line.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./silver/checked.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./silver/lxqt-notificationd.qss
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/themes/./silver/arrow-left-selected.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/icons/hicolor
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/icons/hicolor/scalable
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/icons/hicolor/scalable/apps
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/icons/hicolor/scalable/apps/lxqt.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/icons/hicolor/scalable/places
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/icons/hicolor/scalable/places/start-here-lxqt.svg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/wallpapers/.
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/wallpapers/./appleflower.png
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/wallpapers/./waves-purple-logo.jpg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/wallpapers/./flowers.png
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/wallpapers/./butterfly.png
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/wallpapers/./License
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/wallpapers/./origami-bright-logo.png
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/wallpapers/./origami-light.png
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/wallpapers/./waves-logo.png
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/wallpapers/./kde-plasma.png
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/wallpapers/./beam.png
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/wallpapers/./fog.jpg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/wallpapers/./triangles-logo.png
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/wallpapers/./cloud.png
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/wallpapers/./Butterfly-Kenneth-Wimer.jpg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/wallpapers/./this-is-not-windows.jpg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/wallpapers/./plasma-logo-bright.png
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/wallpapers/./simple_blue_widescreen.png
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/wallpapers/./plasma_arch.png
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/wallpapers/./triangles.png
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/wallpapers/./after-the-rain.jpg
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/wallpapers/./origami-dark.png
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/wallpapers/./lxqt-origami-green.png
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/wallpapers/./Valendas.png
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/wallpapers/./drop.png
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/wallpapers/./plasma-logo-dark.png
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/palettes/.
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/palettes/./Ambiance
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/palettes/./Dark
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/palettes/./Valendas
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/palettes/./Leech
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/palettes/./Arch-Colors
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/palettes/./Silver-bright
+-- Installing: /home/cnc/lxqt-dev/lxqt-themes-1.1.0/debian/tmp/usr/share/lxqt/palettes/./Silver-dark
+make[1]: Leaving directory '/home/cnc/lxqt-dev/lxqt-themes-1.1.0/obj-aarch64-linux-gnu'
+   dh_install -O--buildsystem=cmake
+   dh_installdocs -O--buildsystem=cmake
+   dh_installchangelogs -O--buildsystem=cmake
+   dh_installsystemduser -O--buildsystem=cmake
+   dh_icons -O--buildsystem=cmake
+   dh_perl -O--buildsystem=cmake
+   dh_link -O--buildsystem=cmake
+   dh_strip_nondeterminism -O--buildsystem=cmake
+   dh_compress -O--buildsystem=cmake
+   dh_fixperms -O--buildsystem=cmake
+   debian/rules override_dh_missing
+make[1]: Entering directory '/home/cnc/lxqt-dev/lxqt-themes-1.1.0'
+dh_missing --fail-missing
+make[1]: Leaving directory '/home/cnc/lxqt-dev/lxqt-themes-1.1.0'
+   dh_installdeb -O--buildsystem=cmake
+   dh_gencontrol -O--buildsystem=cmake
+   dh_md5sums -O--buildsystem=cmake
+   dh_builddeb -O--buildsystem=cmake
+dpkg-deb: building package 'lxqt-system-theme' in '../lxqt-system-theme_1.1.0-1_all.deb'.
+dpkg-deb: building package 'lxqt-themes' in '../lxqt-themes_1.1.0-1_all.deb'.
+ dpkg-genbuildinfo --build=binary -O../lxqt-themes_1.1.0-1_arm64.buildinfo
+ dpkg-genchanges --build=binary -O../lxqt-themes_1.1.0-1_arm64.changes
+dpkg-genchanges: info: binary-only upload (no source code included)
+ dpkg-source -i --after-build .
+dpkg-source: info: using options from lxqt-themes-1.1.0/debian/source/options: --tar-ignore=.gitignore
+dpkg-buildpackage: info: binary-only upload (no source included)
+Now running lintian lxqt-themes_1.1.0-1_arm64.changes ...
+running with root privileges is not recommended!
+Finished running lintian.

@@ -1,0 +1,42 @@
+Format: 1.8
+Date: Wed, 13 Jul 2022 19:57:58 -0500
+Source: lxqt-session
+Binary: lxqt-session lxqt-session-dbgsym lxqt-session-l10n
+Architecture: arm64 all
+Version: 1.1.1-1
+Distribution: experimental
+Urgency: medium
+Maintainer: LXQt Packaging Team <pkg-lxqt-devel@lists.alioth.debian.org>
+Changed-By: Simon Quigley <tsimonq2@debian.org>
+Description:
+ lxqt-session - session manager component for LXQt
+ lxqt-session-l10n - Language package for lxqt-session
+Changes:
+ lxqt-session (1.1.1-1) experimental; urgency=medium
+ .
+   [ Simon Quigley ]
+   * New upstream release.
+   * Bump debhelper compat to 13, no changes needed.
+   * Bump build dependencies.
+   * Bump Standards-version to 4.6.1, no changes needed.
+   * Drop some old Breaks/Replaces.
+   * Run wrap-and-sort.
+   * Pull some useful changes from Ubuntu so we can sync.
+ .
+   [ djsftree ]
+   * compiled by djsftree
+Checksums-Sha1:
+ 371c19fa561275478a47820482cb34a289748962 3310152 lxqt-session-dbgsym_1.1.1-1_arm64.deb
+ dc468ae8870bede04edd771fb007afa58c1ce827 67412 lxqt-session-l10n_1.1.1-1_all.deb
+ 9d2171559e405f8319d047b23896cee9a52bc0a8 12997 lxqt-session_1.1.1-1_arm64.buildinfo
+ 33c3d56d98faf9b66d58bc4111f1f7755fb4de5e 124672 lxqt-session_1.1.1-1_arm64.deb
+Checksums-Sha256:
+ 8ab94fee5f63ab095b58310b7c8744c7118e0b0169d392947ca3dfceacdfbfab 3310152 lxqt-session-dbgsym_1.1.1-1_arm64.deb
+ ffa5a6e9d15884bfea70dbd2865b9116b3bc85dac48e2e13767c9eca8f9244a0 67412 lxqt-session-l10n_1.1.1-1_all.deb
+ 9bbe9b8ee379675e3045b2767f57e72c0045f023c9285d1e7ee5f7d30cd72720 12997 lxqt-session_1.1.1-1_arm64.buildinfo
+ 4710acbd2d8bb99ec1bf2c764c2e2f74d6355ef25168704a95f080c0d84548a9 124672 lxqt-session_1.1.1-1_arm64.deb
+Files:
+ 64741561cf9714a2cf854eaffb4e92a0 3310152 debug optional lxqt-session-dbgsym_1.1.1-1_arm64.deb
+ a62ff07363fcc02b34d3c2cb9a103c99 67412 localization optional lxqt-session-l10n_1.1.1-1_all.deb
+ 12c587e8e1aaca83f8a1e7cd97f779c6 12997 x11 optional lxqt-session_1.1.1-1_arm64.buildinfo
+ 5347090a6652a6385958d77a201f6e1b 124672 x11 optional lxqt-session_1.1.1-1_arm64.deb

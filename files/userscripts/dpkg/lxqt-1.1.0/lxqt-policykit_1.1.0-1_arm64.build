@@ -1,0 +1,400 @@
+ dpkg-buildpackage -us -uc -ui -i -b
+dpkg-buildpackage: info: source package lxqt-policykit
+dpkg-buildpackage: info: source version 1.1.0-1
+dpkg-buildpackage: info: source distribution experimental
+dpkg-buildpackage: info: source changed by Andrew Lee (李健秋) <ajqlee@debian.org>
+ dpkg-source -i --before-build .
+dpkg-buildpackage: info: host architecture arm64
+dpkg-source: info: using options from lxqt-policykit-1.1.0/debian/source/options: --tar-ignore=.gitignore
+ debian/rules clean
+dh clean --buildsystem cmake
+   dh_auto_clean -O--buildsystem=cmake
+   dh_autoreconf_clean -O--buildsystem=cmake
+   dh_clean -O--buildsystem=cmake
+ debian/rules build
+dh build --buildsystem cmake
+   dh_update_autotools_config -O--buildsystem=cmake
+   dh_autoreconf -O--buildsystem=cmake
+   debian/rules override_dh_auto_configure
+make[1]: Entering directory '/home/cnc/lxqt-dev/lxqt-policykit-1.1.0'
+dh_auto_configure -- \
+	-DUPDATE_TRANSLATIONS=OFF \
+	-DCMAKE_BUILD_TYPE=RelWithDebInfo
+	cd obj-aarch64-linux-gnu && cmake -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=None -DCMAKE_INSTALL_SYSCONFDIR=/etc -DCMAKE_INSTALL_LOCALSTATEDIR=/var -DCMAKE_EXPORT_NO_PACKAGE_REGISTRY=ON -DCMAKE_FIND_USE_PACKAGE_REGISTRY=OFF -DCMAKE_FIND_PACKAGE_NO_PACKAGE_REGISTRY=ON -DFETCHCONTENT_FULLY_DISCONNECTED=ON -DCMAKE_INSTALL_RUNSTATEDIR=/run "-GUnix Makefiles" -DCMAKE_VERBOSE_MAKEFILE=ON -DCMAKE_INSTALL_LIBDIR=lib/aarch64-linux-gnu -DUPDATE_TRANSLATIONS=OFF -DCMAKE_BUILD_TYPE=RelWithDebInfo ..
+-- The C compiler identification is GNU 11.3.0
+-- The CXX compiler identification is GNU 11.3.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found PkgConfig: /usr/bin/pkg-config (found version "0.29.2") 
+-- Checking for module 'polkit-agent-1'
+--   Found polkit-agent-1, version 0.105
+-- polkit agent: /usr/include/polkit-1;/usr/include/libmount;/usr/include/blkid;/usr/include/glib-2.0;/usr/lib/aarch64-linux-gnu/glib-2.0/include polkit-agent-1;polkit-gobject-1;gio-2.0;gobject-2.0;glib-2.0
+-- Found X11: /usr/include   
+-- Looking for XOpenDisplay in /usr/lib/aarch64-linux-gnu/libX11.so;/usr/lib/aarch64-linux-gnu/libXext.so
+-- Looking for XOpenDisplay in /usr/lib/aarch64-linux-gnu/libX11.so;/usr/lib/aarch64-linux-gnu/libXext.so - found
+-- Looking for gethostbyname
+-- Looking for gethostbyname - found
+-- Looking for connect
+-- Looking for connect - found
+-- Looking for remove
+-- Looking for remove - found
+-- Looking for shmat
+-- Looking for shmat - found
+-- Looking for IceConnectionNumber in ICE
+-- Looking for IceConnectionNumber in ICE - found
+-- Building with Qt5.15.4
+-- PolkitQt-1: 0.114.0
+--    install: /usr
+--       libs: /usr/lib/aarch64-linux-gnu/libpolkit-qt5-core-1.so /usr/lib/aarch64-linux-gnu/libpolkit-qt5-agent-1.so
+--    include: /usr/include/polkit-qt5-1
+-- Found Perl: /usr/bin/perl (found version "5.34.0") 
+-- Configuring done
+-- Generating done
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    CMAKE_EXPORT_NO_PACKAGE_REGISTRY
+    CMAKE_FIND_PACKAGE_NO_PACKAGE_REGISTRY
+    FETCHCONTENT_FULLY_DISCONNECTED
+
+
+-- Build files have been written to: /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu
+make[1]: Leaving directory '/home/cnc/lxqt-dev/lxqt-policykit-1.1.0'
+   dh_auto_build -O--buildsystem=cmake
+	cd obj-aarch64-linux-gnu && make -j4 "INSTALL=install --strip-program=true" VERBOSE=1
+make[1]: Entering directory '/home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu'
+/usr/bin/cmake -S/home/cnc/lxqt-dev/lxqt-policykit-1.1.0 -B/home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu --check-build-system CMakeFiles/Makefile.cmake 0
+/usr/bin/cmake -E cmake_progress_start /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu/CMakeFiles /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu//CMakeFiles/progress.marks
+make  -f CMakeFiles/Makefile2 all
+make[2]: Entering directory '/home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu'
+make  -f CMakeFiles/lxqt-policykit-agent_autogen.dir/build.make CMakeFiles/lxqt-policykit-agent_autogen.dir/depend
+make  -f autostart/CMakeFiles/lxqt_policykit_autostart_desktop_files.dir/build.make autostart/CMakeFiles/lxqt_policykit_autostart_desktop_files.dir/depend
+make[3]: Entering directory '/home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu'
+cd /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/cnc/lxqt-dev/lxqt-policykit-1.1.0 /home/cnc/lxqt-dev/lxqt-policykit-1.1.0 /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu/CMakeFiles/lxqt-policykit-agent_autogen.dir/DependInfo.cmake --color=
+make[3]: Entering directory '/home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu'
+cd /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/cnc/lxqt-dev/lxqt-policykit-1.1.0 /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/autostart /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu/autostart /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu/autostart/CMakeFiles/lxqt_policykit_autostart_desktop_files.dir/DependInfo.cmake --color=
+make[3]: Leaving directory '/home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu'
+make  -f CMakeFiles/lxqt-policykit-agent_autogen.dir/build.make CMakeFiles/lxqt-policykit-agent_autogen.dir/build
+make[3]: Entering directory '/home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu'
+make[3]: Leaving directory '/home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu'
+make  -f autostart/CMakeFiles/lxqt_policykit_autostart_desktop_files.dir/build.make autostart/CMakeFiles/lxqt_policykit_autostart_desktop_files.dir/build
+make[3]: Entering directory '/home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu'
+[  2%] Generating lxqt-policykit-agent.desktop
+cd /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu/autostart && /usr/bin/perl /usr/share/cmake/lxqt-build-tools/modules//LXQtTranslateDesktopYaml.pl /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/autostart/lxqt-policykit-agent.desktop.in lxqt-policykit-agent "/home/cnc/lxqt-dev/lxqt-policykit-1.1.0/autostart/translations/lxqt-policykit-agent[_.]*desktop.yaml" >> /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu/autostart/lxqt-policykit-agent.desktop
+[  4%] Automatic MOC and UIC for target lxqt-policykit-agent
+/usr/bin/cmake -E cmake_autogen /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu/CMakeFiles/lxqt-policykit-agent_autogen.dir/AutogenInfo.json RelWithDebInfo
+AutoGen: Refreshing parse cache because it doesn't exist.
+AutoMoc: Generating "SRC:/obj-aarch64-linux-gnu/lxqt-policykit-agent_autogen/moc_predefs.h", because it doesn't exist.
+/usr/bin/c++ -dM -E -c /usr/share/cmake-3.23/Modules/CMakeCXXCompilerABI.cpp "-DLXQT_DATA_DIR=\"/usr/share\"" "-DLXQT_ETC_XDG_DIR=\"/etc/xdg\"" "-DLXQT_GRAPHICS_DIR=\"/usr/share/lxqt/graphics\"" "-DLXQT_MAJOR_VERSION=\"1\"" "-DLXQT_MINOR_VERSION=\"1\"" "-DLXQT_PATCH_VERSION=\"0\"" "-DLXQT_POLKITAGENT_VERSION=\"1.1.0\"" "-DLXQT_RELATIVE_SHARE_DIR=\"lxqt\"" "-DLXQT_RELATIVE_SHARE_TRANSLATIONS_DIR=\"lxqt/translations\"" "-DLXQT_SHARE_DIR=\"/usr/share/lxqt\"" "-DLXQT_SHARE_TRANSLATIONS_DIR=\"/usr/share/lxqt/translations\"" "-DLXQT_VERSION=\"1.1.0\"" -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_SVG_LIB -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DQT_XML_LIB -I/home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu -I/home/cnc/lxqt-dev/lxqt-policykit-1.1.0 -I/usr/include/polkit-1 -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/glib-2.0 -I/usr/lib/aarch64-linux-gnu/glib-2.0/include -I/usr/include/polkit-qt5-1 -I/usr/include/aarch64-linux-gnu/qt5 -I/usr/include/aarch64-linux-gnu/qt5/QtWidgets -I/usr/include/aarch64-linux-gnu/qt5/QtGui -I/usr/include/aarch64-linux-gnu/qt5/QtCore -I/usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -I/usr/include/lxqt -I/usr/include/lxqt/LXQt -I/usr/include/KF5/KWindowSystem -I/usr/include/KF5 -I/usr/include/aarch64-linux-gnu/qt5/QtDBus -I/usr/include/qt5xdg -I/usr/include/aarch64-linux-gnu/qt5/QtXml -I/usr/include/qt5xdgiconloader -I/usr/include/qt5xdgiconloader/3.9.1 -I/usr/include/aarch64-linux-gnu/qt5/QtSvg -I/usr/include/aarch64-linux-gnu/qt5/QtX11Extras -I/usr/include -I/usr/include/c++/11 -I/usr/include/aarch64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/aarch64-linux-gnu/11/include -I/usr/local/include -I/usr/include/aarch64-linux-gnu
+make[3]: Leaving directory '/home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu'
+AutoGen: Parsing "SRC:/src/policykitagent.h"
+AutoGen: Parsing "SRC:/src/policykitagentgui.h"
+AutoGen: Parsing "SRC:/obj-aarch64-linux-gnu/LXQtAppTranslationLoader.cpp"
+AutoGen: Parsing "SRC:/src/main.cpp"
+AutoGen: Parsing "SRC:/src/policykitagent.cpp"
+AutoGen: Parsing "SRC:/src/policykitagentgui.cpp"
+AutoMoc: Generating "SRC:/obj-aarch64-linux-gnu/lxqt-policykit-agent_autogen/UVLADIE3JM/moc_policykitagent.cpp", because it doesn't exist, from "SRC:/src/policykitagent.h"
+/usr/lib/qt5/bin/moc "-DLXQT_DATA_DIR=\"/usr/share\"" "-DLXQT_ETC_XDG_DIR=\"/etc/xdg\"" "-DLXQT_GRAPHICS_DIR=\"/usr/share/lxqt/graphics\"" "-DLXQT_MAJOR_VERSION=\"1\"" "-DLXQT_MINOR_VERSION=\"1\"" "-DLXQT_PATCH_VERSION=\"0\"" "-DLXQT_POLKITAGENT_VERSION=\"1.1.0\"" "-DLXQT_RELATIVE_SHARE_DIR=\"lxqt\"" "-DLXQT_RELATIVE_SHARE_TRANSLATIONS_DIR=\"lxqt/translations\"" "-DLXQT_SHARE_DIR=\"/usr/share/lxqt\"" "-DLXQT_SHARE_TRANSLATIONS_DIR=\"/usr/share/lxqt/translations\"" "-DLXQT_VERSION=\"1.1.0\"" -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_SVG_LIB -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DQT_XML_LIB -I/home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu -I/home/cnc/lxqt-dev/lxqt-policykit-1.1.0 -I/usr/include/polkit-1 -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/glib-2.0 -I/usr/lib/aarch64-linux-gnu/glib-2.0/include -I/usr/include/polkit-qt5-1 -I/usr/include/aarch64-linux-gnu/qt5 -I/usr/include/aarch64-linux-gnu/qt5/QtWidgets -I/usr/include/aarch64-linux-gnu/qt5/QtGui -I/usr/include/aarch64-linux-gnu/qt5/QtCore -I/usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -I/usr/include/lxqt -I/usr/include/lxqt/LXQt -I/usr/include/KF5/KWindowSystem -I/usr/include/KF5 -I/usr/include/aarch64-linux-gnu/qt5/QtDBus -I/usr/include/qt5xdg -I/usr/include/aarch64-linux-gnu/qt5/QtXml -I/usr/include/qt5xdgiconloader -I/usr/include/qt5xdgiconloader/3.9.1 -I/usr/include/aarch64-linux-gnu/qt5/QtSvg -I/usr/include/aarch64-linux-gnu/qt5/QtX11Extras -I/usr/include -I/usr/include/c++/11 -I/usr/include/aarch64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/aarch64-linux-gnu/11/include -I/usr/local/include -I/usr/include/aarch64-linux-gnu --include /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu/lxqt-policykit-agent_autogen/moc_predefs.h --output-dep-file -o /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu/lxqt-policykit-agent_autogen/UVLADIE3JM/moc_policykitagent.cpp /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/src/policykitagent.h
+[  4%] Built target lxqt_policykit_autostart_desktop_files
+AutoMoc: Reading dependencies from "SRC:/obj-aarch64-linux-gnu/lxqt-policykit-agent_autogen/UVLADIE3JM/moc_policykitagent.cpp.d"
+AutoMoc: Generating "SRC:/obj-aarch64-linux-gnu/lxqt-policykit-agent_autogen/UVLADIE3JM/moc_policykitagentgui.cpp", because it doesn't exist, from "SRC:/src/policykitagentgui.h"
+/usr/lib/qt5/bin/moc "-DLXQT_DATA_DIR=\"/usr/share\"" "-DLXQT_ETC_XDG_DIR=\"/etc/xdg\"" "-DLXQT_GRAPHICS_DIR=\"/usr/share/lxqt/graphics\"" "-DLXQT_MAJOR_VERSION=\"1\"" "-DLXQT_MINOR_VERSION=\"1\"" "-DLXQT_PATCH_VERSION=\"0\"" "-DLXQT_POLKITAGENT_VERSION=\"1.1.0\"" "-DLXQT_RELATIVE_SHARE_DIR=\"lxqt\"" "-DLXQT_RELATIVE_SHARE_TRANSLATIONS_DIR=\"lxqt/translations\"" "-DLXQT_SHARE_DIR=\"/usr/share/lxqt\"" "-DLXQT_SHARE_TRANSLATIONS_DIR=\"/usr/share/lxqt/translations\"" "-DLXQT_VERSION=\"1.1.0\"" -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_SVG_LIB -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DQT_XML_LIB -I/home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu -I/home/cnc/lxqt-dev/lxqt-policykit-1.1.0 -I/usr/include/polkit-1 -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/glib-2.0 -I/usr/lib/aarch64-linux-gnu/glib-2.0/include -I/usr/include/polkit-qt5-1 -I/usr/include/aarch64-linux-gnu/qt5 -I/usr/include/aarch64-linux-gnu/qt5/QtWidgets -I/usr/include/aarch64-linux-gnu/qt5/QtGui -I/usr/include/aarch64-linux-gnu/qt5/QtCore -I/usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -I/usr/include/lxqt -I/usr/include/lxqt/LXQt -I/usr/include/KF5/KWindowSystem -I/usr/include/KF5 -I/usr/include/aarch64-linux-gnu/qt5/QtDBus -I/usr/include/qt5xdg -I/usr/include/aarch64-linux-gnu/qt5/QtXml -I/usr/include/qt5xdgiconloader -I/usr/include/qt5xdgiconloader/3.9.1 -I/usr/include/aarch64-linux-gnu/qt5/QtSvg -I/usr/include/aarch64-linux-gnu/qt5/QtX11Extras -I/usr/include -I/usr/include/c++/11 -I/usr/include/aarch64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/aarch64-linux-gnu/11/include -I/usr/local/include -I/usr/include/aarch64-linux-gnu --include /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu/lxqt-policykit-agent_autogen/moc_predefs.h --output-dep-file -o /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu/lxqt-policykit-agent_autogen/UVLADIE3JM/moc_policykitagentgui.cpp /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/src/policykitagentgui.h
+AutoMoc: Reading dependencies from "SRC:/obj-aarch64-linux-gnu/lxqt-policykit-agent_autogen/UVLADIE3JM/moc_policykitagentgui.cpp.d"
+AutoUic: Generating "SRC:/obj-aarch64-linux-gnu/lxqt-policykit-agent_autogen/include/ui_policykitagentgui.h", because it doesn't exist, from "SRC:/src/policykitagentgui.ui"
+/usr/lib/qt5/bin/uic -o /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu/lxqt-policykit-agent_autogen/include/ui_policykitagentgui.h /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/src/policykitagentgui.ui
+AutoMoc: Generating MOC compilation "SRC:/obj-aarch64-linux-gnu/lxqt-policykit-agent_autogen/mocs_compilation.cpp"
+AutoGen: Writing the parse cache file "SRC:/obj-aarch64-linux-gnu/CMakeFiles/lxqt-policykit-agent_autogen.dir/ParseCache.txt"
+AutoGen: Writing the settings file "SRC:/obj-aarch64-linux-gnu/CMakeFiles/lxqt-policykit-agent_autogen.dir/AutogenUsed.txt"
+make[3]: Leaving directory '/home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu'
+[  4%] Built target lxqt-policykit-agent_autogen
+make  -f CMakeFiles/lxqt-policykit-agent.dir/build.make CMakeFiles/lxqt-policykit-agent.dir/depend
+make[3]: Entering directory '/home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu'
+[  7%] Generating lxqt-policykit-agent_zh_CN.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/translations/lxqt-policykit-agent_zh_CN.ts -qm /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu/lxqt-policykit-agent_zh_CN.qm
+[  9%] Generating lxqt-policykit-agent_ast.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/translations/lxqt-policykit-agent_ast.ts -qm /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu/lxqt-policykit-agent_ast.qm
+[ 12%] Generating lxqt-policykit-agent_ar.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/translations/lxqt-policykit-agent_ar.ts -qm /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu/lxqt-policykit-agent_ar.qm
+[ 14%] Generating lxqt-policykit-agent_arn.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/translations/lxqt-policykit-agent_arn.ts -qm /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu/lxqt-policykit-agent_arn.qm
+Updating '/home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu/lxqt-policykit-agent_zh_CN.qm'...
+    Generated 8 translation(s) (8 finished and 0 unfinished)
+Updating '/home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu/lxqt-policykit-agent_ar.qm'...
+    Generated 7 translation(s) (7 finished and 0 unfinished)
+    Ignored 1 untranslated source text(s)
+Updating '/home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu/lxqt-policykit-agent_ast.qm'...
+Updating '/home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu/lxqt-policykit-agent_arn.qm'...
+    Generated 0 translation(s) (0 finished and 0 unfinished)
+    Ignored 8 untranslated source text(s)
+    Generated 7 translation(s) (7 finished and 0 unfinished)
+    Ignored 1 untranslated source text(s)
+[ 17%] Generating lxqt-policykit-agent_bg.qm
+[ 19%] Generating lxqt-policykit-agent_ca.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/translations/lxqt-policykit-agent_bg.ts -qm /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu/lxqt-policykit-agent_bg.qm
+[ 21%] Generating lxqt-policykit-agent_cs.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/translations/lxqt-policykit-agent_ca.ts -qm /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu/lxqt-policykit-agent_ca.qm
+[ 24%] Generating lxqt-policykit-agent_cy.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/translations/lxqt-policykit-agent_cs.ts -qm /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu/lxqt-policykit-agent_cs.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/translations/lxqt-policykit-agent_cy.ts -qm /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu/lxqt-policykit-agent_cy.qm
+Updating '/home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu/lxqt-policykit-agent_bg.qm'...
+    Generated 8 translation(s) (8 finished and 0 unfinished)
+Updating '/home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu/lxqt-policykit-agent_ca.qm'...
+    Generated 8 translation(s) (8 finished and 0 unfinished)
+Updating '/home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu/lxqt-policykit-agent_cs.qm'...
+    Generated 8 translation(s) (8 finished and 0 unfinished)
+[ 26%] Generating lxqt-policykit-agent_da.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/translations/lxqt-policykit-agent_da.ts -qm /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu/lxqt-policykit-agent_da.qm
+Updating '/home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu/lxqt-policykit-agent_cy.qm'...
+    Generated 7 translation(s) (7 finished and 0 unfinished)
+    Ignored 1 untranslated source text(s)
+[ 29%] Generating lxqt-policykit-agent_el.qm
+[ 31%] Generating lxqt-policykit-agent_de.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/translations/lxqt-policykit-agent_el.ts -qm /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu/lxqt-policykit-agent_el.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/translations/lxqt-policykit-agent_de.ts -qm /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu/lxqt-policykit-agent_de.qm
+Updating '/home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu/lxqt-policykit-agent_da.qm'...
+    Generated 8 translation(s) (8 finished and 0 unfinished)
+Updating '/home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu/lxqt-policykit-agent_el.qm'...
+    Generated 8 translation(s) (8 finished and 0 unfinished)
+Updating '/home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu/lxqt-policykit-agent_de.qm'...
+    Generated 8 translation(s) (8 finished and 0 unfinished)
+[ 34%] Generating lxqt-policykit-agent_es.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/translations/lxqt-policykit-agent_es.ts -qm /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu/lxqt-policykit-agent_es.qm
+[ 36%] Generating lxqt-policykit-agent_et.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/translations/lxqt-policykit-agent_et.ts -qm /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu/lxqt-policykit-agent_et.qm
+[ 39%] Generating lxqt-policykit-agent_gl.qm
+Updating '/home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu/lxqt-policykit-agent_es.qm'...
+    Generated 8 translation(s) (8 finished and 0 unfinished)
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/translations/lxqt-policykit-agent_gl.ts -qm /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu/lxqt-policykit-agent_gl.qm
+[ 41%] Generating lxqt-policykit-agent_fr.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/translations/lxqt-policykit-agent_fr.ts -qm /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu/lxqt-policykit-agent_fr.qm
+Updating '/home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu/lxqt-policykit-agent_et.qm'...
+    Generated 8 translation(s) (8 finished and 0 unfinished)
+Updating '/home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu/lxqt-policykit-agent_gl.qm'...
+    Generated 8 translation(s) (8 finished and 0 unfinished)
+Updating '/home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu/lxqt-policykit-agent_fr.qm'...
+    Generated 8 translation(s) (8 finished and 0 unfinished)
+[ 43%] Generating lxqt-policykit-agent_he.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/translations/lxqt-policykit-agent_he.ts -qm /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu/lxqt-policykit-agent_he.qm
+Updating '/home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu/lxqt-policykit-agent_he.qm'...
+    Generated 8 translation(s) (8 finished and 0 unfinished)
+[ 46%] Generating lxqt-policykit-agent_id.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/translations/lxqt-policykit-agent_id.ts -qm /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu/lxqt-policykit-agent_id.qm
+Updating '/home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu/lxqt-policykit-agent_id.qm'...
+    Generated 8 translation(s) (8 finished and 0 unfinished)
+[ 51%] Generating lxqt-policykit-agent_it.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/translations/lxqt-policykit-agent_it.ts -qm /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu/lxqt-policykit-agent_it.qm
+[ 51%] Generating lxqt-policykit-agent_hr.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/translations/lxqt-policykit-agent_hr.ts -qm /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu/lxqt-policykit-agent_hr.qm
+[ 53%] Generating lxqt-policykit-agent_hu.qm
+Updating '/home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu/lxqt-policykit-agent_it.qm'...
+    Generated 8 translation(s) (8 finished and 0 unfinished)
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/translations/lxqt-policykit-agent_hu.ts -qm /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu/lxqt-policykit-agent_hu.qm
+[ 56%] Generating lxqt-policykit-agent_ko.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/translations/lxqt-policykit-agent_ko.ts -qm /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu/lxqt-policykit-agent_ko.qm
+Updating '/home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu/lxqt-policykit-agent_hr.qm'...
+    Generated 8 translation(s) (8 finished and 0 unfinished)
+Updating '/home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu/lxqt-policykit-agent_hu.qm'...
+    Generated 8 translation(s) (8 finished and 0 unfinished)
+Updating '/home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu/lxqt-policykit-agent_ko.qm'...
+    Generated 8 translation(s) (8 finished and 0 unfinished)
+[ 58%] Generating lxqt-policykit-agent_ja.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/translations/lxqt-policykit-agent_ja.ts -qm /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu/lxqt-policykit-agent_ja.qm
+[ 60%] Generating lxqt-policykit-agent_lt.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/translations/lxqt-policykit-agent_lt.ts -qm /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu/lxqt-policykit-agent_lt.qm
+Updating '/home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu/lxqt-policykit-agent_ja.qm'...
+    Generated 8 translation(s) (8 finished and 0 unfinished)
+Updating '/home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu/lxqt-policykit-agent_lt.qm'...
+    Generated 8 translation(s) (8 finished and 0 unfinished)
+[ 63%] Generating lxqt-policykit-agent_pl.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/translations/lxqt-policykit-agent_pl.ts -qm /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu/lxqt-policykit-agent_pl.qm
+[ 65%] Generating lxqt-policykit-agent_nb_NO.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/translations/lxqt-policykit-agent_nb_NO.ts -qm /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu/lxqt-policykit-agent_nb_NO.qm
+[ 68%] Generating lxqt-policykit-agent_nl.qm
+[ 70%] Generating lxqt-policykit-agent_pt.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/translations/lxqt-policykit-agent_nl.ts -qm /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu/lxqt-policykit-agent_nl.qm
+Updating '/home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu/lxqt-policykit-agent_pl.qm'...
+    Generated 8 translation(s) (8 finished and 0 unfinished)
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/translations/lxqt-policykit-agent_pt.ts -qm /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu/lxqt-policykit-agent_pt.qm
+Updating '/home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu/lxqt-policykit-agent_nb_NO.qm'...
+    Generated 8 translation(s) (8 finished and 0 unfinished)
+Updating '/home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu/lxqt-policykit-agent_nl.qm'...
+    Generated 8 translation(s) (8 finished and 0 unfinished)
+Updating '/home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu/lxqt-policykit-agent_pt.qm'...
+    Generated 8 translation(s) (8 finished and 0 unfinished)
+[ 73%] Generating lxqt-policykit-agent_tr.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/translations/lxqt-policykit-agent_tr.ts -qm /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu/lxqt-policykit-agent_tr.qm
+[ 75%] Generating lxqt-policykit-agent_ru.qm
+Updating '/home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu/lxqt-policykit-agent_tr.qm'...
+    Generated 8 translation(s) (8 finished and 0 unfinished)
+[ 78%] Generating lxqt-policykit-agent_ro.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/translations/lxqt-policykit-agent_ro.ts -qm /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu/lxqt-policykit-agent_ro.qm
+[ 80%] Generating lxqt-policykit-agent_sk_SK.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/translations/lxqt-policykit-agent_ru.ts -qm /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu/lxqt-policykit-agent_ru.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/translations/lxqt-policykit-agent_sk_SK.ts -qm /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu/lxqt-policykit-agent_sk_SK.qm
+Updating '/home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu/lxqt-policykit-agent_ro.qm'...
+    Generated 8 translation(s) (8 finished and 0 unfinished)
+Updating '/home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu/lxqt-policykit-agent_ru.qm'...
+    Generated 8 translation(s) (8 finished and 0 unfinished)
+Updating '/home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu/lxqt-policykit-agent_sk_SK.qm'...
+[ 82%] Generating lxqt-policykit-agent_vi.qm
+    Generated 8 translation(s) (8 finished and 0 unfinished)
+[ 85%] Generating lxqt-policykit-agent_uk.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/translations/lxqt-policykit-agent_vi.ts -qm /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu/lxqt-policykit-agent_vi.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/translations/lxqt-policykit-agent_uk.ts -qm /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu/lxqt-policykit-agent_uk.qm
+Updating '/home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu/lxqt-policykit-agent_vi.qm'...
+    Generated 8 translation(s) (8 finished and 0 unfinished)
+Updating '/home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu/lxqt-policykit-agent_uk.qm'...
+    Generated 8 translation(s) (8 finished and 0 unfinished)
+cd /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/cnc/lxqt-dev/lxqt-policykit-1.1.0 /home/cnc/lxqt-dev/lxqt-policykit-1.1.0 /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu/CMakeFiles/lxqt-policykit-agent.dir/DependInfo.cmake --color=
+make[3]: Leaving directory '/home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu'
+make  -f CMakeFiles/lxqt-policykit-agent.dir/build.make CMakeFiles/lxqt-policykit-agent.dir/build
+make[3]: Entering directory '/home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu'
+[ 87%] Building CXX object CMakeFiles/lxqt-policykit-agent.dir/lxqt-policykit-agent_autogen/mocs_compilation.cpp.o
+/usr/bin/c++ -DLXQT_DATA_DIR=\"/usr/share\" -DLXQT_ETC_XDG_DIR=\"/etc/xdg\" -DLXQT_GRAPHICS_DIR=\"/usr/share/lxqt/graphics\" -DLXQT_MAJOR_VERSION=\"1\" -DLXQT_MINOR_VERSION=\"1\" -DLXQT_PATCH_VERSION=\"0\" -DLXQT_POLKITAGENT_VERSION=\"1.1.0\" -DLXQT_RELATIVE_SHARE_DIR=\"lxqt\" -DLXQT_RELATIVE_SHARE_TRANSLATIONS_DIR=\"lxqt/translations\" -DLXQT_SHARE_DIR=\"/usr/share/lxqt\" -DLXQT_SHARE_TRANSLATIONS_DIR=\"/usr/share/lxqt/translations\" -DLXQT_VERSION=\"1.1.0\" -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_SVG_LIB -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DQT_XML_LIB -I/home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu -I/home/cnc/lxqt-dev/lxqt-policykit-1.1.0 -I/home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu/lxqt-policykit-agent_autogen/include -I/usr/include/polkit-1 -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/glib-2.0 -I/usr/lib/aarch64-linux-gnu/glib-2.0/include -I/usr/include/polkit-qt5-1 -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/lxqt -isystem /usr/include/lxqt/LXQt -isystem /usr/include/KF5/KWindowSystem -isystem /usr/include/KF5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/qt5xdg -isystem /usr/include/aarch64-linux-gnu/qt5/QtXml -isystem /usr/include/qt5xdgiconloader -isystem /usr/include/qt5xdgiconloader/3.9.1 -isystem /usr/include/aarch64-linux-gnu/qt5/QtSvg -isystem /usr/include/aarch64-linux-gnu/qt5/QtX11Extras -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/lxqt-policykit-1.1.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -fPIE -fvisibility=hidden -fvisibility-inlines-hidden -fPIC -std=c++14 -MD -MT CMakeFiles/lxqt-policykit-agent.dir/lxqt-policykit-agent_autogen/mocs_compilation.cpp.o -MF CMakeFiles/lxqt-policykit-agent.dir/lxqt-policykit-agent_autogen/mocs_compilation.cpp.o.d -o CMakeFiles/lxqt-policykit-agent.dir/lxqt-policykit-agent_autogen/mocs_compilation.cpp.o -c /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu/lxqt-policykit-agent_autogen/mocs_compilation.cpp
+[ 90%] Building CXX object CMakeFiles/lxqt-policykit-agent.dir/src/main.cpp.o
+[ 92%] Building CXX object CMakeFiles/lxqt-policykit-agent.dir/src/policykitagentgui.cpp.o
+[ 95%] Building CXX object CMakeFiles/lxqt-policykit-agent.dir/src/policykitagent.cpp.o
+/usr/bin/c++ -DLXQT_DATA_DIR=\"/usr/share\" -DLXQT_ETC_XDG_DIR=\"/etc/xdg\" -DLXQT_GRAPHICS_DIR=\"/usr/share/lxqt/graphics\" -DLXQT_MAJOR_VERSION=\"1\" -DLXQT_MINOR_VERSION=\"1\" -DLXQT_PATCH_VERSION=\"0\" -DLXQT_POLKITAGENT_VERSION=\"1.1.0\" -DLXQT_RELATIVE_SHARE_DIR=\"lxqt\" -DLXQT_RELATIVE_SHARE_TRANSLATIONS_DIR=\"lxqt/translations\" -DLXQT_SHARE_DIR=\"/usr/share/lxqt\" -DLXQT_SHARE_TRANSLATIONS_DIR=\"/usr/share/lxqt/translations\" -DLXQT_VERSION=\"1.1.0\" -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_SVG_LIB -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DQT_XML_LIB -I/home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu -I/home/cnc/lxqt-dev/lxqt-policykit-1.1.0 -I/home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu/lxqt-policykit-agent_autogen/include -I/usr/include/polkit-1 -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/glib-2.0 -I/usr/lib/aarch64-linux-gnu/glib-2.0/include -I/usr/include/polkit-qt5-1 -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/lxqt -isystem /usr/include/lxqt/LXQt -isystem /usr/include/KF5/KWindowSystem -isystem /usr/include/KF5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/qt5xdg -isystem /usr/include/aarch64-linux-gnu/qt5/QtXml -isystem /usr/include/qt5xdgiconloader -isystem /usr/include/qt5xdgiconloader/3.9.1 -isystem /usr/include/aarch64-linux-gnu/qt5/QtSvg -isystem /usr/include/aarch64-linux-gnu/qt5/QtX11Extras -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/lxqt-policykit-1.1.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -fPIE -fvisibility=hidden -fvisibility-inlines-hidden -fPIC -std=c++14 -MD -MT CMakeFiles/lxqt-policykit-agent.dir/src/main.cpp.o -MF CMakeFiles/lxqt-policykit-agent.dir/src/main.cpp.o.d -o CMakeFiles/lxqt-policykit-agent.dir/src/main.cpp.o -c /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/src/main.cpp
+/usr/bin/c++ -DLXQT_DATA_DIR=\"/usr/share\" -DLXQT_ETC_XDG_DIR=\"/etc/xdg\" -DLXQT_GRAPHICS_DIR=\"/usr/share/lxqt/graphics\" -DLXQT_MAJOR_VERSION=\"1\" -DLXQT_MINOR_VERSION=\"1\" -DLXQT_PATCH_VERSION=\"0\" -DLXQT_POLKITAGENT_VERSION=\"1.1.0\" -DLXQT_RELATIVE_SHARE_DIR=\"lxqt\" -DLXQT_RELATIVE_SHARE_TRANSLATIONS_DIR=\"lxqt/translations\" -DLXQT_SHARE_DIR=\"/usr/share/lxqt\" -DLXQT_SHARE_TRANSLATIONS_DIR=\"/usr/share/lxqt/translations\" -DLXQT_VERSION=\"1.1.0\" -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_SVG_LIB -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DQT_XML_LIB -I/home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu -I/home/cnc/lxqt-dev/lxqt-policykit-1.1.0 -I/home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu/lxqt-policykit-agent_autogen/include -I/usr/include/polkit-1 -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/glib-2.0 -I/usr/lib/aarch64-linux-gnu/glib-2.0/include -I/usr/include/polkit-qt5-1 -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/lxqt -isystem /usr/include/lxqt/LXQt -isystem /usr/include/KF5/KWindowSystem -isystem /usr/include/KF5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/qt5xdg -isystem /usr/include/aarch64-linux-gnu/qt5/QtXml -isystem /usr/include/qt5xdgiconloader -isystem /usr/include/qt5xdgiconloader/3.9.1 -isystem /usr/include/aarch64-linux-gnu/qt5/QtSvg -isystem /usr/include/aarch64-linux-gnu/qt5/QtX11Extras -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/lxqt-policykit-1.1.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -fPIE -fvisibility=hidden -fvisibility-inlines-hidden -fPIC -std=c++14 -MD -MT CMakeFiles/lxqt-policykit-agent.dir/src/policykitagent.cpp.o -MF CMakeFiles/lxqt-policykit-agent.dir/src/policykitagent.cpp.o.d -o CMakeFiles/lxqt-policykit-agent.dir/src/policykitagent.cpp.o -c /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/src/policykitagent.cpp
+/usr/bin/c++ -DLXQT_DATA_DIR=\"/usr/share\" -DLXQT_ETC_XDG_DIR=\"/etc/xdg\" -DLXQT_GRAPHICS_DIR=\"/usr/share/lxqt/graphics\" -DLXQT_MAJOR_VERSION=\"1\" -DLXQT_MINOR_VERSION=\"1\" -DLXQT_PATCH_VERSION=\"0\" -DLXQT_POLKITAGENT_VERSION=\"1.1.0\" -DLXQT_RELATIVE_SHARE_DIR=\"lxqt\" -DLXQT_RELATIVE_SHARE_TRANSLATIONS_DIR=\"lxqt/translations\" -DLXQT_SHARE_DIR=\"/usr/share/lxqt\" -DLXQT_SHARE_TRANSLATIONS_DIR=\"/usr/share/lxqt/translations\" -DLXQT_VERSION=\"1.1.0\" -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_SVG_LIB -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DQT_XML_LIB -I/home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu -I/home/cnc/lxqt-dev/lxqt-policykit-1.1.0 -I/home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu/lxqt-policykit-agent_autogen/include -I/usr/include/polkit-1 -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/glib-2.0 -I/usr/lib/aarch64-linux-gnu/glib-2.0/include -I/usr/include/polkit-qt5-1 -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/lxqt -isystem /usr/include/lxqt/LXQt -isystem /usr/include/KF5/KWindowSystem -isystem /usr/include/KF5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/qt5xdg -isystem /usr/include/aarch64-linux-gnu/qt5/QtXml -isystem /usr/include/qt5xdgiconloader -isystem /usr/include/qt5xdgiconloader/3.9.1 -isystem /usr/include/aarch64-linux-gnu/qt5/QtSvg -isystem /usr/include/aarch64-linux-gnu/qt5/QtX11Extras -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/lxqt-policykit-1.1.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -fPIE -fvisibility=hidden -fvisibility-inlines-hidden -fPIC -std=c++14 -MD -MT CMakeFiles/lxqt-policykit-agent.dir/src/policykitagentgui.cpp.o -MF CMakeFiles/lxqt-policykit-agent.dir/src/policykitagentgui.cpp.o.d -o CMakeFiles/lxqt-policykit-agent.dir/src/policykitagentgui.cpp.o -c /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/src/policykitagentgui.cpp
+[ 97%] Building CXX object CMakeFiles/lxqt-policykit-agent.dir/LXQtAppTranslationLoader.cpp.o
+/usr/bin/c++ -DLXQT_DATA_DIR=\"/usr/share\" -DLXQT_ETC_XDG_DIR=\"/etc/xdg\" -DLXQT_GRAPHICS_DIR=\"/usr/share/lxqt/graphics\" -DLXQT_MAJOR_VERSION=\"1\" -DLXQT_MINOR_VERSION=\"1\" -DLXQT_PATCH_VERSION=\"0\" -DLXQT_POLKITAGENT_VERSION=\"1.1.0\" -DLXQT_RELATIVE_SHARE_DIR=\"lxqt\" -DLXQT_RELATIVE_SHARE_TRANSLATIONS_DIR=\"lxqt/translations\" -DLXQT_SHARE_DIR=\"/usr/share/lxqt\" -DLXQT_SHARE_TRANSLATIONS_DIR=\"/usr/share/lxqt/translations\" -DLXQT_VERSION=\"1.1.0\" -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_SVG_LIB -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DQT_XML_LIB -I/home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu -I/home/cnc/lxqt-dev/lxqt-policykit-1.1.0 -I/home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu/lxqt-policykit-agent_autogen/include -I/usr/include/polkit-1 -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/glib-2.0 -I/usr/lib/aarch64-linux-gnu/glib-2.0/include -I/usr/include/polkit-qt5-1 -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/lxqt -isystem /usr/include/lxqt/LXQt -isystem /usr/include/KF5/KWindowSystem -isystem /usr/include/KF5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/qt5xdg -isystem /usr/include/aarch64-linux-gnu/qt5/QtXml -isystem /usr/include/qt5xdgiconloader -isystem /usr/include/qt5xdgiconloader/3.9.1 -isystem /usr/include/aarch64-linux-gnu/qt5/QtSvg -isystem /usr/include/aarch64-linux-gnu/qt5/QtX11Extras -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/lxqt-policykit-1.1.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -fPIE -fvisibility=hidden -fvisibility-inlines-hidden -fPIC -std=c++14 -MD -MT CMakeFiles/lxqt-policykit-agent.dir/LXQtAppTranslationLoader.cpp.o -MF CMakeFiles/lxqt-policykit-agent.dir/LXQtAppTranslationLoader.cpp.o.d -o CMakeFiles/lxqt-policykit-agent.dir/LXQtAppTranslationLoader.cpp.o -c /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu/LXQtAppTranslationLoader.cpp
+[100%] Linking CXX executable lxqt-policykit-agent
+/usr/bin/cmake -E cmake_link_script CMakeFiles/lxqt-policykit-agent.dir/link.txt --verbose=1
+/usr/bin/c++ -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/lxqt-policykit-1.1.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -Wl,-Bsymbolic-functions -Wl,-Bsymbolic -Wl,-z,relro -Wl,-z,now -Wl,--as-needed -rdynamic "CMakeFiles/lxqt-policykit-agent.dir/lxqt-policykit-agent_autogen/mocs_compilation.cpp.o" "CMakeFiles/lxqt-policykit-agent.dir/src/main.cpp.o" "CMakeFiles/lxqt-policykit-agent.dir/src/policykitagent.cpp.o" "CMakeFiles/lxqt-policykit-agent.dir/src/policykitagentgui.cpp.o" "CMakeFiles/lxqt-policykit-agent.dir/LXQtAppTranslationLoader.cpp.o" -o lxqt-policykit-agent  /usr/lib/aarch64-linux-gnu/liblxqt.so.1.1.0 -lpolkit-qt5-core-1 -lpolkit-qt5-agent-1 -L/usr/lib/aarch64-linux-gnu -lpolkit-agent-1 -lpolkit-gobject-1 -lgio-2.0 -lgobject-2.0 -lglib-2.0 /usr/lib/aarch64-linux-gnu/libKF5WindowSystem.so.5.96.0 /usr/lib/aarch64-linux-gnu/libX11.so /usr/lib/aarch64-linux-gnu/libQt5Xdg.so.3.9.1 /usr/lib/aarch64-linux-gnu/libQt5DBus.so.5.15.4 /usr/lib/aarch64-linux-gnu/libQt5Xml.so.5.15.4 /usr/lib/aarch64-linux-gnu/libQt5XdgIconLoader.so.3.9.1 /usr/lib/aarch64-linux-gnu/libQt5Svg.so.5.15.4 /usr/lib/aarch64-linux-gnu/libQt5Widgets.so.5.15.4 -lglib-2.0 -lgobject-2.0 -lgio-2.0 /usr/lib/aarch64-linux-gnu/libQt5X11Extras.so.5.15.4 /usr/lib/aarch64-linux-gnu/libQt5Gui.so.5.15.4 /usr/lib/aarch64-linux-gnu/libQt5Core.so.5.15.4 
+make[3]: Leaving directory '/home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu'
+[100%] Built target lxqt-policykit-agent
+make[2]: Leaving directory '/home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu'
+/usr/bin/cmake -E cmake_progress_start /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu/CMakeFiles 0
+make[1]: Leaving directory '/home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu'
+   dh_auto_test -O--buildsystem=cmake
+   create-stamp debian/debhelper-build-stamp
+ debian/rules binary
+dh binary --buildsystem cmake
+   dh_testroot -O--buildsystem=cmake
+   dh_prep -O--buildsystem=cmake
+   dh_auto_install -O--buildsystem=cmake
+	cd obj-aarch64-linux-gnu && make -j4 install DESTDIR=/home/cnc/lxqt-dev/lxqt-policykit-1.1.0/debian/tmp AM_UPDATE_INFO_DIR=no "INSTALL=install --strip-program=true"
+make[1]: Entering directory '/home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu'
+/usr/bin/cmake -S/home/cnc/lxqt-dev/lxqt-policykit-1.1.0 -B/home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu --check-build-system CMakeFiles/Makefile.cmake 0
+/usr/bin/cmake -E cmake_progress_start /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu/CMakeFiles /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu//CMakeFiles/progress.marks
+make  -f CMakeFiles/Makefile2 all
+make[2]: Entering directory '/home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu'
+make  -f CMakeFiles/lxqt-policykit-agent_autogen.dir/build.make CMakeFiles/lxqt-policykit-agent_autogen.dir/depend
+make  -f autostart/CMakeFiles/lxqt_policykit_autostart_desktop_files.dir/build.make autostart/CMakeFiles/lxqt_policykit_autostart_desktop_files.dir/depend
+make[3]: Entering directory '/home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu'
+cd /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/cnc/lxqt-dev/lxqt-policykit-1.1.0 /home/cnc/lxqt-dev/lxqt-policykit-1.1.0 /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu/CMakeFiles/lxqt-policykit-agent_autogen.dir/DependInfo.cmake --color=
+make[3]: Entering directory '/home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu'
+cd /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/cnc/lxqt-dev/lxqt-policykit-1.1.0 /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/autostart /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu/autostart /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu/autostart/CMakeFiles/lxqt_policykit_autostart_desktop_files.dir/DependInfo.cmake --color=
+make[3]: Leaving directory '/home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu'
+make  -f CMakeFiles/lxqt-policykit-agent_autogen.dir/build.make CMakeFiles/lxqt-policykit-agent_autogen.dir/build
+make[3]: Entering directory '/home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu'
+make[3]: Leaving directory '/home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu'
+make  -f autostart/CMakeFiles/lxqt_policykit_autostart_desktop_files.dir/build.make autostart/CMakeFiles/lxqt_policykit_autostart_desktop_files.dir/build
+make[3]: Entering directory '/home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu'
+make[3]: Nothing to be done for 'autostart/CMakeFiles/lxqt_policykit_autostart_desktop_files.dir/build'.
+make[3]: Leaving directory '/home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu'
+[  2%] Automatic MOC and UIC for target lxqt-policykit-agent
+/usr/bin/cmake -E cmake_autogen /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu/CMakeFiles/lxqt-policykit-agent_autogen.dir/AutogenInfo.json RelWithDebInfo
+[  4%] Built target lxqt_policykit_autostart_desktop_files
+make[3]: Leaving directory '/home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu'
+[  4%] Built target lxqt-policykit-agent_autogen
+make  -f CMakeFiles/lxqt-policykit-agent.dir/build.make CMakeFiles/lxqt-policykit-agent.dir/depend
+make[3]: Entering directory '/home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu'
+cd /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/cnc/lxqt-dev/lxqt-policykit-1.1.0 /home/cnc/lxqt-dev/lxqt-policykit-1.1.0 /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu/CMakeFiles/lxqt-policykit-agent.dir/DependInfo.cmake --color=
+Consolidate compiler generated dependencies of target lxqt-policykit-agent
+make[3]: Leaving directory '/home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu'
+make  -f CMakeFiles/lxqt-policykit-agent.dir/build.make CMakeFiles/lxqt-policykit-agent.dir/build
+make[3]: Entering directory '/home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu'
+make[3]: Nothing to be done for 'CMakeFiles/lxqt-policykit-agent.dir/build'.
+make[3]: Leaving directory '/home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu'
+[100%] Built target lxqt-policykit-agent
+make[2]: Leaving directory '/home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu'
+/usr/bin/cmake -E cmake_progress_start /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu/CMakeFiles 0
+make  -f CMakeFiles/Makefile2 preinstall
+make[2]: Entering directory '/home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu'
+make[2]: Nothing to be done for 'preinstall'.
+make[2]: Leaving directory '/home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu'
+Install the project...
+/usr/bin/cmake -P cmake_install.cmake
+-- Install configuration: "RelWithDebInfo"
+-- Installing: /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_ar.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_arn.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_ast.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_bg.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_ca.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_cs.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_cy.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_da.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_de.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_el.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_es.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_et.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_fr.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_gl.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_he.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_hr.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_hu.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_id.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_it.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_ja.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_ko.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_lt.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_nb_NO.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_nl.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_pl.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_pt.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_ro.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_ru.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_sk_SK.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_tr.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_uk.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_vi.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_zh_CN.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/debian/tmp/usr/bin/lxqt-policykit-agent
+-- Installing: /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/debian/tmp/usr/share/man/man1/lxqt-policykit-agent.1
+-- Installing: /home/cnc/lxqt-dev/lxqt-policykit-1.1.0/debian/tmp/etc/xdg/autostart/lxqt-policykit-agent.desktop
+make[1]: Leaving directory '/home/cnc/lxqt-dev/lxqt-policykit-1.1.0/obj-aarch64-linux-gnu'
+   dh_install -O--buildsystem=cmake
+   dh_installdocs -O--buildsystem=cmake
+   dh_installchangelogs -O--buildsystem=cmake
+   dh_installman -O--buildsystem=cmake
+   dh_installinit -O--buildsystem=cmake
+   dh_installsystemduser -O--buildsystem=cmake
+   dh_perl -O--buildsystem=cmake
+   dh_link -O--buildsystem=cmake
+   dh_strip_nondeterminism -O--buildsystem=cmake
+   dh_compress -O--buildsystem=cmake
+   dh_fixperms -O--buildsystem=cmake
+   debian/rules override_dh_missing
+make[1]: Entering directory '/home/cnc/lxqt-dev/lxqt-policykit-1.1.0'
+dh_missing --fail-missing
+make[1]: Leaving directory '/home/cnc/lxqt-dev/lxqt-policykit-1.1.0'
+   dh_dwz -O--buildsystem=cmake
+   dh_strip -O--buildsystem=cmake
+   dh_makeshlibs -O--buildsystem=cmake
+   dh_shlibdeps -O--buildsystem=cmake
+   dh_installdeb -O--buildsystem=cmake
+   dh_gencontrol -O--buildsystem=cmake
+   dh_md5sums -O--buildsystem=cmake
+   dh_builddeb -O--buildsystem=cmake
+dpkg-deb: building package 'lxqt-policykit' in '../lxqt-policykit_1.1.0-1_arm64.deb'.
+dpkg-deb: building package 'lxqt-policykit-l10n' in '../lxqt-policykit-l10n_1.1.0-1_all.deb'.
+dpkg-deb: building package 'lxqt-policykit-dbgsym' in '../lxqt-policykit-dbgsym_1.1.0-1_arm64.deb'.
+ dpkg-genbuildinfo --build=binary -O../lxqt-policykit_1.1.0-1_arm64.buildinfo
+ dpkg-genchanges --build=binary -O../lxqt-policykit_1.1.0-1_arm64.changes
+dpkg-genchanges: info: binary-only upload (no source code included)
+ dpkg-source -i --after-build .
+dpkg-source: info: using options from lxqt-policykit-1.1.0/debian/source/options: --tar-ignore=.gitignore
+dpkg-buildpackage: info: binary-only upload (no source included)
+Now running lintian lxqt-policykit_1.1.0-1_arm64.changes ...
+running with root privileges is not recommended!
+Finished running lintian.

@@ -1,0 +1,43 @@
+Format: 1.8
+Date: Tue, 12 Jul 2022 17:15:16 -0500
+Source: lxqt-archiver
+Binary: lxqt-archiver lxqt-archiver-dbgsym lxqt-archiver-l10n
+Architecture: arm64 all
+Version: 0.6.0-1
+Distribution: experimental
+Urgency: medium
+Maintainer: LXQt Packaging Team <pkg-lxqt-devel@lists.alioth.debian.org>
+Changed-By: Aaron Rainbolt <arraybolt3@gmail.com>
+Description:
+ lxqt-archiver - Archiv Manager for LXQt
+ lxqt-archiver-l10n - Language package for lxqt-archiver
+Changes:
+ lxqt-archiver (0.6.0-1) experimental; urgency=medium
+ .
+   [ Aaron Rainbolt ]
+   * New upstream release.
+   * Upstreamed compatible changes from Ubuntu, modifying the following files:
+     - control
+     - copyright
+     - lintian-overrides
+     - rules
+     - upstream/*
+     - lxqt-archiver.install
+ .
+   [ djsftree ]
+   * compiled by djsftree
+Checksums-Sha1:
+ 121bdf8ebf995295c2451ea20c9597a9394a3e1a 2273256 lxqt-archiver-dbgsym_0.6.0-1_arm64.deb
+ 31a07696a23bbdba3b69c2b02b8562620f818465 74840 lxqt-archiver-l10n_0.6.0-1_all.deb
+ f6fe07fefc6daeff4ef7944801ee325418747048 12700 lxqt-archiver_0.6.0-1_arm64.buildinfo
+ 76351f15f2c0e8013f70a027d845069894804fff 133964 lxqt-archiver_0.6.0-1_arm64.deb
+Checksums-Sha256:
+ 4515d7d8112c64144ba64daa3485488c38e21987fb5a918242fe69d421367387 2273256 lxqt-archiver-dbgsym_0.6.0-1_arm64.deb
+ 40d5e760c31de376ae24fdc9cb6ed0f06e5f73a2667784ad9011649d2a26501c 74840 lxqt-archiver-l10n_0.6.0-1_all.deb
+ 31290ce82d37b044654576cdc1340c77e9d969659b3991fd16acbb2cca23b9bf 12700 lxqt-archiver_0.6.0-1_arm64.buildinfo
+ 66bf669d60c762ec6ccfbddfa7a3f96b8810a645c15807ea215acf1e6e5cd2de 133964 lxqt-archiver_0.6.0-1_arm64.deb
+Files:
+ 878e7ec7b9d7e5a570d9a95a4cab04bc 2273256 debug optional lxqt-archiver-dbgsym_0.6.0-1_arm64.deb
+ 153d7ff6904f501af71956a7a4813930 74840 localization optional lxqt-archiver-l10n_0.6.0-1_all.deb
+ cd10d83e0e8b997bb71229cdb1f9a767 12700 x11 optional lxqt-archiver_0.6.0-1_arm64.buildinfo
+ adcbb4b8a0ffc574db95acee945363ee 133964 x11 optional lxqt-archiver_0.6.0-1_arm64.deb

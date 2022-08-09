@@ -1,0 +1,43 @@
+Format: 1.8
+Date: Fri, 15 Jul 2022 22:33:18 +0800
+Source: lxqt-runner
+Binary: lxqt-runner lxqt-runner-dbgsym lxqt-runner-l10n
+Architecture: arm64 all
+Version: 1.1.0-1
+Distribution: experimental
+Urgency: medium
+Maintainer: LXQt Packaging Team <pkg-lxqt-devel@lists.alioth.debian.org>
+Changed-By: Andrew Lee (李健秋) <ajqlee@debian.org>
+Description:
+ lxqt-runner - LXQt program launcher
+ lxqt-runner-l10n - Language package for lxqt-runner
+Changes:
+ lxqt-runner (1.1.0-1) experimental; urgency=medium
+ .
+   [ Andrew Lee (李健秋) ]
+   * Add debian/salsa-ci.yml file.
+   * Update debian/upstream/signing-key.asc.
+   * New upstream version 1.0.0
+   * New upstream version 1.1.0
+   * Build-deps on liblxqt1-dev (>= 1.1.0~).
+   * Build-deps on liblxqt-globalkeys1-dev (>= 1.1.0~).
+   * Build-deps on liblxqt-globalkeys-ui1-dev (>= 1.1.0~).
+   * Drop obsoleted Breaks and Replaces lines.
+ .
+   [ djsftree ]
+   * compiled by djsftree
+Checksums-Sha1:
+ 3251970125329b9e6789914e49f9f4ee43ed763a 1676640 lxqt-runner-dbgsym_1.1.0-1_arm64.deb
+ f67f62a61b8936ddc06da897503652d53a954774 24504 lxqt-runner-l10n_1.1.0-1_all.deb
+ 748944db6ec56e27f91356634acc392eb1565d45 13079 lxqt-runner_1.1.0-1_arm64.buildinfo
+ b86dd97db565152661be839b6e4823ef99726a7b 75552 lxqt-runner_1.1.0-1_arm64.deb
+Checksums-Sha256:
+ 007e53e65cb0a1adcbd2bfd694ab2efc610639434cd54637f6b612dd2c35e03a 1676640 lxqt-runner-dbgsym_1.1.0-1_arm64.deb
+ 83d4bf45b55d53ae519c92f247c898995c1a426e633f13469b63d0b621ce78d0 24504 lxqt-runner-l10n_1.1.0-1_all.deb
+ 350d53d2806101980d06cf8b60b0e85cb15986f023bbfa694cb5fcfd5a873fba 13079 lxqt-runner_1.1.0-1_arm64.buildinfo
+ 370179d76429809d05e09d641781d6bfafb6e1b3844d2cd03d9a24b77da3c451 75552 lxqt-runner_1.1.0-1_arm64.deb
+Files:
+ 54a0606e3f69326be749785834a18a34 1676640 debug optional lxqt-runner-dbgsym_1.1.0-1_arm64.deb
+ 4b70ffadcf7c7ae5ee7ae004d24f2890 24504 localization optional lxqt-runner-l10n_1.1.0-1_all.deb
+ 0d1bee829f86c7c2f41b3910acf8cb98 13079 x11 optional lxqt-runner_1.1.0-1_arm64.buildinfo
+ aa755271fe8edb27f51c79ee4f87c334 75552 x11 optional lxqt-runner_1.1.0-1_arm64.deb

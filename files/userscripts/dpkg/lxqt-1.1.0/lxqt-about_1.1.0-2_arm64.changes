@@ -1,0 +1,42 @@
+Format: 1.8
+Date: Wed, 13 Jul 2022 19:31:47 -0500
+Source: lxqt-about
+Binary: lxqt-about lxqt-about-dbgsym lxqt-about-l10n
+Architecture: arm64 all
+Version: 1.1.0-2
+Distribution: experimental
+Urgency: medium
+Maintainer: LXQt Packaging Team <pkg-lxqt-devel@lists.alioth.debian.org>
+Changed-By: Aaron Rainbolt <arraybolt3@gmail.com>
+Description:
+ lxqt-about - About screen for LXQt
+ lxqt-about-l10n - Language package for lxqt-about
+Changes:
+ lxqt-about (1.1.0-2) experimental; urgency=medium
+ .
+   [ Aaron Rainbolt ]
+   * Upstreamed changes from Ubuntu, modifying the following files:
+     - control
+     - copyright
+     - lintian-overrides
+     - lxqt-about.install
+     - rules
+     - upstream/*
+ .
+   [ djsftree ]
+   * compiled by djsftree
+Checksums-Sha1:
+ 621cc5311ec056ac37df8b240dd1725077315aa1 921556 lxqt-about-dbgsym_1.1.0-2_arm64.deb
+ 125a0cf35650d21ce3b175af33d55c802efa1867 27576 lxqt-about-l10n_1.1.0-2_all.deb
+ b132078a0b055122b58518592fffd0d406355fc5 12848 lxqt-about_1.1.0-2_arm64.buildinfo
+ c287143bc7170a51c09643c1408e3136bc1d5a8c 41940 lxqt-about_1.1.0-2_arm64.deb
+Checksums-Sha256:
+ ee37515663e15fa8c091e7e703737f6f41768c0a23738a1de87fa44178112283 921556 lxqt-about-dbgsym_1.1.0-2_arm64.deb
+ f0bb667c5c7e02177ff806826feaff094418064560e60a77fd36707410ed4151 27576 lxqt-about-l10n_1.1.0-2_all.deb
+ fd1894b7f928634cdd2ddc3a2daf5c23bfb3b48cc9511283135ae4a7c7807da2 12848 lxqt-about_1.1.0-2_arm64.buildinfo
+ 189ee0641a68782ad080d702ea06a453640e52365550918a7e9bdee24274d256 41940 lxqt-about_1.1.0-2_arm64.deb
+Files:
+ f62e91b9b677f7435cfcfc274e8687dd 921556 debug optional lxqt-about-dbgsym_1.1.0-2_arm64.deb
+ ae319c4de7ae2786fa409aeea3623ef2 27576 localization optional lxqt-about-l10n_1.1.0-2_all.deb
+ 64ee476e66464f3214a645009b25310c 12848 x11 optional lxqt-about_1.1.0-2_arm64.buildinfo
+ c8ea43bbc82db156df5a6899dd18044a 41940 x11 optional lxqt-about_1.1.0-2_arm64.deb

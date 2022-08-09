@@ -1,0 +1,32 @@
+Format: 1.8
+Date: Sat, 14 May 2022 16:00:20 +0300
+Source: lxqt-build-tools
+Binary: lxqt-build-tools
+Architecture: all
+Version: 0.11.0-0.1
+Distribution: unstable
+Urgency: medium
+Maintainer: LXQt Packaging Team <pkg-lxqt-devel@lists.alioth.debian.org>
+Changed-By: Dmitry Shachnev <mitya57@debian.org>
+Description:
+ lxqt-build-tools - Build tools for the LXQt desktop environment
+Closes: 1008416
+Changes:
+ lxqt-build-tools (0.11.0-0.1) unstable; urgency=medium
+ .
+   [ Dmitry Shachnev ]
+   * Non-maintainer upload.
+   * New upstream release.
+     - Fixes compatibility with GLib ≥ 2.71.1 (closes: #1008416).
+ .
+   [ djsftree ]
+   * compiled by djsftree
+Checksums-Sha1:
+ b19ccda912ab739a9e21c2dd37880eec458ae71a 32264 lxqt-build-tools_0.11.0-0.1_all.deb
+ 2ef0e3551c7d8c2808684c6207818ba5b46bde9c 10564 lxqt-build-tools_0.11.0-0.1_arm64.buildinfo
+Checksums-Sha256:
+ 8000133a7cbb5a50c52c318aa127b674e52b45e7068e541cb1e051bbec50b1d5 32264 lxqt-build-tools_0.11.0-0.1_all.deb
+ e5c157c911db6469b9c2718cfe5a4e8fdaef6175d0e340da1f533b1e72ce394c 10564 lxqt-build-tools_0.11.0-0.1_arm64.buildinfo
+Files:
+ ceeaa9e1d42359ab465e4fea9a99d686 32264 devel optional lxqt-build-tools_0.11.0-0.1_all.deb
+ 94319bbcfb4c199a1f75714c7df8b3b6 10564 devel optional lxqt-build-tools_0.11.0-0.1_arm64.buildinfo

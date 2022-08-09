@@ -1,0 +1,67 @@
+Format: 1.8
+Date: Wed, 13 Jul 2022 13:02:01 -0500
+Source: lxqt-globalkeys
+Binary: liblxqt-globalkeys-ui1 liblxqt-globalkeys-ui1-dbgsym liblxqt-globalkeys-ui1-dev liblxqt-globalkeys1 liblxqt-globalkeys1-dbgsym liblxqt-globalkeys1-dev lxqt-globalkeys lxqt-globalkeys-dbgsym lxqt-globalkeys-l10n
+Architecture: arm64 all
+Version: 1.1.0-1
+Distribution: experimental
+Urgency: medium
+Maintainer: LXQt Packaging Team <pkg-lxqt-devel@lists.alioth.debian.org>
+Changed-By: Aaron Rainbolt <arraybolt3@gmail.com>
+Description:
+ liblxqt-globalkeys-ui1 - daemon used to register global keyboard shortcuts (ui files)
+ liblxqt-globalkeys-ui1-dev - daemon used to register global keyboard shortcuts (ui dev files)
+ liblxqt-globalkeys1 - daemon used to register global keyboard shortcuts (shared libs)
+ liblxqt-globalkeys1-dev - daemon used to register global keyboard shortcuts (dev files)
+ lxqt-globalkeys - daemon used to register global keyboard shortcuts (appl.)
+ lxqt-globalkeys-l10n - Language package for lxqt-globalkeys
+Changes:
+ lxqt-globalkeys (1.1.0-1) experimental; urgency=medium
+ .
+   [ Aaron Rainbolt ]
+   * New upstream release.
+   * Cleaned up gbp.conf trailing whitespace.
+   * Upstreamed compatible changes from Ubuntu, modifying the following files:
+     - control
+     - copyright
+     - *.install
+     - *.symbols
+     - lxqt-globalkeys.lintian-overrides
+     - rules
+     - upstream/*
+ .
+   [ djsftree ]
+   * compiled by djsftree
+Checksums-Sha1:
+ 5fc9a32c6b7c0176ef1a686c123e686364b871c0 235124 liblxqt-globalkeys-ui1-dbgsym_1.1.0-1_arm64.deb
+ 1d8442406850cd360cce47994e109a68ff3ad66e 14220 liblxqt-globalkeys-ui1-dev_1.1.0-1_arm64.deb
+ ff68802b1379e52a73a1841f66b5194f86039d59 17112 liblxqt-globalkeys-ui1_1.1.0-1_arm64.deb
+ 6da9a7622bc6f4121322d45c0dc9c6281506c81f 836472 liblxqt-globalkeys1-dbgsym_1.1.0-1_arm64.deb
+ 5f237fcec2ca76bbbd297d76342bac724fa631a3 14412 liblxqt-globalkeys1-dev_1.1.0-1_arm64.deb
+ 82ec046f840a6465f6055ff0855e59f8d277e0ef 32044 liblxqt-globalkeys1_1.1.0-1_arm64.deb
+ 799592a59a0604750844aa4a775bb506dc49daeb 3663892 lxqt-globalkeys-dbgsym_1.1.0-1_arm64.deb
+ bdca20aa2a50e46e141a2a70cd38a941cec72a9b 26356 lxqt-globalkeys-l10n_1.1.0-1_all.deb
+ 2a2cf94a80781e735a893013201bc14974caea7c 14869 lxqt-globalkeys_1.1.0-1_arm64.buildinfo
+ 1c41da365dd2f49ccea25f16c1bdd91e68a25642 145524 lxqt-globalkeys_1.1.0-1_arm64.deb
+Checksums-Sha256:
+ 1c80fa341d06a7e37b46c6df6c6e2b1a986078b9581bfca2b80931630edf2d63 235124 liblxqt-globalkeys-ui1-dbgsym_1.1.0-1_arm64.deb
+ 055ea3f4d78aa72b24fe13d142d493bc65a8884c63bfc51f41fb66fe3f6d5af3 14220 liblxqt-globalkeys-ui1-dev_1.1.0-1_arm64.deb
+ 96e5d34768e8bfc7fb58d5a81ff0c33b99823d5c841db8ac5e68a9ce08ac7441 17112 liblxqt-globalkeys-ui1_1.1.0-1_arm64.deb
+ dfe04ce4877e800e22821a4f0c8b649c41ca4fdeff5d73c49efb694e4c32f1ba 836472 liblxqt-globalkeys1-dbgsym_1.1.0-1_arm64.deb
+ 75b1f4229f848c5bc420f338204eeda1c9f02a5ee31b33e38de7fb2ef8e28faa 14412 liblxqt-globalkeys1-dev_1.1.0-1_arm64.deb
+ 1d1223ecb272627a7fb9f0fe54592ff68f46434ef897c3076aa6d10c5ad0204d 32044 liblxqt-globalkeys1_1.1.0-1_arm64.deb
+ aafec00c06ea2871c1d934f1620784fffb19b1c6bac133eb8078aa706b964c57 3663892 lxqt-globalkeys-dbgsym_1.1.0-1_arm64.deb
+ 69c53e5757df00087fbf130126463f4ceeea3cec2a874dcecdc5ac0ff127b093 26356 lxqt-globalkeys-l10n_1.1.0-1_all.deb
+ 1eaacd3a67219323508871b821f95c20ba51c2cd47ba79117a6c9a1f0af5274d 14869 lxqt-globalkeys_1.1.0-1_arm64.buildinfo
+ 716b0dcf40cdeddbef0a935aba0383f9587fc2ea3b4b6ea7bd5ef00b6739430f 145524 lxqt-globalkeys_1.1.0-1_arm64.deb
+Files:
+ 1dbc28cdd3fe2582a58af2be57186374 235124 debug optional liblxqt-globalkeys-ui1-dbgsym_1.1.0-1_arm64.deb
+ bd8ae6aab7fe2c21652203f0193851d5 14220 libdevel optional liblxqt-globalkeys-ui1-dev_1.1.0-1_arm64.deb
+ dfe3282c08d127107a441c98b58bd162 17112 libs optional liblxqt-globalkeys-ui1_1.1.0-1_arm64.deb
+ f304841af688e8e30ff7e042a9db09ce 836472 debug optional liblxqt-globalkeys1-dbgsym_1.1.0-1_arm64.deb
+ 1877aa40c28fd0077598ddc5b96388de 14412 libdevel optional liblxqt-globalkeys1-dev_1.1.0-1_arm64.deb
+ 635d1468eecee4e9ade5922810ad060d 32044 libs optional liblxqt-globalkeys1_1.1.0-1_arm64.deb
+ aa151cc1a043159da9bd1938ebc08d40 3663892 debug optional lxqt-globalkeys-dbgsym_1.1.0-1_arm64.deb
+ f7ba52b6574b5bf3960159498a30d883 26356 localization optional lxqt-globalkeys-l10n_1.1.0-1_all.deb
+ 9578f71ed1a314e2dfeadaedce4582b7 14869 x11 optional lxqt-globalkeys_1.1.0-1_arm64.buildinfo
+ b8e1b2d9de36e8b91dbafa49de71dbad 145524 x11 optional lxqt-globalkeys_1.1.0-1_arm64.deb

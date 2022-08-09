@@ -1,0 +1,44 @@
+Format: 1.8
+Date: Fri, 15 Jul 2022 23:15:01 +0800
+Source: lxqt-powermanagement
+Binary: lxqt-powermanagement lxqt-powermanagement-dbgsym lxqt-powermanagement-l10n
+Architecture: arm64 all
+Version: 1.1.0-1
+Distribution: experimental
+Urgency: medium
+Maintainer: LXQt Packaging Team <pkg-lxqt-devel@lists.alioth.debian.org>
+Changed-By: Andrew Lee (李健秋) <ajqlee@debian.org>
+Description:
+ lxqt-powermanagement - power management module for LXQt
+ lxqt-powermanagement-l10n - Language package for lxqt-powermanagement
+Changes:
+ lxqt-powermanagement (1.1.0-1) experimental; urgency=medium
+ .
+   [ Andrew Lee (李健秋) ]
+   * Add debian/salsa-ci.yml file.
+   * Update debian/upstream/signing-key.asc.
+   * New upstream version 1.0.0
+   * New upstream version 1.1.0
+   * Build-deps on liblxqt1-dev (>= 1.1.0~).
+   * Build-deps on liblxqt-globalkeys1-dev (>= 1.1.0~).
+   * Build-deps on liblxqt-globalkeys-ui1-dev (>= 1.1.0~).
+   * Drop obsleted Breaks and Replaces lines.
+   * debian/copyright: update years.
+ .
+   [ djsftree ]
+   * compiled by djsftree
+Checksums-Sha1:
+ 6f9af539ec473089c968d104ea0234cafdab6cbe 2779800 lxqt-powermanagement-dbgsym_1.1.0-1_arm64.deb
+ b257ed6ff271d6957e866354c89be747a948a907 62400 lxqt-powermanagement-l10n_1.1.0-1_all.deb
+ 6cf579ad8b931dc7dd61f9f7503f02cfab0ddd44 13933 lxqt-powermanagement_1.1.0-1_arm64.buildinfo
+ e1f4033787e147cfcf3b8b4e2127282622935d8b 81264 lxqt-powermanagement_1.1.0-1_arm64.deb
+Checksums-Sha256:
+ 7b00a299f6570576fa5ef76d2d469aa695d41a1927a4e6819516a0546ffb15ff 2779800 lxqt-powermanagement-dbgsym_1.1.0-1_arm64.deb
+ 9432d80885f037170d3272b3825a2f66fe72b666a1b06e420fce01150b40aa0e 62400 lxqt-powermanagement-l10n_1.1.0-1_all.deb
+ 5d5ae56578c4ed30dc9ed3077a9f42ac022d8346646f3abc34758a147ed4378f 13933 lxqt-powermanagement_1.1.0-1_arm64.buildinfo
+ 8b0eb2e35726c615a3a53a99319df5c9c60a05d7255fb2d4aa66c1cc17c6afde 81264 lxqt-powermanagement_1.1.0-1_arm64.deb
+Files:
+ 8452e2e2fbf45b12e22dba2122631e44 2779800 debug optional lxqt-powermanagement-dbgsym_1.1.0-1_arm64.deb
+ 4c0163b02a1a1748505328407d058309 62400 localization optional lxqt-powermanagement-l10n_1.1.0-1_all.deb
+ c1ba0b084b3a5ed02322b5d369a5e403 13933 x11 optional lxqt-powermanagement_1.1.0-1_arm64.buildinfo
+ b957116d7e267333d6e9db5846c7b1e4 81264 x11 optional lxqt-powermanagement_1.1.0-1_arm64.deb

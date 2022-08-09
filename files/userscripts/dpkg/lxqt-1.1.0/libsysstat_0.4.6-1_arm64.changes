@@ -1,0 +1,46 @@
+Format: 1.8
+Date: Wed, 09 Feb 2022 23:16:01 +0800
+Source: libsysstat
+Binary: libsysstat-qt5-0 libsysstat-qt5-0-dbgsym libsysstat-qt5-0-dev
+Architecture: arm64
+Version: 0.4.6-1
+Distribution: unstable
+Urgency: medium
+Maintainer: LXQt Packaging Team <pkg-lxqt-devel@lists.alioth.debian.org>
+Changed-By: ChangZhuo Chen (陳昌倬) <czchen@debian.org>
+Description:
+ libsysstat-qt5-0 - Qt-based interface to system statistics
+ libsysstat-qt5-0-dev - Qt-based interface to system statistics (dev)
+Changes:
+ libsysstat (0.4.6-1) unstable; urgency=medium
+ .
+   [ Alf Gaida ]
+   * Switched to gbp.
+ .
+   [ Andrew Lee (李健秋) ]
+   * New upstream release.
+   * Added myself as uploader.
+ .
+   [ ChangZhuo Chen (陳昌倬) ]
+   * Bump Standards-Version to 4.6.0.
+   * Bump compat to 13.
+   * Add Rules-Requires-Root: no.
+   * Fix wrong field name in d/upstream/metadata.
+ .
+   [ djsftree ]
+   * compiled by djsftree
+Checksums-Sha1:
+ 76e4975ae705849a62731c3353d5d45e1015fbeb 505816 libsysstat-qt5-0-dbgsym_0.4.6-1_arm64.deb
+ 919344acc745af27526414ac6ad062975e4a6bf6 9868 libsysstat-qt5-0-dev_0.4.6-1_arm64.deb
+ 61d53e82028085a9b751287ae0d462307bfdf2bb 27032 libsysstat-qt5-0_0.4.6-1_arm64.deb
+ 930ec5ae810504d29ce4dd702992269c9da53526 12154 libsysstat_0.4.6-1_arm64.buildinfo
+Checksums-Sha256:
+ b0174c7756d7a94b4cbf95761d0b923091cbda88f568ad357c1e9f5f24ebc79d 505816 libsysstat-qt5-0-dbgsym_0.4.6-1_arm64.deb
+ b325c7226268cccda549dcad0dafce74cc617c1c1c65c805b5a73c7f96681368 9868 libsysstat-qt5-0-dev_0.4.6-1_arm64.deb
+ 3a8c43778360470b2bc5367b93d718f8901574219e2cc764fafed222ab779c8e 27032 libsysstat-qt5-0_0.4.6-1_arm64.deb
+ c44d5df0f8c075bf8c9c5884db61ec506ad63b788a7e4ceaabe7db0abdae377c 12154 libsysstat_0.4.6-1_arm64.buildinfo
+Files:
+ 24eaca3f9c43d7d12cc838d0f6925c9e 505816 debug optional libsysstat-qt5-0-dbgsym_0.4.6-1_arm64.deb
+ 4ac48c2d120192d36316d93b383f481a 9868 libdevel optional libsysstat-qt5-0-dev_0.4.6-1_arm64.deb
+ 79dbb8ec31d1741a2e8678f912de6da7 27032 libs optional libsysstat-qt5-0_0.4.6-1_arm64.deb
+ 8c012ec05393159b08902f9ed622db6c 12154 libs optional libsysstat_0.4.6-1_arm64.buildinfo

@@ -1,0 +1,42 @@
+Format: 1.8
+Date: Sun, 10 Jul 2022 00:29:24 -0500
+Source: lxqt-qtplugin
+Binary: lxqt-qtplugin lxqt-qtplugin-dbgsym
+Architecture: arm64
+Version: 1.1.0-1
+Distribution: experimental
+Urgency: medium
+Maintainer: LXQt Packaging Team <pkg-lxqt-devel@lists.alioth.debian.org>
+Changed-By: Aaron Rainbolt <arraybolt3@gmail.com>
+Description:
+ lxqt-qtplugin - LXQt system integration plugin for Qt
+Changes:
+ lxqt-qtplugin (1.1.0-1) experimental; urgency=medium
+ .
+   [ Aaron Rainbolt ]
+   * New upstream release 1.1.0.
+   * Removed obsolete debian/compat file.
+   * Switched to GBP.
+   * Upstreamed non-Ubuntu-specific packaging changes from Ubuntu, modifying
+     the following files:
+     - control
+     - copyright
+     - upstream/*
+ .
+   [ Simon Quigley ]
+   * Re-add the existing uploaders to debian/control.
+ .
+   [ djsftree ]
+   * compiled by djsftree
+Checksums-Sha1:
+ e1ae6a8c4c47d0575f7e464cfac2ae136fe12640 1165764 lxqt-qtplugin-dbgsym_1.1.0-1_arm64.deb
+ 6ce86255d2a73adeb7d550e2c35aca9b26347068 13401 lxqt-qtplugin_1.1.0-1_arm64.buildinfo
+ 5c611b96dbb240337472d650b207b824980de123 38540 lxqt-qtplugin_1.1.0-1_arm64.deb
+Checksums-Sha256:
+ 7d9557be880ed69fa83eab9883342dd47e70bdcd4b3b9031b76eb0d47240a11b 1165764 lxqt-qtplugin-dbgsym_1.1.0-1_arm64.deb
+ 6689e086420a482e6fa432522eebbe4ce720968597c5444713057dbeaa1b946c 13401 lxqt-qtplugin_1.1.0-1_arm64.buildinfo
+ 609334bc8ab7a028530341dbba9f1ebd1eab4d5419dc29e9d4edd087230afd3c 38540 lxqt-qtplugin_1.1.0-1_arm64.deb
+Files:
+ 45904ddb790c9e334012b19749440b57 1165764 debug optional lxqt-qtplugin-dbgsym_1.1.0-1_arm64.deb
+ a99fa611f1f0912c9ebade17a05cec52 13401 x11 optional lxqt-qtplugin_1.1.0-1_arm64.buildinfo
+ 079d45eb153087397a8a32b0634556db 38540 x11 optional lxqt-qtplugin_1.1.0-1_arm64.deb

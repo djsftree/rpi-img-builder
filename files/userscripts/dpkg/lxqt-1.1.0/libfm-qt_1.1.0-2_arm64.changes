@@ -1,0 +1,52 @@
+Format: 1.8
+Date: Thu, 14 Jul 2022 15:45:41 -0500
+Source: libfm-qt
+Binary: libfm-qt-common libfm-qt-dev libfm-qt-l10n libfm-qt11 libfm-qt11-dbgsym
+Architecture: all arm64
+Version: 1.1.0-2
+Distribution: experimental
+Urgency: medium
+Maintainer: LXQt Packaging Team <pkg-lxqt-devel@lists.alioth.debian.org>
+Changed-By: Aaron Rainbolt <arraybolt3@gmail.com>
+Description:
+ libfm-qt-common - Common files for libfm-qt
+ libfm-qt-dev - file management support library for pcmanfm-qt (development files
+ libfm-qt-l10n - Language package for libfm-qt
+ libfm-qt11 - file management support for pcmanfm-qt
+Changes:
+ libfm-qt (1.1.0-2) experimental; urgency=medium
+ .
+   [ Aaron Rainbolt ]
+   * Upstreamed compatible changes from Ubuntu, modifying the following files:
+     - control
+     - copyright
+     - libfm-qt11.symbols
+     - libfm-qt-common.install
+     - libfm-qt-dev.install
+     - rules
+     - upstream/*
+     - patches directory
+ .
+   [ djsftree ]
+   * compiled by djsftree
+Checksums-Sha1:
+ fe05602b5de0cc1c2888ae5fab3f93917d13bd46 27072 libfm-qt-common_1.1.0-2_all.deb
+ ef1f8ae3c3c7db9d63bb11640d0d54542cd2b346 70876 libfm-qt-dev_1.1.0-2_arm64.deb
+ 2bfde3f6dc6c0a50aa4b8a51ec0547e66a5693b0 156300 libfm-qt-l10n_1.1.0-2_all.deb
+ aa7629b9f26aa6533e3deec047ef4ebdfd6065b2 11282576 libfm-qt11-dbgsym_1.1.0-2_arm64.deb
+ bbb4fdd9711876e1f160ba4b5b32c67f0a66b1c1 412480 libfm-qt11_1.1.0-2_arm64.deb
+ 2d953623ece9a5a5345b9f36b303ef5cae48ac25 13599 libfm-qt_1.1.0-2_arm64.buildinfo
+Checksums-Sha256:
+ 05b79a6aa5ea0d6e9e34af5fbb6c03ad19c634f9157ff09f5d8d0c6a0db21e01 27072 libfm-qt-common_1.1.0-2_all.deb
+ c1cfd4c78d695b3cd30e2b2bf84bc7e049ef3ea88299b68538f494f78ad76201 70876 libfm-qt-dev_1.1.0-2_arm64.deb
+ d864baba6ca170184974a85801da74797cc2fe42a38819db1498b86a0d367e0b 156300 libfm-qt-l10n_1.1.0-2_all.deb
+ 9743cba29500333701fce3a785990d13beeecdc56d3744a3d37869c30ff81b0b 11282576 libfm-qt11-dbgsym_1.1.0-2_arm64.deb
+ 4a808b8ad732ed562f93b1530abf3341e03898b78dfa326e730401b8f3d10477 412480 libfm-qt11_1.1.0-2_arm64.deb
+ 2c46be29fed3e762e1fdfe493e11ad68b04d6821dd2253e0432603ab8417b443 13599 libfm-qt_1.1.0-2_arm64.buildinfo
+Files:
+ 2f648f6a7d583f345a11f8f7c6631458 27072 libs optional libfm-qt-common_1.1.0-2_all.deb
+ e14a338e2c14f74f73f1f7a36276b536 70876 libdevel optional libfm-qt-dev_1.1.0-2_arm64.deb
+ db547a10b379ed82b922a090cdbefb0c 156300 localization optional libfm-qt-l10n_1.1.0-2_all.deb
+ dc17b9606c99cc009b2bd8d1a078d440 11282576 debug optional libfm-qt11-dbgsym_1.1.0-2_arm64.deb
+ d606d6f17a1896754ab8ee4d9f253c4b 412480 libs optional libfm-qt11_1.1.0-2_arm64.deb
+ 71ac6bd0c1bd14f2ddf57c283a6fb840 13599 x11 optional libfm-qt_1.1.0-2_arm64.buildinfo

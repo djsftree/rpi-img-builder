@@ -1,0 +1,51 @@
+Format: 1.8
+Date: Sun, 10 Jul 2022 05:32:17 -0500
+Source: qtermwidget
+Binary: libqtermwidget5-1 libqtermwidget5-1-dbgsym libqtermwidget5-1-dev qtermwidget5-data
+Architecture: arm64 all
+Version: 1.1.0-1
+Distribution: experimental
+Urgency: medium
+Maintainer: LXQt Packaging Team <pkg-lxqt-devel@lists.alioth.debian.org>
+Changed-By: Aaron Rainbolt <arraybolt3@gmail.com>
+Description:
+ libqtermwidget5-1 - Terminal emulator widget for Qt 5 (shared libraries)
+ libqtermwidget5-1-dev - Terminal emulator widget for Qt 5 (development files)
+ qtermwidget5-data - Terminal emulator widget for Qt 5 (data files)
+Changes:
+ qtermwidget (1.1.0-1) experimental; urgency=medium
+ .
+   [ Aaron Rainbolt ]
+   * New upstream release 1.1.0.
+   * Removed obsolete debian/compat file.
+   * Switched to GBP.
+   * Upstreamed non-Ubuntu-specific packaging changes from Ubuntu, modifying
+     the following files:
+     - control
+     - copyright
+     - *.install
+     - libqtermwidget5-0.symbols
+     - rules
+     - upstream/*
+     - patches directory
+ .
+   [ djsftree ]
+   * compiled by djsftree
+Checksums-Sha1:
+ 25575c6d8dbe23e6c814680f42b68a3be1da710e 3710620 libqtermwidget5-1-dbgsym_1.1.0-1_arm64.deb
+ 931ea779205e930bd8f17d0dc9a99d54c016a208 32124 libqtermwidget5-1-dev_1.1.0-1_arm64.deb
+ e87e717680fafe30dbbe72388b7b99dfce580995 166028 libqtermwidget5-1_1.1.0-1_arm64.deb
+ 377a0b8122c0a823dcfe3023e82032237d5fe38c 39384 qtermwidget5-data_1.1.0-1_all.deb
+ 14cd35496ffe14e8f7d7b200b3a1fdb60166d12d 12519 qtermwidget_1.1.0-1_arm64.buildinfo
+Checksums-Sha256:
+ b5a912037fa94bca472f76db76d99a1076ce2c8b1295f5f72fa338a4e23e845d 3710620 libqtermwidget5-1-dbgsym_1.1.0-1_arm64.deb
+ cd2df32554d89209571779930a6c95a93e9fae523802c97c615c7d0e4e2d3cbc 32124 libqtermwidget5-1-dev_1.1.0-1_arm64.deb
+ e5c04f15f7986e5485942aa9fad16ce952a478363d25781fcbcde29b1da65f8a 166028 libqtermwidget5-1_1.1.0-1_arm64.deb
+ 6f6c63259aeb3c5df7524532aec81062b044ddc53f1b33e26ca50d340de3d31a 39384 qtermwidget5-data_1.1.0-1_all.deb
+ 3fb25660aca7af860276126dbe67a0a3487d0ea1f47ae68166986dc77dc85708 12519 qtermwidget_1.1.0-1_arm64.buildinfo
+Files:
+ 0dc295de428bdc365e3c11c4134ad0c6 3710620 debug optional libqtermwidget5-1-dbgsym_1.1.0-1_arm64.deb
+ 3feb4b6e6c19749bc64ffe1ff3c01c20 32124 libdevel optional libqtermwidget5-1-dev_1.1.0-1_arm64.deb
+ c132883c5c9565237976460f7349e653 166028 libs optional libqtermwidget5-1_1.1.0-1_arm64.deb
+ 2bc8d94216e7430cef2a35df5d6c08fc 39384 libs optional qtermwidget5-data_1.1.0-1_all.deb
+ a0bfb4f4ae46152cf05392a92110dc19 12519 libs optional qtermwidget_1.1.0-1_arm64.buildinfo

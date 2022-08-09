@@ -1,0 +1,603 @@
+ dpkg-buildpackage -us -uc -ui -i -b
+dpkg-buildpackage: info: source package lxqt-admin
+dpkg-buildpackage: info: source version 1.1.0-1
+dpkg-buildpackage: info: source distribution experimental
+dpkg-buildpackage: info: source changed by Aaron Rainbolt <arraybolt3@gmail.com>
+ dpkg-source -i --before-build .
+dpkg-buildpackage: info: host architecture arm64
+dpkg-source: info: using options from lxqt-admin-1.1.0/debian/source/options: --tar-ignore=.gitignore
+ debian/rules clean
+dh clean --buildsystem cmake
+   dh_auto_clean -O--buildsystem=cmake
+   dh_autoreconf_clean -O--buildsystem=cmake
+   dh_clean -O--buildsystem=cmake
+ debian/rules binary
+dh binary --buildsystem cmake
+   dh_update_autotools_config -O--buildsystem=cmake
+   dh_autoreconf -O--buildsystem=cmake
+   debian/rules override_dh_auto_configure
+make[1]: Entering directory '/home/cnc/lxqt-dev/lxqt-admin-1.1.0'
+dh_auto_configure -- \
+	-DUPDATE_TRANSLATIONS=OFF \
+	-DCMAKE_BUILD_TYPE=RelWithDebInfo
+	cd obj-aarch64-linux-gnu && cmake -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=None -DCMAKE_INSTALL_SYSCONFDIR=/etc -DCMAKE_INSTALL_LOCALSTATEDIR=/var -DCMAKE_EXPORT_NO_PACKAGE_REGISTRY=ON -DCMAKE_FIND_USE_PACKAGE_REGISTRY=OFF -DCMAKE_FIND_PACKAGE_NO_PACKAGE_REGISTRY=ON -DFETCHCONTENT_FULLY_DISCONNECTED=ON -DCMAKE_INSTALL_RUNSTATEDIR=/run -DCMAKE_SKIP_INSTALL_ALL_DEPENDENCY=ON "-GUnix Makefiles" -DCMAKE_VERBOSE_MAKEFILE=ON -DCMAKE_INSTALL_LIBDIR=lib/aarch64-linux-gnu -DUPDATE_TRANSLATIONS=OFF -DCMAKE_BUILD_TYPE=RelWithDebInfo ..
+-- The C compiler identification is GNU 11.3.0
+-- The CXX compiler identification is GNU 11.3.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found X11: /usr/include   
+-- Looking for XOpenDisplay in /usr/lib/aarch64-linux-gnu/libX11.so;/usr/lib/aarch64-linux-gnu/libXext.so
+-- Looking for XOpenDisplay in /usr/lib/aarch64-linux-gnu/libX11.so;/usr/lib/aarch64-linux-gnu/libXext.so - found
+-- Looking for gethostbyname
+-- Looking for gethostbyname - found
+-- Looking for connect
+-- Looking for connect - found
+-- Looking for remove
+-- Looking for remove - found
+-- Looking for shmat
+-- Looking for shmat - found
+-- Looking for IceConnectionNumber in ICE
+-- Looking for IceConnectionNumber in ICE - found
+-- Found Perl: /usr/bin/perl (found version "5.34.0") 
+-- Configuring done
+-- Generating done
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    CMAKE_EXPORT_NO_PACKAGE_REGISTRY
+    CMAKE_FIND_PACKAGE_NO_PACKAGE_REGISTRY
+    CMAKE_INSTALL_LIBDIR
+    CMAKE_INSTALL_LOCALSTATEDIR
+    CMAKE_INSTALL_RUNSTATEDIR
+    CMAKE_INSTALL_SYSCONFDIR
+    FETCHCONTENT_FULLY_DISCONNECTED
+
+
+-- Build files have been written to: /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu
+make[1]: Leaving directory '/home/cnc/lxqt-dev/lxqt-admin-1.1.0'
+   dh_auto_build -O--buildsystem=cmake
+	cd obj-aarch64-linux-gnu && make -j4 "INSTALL=install --strip-program=true" VERBOSE=1
+make[1]: Entering directory '/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu'
+/usr/bin/cmake -S/home/cnc/lxqt-dev/lxqt-admin-1.1.0 -B/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu --check-build-system CMakeFiles/Makefile.cmake 0
+/usr/bin/cmake -E cmake_progress_start /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/CMakeFiles /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu//CMakeFiles/progress.marks
+make  -f CMakeFiles/Makefile2 all
+make[2]: Entering directory '/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu'
+make  -f lxqt-admin-user/CMakeFiles/lxqt-admin-user.dir/build.make lxqt-admin-user/CMakeFiles/lxqt-admin-user.dir/depend
+make  -f lxqt-admin-time/CMakeFiles/lxqt-admin-time.dir/build.make lxqt-admin-time/CMakeFiles/lxqt-admin-time.dir/depend
+make[3]: Entering directory '/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu'
+make[3]: Entering directory '/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu'
+[  1%] Generating ui_timezone.h
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time && /usr/lib/qt5/bin/uic -o /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time/ui_timezone.h /home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-time/timezone.ui
+[  2%] Generating lxqt-admin-user.desktop
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user && /usr/bin/perl /usr/share/cmake/lxqt-build-tools/modules//LXQtTranslateDesktopYaml.pl /home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-user/lxqt-admin-user.desktop.in lxqt-admin-user "/home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-user/translations/lxqt-admin-user[_.]*desktop.yaml" >> /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user/lxqt-admin-user.desktop
+[  3%] Generating ui_userdialog.h
+[  4%] Generating lxqt-admin-time.desktop
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time && /usr/bin/perl /usr/share/cmake/lxqt-build-tools/modules//LXQtTranslateDesktopYaml.pl /home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-time/lxqt-admin-time.desktop.in lxqt-admin-time "/home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-time/translations/lxqt-admin-time[_.]*desktop.yaml" >> /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time/lxqt-admin-time.desktop
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user && /usr/lib/qt5/bin/uic -o /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user/ui_userdialog.h /home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-user/userdialog.ui
+[  5%] Generating lxqt-admin-user_ar.qm
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-user/translations/lxqt-admin-user_ar.ts -qm /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user/lxqt-admin-user_ar.qm
+Updating '/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user/lxqt-admin-user_ar.qm'...
+    Generated 49 translation(s) (49 finished and 0 unfinished)
+    Ignored 1 untranslated source text(s)
+[  6%] Generating lxqt-admin-user_arn.qm
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-user/translations/lxqt-admin-user_arn.ts -qm /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user/lxqt-admin-user_arn.qm
+[  7%] Generating lxqt-admin-user_ast.qm
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-user/translations/lxqt-admin-user_ast.ts -qm /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user/lxqt-admin-user_ast.qm
+[  8%] Generating lxqt-admin-time_ar.qm
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-time/translations/lxqt-admin-time_ar.ts -qm /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time/lxqt-admin-time_ar.qm
+Updating '/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user/lxqt-admin-user_ast.qm'...
+    Generated 0 translation(s) (0 finished and 0 unfinished)
+    Ignored 50 untranslated source text(s)
+Updating '/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user/lxqt-admin-user_arn.qm'...
+    Generated 0 translation(s) (0 finished and 0 unfinished)
+    Ignored 50 untranslated source text(s)
+Updating '/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time/lxqt-admin-time_ar.qm'...
+    Generated 15 translation(s) (15 finished and 0 unfinished)
+    Ignored 2 untranslated source text(s)
+[  9%] Generating lxqt-admin-user_ca.qm
+[ 10%] Generating lxqt-admin-user_bg.qm
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-user/translations/lxqt-admin-user_bg.ts -qm /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user/lxqt-admin-user_bg.qm
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-user/translations/lxqt-admin-user_ca.ts -qm /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user/lxqt-admin-user_ca.qm
+Updating '/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user/lxqt-admin-user_bg.qm'...
+    Generated 50 translation(s) (50 finished and 0 unfinished)
+[ 11%] Generating lxqt-admin-user_cs.qm
+Updating '/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user/lxqt-admin-user_ca.qm'...
+    Generated 50 translation(s) (50 finished and 0 unfinished)
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-user/translations/lxqt-admin-user_cs.ts -qm /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user/lxqt-admin-user_cs.qm
+[ 11%] Generating lxqt-admin-user_cy.qm
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-user/translations/lxqt-admin-user_cy.ts -qm /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user/lxqt-admin-user_cy.qm
+[ 12%] Generating lxqt-admin-time_arn.qm
+Updating '/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user/lxqt-admin-user_cs.qm'...
+    Generated 50 translation(s) (50 finished and 0 unfinished)
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-time/translations/lxqt-admin-time_arn.ts -qm /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time/lxqt-admin-time_arn.qm
+Updating '/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time/lxqt-admin-time_arn.qm'...
+    Generated 0 translation(s) (0 finished and 0 unfinished)
+    Ignored 17 untranslated source text(s)
+Updating '/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user/lxqt-admin-user_cy.qm'...
+    Generated 49 translation(s) (49 finished and 0 unfinished)
+    Ignored 1 untranslated source text(s)
+[ 13%] Generating lxqt-admin-user_da.qm
+[ 14%] Generating lxqt-admin-user_de.qm
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-user/translations/lxqt-admin-user_da.ts -qm /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user/lxqt-admin-user_da.qm
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-user/translations/lxqt-admin-user_de.ts -qm /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user/lxqt-admin-user_de.qm
+[ 15%] Generating lxqt-admin-time_ast.qm
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-time/translations/lxqt-admin-time_ast.ts -qm /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time/lxqt-admin-time_ast.qm
+Updating '/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user/lxqt-admin-user_da.qm'...
+    Generated 50 translation(s) (50 finished and 0 unfinished)
+[ 16%] Generating lxqt-admin-user_el.qm
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-user/translations/lxqt-admin-user_el.ts -qm /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user/lxqt-admin-user_el.qm
+Updating '/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user/lxqt-admin-user_de.qm'...
+Updating '/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time/lxqt-admin-time_ast.qm'...
+    Generated 50 translation(s) (50 finished and 0 unfinished)
+    Generated 17 translation(s) (17 finished and 0 unfinished)
+Updating '/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user/lxqt-admin-user_el.qm'...
+    Generated 50 translation(s) (50 finished and 0 unfinished)
+[ 17%] Generating lxqt-admin-user_en_GB.qm
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-user/translations/lxqt-admin-user_en_GB.ts -qm /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user/lxqt-admin-user_en_GB.qm
+[ 18%] Generating lxqt-admin-user_es.qm
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-user/translations/lxqt-admin-user_es.ts -qm /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user/lxqt-admin-user_es.qm
+[ 19%] Generating lxqt-admin-time_bg.qm
+Updating '/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user/lxqt-admin-user_es.qm'...
+    Generated 50 translation(s) (50 finished and 0 unfinished)
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-time/translations/lxqt-admin-time_bg.ts -qm /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time/lxqt-admin-time_bg.qm
+Updating '/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user/lxqt-admin-user_en_GB.qm'...
+    Generated 50 translation(s) (50 finished and 0 unfinished)
+[ 20%] Generating lxqt-admin-user_et.qm
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-user/translations/lxqt-admin-user_et.ts -qm /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user/lxqt-admin-user_et.qm
+Updating '/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time/lxqt-admin-time_bg.qm'...
+    Generated 17 translation(s) (17 finished and 0 unfinished)
+[ 21%] Generating lxqt-admin-user_fr.qm
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-user/translations/lxqt-admin-user_fr.ts -qm /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user/lxqt-admin-user_fr.qm
+[ 21%] Generating lxqt-admin-time_ca.qm
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-time/translations/lxqt-admin-time_ca.ts -qm /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time/lxqt-admin-time_ca.qm
+Updating '/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user/lxqt-admin-user_et.qm'...
+    Generated 50 translation(s) (50 finished and 0 unfinished)
+[ 22%] Generating lxqt-admin-user_gl.qm
+Updating '/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user/lxqt-admin-user_fr.qm'...
+    Generated 50 translation(s) (50 finished and 0 unfinished)
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-user/translations/lxqt-admin-user_gl.ts -qm /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user/lxqt-admin-user_gl.qm
+Updating '/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time/lxqt-admin-time_ca.qm'...
+    Generated 17 translation(s) (17 finished and 0 unfinished)
+[ 23%] Generating lxqt-admin-user_he.qm
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-user/translations/lxqt-admin-user_he.ts -qm /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user/lxqt-admin-user_he.qm
+Updating '/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user/lxqt-admin-user_gl.qm'...
+    Generated 50 translation(s) (50 finished and 0 unfinished)
+[ 24%] Generating lxqt-admin-time_cs.qm
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-time/translations/lxqt-admin-time_cs.ts -qm /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time/lxqt-admin-time_cs.qm
+[ 24%] Generating lxqt-admin-user_hi.qm
+Updating '/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time/lxqt-admin-time_cs.qm'...
+    Generated 17 translation(s) (17 finished and 0 unfinished)
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-user/translations/lxqt-admin-user_hi.ts -qm /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user/lxqt-admin-user_hi.qm
+Updating '/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user/lxqt-admin-user_he.qm'...
+    Generated 50 translation(s) (50 finished and 0 unfinished)
+Updating '/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user/lxqt-admin-user_hi.qm'...
+    Generated 16 translation(s) (14 finished and 2 unfinished)
+    Ignored 34 untranslated source text(s)
+[ 25%] Generating lxqt-admin-user_hu.qm
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-user/translations/lxqt-admin-user_hu.ts -qm /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user/lxqt-admin-user_hu.qm
+[ 27%] Generating lxqt-admin-user_id.qm
+[ 27%] Generating lxqt-admin-user_hr.qm
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-user/translations/lxqt-admin-user_id.ts -qm /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user/lxqt-admin-user_id.qm
+[ 28%] Generating lxqt-admin-time_cy.qm
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-user/translations/lxqt-admin-user_hr.ts -qm /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user/lxqt-admin-user_hr.qm
+Updating '/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user/lxqt-admin-user_hu.qm'...
+    Generated 50 translation(s) (50 finished and 0 unfinished)
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-time/translations/lxqt-admin-time_cy.ts -qm /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time/lxqt-admin-time_cy.qm
+Updating '/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user/lxqt-admin-user_id.qm'...
+    Generated 50 translation(s) (50 finished and 0 unfinished)
+Updating '/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time/lxqt-admin-time_cy.qm'...
+    Generated 12 translation(s) (12 finished and 0 unfinished)
+    Ignored 5 untranslated source text(s)
+Updating '/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user/lxqt-admin-user_hr.qm'...
+    Generated 50 translation(s) (50 finished and 0 unfinished)
+[ 29%] Generating lxqt-admin-user_it.qm
+[ 30%] Generating lxqt-admin-user_ja.qm
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-user/translations/lxqt-admin-user_it.ts -qm /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user/lxqt-admin-user_it.qm
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-user/translations/lxqt-admin-user_ja.ts -qm /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user/lxqt-admin-user_ja.qm
+Updating '/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user/lxqt-admin-user_it.qm'...
+    Generated 50 translation(s) (50 finished and 0 unfinished)
+[ 31%] Generating lxqt-admin-time_da.qm
+Updating '/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user/lxqt-admin-user_ja.qm'...
+    Generated 50 translation(s) (50 finished and 0 unfinished)
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-time/translations/lxqt-admin-time_da.ts -qm /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time/lxqt-admin-time_da.qm
+[ 32%] Generating lxqt-admin-time_de.qm
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-time/translations/lxqt-admin-time_de.ts -qm /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time/lxqt-admin-time_de.qm
+[ 33%] Generating lxqt-admin-user_ko.qm
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-user/translations/lxqt-admin-user_ko.ts -qm /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user/lxqt-admin-user_ko.qm
+Updating '/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time/lxqt-admin-time_da.qm'...
+    Generated 17 translation(s) (17 finished and 0 unfinished)
+Updating '/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time/lxqt-admin-time_de.qm'...
+    Generated 17 translation(s) (17 finished and 0 unfinished)
+Updating '/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user/lxqt-admin-user_ko.qm'...
+    Generated 50 translation(s) (50 finished and 0 unfinished)
+[ 34%] Generating lxqt-admin-user_lt.qm
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-user/translations/lxqt-admin-user_lt.ts -qm /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user/lxqt-admin-user_lt.qm
+[ 35%] Generating lxqt-admin-user_nb_NO.qm
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-user/translations/lxqt-admin-user_nb_NO.ts -qm /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user/lxqt-admin-user_nb_NO.qm
+Updating '/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user/lxqt-admin-user_nb_NO.qm'...
+    Generated 50 translation(s) (50 finished and 0 unfinished)
+Updating '/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user/lxqt-admin-user_lt.qm'...
+    Generated 50 translation(s) (50 finished and 0 unfinished)
+[ 36%] Generating lxqt-admin-time_el.qm
+[ 37%] Generating lxqt-admin-user_nl.qm
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-user/translations/lxqt-admin-user_nl.ts -qm /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user/lxqt-admin-user_nl.qm
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-time/translations/lxqt-admin-time_el.ts -qm /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time/lxqt-admin-time_el.qm
+[ 38%] Generating lxqt-admin-time_en_GB.qm
+Updating '/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user/lxqt-admin-user_nl.qm'...
+    Generated 50 translation(s) (50 finished and 0 unfinished)
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-time/translations/lxqt-admin-time_en_GB.ts -qm /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time/lxqt-admin-time_en_GB.qm
+[ 38%] Generating lxqt-admin-user_pl.qm
+Updating '/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time/lxqt-admin-time_el.qm'...
+    Generated 17 translation(s) (17 finished and 0 unfinished)
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-user/translations/lxqt-admin-user_pl.ts -qm /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user/lxqt-admin-user_pl.qm
+Updating '/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time/lxqt-admin-time_en_GB.qm'...
+    Generated 17 translation(s) (17 finished and 0 unfinished)
+Updating '/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user/lxqt-admin-user_pl.qm'...
+    Generated 50 translation(s) (50 finished and 0 unfinished)
+[ 39%] Generating lxqt-admin-time_et.qm
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-time/translations/lxqt-admin-time_et.ts -qm /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time/lxqt-admin-time_et.qm
+[ 40%] Generating lxqt-admin-user_pt.qm
+[ 41%] Generating lxqt-admin-user_pt_BR.qm
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-user/translations/lxqt-admin-user_pt.ts -qm /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user/lxqt-admin-user_pt.qm
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-user/translations/lxqt-admin-user_pt_BR.ts -qm /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user/lxqt-admin-user_pt_BR.qm
+Updating '/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time/lxqt-admin-time_et.qm'...
+    Generated 17 translation(s) (17 finished and 0 unfinished)
+[ 42%] Generating lxqt-admin-time_es.qm
+Updating '/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user/lxqt-admin-user_pt.qm'...
+    Generated 50 translation(s) (50 finished and 0 unfinished)
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-time/translations/lxqt-admin-time_es.ts -qm /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time/lxqt-admin-time_es.qm
+Updating '/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user/lxqt-admin-user_pt_BR.qm'...
+    Generated 50 translation(s) (50 finished and 0 unfinished)
+Updating '/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time/lxqt-admin-time_es.qm'...
+    Generated 17 translation(s) (17 finished and 0 unfinished)
+[ 44%] Generating lxqt-admin-user_si.qm
+[ 44%] Generating lxqt-admin-time_fr.qm
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-user/translations/lxqt-admin-user_si.ts -qm /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user/lxqt-admin-user_si.qm
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-time/translations/lxqt-admin-time_fr.ts -qm /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time/lxqt-admin-time_fr.qm
+[ 44%] Generating lxqt-admin-time_gl.qm
+[ 45%] Generating lxqt-admin-user_ru.qm
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-time/translations/lxqt-admin-time_gl.ts -qm /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time/lxqt-admin-time_gl.qm
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-user/translations/lxqt-admin-user_ru.ts -qm /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user/lxqt-admin-user_ru.qm
+Updating '/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user/lxqt-admin-user_si.qm'...
+    Generated 0 translation(s) (0 finished and 0 unfinished)
+    Ignored 50 untranslated source text(s)
+Updating '/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user/lxqt-admin-user_ru.qm'...
+    Generated 50 translation(s) (50 finished and 0 unfinished)
+Updating '/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time/lxqt-admin-time_fr.qm'...
+    Generated 17 translation(s) (17 finished and 0 unfinished)
+Updating '/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time/lxqt-admin-time_gl.qm'...
+    Generated 17 translation(s) (17 finished and 0 unfinished)
+[ 47%] Generating lxqt-admin-user_sk.qm
+[ 46%] Generating lxqt-admin-user_tr.qm
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-user/translations/lxqt-admin-user_sk.ts -qm /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user/lxqt-admin-user_sk.qm
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-user/translations/lxqt-admin-user_tr.ts -qm /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user/lxqt-admin-user_tr.qm
+[ 48%] Generating lxqt-admin-time_hr.qm
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-time/translations/lxqt-admin-time_hr.ts -qm /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time/lxqt-admin-time_hr.qm
+[ 49%] Generating lxqt-admin-time_he.qm
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-time/translations/lxqt-admin-time_he.ts -qm /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time/lxqt-admin-time_he.qm
+Updating '/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user/lxqt-admin-user_sk.qm'...
+    Generated 50 translation(s) (50 finished and 0 unfinished)
+Updating '/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user/lxqt-admin-user_tr.qm'...
+    Generated 50 translation(s) (50 finished and 0 unfinished)
+Updating '/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time/lxqt-admin-time_he.qm'...
+    Generated 17 translation(s) (17 finished and 0 unfinished)
+Updating '/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time/lxqt-admin-time_hr.qm'...
+    Generated 17 translation(s) (17 finished and 0 unfinished)
+[ 50%] Generating lxqt-admin-time_hu.qm
+[ 51%] Generating lxqt-admin-user_uk.qm
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-time/translations/lxqt-admin-time_hu.ts -qm /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time/lxqt-admin-time_hu.qm
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-user/translations/lxqt-admin-user_uk.ts -qm /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user/lxqt-admin-user_uk.qm
+Updating '/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user/lxqt-admin-user_uk.qm'...
+    Generated 50 translation(s) (50 finished and 0 unfinished)
+Updating '/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time/lxqt-admin-time_hu.qm'...
+    Generated 17 translation(s) (17 finished and 0 unfinished)
+[ 53%] Generating lxqt-admin-time_id.qm
+[ 52%] Generating lxqt-admin-user_vi.qm
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-user/translations/lxqt-admin-user_vi.ts -qm /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user/lxqt-admin-user_vi.qm
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-time/translations/lxqt-admin-time_id.ts -qm /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time/lxqt-admin-time_id.qm
+Updating '/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time/lxqt-admin-time_id.qm'...
+    Generated 17 translation(s) (17 finished and 0 unfinished)
+Updating '/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user/lxqt-admin-user_vi.qm'...
+    Generated 50 translation(s) (50 finished and 0 unfinished)
+[ 54%] Generating lxqt-admin-user_zh_CN.qm
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-user/translations/lxqt-admin-user_zh_CN.ts -qm /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user/lxqt-admin-user_zh_CN.qm
+[ 55%] Generating lxqt-admin-time_it.qm
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-time/translations/lxqt-admin-time_it.ts -qm /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time/lxqt-admin-time_it.qm
+[ 56%] Generating lxqt-admin-time_ja.qm
+[ 57%] Generating moc_groupdialog.cpp
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-time/translations/lxqt-admin-time_ja.ts -qm /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time/lxqt-admin-time_ja.qm
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user && /usr/lib/qt5/bin/moc @/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user/moc_groupdialog.cpp_parameters
+Updating '/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time/lxqt-admin-time_it.qm'...
+    Generated 17 translation(s) (17 finished and 0 unfinished)
+Updating '/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user/lxqt-admin-user_zh_CN.qm'...
+    Generated 50 translation(s) (50 finished and 0 unfinished)
+[ 58%] Generating lxqt-admin-time_ko.qm
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-time/translations/lxqt-admin-time_ko.ts -qm /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time/lxqt-admin-time_ko.qm
+Updating '/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time/lxqt-admin-time_ja.qm'...
+    Generated 17 translation(s) (17 finished and 0 unfinished)
+Updating '/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time/lxqt-admin-time_ko.qm'...
+    Generated 17 translation(s) (17 finished and 0 unfinished)
+[ 59%] Generating moc_mainwindow.cpp
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user && /usr/lib/qt5/bin/moc @/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user/moc_mainwindow.cpp_parameters
+[ 59%] Generating moc_userdialog.cpp
+[ 60%] Generating lxqt-admin-time_lt.qm
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-time/translations/lxqt-admin-time_lt.ts -qm /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time/lxqt-admin-time_lt.qm
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user && /usr/lib/qt5/bin/moc @/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user/moc_userdialog.cpp_parameters
+[ 61%] Generating moc_usermanager.cpp
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user && /usr/lib/qt5/bin/moc @/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user/moc_usermanager.cpp_parameters
+Updating '/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time/lxqt-admin-time_lt.qm'...
+    Generated 17 translation(s) (17 finished and 0 unfinished)
+[ 62%] Generating ui_groupdialog.h
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user && /usr/lib/qt5/bin/uic -o /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user/ui_groupdialog.h /home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-user/groupdialog.ui
+[ 63%] Generating lxqt-admin-time_lv.qm
+[ 64%] Generating ui_mainwindow.h
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-time/translations/lxqt-admin-time_lv.ts -qm /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time/lxqt-admin-time_lv.qm
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user && /usr/lib/qt5/bin/uic -o /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user/ui_mainwindow.h /home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-user/mainwindow.ui
+[ 64%] Generating lxqt-admin-time_nb_NO.qm
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-time/translations/lxqt-admin-time_nb_NO.ts -qm /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time/lxqt-admin-time_nb_NO.qm
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/cnc/lxqt-dev/lxqt-admin-1.1.0 /home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-user /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user/CMakeFiles/lxqt-admin-user.dir/DependInfo.cmake --color=
+Updating '/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time/lxqt-admin-time_nb_NO.qm'...
+    Generated 17 translation(s) (17 finished and 0 unfinished)
+Updating '/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time/lxqt-admin-time_lv.qm'...
+    Generated 17 translation(s) (17 finished and 0 unfinished)
+[ 65%] Generating lxqt-admin-time_nl.qm
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-time/translations/lxqt-admin-time_nl.ts -qm /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time/lxqt-admin-time_nl.qm
+[ 66%] Generating lxqt-admin-time_oc.qm
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-time/translations/lxqt-admin-time_oc.ts -qm /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time/lxqt-admin-time_oc.qm
+make[3]: Leaving directory '/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu'
+make  -f lxqt-admin-user/CMakeFiles/lxqt-admin-user.dir/build.make lxqt-admin-user/CMakeFiles/lxqt-admin-user.dir/build
+Updating '/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time/lxqt-admin-time_nl.qm'...
+    Generated 17 translation(s) (17 finished and 0 unfinished)
+make[3]: Entering directory '/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu'
+[ 67%] Generating lxqt-admin-time_pl.qm
+Updating '/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time/lxqt-admin-time_oc.qm'...
+    Generated 17 translation(s) (17 finished and 0 unfinished)
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-time/translations/lxqt-admin-time_pl.ts -qm /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time/lxqt-admin-time_pl.qm
+Updating '/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time/lxqt-admin-time_pl.qm'...
+    Generated 17 translation(s) (17 finished and 0 unfinished)
+[ 67%] Building CXX object lxqt-admin-user/CMakeFiles/lxqt-admin-user.dir/main.cpp.o
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user && /usr/bin/c++ -DLXQT_ADMIN_VERSION=\"1.1.0\" -DLXQT_DATA_DIR=\"/usr/share\" -DLXQT_ETC_XDG_DIR=\"/etc/xdg\" -DLXQT_GRAPHICS_DIR=\"/usr/share/lxqt/graphics\" -DLXQT_MAJOR_VERSION=\"1\" -DLXQT_MINOR_VERSION=\"1\" -DLXQT_PATCH_VERSION=\"0\" -DLXQT_RELATIVE_SHARE_DIR=\"lxqt\" -DLXQT_RELATIVE_SHARE_TRANSLATIONS_DIR=\"lxqt/translations\" -DLXQT_SHARE_DIR=\"/usr/share/lxqt\" -DLXQT_SHARE_TRANSLATIONS_DIR=\"/usr/share/lxqt/translations\" -DLXQT_VERSION=\"1.1.0\" -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_SVG_LIB -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DQT_XML_LIB -I/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user -I/home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-user -isystem /usr/include/KF5/KWindowSystem -isystem /usr/include/KF5 -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/lxqt -isystem /usr/include/lxqt/LXQt -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/qt5xdg -isystem /usr/include/aarch64-linux-gnu/qt5/QtXml -isystem /usr/include/qt5xdgiconloader -isystem /usr/include/qt5xdgiconloader/3.9.1 -isystem /usr/include/aarch64-linux-gnu/qt5/QtSvg -isystem /usr/include/aarch64-linux-gnu/qt5/QtX11Extras -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/lxqt-admin-1.1.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -fvisibility=hidden -fvisibility-inlines-hidden -fPIC -std=c++14 -MD -MT lxqt-admin-user/CMakeFiles/lxqt-admin-user.dir/main.cpp.o -MF CMakeFiles/lxqt-admin-user.dir/main.cpp.o.d -o CMakeFiles/lxqt-admin-user.dir/main.cpp.o -c /home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-user/main.cpp
+[ 68%] Generating lxqt-admin-time_pt_BR.qm
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-time/translations/lxqt-admin-time_pt_BR.ts -qm /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time/lxqt-admin-time_pt_BR.qm
+Updating '/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time/lxqt-admin-time_pt_BR.qm'...
+    Generated 17 translation(s) (17 finished and 0 unfinished)
+[ 69%] Generating lxqt-admin-time_pt.qm
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-time/translations/lxqt-admin-time_pt.ts -qm /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time/lxqt-admin-time_pt.qm
+[ 70%] Generating lxqt-admin-time_ru.qm
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-time/translations/lxqt-admin-time_ru.ts -qm /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time/lxqt-admin-time_ru.qm
+Updating '/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time/lxqt-admin-time_pt.qm'...
+    Generated 17 translation(s) (17 finished and 0 unfinished)
+Updating '/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time/lxqt-admin-time_ru.qm'...
+    Generated 17 translation(s) (17 finished and 0 unfinished)
+[ 71%] Generating lxqt-admin-time_si.qm
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-time/translations/lxqt-admin-time_si.ts -qm /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time/lxqt-admin-time_si.qm
+Updating '/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time/lxqt-admin-time_si.qm'...
+    Generated 0 translation(s) (0 finished and 0 unfinished)
+    Ignored 17 untranslated source text(s)
+[ 72%] Building CXX object lxqt-admin-user/CMakeFiles/lxqt-admin-user.dir/mainwindow.cpp.o
+[ 73%] Generating lxqt-admin-time_sk.qm
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user && /usr/bin/c++ -DLXQT_ADMIN_VERSION=\"1.1.0\" -DLXQT_DATA_DIR=\"/usr/share\" -DLXQT_ETC_XDG_DIR=\"/etc/xdg\" -DLXQT_GRAPHICS_DIR=\"/usr/share/lxqt/graphics\" -DLXQT_MAJOR_VERSION=\"1\" -DLXQT_MINOR_VERSION=\"1\" -DLXQT_PATCH_VERSION=\"0\" -DLXQT_RELATIVE_SHARE_DIR=\"lxqt\" -DLXQT_RELATIVE_SHARE_TRANSLATIONS_DIR=\"lxqt/translations\" -DLXQT_SHARE_DIR=\"/usr/share/lxqt\" -DLXQT_SHARE_TRANSLATIONS_DIR=\"/usr/share/lxqt/translations\" -DLXQT_VERSION=\"1.1.0\" -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_SVG_LIB -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DQT_XML_LIB -I/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user -I/home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-user -isystem /usr/include/KF5/KWindowSystem -isystem /usr/include/KF5 -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/lxqt -isystem /usr/include/lxqt/LXQt -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/qt5xdg -isystem /usr/include/aarch64-linux-gnu/qt5/QtXml -isystem /usr/include/qt5xdgiconloader -isystem /usr/include/qt5xdgiconloader/3.9.1 -isystem /usr/include/aarch64-linux-gnu/qt5/QtSvg -isystem /usr/include/aarch64-linux-gnu/qt5/QtX11Extras -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/lxqt-admin-1.1.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -fvisibility=hidden -fvisibility-inlines-hidden -fPIC -std=c++14 -MD -MT lxqt-admin-user/CMakeFiles/lxqt-admin-user.dir/mainwindow.cpp.o -MF CMakeFiles/lxqt-admin-user.dir/mainwindow.cpp.o.d -o CMakeFiles/lxqt-admin-user.dir/mainwindow.cpp.o -c /home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-user/mainwindow.cpp
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-time/translations/lxqt-admin-time_sk.ts -qm /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time/lxqt-admin-time_sk.qm
+Updating '/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time/lxqt-admin-time_sk.qm'...
+    Generated 17 translation(s) (17 finished and 0 unfinished)
+[ 74%] Building CXX object lxqt-admin-user/CMakeFiles/lxqt-admin-user.dir/userdialog.cpp.o
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user && /usr/bin/c++ -DLXQT_ADMIN_VERSION=\"1.1.0\" -DLXQT_DATA_DIR=\"/usr/share\" -DLXQT_ETC_XDG_DIR=\"/etc/xdg\" -DLXQT_GRAPHICS_DIR=\"/usr/share/lxqt/graphics\" -DLXQT_MAJOR_VERSION=\"1\" -DLXQT_MINOR_VERSION=\"1\" -DLXQT_PATCH_VERSION=\"0\" -DLXQT_RELATIVE_SHARE_DIR=\"lxqt\" -DLXQT_RELATIVE_SHARE_TRANSLATIONS_DIR=\"lxqt/translations\" -DLXQT_SHARE_DIR=\"/usr/share/lxqt\" -DLXQT_SHARE_TRANSLATIONS_DIR=\"/usr/share/lxqt/translations\" -DLXQT_VERSION=\"1.1.0\" -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_SVG_LIB -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DQT_XML_LIB -I/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user -I/home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-user -isystem /usr/include/KF5/KWindowSystem -isystem /usr/include/KF5 -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/lxqt -isystem /usr/include/lxqt/LXQt -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/qt5xdg -isystem /usr/include/aarch64-linux-gnu/qt5/QtXml -isystem /usr/include/qt5xdgiconloader -isystem /usr/include/qt5xdgiconloader/3.9.1 -isystem /usr/include/aarch64-linux-gnu/qt5/QtSvg -isystem /usr/include/aarch64-linux-gnu/qt5/QtX11Extras -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/lxqt-admin-1.1.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -fvisibility=hidden -fvisibility-inlines-hidden -fPIC -std=c++14 -MD -MT lxqt-admin-user/CMakeFiles/lxqt-admin-user.dir/userdialog.cpp.o -MF CMakeFiles/lxqt-admin-user.dir/userdialog.cpp.o.d -o CMakeFiles/lxqt-admin-user.dir/userdialog.cpp.o -c /home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-user/userdialog.cpp
+[ 75%] Generating lxqt-admin-time_tr.qm
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-time/translations/lxqt-admin-time_tr.ts -qm /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time/lxqt-admin-time_tr.qm
+Updating '/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time/lxqt-admin-time_tr.qm'...
+    Generated 17 translation(s) (17 finished and 0 unfinished)
+[ 75%] Generating lxqt-admin-time_uk.qm
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-time/translations/lxqt-admin-time_uk.ts -qm /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time/lxqt-admin-time_uk.qm
+Updating '/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time/lxqt-admin-time_uk.qm'...
+    Generated 17 translation(s) (17 finished and 0 unfinished)
+[ 76%] Generating lxqt-admin-time_vi.qm
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-time/translations/lxqt-admin-time_vi.ts -qm /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time/lxqt-admin-time_vi.qm
+Updating '/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time/lxqt-admin-time_vi.qm'...
+    Generated 17 translation(s) (17 finished and 0 unfinished)
+[ 77%] Generating lxqt-admin-time_zh_CN.qm
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-time/translations/lxqt-admin-time_zh_CN.ts -qm /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time/lxqt-admin-time_zh_CN.qm
+Updating '/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time/lxqt-admin-time_zh_CN.qm'...
+    Generated 17 translation(s) (17 finished and 0 unfinished)
+[ 78%] Generating lxqt-admin-time_zh_TW.qm
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-time/translations/lxqt-admin-time_zh_TW.ts -qm /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time/lxqt-admin-time_zh_TW.qm
+Updating '/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time/lxqt-admin-time_zh_TW.qm'...
+    Generated 17 translation(s) (17 finished and 0 unfinished)
+[ 79%] Generating moc_datetime.cpp
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time && /usr/lib/qt5/bin/moc @/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time/moc_datetime.cpp_parameters
+[ 80%] Generating moc_timeadmindialog.cpp
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time && /usr/lib/qt5/bin/moc @/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time/moc_timeadmindialog.cpp_parameters
+[ 81%] Generating moc_timezone.cpp
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time && /usr/lib/qt5/bin/moc @/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time/moc_timezone.cpp_parameters
+[ 81%] Generating ui_datetime.h
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time && /usr/lib/qt5/bin/uic -o /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time/ui_datetime.h /home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-time/datetime.ui
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/cnc/lxqt-dev/lxqt-admin-1.1.0 /home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-time /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time/CMakeFiles/lxqt-admin-time.dir/DependInfo.cmake --color=
+make[3]: Leaving directory '/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu'
+make  -f lxqt-admin-time/CMakeFiles/lxqt-admin-time.dir/build.make lxqt-admin-time/CMakeFiles/lxqt-admin-time.dir/build
+make[3]: Entering directory '/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu'
+[ 82%] Building CXX object lxqt-admin-time/CMakeFiles/lxqt-admin-time.dir/main.cpp.o
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time && /usr/bin/c++ -DLXQT_ADMIN_VERSION=\"1.1.0\" -DLXQT_DATA_DIR=\"/usr/share\" -DLXQT_ETC_XDG_DIR=\"/etc/xdg\" -DLXQT_GRAPHICS_DIR=\"/usr/share/lxqt/graphics\" -DLXQT_MAJOR_VERSION=\"1\" -DLXQT_MINOR_VERSION=\"1\" -DLXQT_PATCH_VERSION=\"0\" -DLXQT_RELATIVE_SHARE_DIR=\"lxqt\" -DLXQT_RELATIVE_SHARE_TRANSLATIONS_DIR=\"lxqt/translations\" -DLXQT_SHARE_DIR=\"/usr/share/lxqt\" -DLXQT_SHARE_TRANSLATIONS_DIR=\"/usr/share/lxqt/translations\" -DLXQT_VERSION=\"1.1.0\" -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_SVG_LIB -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DQT_XML_LIB -I/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time -I/home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-time -isystem /usr/include/KF5/KWindowSystem -isystem /usr/include/KF5 -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/lxqt -isystem /usr/include/lxqt/LXQt -isystem /usr/include/qt5xdg -isystem /usr/include/aarch64-linux-gnu/qt5/QtXml -isystem /usr/include/qt5xdgiconloader -isystem /usr/include/qt5xdgiconloader/3.9.1 -isystem /usr/include/aarch64-linux-gnu/qt5/QtSvg -isystem /usr/include/aarch64-linux-gnu/qt5/QtX11Extras -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/lxqt-admin-1.1.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -fvisibility=hidden -fvisibility-inlines-hidden -fPIC -std=c++14 -MD -MT lxqt-admin-time/CMakeFiles/lxqt-admin-time.dir/main.cpp.o -MF CMakeFiles/lxqt-admin-time.dir/main.cpp.o.d -o CMakeFiles/lxqt-admin-time.dir/main.cpp.o -c /home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-time/main.cpp
+[ 83%] Building CXX object lxqt-admin-time/CMakeFiles/lxqt-admin-time.dir/timeadmindialog.cpp.o
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time && /usr/bin/c++ -DLXQT_ADMIN_VERSION=\"1.1.0\" -DLXQT_DATA_DIR=\"/usr/share\" -DLXQT_ETC_XDG_DIR=\"/etc/xdg\" -DLXQT_GRAPHICS_DIR=\"/usr/share/lxqt/graphics\" -DLXQT_MAJOR_VERSION=\"1\" -DLXQT_MINOR_VERSION=\"1\" -DLXQT_PATCH_VERSION=\"0\" -DLXQT_RELATIVE_SHARE_DIR=\"lxqt\" -DLXQT_RELATIVE_SHARE_TRANSLATIONS_DIR=\"lxqt/translations\" -DLXQT_SHARE_DIR=\"/usr/share/lxqt\" -DLXQT_SHARE_TRANSLATIONS_DIR=\"/usr/share/lxqt/translations\" -DLXQT_VERSION=\"1.1.0\" -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_SVG_LIB -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DQT_XML_LIB -I/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time -I/home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-time -isystem /usr/include/KF5/KWindowSystem -isystem /usr/include/KF5 -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/lxqt -isystem /usr/include/lxqt/LXQt -isystem /usr/include/qt5xdg -isystem /usr/include/aarch64-linux-gnu/qt5/QtXml -isystem /usr/include/qt5xdgiconloader -isystem /usr/include/qt5xdgiconloader/3.9.1 -isystem /usr/include/aarch64-linux-gnu/qt5/QtSvg -isystem /usr/include/aarch64-linux-gnu/qt5/QtX11Extras -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/lxqt-admin-1.1.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -fvisibility=hidden -fvisibility-inlines-hidden -fPIC -std=c++14 -MD -MT lxqt-admin-time/CMakeFiles/lxqt-admin-time.dir/timeadmindialog.cpp.o -MF CMakeFiles/lxqt-admin-time.dir/timeadmindialog.cpp.o.d -o CMakeFiles/lxqt-admin-time.dir/timeadmindialog.cpp.o -c /home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-time/timeadmindialog.cpp
+[ 84%] Building CXX object lxqt-admin-time/CMakeFiles/lxqt-admin-time.dir/datetime.cpp.o
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time && /usr/bin/c++ -DLXQT_ADMIN_VERSION=\"1.1.0\" -DLXQT_DATA_DIR=\"/usr/share\" -DLXQT_ETC_XDG_DIR=\"/etc/xdg\" -DLXQT_GRAPHICS_DIR=\"/usr/share/lxqt/graphics\" -DLXQT_MAJOR_VERSION=\"1\" -DLXQT_MINOR_VERSION=\"1\" -DLXQT_PATCH_VERSION=\"0\" -DLXQT_RELATIVE_SHARE_DIR=\"lxqt\" -DLXQT_RELATIVE_SHARE_TRANSLATIONS_DIR=\"lxqt/translations\" -DLXQT_SHARE_DIR=\"/usr/share/lxqt\" -DLXQT_SHARE_TRANSLATIONS_DIR=\"/usr/share/lxqt/translations\" -DLXQT_VERSION=\"1.1.0\" -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_SVG_LIB -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DQT_XML_LIB -I/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time -I/home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-time -isystem /usr/include/KF5/KWindowSystem -isystem /usr/include/KF5 -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/lxqt -isystem /usr/include/lxqt/LXQt -isystem /usr/include/qt5xdg -isystem /usr/include/aarch64-linux-gnu/qt5/QtXml -isystem /usr/include/qt5xdgiconloader -isystem /usr/include/qt5xdgiconloader/3.9.1 -isystem /usr/include/aarch64-linux-gnu/qt5/QtSvg -isystem /usr/include/aarch64-linux-gnu/qt5/QtX11Extras -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/lxqt-admin-1.1.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -fvisibility=hidden -fvisibility-inlines-hidden -fPIC -std=c++14 -MD -MT lxqt-admin-time/CMakeFiles/lxqt-admin-time.dir/datetime.cpp.o -MF CMakeFiles/lxqt-admin-time.dir/datetime.cpp.o.d -o CMakeFiles/lxqt-admin-time.dir/datetime.cpp.o -c /home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-time/datetime.cpp
+[ 85%] Building CXX object lxqt-admin-user/CMakeFiles/lxqt-admin-user.dir/groupdialog.cpp.o
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user && /usr/bin/c++ -DLXQT_ADMIN_VERSION=\"1.1.0\" -DLXQT_DATA_DIR=\"/usr/share\" -DLXQT_ETC_XDG_DIR=\"/etc/xdg\" -DLXQT_GRAPHICS_DIR=\"/usr/share/lxqt/graphics\" -DLXQT_MAJOR_VERSION=\"1\" -DLXQT_MINOR_VERSION=\"1\" -DLXQT_PATCH_VERSION=\"0\" -DLXQT_RELATIVE_SHARE_DIR=\"lxqt\" -DLXQT_RELATIVE_SHARE_TRANSLATIONS_DIR=\"lxqt/translations\" -DLXQT_SHARE_DIR=\"/usr/share/lxqt\" -DLXQT_SHARE_TRANSLATIONS_DIR=\"/usr/share/lxqt/translations\" -DLXQT_VERSION=\"1.1.0\" -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_SVG_LIB -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DQT_XML_LIB -I/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user -I/home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-user -isystem /usr/include/KF5/KWindowSystem -isystem /usr/include/KF5 -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/lxqt -isystem /usr/include/lxqt/LXQt -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/qt5xdg -isystem /usr/include/aarch64-linux-gnu/qt5/QtXml -isystem /usr/include/qt5xdgiconloader -isystem /usr/include/qt5xdgiconloader/3.9.1 -isystem /usr/include/aarch64-linux-gnu/qt5/QtSvg -isystem /usr/include/aarch64-linux-gnu/qt5/QtX11Extras -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/lxqt-admin-1.1.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -fvisibility=hidden -fvisibility-inlines-hidden -fPIC -std=c++14 -MD -MT lxqt-admin-user/CMakeFiles/lxqt-admin-user.dir/groupdialog.cpp.o -MF CMakeFiles/lxqt-admin-user.dir/groupdialog.cpp.o.d -o CMakeFiles/lxqt-admin-user.dir/groupdialog.cpp.o -c /home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-user/groupdialog.cpp
+[ 86%] Building CXX object lxqt-admin-time/CMakeFiles/lxqt-admin-time.dir/timezone.cpp.o
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time && /usr/bin/c++ -DLXQT_ADMIN_VERSION=\"1.1.0\" -DLXQT_DATA_DIR=\"/usr/share\" -DLXQT_ETC_XDG_DIR=\"/etc/xdg\" -DLXQT_GRAPHICS_DIR=\"/usr/share/lxqt/graphics\" -DLXQT_MAJOR_VERSION=\"1\" -DLXQT_MINOR_VERSION=\"1\" -DLXQT_PATCH_VERSION=\"0\" -DLXQT_RELATIVE_SHARE_DIR=\"lxqt\" -DLXQT_RELATIVE_SHARE_TRANSLATIONS_DIR=\"lxqt/translations\" -DLXQT_SHARE_DIR=\"/usr/share/lxqt\" -DLXQT_SHARE_TRANSLATIONS_DIR=\"/usr/share/lxqt/translations\" -DLXQT_VERSION=\"1.1.0\" -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_SVG_LIB -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DQT_XML_LIB -I/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time -I/home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-time -isystem /usr/include/KF5/KWindowSystem -isystem /usr/include/KF5 -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/lxqt -isystem /usr/include/lxqt/LXQt -isystem /usr/include/qt5xdg -isystem /usr/include/aarch64-linux-gnu/qt5/QtXml -isystem /usr/include/qt5xdgiconloader -isystem /usr/include/qt5xdgiconloader/3.9.1 -isystem /usr/include/aarch64-linux-gnu/qt5/QtSvg -isystem /usr/include/aarch64-linux-gnu/qt5/QtX11Extras -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/lxqt-admin-1.1.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -fvisibility=hidden -fvisibility-inlines-hidden -fPIC -std=c++14 -MD -MT lxqt-admin-time/CMakeFiles/lxqt-admin-time.dir/timezone.cpp.o -MF CMakeFiles/lxqt-admin-time.dir/timezone.cpp.o.d -o CMakeFiles/lxqt-admin-time.dir/timezone.cpp.o -c /home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-time/timezone.cpp
+[ 87%] Building CXX object lxqt-admin-user/CMakeFiles/lxqt-admin-user.dir/usermanager.cpp.o
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user && /usr/bin/c++ -DLXQT_ADMIN_VERSION=\"1.1.0\" -DLXQT_DATA_DIR=\"/usr/share\" -DLXQT_ETC_XDG_DIR=\"/etc/xdg\" -DLXQT_GRAPHICS_DIR=\"/usr/share/lxqt/graphics\" -DLXQT_MAJOR_VERSION=\"1\" -DLXQT_MINOR_VERSION=\"1\" -DLXQT_PATCH_VERSION=\"0\" -DLXQT_RELATIVE_SHARE_DIR=\"lxqt\" -DLXQT_RELATIVE_SHARE_TRANSLATIONS_DIR=\"lxqt/translations\" -DLXQT_SHARE_DIR=\"/usr/share/lxqt\" -DLXQT_SHARE_TRANSLATIONS_DIR=\"/usr/share/lxqt/translations\" -DLXQT_VERSION=\"1.1.0\" -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_SVG_LIB -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DQT_XML_LIB -I/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user -I/home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-user -isystem /usr/include/KF5/KWindowSystem -isystem /usr/include/KF5 -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/lxqt -isystem /usr/include/lxqt/LXQt -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/qt5xdg -isystem /usr/include/aarch64-linux-gnu/qt5/QtXml -isystem /usr/include/qt5xdgiconloader -isystem /usr/include/qt5xdgiconloader/3.9.1 -isystem /usr/include/aarch64-linux-gnu/qt5/QtSvg -isystem /usr/include/aarch64-linux-gnu/qt5/QtX11Extras -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/lxqt-admin-1.1.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -fvisibility=hidden -fvisibility-inlines-hidden -fPIC -std=c++14 -MD -MT lxqt-admin-user/CMakeFiles/lxqt-admin-user.dir/usermanager.cpp.o -MF CMakeFiles/lxqt-admin-user.dir/usermanager.cpp.o.d -o CMakeFiles/lxqt-admin-user.dir/usermanager.cpp.o -c /home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-user/usermanager.cpp
+[ 88%] Building CXX object lxqt-admin-user/CMakeFiles/lxqt-admin-user.dir/moc_mainwindow.cpp.o
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user && /usr/bin/c++ -DLXQT_ADMIN_VERSION=\"1.1.0\" -DLXQT_DATA_DIR=\"/usr/share\" -DLXQT_ETC_XDG_DIR=\"/etc/xdg\" -DLXQT_GRAPHICS_DIR=\"/usr/share/lxqt/graphics\" -DLXQT_MAJOR_VERSION=\"1\" -DLXQT_MINOR_VERSION=\"1\" -DLXQT_PATCH_VERSION=\"0\" -DLXQT_RELATIVE_SHARE_DIR=\"lxqt\" -DLXQT_RELATIVE_SHARE_TRANSLATIONS_DIR=\"lxqt/translations\" -DLXQT_SHARE_DIR=\"/usr/share/lxqt\" -DLXQT_SHARE_TRANSLATIONS_DIR=\"/usr/share/lxqt/translations\" -DLXQT_VERSION=\"1.1.0\" -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_SVG_LIB -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DQT_XML_LIB -I/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user -I/home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-user -isystem /usr/include/KF5/KWindowSystem -isystem /usr/include/KF5 -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/lxqt -isystem /usr/include/lxqt/LXQt -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/qt5xdg -isystem /usr/include/aarch64-linux-gnu/qt5/QtXml -isystem /usr/include/qt5xdgiconloader -isystem /usr/include/qt5xdgiconloader/3.9.1 -isystem /usr/include/aarch64-linux-gnu/qt5/QtSvg -isystem /usr/include/aarch64-linux-gnu/qt5/QtX11Extras -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/lxqt-admin-1.1.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -fvisibility=hidden -fvisibility-inlines-hidden -fPIC -std=c++14 -MD -MT lxqt-admin-user/CMakeFiles/lxqt-admin-user.dir/moc_mainwindow.cpp.o -MF CMakeFiles/lxqt-admin-user.dir/moc_mainwindow.cpp.o.d -o CMakeFiles/lxqt-admin-user.dir/moc_mainwindow.cpp.o -c /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user/moc_mainwindow.cpp
+[ 89%] Building CXX object lxqt-admin-user/CMakeFiles/lxqt-admin-user.dir/moc_userdialog.cpp.o
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user && /usr/bin/c++ -DLXQT_ADMIN_VERSION=\"1.1.0\" -DLXQT_DATA_DIR=\"/usr/share\" -DLXQT_ETC_XDG_DIR=\"/etc/xdg\" -DLXQT_GRAPHICS_DIR=\"/usr/share/lxqt/graphics\" -DLXQT_MAJOR_VERSION=\"1\" -DLXQT_MINOR_VERSION=\"1\" -DLXQT_PATCH_VERSION=\"0\" -DLXQT_RELATIVE_SHARE_DIR=\"lxqt\" -DLXQT_RELATIVE_SHARE_TRANSLATIONS_DIR=\"lxqt/translations\" -DLXQT_SHARE_DIR=\"/usr/share/lxqt\" -DLXQT_SHARE_TRANSLATIONS_DIR=\"/usr/share/lxqt/translations\" -DLXQT_VERSION=\"1.1.0\" -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_SVG_LIB -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DQT_XML_LIB -I/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user -I/home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-user -isystem /usr/include/KF5/KWindowSystem -isystem /usr/include/KF5 -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/lxqt -isystem /usr/include/lxqt/LXQt -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/qt5xdg -isystem /usr/include/aarch64-linux-gnu/qt5/QtXml -isystem /usr/include/qt5xdgiconloader -isystem /usr/include/qt5xdgiconloader/3.9.1 -isystem /usr/include/aarch64-linux-gnu/qt5/QtSvg -isystem /usr/include/aarch64-linux-gnu/qt5/QtX11Extras -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/lxqt-admin-1.1.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -fvisibility=hidden -fvisibility-inlines-hidden -fPIC -std=c++14 -MD -MT lxqt-admin-user/CMakeFiles/lxqt-admin-user.dir/moc_userdialog.cpp.o -MF CMakeFiles/lxqt-admin-user.dir/moc_userdialog.cpp.o.d -o CMakeFiles/lxqt-admin-user.dir/moc_userdialog.cpp.o -c /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user/moc_userdialog.cpp
+[ 90%] Building CXX object lxqt-admin-time/CMakeFiles/lxqt-admin-time.dir/fbsdtimedatectl.cpp.o
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time && /usr/bin/c++ -DLXQT_ADMIN_VERSION=\"1.1.0\" -DLXQT_DATA_DIR=\"/usr/share\" -DLXQT_ETC_XDG_DIR=\"/etc/xdg\" -DLXQT_GRAPHICS_DIR=\"/usr/share/lxqt/graphics\" -DLXQT_MAJOR_VERSION=\"1\" -DLXQT_MINOR_VERSION=\"1\" -DLXQT_PATCH_VERSION=\"0\" -DLXQT_RELATIVE_SHARE_DIR=\"lxqt\" -DLXQT_RELATIVE_SHARE_TRANSLATIONS_DIR=\"lxqt/translations\" -DLXQT_SHARE_DIR=\"/usr/share/lxqt\" -DLXQT_SHARE_TRANSLATIONS_DIR=\"/usr/share/lxqt/translations\" -DLXQT_VERSION=\"1.1.0\" -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_SVG_LIB -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DQT_XML_LIB -I/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time -I/home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-time -isystem /usr/include/KF5/KWindowSystem -isystem /usr/include/KF5 -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/lxqt -isystem /usr/include/lxqt/LXQt -isystem /usr/include/qt5xdg -isystem /usr/include/aarch64-linux-gnu/qt5/QtXml -isystem /usr/include/qt5xdgiconloader -isystem /usr/include/qt5xdgiconloader/3.9.1 -isystem /usr/include/aarch64-linux-gnu/qt5/QtSvg -isystem /usr/include/aarch64-linux-gnu/qt5/QtX11Extras -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/lxqt-admin-1.1.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -fvisibility=hidden -fvisibility-inlines-hidden -fPIC -std=c++14 -MD -MT lxqt-admin-time/CMakeFiles/lxqt-admin-time.dir/fbsdtimedatectl.cpp.o -MF CMakeFiles/lxqt-admin-time.dir/fbsdtimedatectl.cpp.o.d -o CMakeFiles/lxqt-admin-time.dir/fbsdtimedatectl.cpp.o -c /home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-time/fbsdtimedatectl.cpp
+[ 91%] Building CXX object lxqt-admin-time/CMakeFiles/lxqt-admin-time.dir/dbustimedatectl.cpp.o
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time && /usr/bin/c++ -DLXQT_ADMIN_VERSION=\"1.1.0\" -DLXQT_DATA_DIR=\"/usr/share\" -DLXQT_ETC_XDG_DIR=\"/etc/xdg\" -DLXQT_GRAPHICS_DIR=\"/usr/share/lxqt/graphics\" -DLXQT_MAJOR_VERSION=\"1\" -DLXQT_MINOR_VERSION=\"1\" -DLXQT_PATCH_VERSION=\"0\" -DLXQT_RELATIVE_SHARE_DIR=\"lxqt\" -DLXQT_RELATIVE_SHARE_TRANSLATIONS_DIR=\"lxqt/translations\" -DLXQT_SHARE_DIR=\"/usr/share/lxqt\" -DLXQT_SHARE_TRANSLATIONS_DIR=\"/usr/share/lxqt/translations\" -DLXQT_VERSION=\"1.1.0\" -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_SVG_LIB -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DQT_XML_LIB -I/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time -I/home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-time -isystem /usr/include/KF5/KWindowSystem -isystem /usr/include/KF5 -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/lxqt -isystem /usr/include/lxqt/LXQt -isystem /usr/include/qt5xdg -isystem /usr/include/aarch64-linux-gnu/qt5/QtXml -isystem /usr/include/qt5xdgiconloader -isystem /usr/include/qt5xdgiconloader/3.9.1 -isystem /usr/include/aarch64-linux-gnu/qt5/QtSvg -isystem /usr/include/aarch64-linux-gnu/qt5/QtX11Extras -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/lxqt-admin-1.1.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -fvisibility=hidden -fvisibility-inlines-hidden -fPIC -std=c++14 -MD -MT lxqt-admin-time/CMakeFiles/lxqt-admin-time.dir/dbustimedatectl.cpp.o -MF CMakeFiles/lxqt-admin-time.dir/dbustimedatectl.cpp.o.d -o CMakeFiles/lxqt-admin-time.dir/dbustimedatectl.cpp.o -c /home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-time/dbustimedatectl.cpp
+[ 92%] Building CXX object lxqt-admin-user/CMakeFiles/lxqt-admin-user.dir/moc_groupdialog.cpp.o
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user && /usr/bin/c++ -DLXQT_ADMIN_VERSION=\"1.1.0\" -DLXQT_DATA_DIR=\"/usr/share\" -DLXQT_ETC_XDG_DIR=\"/etc/xdg\" -DLXQT_GRAPHICS_DIR=\"/usr/share/lxqt/graphics\" -DLXQT_MAJOR_VERSION=\"1\" -DLXQT_MINOR_VERSION=\"1\" -DLXQT_PATCH_VERSION=\"0\" -DLXQT_RELATIVE_SHARE_DIR=\"lxqt\" -DLXQT_RELATIVE_SHARE_TRANSLATIONS_DIR=\"lxqt/translations\" -DLXQT_SHARE_DIR=\"/usr/share/lxqt\" -DLXQT_SHARE_TRANSLATIONS_DIR=\"/usr/share/lxqt/translations\" -DLXQT_VERSION=\"1.1.0\" -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_SVG_LIB -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DQT_XML_LIB -I/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user -I/home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-user -isystem /usr/include/KF5/KWindowSystem -isystem /usr/include/KF5 -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/lxqt -isystem /usr/include/lxqt/LXQt -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/qt5xdg -isystem /usr/include/aarch64-linux-gnu/qt5/QtXml -isystem /usr/include/qt5xdgiconloader -isystem /usr/include/qt5xdgiconloader/3.9.1 -isystem /usr/include/aarch64-linux-gnu/qt5/QtSvg -isystem /usr/include/aarch64-linux-gnu/qt5/QtX11Extras -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/lxqt-admin-1.1.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -fvisibility=hidden -fvisibility-inlines-hidden -fPIC -std=c++14 -MD -MT lxqt-admin-user/CMakeFiles/lxqt-admin-user.dir/moc_groupdialog.cpp.o -MF CMakeFiles/lxqt-admin-user.dir/moc_groupdialog.cpp.o.d -o CMakeFiles/lxqt-admin-user.dir/moc_groupdialog.cpp.o -c /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user/moc_groupdialog.cpp
+[ 92%] Building CXX object lxqt-admin-time/CMakeFiles/lxqt-admin-time.dir/nosdtimedatectl.cpp.o
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time && /usr/bin/c++ -DLXQT_ADMIN_VERSION=\"1.1.0\" -DLXQT_DATA_DIR=\"/usr/share\" -DLXQT_ETC_XDG_DIR=\"/etc/xdg\" -DLXQT_GRAPHICS_DIR=\"/usr/share/lxqt/graphics\" -DLXQT_MAJOR_VERSION=\"1\" -DLXQT_MINOR_VERSION=\"1\" -DLXQT_PATCH_VERSION=\"0\" -DLXQT_RELATIVE_SHARE_DIR=\"lxqt\" -DLXQT_RELATIVE_SHARE_TRANSLATIONS_DIR=\"lxqt/translations\" -DLXQT_SHARE_DIR=\"/usr/share/lxqt\" -DLXQT_SHARE_TRANSLATIONS_DIR=\"/usr/share/lxqt/translations\" -DLXQT_VERSION=\"1.1.0\" -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_SVG_LIB -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DQT_XML_LIB -I/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time -I/home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-time -isystem /usr/include/KF5/KWindowSystem -isystem /usr/include/KF5 -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/lxqt -isystem /usr/include/lxqt/LXQt -isystem /usr/include/qt5xdg -isystem /usr/include/aarch64-linux-gnu/qt5/QtXml -isystem /usr/include/qt5xdgiconloader -isystem /usr/include/qt5xdgiconloader/3.9.1 -isystem /usr/include/aarch64-linux-gnu/qt5/QtSvg -isystem /usr/include/aarch64-linux-gnu/qt5/QtX11Extras -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/lxqt-admin-1.1.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -fvisibility=hidden -fvisibility-inlines-hidden -fPIC -std=c++14 -MD -MT lxqt-admin-time/CMakeFiles/lxqt-admin-time.dir/nosdtimedatectl.cpp.o -MF CMakeFiles/lxqt-admin-time.dir/nosdtimedatectl.cpp.o.d -o CMakeFiles/lxqt-admin-time.dir/nosdtimedatectl.cpp.o -c /home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-time/nosdtimedatectl.cpp
+[ 93%] Building CXX object lxqt-admin-time/CMakeFiles/lxqt-admin-time.dir/moc_timeadmindialog.cpp.o
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time && /usr/bin/c++ -DLXQT_ADMIN_VERSION=\"1.1.0\" -DLXQT_DATA_DIR=\"/usr/share\" -DLXQT_ETC_XDG_DIR=\"/etc/xdg\" -DLXQT_GRAPHICS_DIR=\"/usr/share/lxqt/graphics\" -DLXQT_MAJOR_VERSION=\"1\" -DLXQT_MINOR_VERSION=\"1\" -DLXQT_PATCH_VERSION=\"0\" -DLXQT_RELATIVE_SHARE_DIR=\"lxqt\" -DLXQT_RELATIVE_SHARE_TRANSLATIONS_DIR=\"lxqt/translations\" -DLXQT_SHARE_DIR=\"/usr/share/lxqt\" -DLXQT_SHARE_TRANSLATIONS_DIR=\"/usr/share/lxqt/translations\" -DLXQT_VERSION=\"1.1.0\" -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_SVG_LIB -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DQT_XML_LIB -I/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time -I/home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-time -isystem /usr/include/KF5/KWindowSystem -isystem /usr/include/KF5 -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/lxqt -isystem /usr/include/lxqt/LXQt -isystem /usr/include/qt5xdg -isystem /usr/include/aarch64-linux-gnu/qt5/QtXml -isystem /usr/include/qt5xdgiconloader -isystem /usr/include/qt5xdgiconloader/3.9.1 -isystem /usr/include/aarch64-linux-gnu/qt5/QtSvg -isystem /usr/include/aarch64-linux-gnu/qt5/QtX11Extras -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/lxqt-admin-1.1.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -fvisibility=hidden -fvisibility-inlines-hidden -fPIC -std=c++14 -MD -MT lxqt-admin-time/CMakeFiles/lxqt-admin-time.dir/moc_timeadmindialog.cpp.o -MF CMakeFiles/lxqt-admin-time.dir/moc_timeadmindialog.cpp.o.d -o CMakeFiles/lxqt-admin-time.dir/moc_timeadmindialog.cpp.o -c /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time/moc_timeadmindialog.cpp
+[ 94%] Building CXX object lxqt-admin-user/CMakeFiles/lxqt-admin-user.dir/moc_usermanager.cpp.o
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user && /usr/bin/c++ -DLXQT_ADMIN_VERSION=\"1.1.0\" -DLXQT_DATA_DIR=\"/usr/share\" -DLXQT_ETC_XDG_DIR=\"/etc/xdg\" -DLXQT_GRAPHICS_DIR=\"/usr/share/lxqt/graphics\" -DLXQT_MAJOR_VERSION=\"1\" -DLXQT_MINOR_VERSION=\"1\" -DLXQT_PATCH_VERSION=\"0\" -DLXQT_RELATIVE_SHARE_DIR=\"lxqt\" -DLXQT_RELATIVE_SHARE_TRANSLATIONS_DIR=\"lxqt/translations\" -DLXQT_SHARE_DIR=\"/usr/share/lxqt\" -DLXQT_SHARE_TRANSLATIONS_DIR=\"/usr/share/lxqt/translations\" -DLXQT_VERSION=\"1.1.0\" -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_SVG_LIB -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DQT_XML_LIB -I/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user -I/home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-user -isystem /usr/include/KF5/KWindowSystem -isystem /usr/include/KF5 -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/lxqt -isystem /usr/include/lxqt/LXQt -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/qt5xdg -isystem /usr/include/aarch64-linux-gnu/qt5/QtXml -isystem /usr/include/qt5xdgiconloader -isystem /usr/include/qt5xdgiconloader/3.9.1 -isystem /usr/include/aarch64-linux-gnu/qt5/QtSvg -isystem /usr/include/aarch64-linux-gnu/qt5/QtX11Extras -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/lxqt-admin-1.1.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -fvisibility=hidden -fvisibility-inlines-hidden -fPIC -std=c++14 -MD -MT lxqt-admin-user/CMakeFiles/lxqt-admin-user.dir/moc_usermanager.cpp.o -MF CMakeFiles/lxqt-admin-user.dir/moc_usermanager.cpp.o.d -o CMakeFiles/lxqt-admin-user.dir/moc_usermanager.cpp.o -c /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user/moc_usermanager.cpp
+[ 95%] Building CXX object lxqt-admin-time/CMakeFiles/lxqt-admin-time.dir/moc_datetime.cpp.o
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time && /usr/bin/c++ -DLXQT_ADMIN_VERSION=\"1.1.0\" -DLXQT_DATA_DIR=\"/usr/share\" -DLXQT_ETC_XDG_DIR=\"/etc/xdg\" -DLXQT_GRAPHICS_DIR=\"/usr/share/lxqt/graphics\" -DLXQT_MAJOR_VERSION=\"1\" -DLXQT_MINOR_VERSION=\"1\" -DLXQT_PATCH_VERSION=\"0\" -DLXQT_RELATIVE_SHARE_DIR=\"lxqt\" -DLXQT_RELATIVE_SHARE_TRANSLATIONS_DIR=\"lxqt/translations\" -DLXQT_SHARE_DIR=\"/usr/share/lxqt\" -DLXQT_SHARE_TRANSLATIONS_DIR=\"/usr/share/lxqt/translations\" -DLXQT_VERSION=\"1.1.0\" -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_SVG_LIB -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DQT_XML_LIB -I/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time -I/home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-time -isystem /usr/include/KF5/KWindowSystem -isystem /usr/include/KF5 -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/lxqt -isystem /usr/include/lxqt/LXQt -isystem /usr/include/qt5xdg -isystem /usr/include/aarch64-linux-gnu/qt5/QtXml -isystem /usr/include/qt5xdgiconloader -isystem /usr/include/qt5xdgiconloader/3.9.1 -isystem /usr/include/aarch64-linux-gnu/qt5/QtSvg -isystem /usr/include/aarch64-linux-gnu/qt5/QtX11Extras -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/lxqt-admin-1.1.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -fvisibility=hidden -fvisibility-inlines-hidden -fPIC -std=c++14 -MD -MT lxqt-admin-time/CMakeFiles/lxqt-admin-time.dir/moc_datetime.cpp.o -MF CMakeFiles/lxqt-admin-time.dir/moc_datetime.cpp.o.d -o CMakeFiles/lxqt-admin-time.dir/moc_datetime.cpp.o -c /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time/moc_datetime.cpp
+[ 96%] Building CXX object lxqt-admin-user/CMakeFiles/lxqt-admin-user.dir/LXQtAppTranslationLoader.cpp.o
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user && /usr/bin/c++ -DLXQT_ADMIN_VERSION=\"1.1.0\" -DLXQT_DATA_DIR=\"/usr/share\" -DLXQT_ETC_XDG_DIR=\"/etc/xdg\" -DLXQT_GRAPHICS_DIR=\"/usr/share/lxqt/graphics\" -DLXQT_MAJOR_VERSION=\"1\" -DLXQT_MINOR_VERSION=\"1\" -DLXQT_PATCH_VERSION=\"0\" -DLXQT_RELATIVE_SHARE_DIR=\"lxqt\" -DLXQT_RELATIVE_SHARE_TRANSLATIONS_DIR=\"lxqt/translations\" -DLXQT_SHARE_DIR=\"/usr/share/lxqt\" -DLXQT_SHARE_TRANSLATIONS_DIR=\"/usr/share/lxqt/translations\" -DLXQT_VERSION=\"1.1.0\" -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_SVG_LIB -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DQT_XML_LIB -I/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user -I/home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-user -isystem /usr/include/KF5/KWindowSystem -isystem /usr/include/KF5 -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/lxqt -isystem /usr/include/lxqt/LXQt -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/qt5xdg -isystem /usr/include/aarch64-linux-gnu/qt5/QtXml -isystem /usr/include/qt5xdgiconloader -isystem /usr/include/qt5xdgiconloader/3.9.1 -isystem /usr/include/aarch64-linux-gnu/qt5/QtSvg -isystem /usr/include/aarch64-linux-gnu/qt5/QtX11Extras -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/lxqt-admin-1.1.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -fvisibility=hidden -fvisibility-inlines-hidden -fPIC -std=c++14 -MD -MT lxqt-admin-user/CMakeFiles/lxqt-admin-user.dir/LXQtAppTranslationLoader.cpp.o -MF CMakeFiles/lxqt-admin-user.dir/LXQtAppTranslationLoader.cpp.o.d -o CMakeFiles/lxqt-admin-user.dir/LXQtAppTranslationLoader.cpp.o -c /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user/LXQtAppTranslationLoader.cpp
+[ 97%] Building CXX object lxqt-admin-time/CMakeFiles/lxqt-admin-time.dir/moc_timezone.cpp.o
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time && /usr/bin/c++ -DLXQT_ADMIN_VERSION=\"1.1.0\" -DLXQT_DATA_DIR=\"/usr/share\" -DLXQT_ETC_XDG_DIR=\"/etc/xdg\" -DLXQT_GRAPHICS_DIR=\"/usr/share/lxqt/graphics\" -DLXQT_MAJOR_VERSION=\"1\" -DLXQT_MINOR_VERSION=\"1\" -DLXQT_PATCH_VERSION=\"0\" -DLXQT_RELATIVE_SHARE_DIR=\"lxqt\" -DLXQT_RELATIVE_SHARE_TRANSLATIONS_DIR=\"lxqt/translations\" -DLXQT_SHARE_DIR=\"/usr/share/lxqt\" -DLXQT_SHARE_TRANSLATIONS_DIR=\"/usr/share/lxqt/translations\" -DLXQT_VERSION=\"1.1.0\" -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_SVG_LIB -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DQT_XML_LIB -I/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time -I/home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-time -isystem /usr/include/KF5/KWindowSystem -isystem /usr/include/KF5 -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/lxqt -isystem /usr/include/lxqt/LXQt -isystem /usr/include/qt5xdg -isystem /usr/include/aarch64-linux-gnu/qt5/QtXml -isystem /usr/include/qt5xdgiconloader -isystem /usr/include/qt5xdgiconloader/3.9.1 -isystem /usr/include/aarch64-linux-gnu/qt5/QtSvg -isystem /usr/include/aarch64-linux-gnu/qt5/QtX11Extras -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/lxqt-admin-1.1.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -fvisibility=hidden -fvisibility-inlines-hidden -fPIC -std=c++14 -MD -MT lxqt-admin-time/CMakeFiles/lxqt-admin-time.dir/moc_timezone.cpp.o -MF CMakeFiles/lxqt-admin-time.dir/moc_timezone.cpp.o.d -o CMakeFiles/lxqt-admin-time.dir/moc_timezone.cpp.o -c /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time/moc_timezone.cpp
+[ 98%] Building CXX object lxqt-admin-time/CMakeFiles/lxqt-admin-time.dir/LXQtAppTranslationLoader.cpp.o
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time && /usr/bin/c++ -DLXQT_ADMIN_VERSION=\"1.1.0\" -DLXQT_DATA_DIR=\"/usr/share\" -DLXQT_ETC_XDG_DIR=\"/etc/xdg\" -DLXQT_GRAPHICS_DIR=\"/usr/share/lxqt/graphics\" -DLXQT_MAJOR_VERSION=\"1\" -DLXQT_MINOR_VERSION=\"1\" -DLXQT_PATCH_VERSION=\"0\" -DLXQT_RELATIVE_SHARE_DIR=\"lxqt\" -DLXQT_RELATIVE_SHARE_TRANSLATIONS_DIR=\"lxqt/translations\" -DLXQT_SHARE_DIR=\"/usr/share/lxqt\" -DLXQT_SHARE_TRANSLATIONS_DIR=\"/usr/share/lxqt/translations\" -DLXQT_VERSION=\"1.1.0\" -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_SVG_LIB -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DQT_XML_LIB -I/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time -I/home/cnc/lxqt-dev/lxqt-admin-1.1.0/lxqt-admin-time -isystem /usr/include/KF5/KWindowSystem -isystem /usr/include/KF5 -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/lxqt -isystem /usr/include/lxqt/LXQt -isystem /usr/include/qt5xdg -isystem /usr/include/aarch64-linux-gnu/qt5/QtXml -isystem /usr/include/qt5xdgiconloader -isystem /usr/include/qt5xdgiconloader/3.9.1 -isystem /usr/include/aarch64-linux-gnu/qt5/QtSvg -isystem /usr/include/aarch64-linux-gnu/qt5/QtX11Extras -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/lxqt-admin-1.1.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -fvisibility=hidden -fvisibility-inlines-hidden -fPIC -std=c++14 -MD -MT lxqt-admin-time/CMakeFiles/lxqt-admin-time.dir/LXQtAppTranslationLoader.cpp.o -MF CMakeFiles/lxqt-admin-time.dir/LXQtAppTranslationLoader.cpp.o.d -o CMakeFiles/lxqt-admin-time.dir/LXQtAppTranslationLoader.cpp.o -c /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time/LXQtAppTranslationLoader.cpp
+[ 99%] Linking CXX executable lxqt-admin-user
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-user && /usr/bin/cmake -E cmake_link_script CMakeFiles/lxqt-admin-user.dir/link.txt --verbose=1
+/usr/bin/c++ -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/lxqt-admin-1.1.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -Wl,-Bsymbolic-functions -Wl,-Bsymbolic -Wl,-z,relro -Wl,-z,now -rdynamic "CMakeFiles/lxqt-admin-user.dir/main.cpp.o" "CMakeFiles/lxqt-admin-user.dir/mainwindow.cpp.o" "CMakeFiles/lxqt-admin-user.dir/userdialog.cpp.o" "CMakeFiles/lxqt-admin-user.dir/groupdialog.cpp.o" "CMakeFiles/lxqt-admin-user.dir/usermanager.cpp.o" "CMakeFiles/lxqt-admin-user.dir/moc_mainwindow.cpp.o" "CMakeFiles/lxqt-admin-user.dir/moc_userdialog.cpp.o" "CMakeFiles/lxqt-admin-user.dir/moc_groupdialog.cpp.o" "CMakeFiles/lxqt-admin-user.dir/moc_usermanager.cpp.o" "CMakeFiles/lxqt-admin-user.dir/LXQtAppTranslationLoader.cpp.o" -o lxqt-admin-user  /usr/lib/aarch64-linux-gnu/liblxqt.so.1.1.0 /usr/lib/aarch64-linux-gnu/libKF5WindowSystem.so.5.96.0 /usr/lib/aarch64-linux-gnu/libX11.so /usr/lib/aarch64-linux-gnu/libQt5Xdg.so.3.9.1 /usr/lib/aarch64-linux-gnu/libQt5DBus.so.5.15.4 /usr/lib/aarch64-linux-gnu/libQt5Xml.so.5.15.4 /usr/lib/aarch64-linux-gnu/libQt5XdgIconLoader.so.3.9.1 /usr/lib/aarch64-linux-gnu/libQt5Svg.so.5.15.4 /usr/lib/aarch64-linux-gnu/libQt5Widgets.so.5.15.4 -lglib-2.0 -lgobject-2.0 -lgio-2.0 /usr/lib/aarch64-linux-gnu/libQt5X11Extras.so.5.15.4 /usr/lib/aarch64-linux-gnu/libQt5Gui.so.5.15.4 /usr/lib/aarch64-linux-gnu/libQt5Core.so.5.15.4 
+make[3]: Leaving directory '/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu'
+[ 99%] Built target lxqt-admin-user
+[100%] Linking CXX executable lxqt-admin-time
+cd /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/lxqt-admin-time && /usr/bin/cmake -E cmake_link_script CMakeFiles/lxqt-admin-time.dir/link.txt --verbose=1
+/usr/bin/c++ -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/lxqt-admin-1.1.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -Wl,-Bsymbolic-functions -Wl,-Bsymbolic -Wl,-z,relro -Wl,-z,now -rdynamic "CMakeFiles/lxqt-admin-time.dir/main.cpp.o" "CMakeFiles/lxqt-admin-time.dir/timeadmindialog.cpp.o" "CMakeFiles/lxqt-admin-time.dir/datetime.cpp.o" "CMakeFiles/lxqt-admin-time.dir/timezone.cpp.o" "CMakeFiles/lxqt-admin-time.dir/fbsdtimedatectl.cpp.o" "CMakeFiles/lxqt-admin-time.dir/dbustimedatectl.cpp.o" "CMakeFiles/lxqt-admin-time.dir/nosdtimedatectl.cpp.o" "CMakeFiles/lxqt-admin-time.dir/moc_timeadmindialog.cpp.o" "CMakeFiles/lxqt-admin-time.dir/moc_datetime.cpp.o" "CMakeFiles/lxqt-admin-time.dir/moc_timezone.cpp.o" "CMakeFiles/lxqt-admin-time.dir/LXQtAppTranslationLoader.cpp.o" -o lxqt-admin-time  /usr/lib/aarch64-linux-gnu/liblxqt.so.1.1.0 /usr/lib/aarch64-linux-gnu/libKF5WindowSystem.so.5.96.0 /usr/lib/aarch64-linux-gnu/libX11.so /usr/lib/aarch64-linux-gnu/libQt5Xdg.so.3.9.1 /usr/lib/aarch64-linux-gnu/libQt5DBus.so.5.15.4 /usr/lib/aarch64-linux-gnu/libQt5Xml.so.5.15.4 /usr/lib/aarch64-linux-gnu/libQt5XdgIconLoader.so.3.9.1 /usr/lib/aarch64-linux-gnu/libQt5Svg.so.5.15.4 /usr/lib/aarch64-linux-gnu/libQt5Widgets.so.5.15.4 -lglib-2.0 -lgobject-2.0 -lgio-2.0 /usr/lib/aarch64-linux-gnu/libQt5X11Extras.so.5.15.4 /usr/lib/aarch64-linux-gnu/libQt5Gui.so.5.15.4 /usr/lib/aarch64-linux-gnu/libQt5Core.so.5.15.4 
+make[3]: Leaving directory '/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu'
+[100%] Built target lxqt-admin-time
+make[2]: Leaving directory '/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu'
+/usr/bin/cmake -E cmake_progress_start /home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu/CMakeFiles 0
+make[1]: Leaving directory '/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu'
+   dh_auto_test -O--buildsystem=cmake
+   create-stamp debian/debhelper-build-stamp
+   dh_testroot -O--buildsystem=cmake
+   dh_prep -O--buildsystem=cmake
+   dh_auto_install -O--buildsystem=cmake
+	cd obj-aarch64-linux-gnu && make -j4 install DESTDIR=/home/cnc/lxqt-dev/lxqt-admin-1.1.0/debian/tmp AM_UPDATE_INFO_DIR=no "INSTALL=install --strip-program=true"
+make[1]: Entering directory '/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu'
+/usr/bin/cmake -S/home/cnc/lxqt-dev/lxqt-admin-1.1.0 -B/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu --check-build-system CMakeFiles/Makefile.cmake 0
+make  -f CMakeFiles/Makefile2 preinstall
+make[2]: Entering directory '/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu'
+make[2]: Nothing to be done for 'preinstall'.
+make[2]: Leaving directory '/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu'
+Install the project...
+/usr/bin/cmake -P cmake_install.cmake
+-- Install configuration: "RelWithDebInfo"
+-- Installing: /home/cnc/lxqt-dev/lxqt-admin-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-admin-user/lxqt-admin-user_ar.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-admin-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-admin-user/lxqt-admin-user_arn.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-admin-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-admin-user/lxqt-admin-user_ast.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-admin-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-admin-user/lxqt-admin-user_bg.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-admin-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-admin-user/lxqt-admin-user_ca.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-admin-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-admin-user/lxqt-admin-user_cs.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-admin-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-admin-user/lxqt-admin-user_cy.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-admin-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-admin-user/lxqt-admin-user_da.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-admin-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-admin-user/lxqt-admin-user_de.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-admin-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-admin-user/lxqt-admin-user_el.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-admin-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-admin-user/lxqt-admin-user_en_GB.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-admin-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-admin-user/lxqt-admin-user_es.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-admin-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-admin-user/lxqt-admin-user_et.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-admin-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-admin-user/lxqt-admin-user_fr.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-admin-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-admin-user/lxqt-admin-user_gl.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-admin-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-admin-user/lxqt-admin-user_he.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-admin-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-admin-user/lxqt-admin-user_hi.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-admin-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-admin-user/lxqt-admin-user_hr.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-admin-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-admin-user/lxqt-admin-user_hu.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-admin-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-admin-user/lxqt-admin-user_id.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-admin-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-admin-user/lxqt-admin-user_it.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-admin-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-admin-user/lxqt-admin-user_ja.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-admin-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-admin-user/lxqt-admin-user_ko.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-admin-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-admin-user/lxqt-admin-user_lt.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-admin-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-admin-user/lxqt-admin-user_nb_NO.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-admin-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-admin-user/lxqt-admin-user_nl.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-admin-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-admin-user/lxqt-admin-user_pl.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-admin-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-admin-user/lxqt-admin-user_pt.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-admin-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-admin-user/lxqt-admin-user_pt_BR.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-admin-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-admin-user/lxqt-admin-user_ru.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-admin-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-admin-user/lxqt-admin-user_si.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-admin-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-admin-user/lxqt-admin-user_sk.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-admin-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-admin-user/lxqt-admin-user_tr.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-admin-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-admin-user/lxqt-admin-user_uk.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-admin-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-admin-user/lxqt-admin-user_vi.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-admin-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-admin-user/lxqt-admin-user_zh_CN.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-admin-1.1.0/debian/tmp/usr/bin/lxqt-admin-user
+-- Installing: /home/cnc/lxqt-dev/lxqt-admin-1.1.0/debian/tmp/usr/share/applications/lxqt-admin-user.desktop
+-- Installing: /home/cnc/lxqt-dev/lxqt-admin-1.1.0/debian/tmp/usr/bin/lxqt-admin-user-helper
+-- Installing: /home/cnc/lxqt-dev/lxqt-admin-1.1.0/debian/tmp/usr/share/polkit-1/actions/org.lxqt.lxqt-admin-user.policy
+-- Installing: /home/cnc/lxqt-dev/lxqt-admin-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-admin-time/lxqt-admin-time_ar.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-admin-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-admin-time/lxqt-admin-time_arn.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-admin-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-admin-time/lxqt-admin-time_ast.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-admin-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-admin-time/lxqt-admin-time_bg.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-admin-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-admin-time/lxqt-admin-time_ca.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-admin-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-admin-time/lxqt-admin-time_cs.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-admin-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-admin-time/lxqt-admin-time_cy.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-admin-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-admin-time/lxqt-admin-time_da.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-admin-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-admin-time/lxqt-admin-time_de.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-admin-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-admin-time/lxqt-admin-time_el.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-admin-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-admin-time/lxqt-admin-time_en_GB.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-admin-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-admin-time/lxqt-admin-time_es.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-admin-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-admin-time/lxqt-admin-time_et.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-admin-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-admin-time/lxqt-admin-time_fr.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-admin-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-admin-time/lxqt-admin-time_gl.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-admin-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-admin-time/lxqt-admin-time_he.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-admin-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-admin-time/lxqt-admin-time_hr.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-admin-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-admin-time/lxqt-admin-time_hu.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-admin-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-admin-time/lxqt-admin-time_id.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-admin-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-admin-time/lxqt-admin-time_it.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-admin-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-admin-time/lxqt-admin-time_ja.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-admin-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-admin-time/lxqt-admin-time_ko.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-admin-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-admin-time/lxqt-admin-time_lt.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-admin-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-admin-time/lxqt-admin-time_lv.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-admin-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-admin-time/lxqt-admin-time_nb_NO.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-admin-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-admin-time/lxqt-admin-time_nl.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-admin-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-admin-time/lxqt-admin-time_oc.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-admin-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-admin-time/lxqt-admin-time_pl.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-admin-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-admin-time/lxqt-admin-time_pt.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-admin-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-admin-time/lxqt-admin-time_pt_BR.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-admin-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-admin-time/lxqt-admin-time_ru.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-admin-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-admin-time/lxqt-admin-time_si.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-admin-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-admin-time/lxqt-admin-time_sk.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-admin-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-admin-time/lxqt-admin-time_tr.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-admin-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-admin-time/lxqt-admin-time_uk.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-admin-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-admin-time/lxqt-admin-time_vi.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-admin-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-admin-time/lxqt-admin-time_zh_CN.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-admin-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-admin-time/lxqt-admin-time_zh_TW.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-admin-1.1.0/debian/tmp/usr/bin/lxqt-admin-time
+-- Installing: /home/cnc/lxqt-dev/lxqt-admin-1.1.0/debian/tmp/usr/share/applications/lxqt-admin-time.desktop
+make[1]: Leaving directory '/home/cnc/lxqt-dev/lxqt-admin-1.1.0/obj-aarch64-linux-gnu'
+   dh_install -O--buildsystem=cmake
+   dh_installdocs -O--buildsystem=cmake
+   dh_installchangelogs -O--buildsystem=cmake
+   dh_installsystemduser -O--buildsystem=cmake
+   dh_lintian -O--buildsystem=cmake
+   dh_perl -O--buildsystem=cmake
+   dh_link -O--buildsystem=cmake
+   dh_strip_nondeterminism -O--buildsystem=cmake
+   dh_compress -O--buildsystem=cmake
+   dh_fixperms -O--buildsystem=cmake
+   debian/rules override_dh_missing
+make[1]: Entering directory '/home/cnc/lxqt-dev/lxqt-admin-1.1.0'
+dh_missing --fail-missing
+make[1]: Leaving directory '/home/cnc/lxqt-dev/lxqt-admin-1.1.0'
+   dh_dwz -a -O--buildsystem=cmake
+   dh_strip -a -O--buildsystem=cmake
+   dh_makeshlibs -a -O--buildsystem=cmake
+   dh_shlibdeps -a -O--buildsystem=cmake
+   dh_installdeb -O--buildsystem=cmake
+   dh_gencontrol -O--buildsystem=cmake
+   dh_md5sums -O--buildsystem=cmake
+   dh_builddeb -O--buildsystem=cmake
+dpkg-deb: building package 'lxqt-admin' in '../lxqt-admin_1.1.0-1_arm64.deb'.
+dpkg-deb: building package 'lxqt-admin-l10n' in '../lxqt-admin-l10n_1.1.0-1_all.deb'.
+dpkg-deb: building package 'lxqt-admin-dbgsym' in '../lxqt-admin-dbgsym_1.1.0-1_arm64.deb'.
+ dpkg-genbuildinfo --build=binary -O../lxqt-admin_1.1.0-1_arm64.buildinfo
+ dpkg-genchanges --build=binary -O../lxqt-admin_1.1.0-1_arm64.changes
+dpkg-genchanges: info: binary-only upload (no source code included)
+ dpkg-source -i --after-build .
+dpkg-source: info: using options from lxqt-admin-1.1.0/debian/source/options: --tar-ignore=.gitignore
+dpkg-buildpackage: info: binary-only upload (no source included)
+Now running lintian lxqt-admin_1.1.0-1_arm64.changes ...
+running with root privileges is not recommended!
+Finished running lintian.

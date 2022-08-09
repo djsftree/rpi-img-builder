@@ -1,0 +1,41 @@
+Format: 1.8
+Date: Thu, 14 Jul 2022 00:28:48 +0800
+Source: lxqt-policykit
+Binary: lxqt-policykit lxqt-policykit-dbgsym lxqt-policykit-l10n
+Architecture: arm64 all
+Version: 1.1.0-1
+Distribution: experimental
+Urgency: medium
+Maintainer: LXQt Packaging Team <pkg-lxqt-devel@lists.alioth.debian.org>
+Changed-By: Andrew Lee (李健秋) <ajqlee@debian.org>
+Description:
+ lxqt-policykit - LXQt authentication agent for PolicyKit
+ lxqt-policykit-l10n - Language package for lxqt-policykit
+Changes:
+ lxqt-policykit (1.1.0-1) experimental; urgency=medium
+ .
+   [ Andrew Lee (李健秋) ]
+   * Add debian/salsa-ci.yml file.
+   * Update debian/upstream/signing-key.asc.
+   * New upstream version 1.0.0
+   * New upstream version 1.1.0
+   * Build-deps on liblxqt1-dev (>= 1.1.0~).
+   * Drop obsoleted Breaks and Replaces lines.
+ .
+   [ djsftree ]
+   * compiled by djsftree
+Checksums-Sha1:
+ 7ad0a5f42a67b03cebc5d95b2b15d944f36bbe3d 556116 lxqt-policykit-dbgsym_1.1.0-1_arm64.deb
+ 33b4c96b3dea2bf4697d062c9f0e4c3afec3352d 12756 lxqt-policykit-l10n_1.1.0-1_all.deb
+ 31a3f2c4938d78fc887cad1c3b784faff092eb72 13873 lxqt-policykit_1.1.0-1_arm64.buildinfo
+ 24fca5d272e5d55b93f3bf2322fa93717e9f7aad 21756 lxqt-policykit_1.1.0-1_arm64.deb
+Checksums-Sha256:
+ cfedfd0e5989587e1019a29a869e7081b468248e2b1b732c7f23b898839435e4 556116 lxqt-policykit-dbgsym_1.1.0-1_arm64.deb
+ 54c0e67ac7e66add47aea20c38a8ee9674749a86c837090aed6f01f7c30e88c4 12756 lxqt-policykit-l10n_1.1.0-1_all.deb
+ 33eb34fc1d6b92a446b27e0de7fe6ce6fe677c6a3e4831f95e71ddb72835b575 13873 lxqt-policykit_1.1.0-1_arm64.buildinfo
+ ea36baa3043a70382d166e8ebee971046288114e3263d86ae3fbd2f7cd10a066 21756 lxqt-policykit_1.1.0-1_arm64.deb
+Files:
+ 1e13a5c44e67a9090f93f8e664fff61c 556116 debug optional lxqt-policykit-dbgsym_1.1.0-1_arm64.deb
+ c37efb51c55a9fc4015d2689f09d1190 12756 localization optional lxqt-policykit-l10n_1.1.0-1_all.deb
+ 20a4b67c032efc8c79b95e968d864ccc 13873 x11 optional lxqt-policykit_1.1.0-1_arm64.buildinfo
+ 52a53fb5814812be081e148f0fdad2c8 21756 x11 optional lxqt-policykit_1.1.0-1_arm64.deb

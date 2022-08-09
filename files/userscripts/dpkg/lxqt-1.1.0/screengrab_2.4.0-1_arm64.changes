@@ -1,0 +1,42 @@
+Format: 1.8
+Date: Thu, 14 Jul 2022 00:21:31 +0530
+Source: screengrab
+Binary: screengrab screengrab-dbgsym
+Architecture: arm64
+Version: 2.4.0-1
+Distribution: experimental
+Urgency: medium
+Maintainer: LXQt Packaging Team <pkg-lxqt-devel@lists.alioth.debian.org>
+Changed-By: suman rajan <suman@protonmail.com>
+Description:
+ screengrab - Crossplatform tool for getting screenshots
+Changes:
+ screengrab (2.4.0-1) experimental; urgency=medium
+ .
+   * Team Upload
+ .
+   [ Andrew Lee (李健秋) ]
+   * Add debian/salsa-ci.yml file.
+   * Update debian/upstream/signing-key.asc.
+   * New upstream version 2.3.0
+ .
+   [ suman rajan ]
+   * New upstream version 2.4.0
+   * debian/copyright: Added cc-by-4.0 license
+   * debian/control: bumped depends version for libqt5xdg-dev
+   * salsa-ci.yml: Added release experimental
+ .
+   [ djsftree ]
+   * compiled by djsftree
+Checksums-Sha1:
+ 15e15b4f0cd0f51545ff98d5e52dfe2fa4c36554 2655428 screengrab-dbgsym_2.4.0-1_arm64.deb
+ 14b6d863599175ae4294ddb10f9de253e878f7c7 12598 screengrab_2.4.0-1_arm64.buildinfo
+ 411e06d65e05cbd7407097fe3e1d889e21e0bb4f 208332 screengrab_2.4.0-1_arm64.deb
+Checksums-Sha256:
+ f855bb9db04c3306c038de75d791e0dde244d95c0702f2e50c97a8a3d5849108 2655428 screengrab-dbgsym_2.4.0-1_arm64.deb
+ 419f98f09922c9339667b4f5eda434e48c576a075755289ee544fde37da44510 12598 screengrab_2.4.0-1_arm64.buildinfo
+ 3a452150144b8ecafff637f0f5d8d26e410ea2a6602e625cfa6c95529971a166 208332 screengrab_2.4.0-1_arm64.deb
+Files:
+ 58003440426dd0a082e0cba7aea2b6ce 2655428 debug optional screengrab-dbgsym_2.4.0-1_arm64.deb
+ 08754da26600ed505368b224c60a10eb 12598 graphics optional screengrab_2.4.0-1_arm64.buildinfo
+ b8c1be249d9781c4b2990fd948d9d904 208332 graphics optional screengrab_2.4.0-1_arm64.deb

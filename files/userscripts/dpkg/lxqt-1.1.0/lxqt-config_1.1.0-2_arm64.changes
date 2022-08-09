@@ -1,0 +1,44 @@
+Format: 1.8
+Date: Thu, 14 Jul 2022 14:22:12 -0500
+Source: lxqt-config
+Binary: lxqt-config lxqt-config-dbgsym lxqt-config-l10n
+Architecture: arm64 all
+Version: 1.1.0-2
+Distribution: experimental
+Urgency: medium
+Maintainer: LXQt Packaging Team <pkg-lxqt-devel@lists.alioth.debian.org>
+Changed-By: Aaron Rainbolt <arraybolt3@gmail.com>
+Description:
+ lxqt-config - LXQt system settings center
+ lxqt-config-l10n - Language package for lxqt-config
+Changes:
+ lxqt-config (1.1.0-2) experimental; urgency=medium
+ .
+   [ Aaron Rainbolt ]
+   * Upstreamed compatible changes from Ubuntu, modifying the following files:
+     - control
+     - copyright
+     - lintian-overrides
+     - lxqt-config.install
+     - patches directory
+     - README.source
+     - rules
+     - upstream/*
+ .
+   [ djsftree ]
+   * compiled by djsftree
+Checksums-Sha1:
+ b1b4715b55d40fa22218d42447815ede0a8d6339 8733752 lxqt-config-dbgsym_1.1.0-2_arm64.deb
+ 8f0d8734704e06e22506d4421ca618797caa582b 162832 lxqt-config-l10n_1.1.0-2_all.deb
+ 9250c0462e3c4d10e01002f27ee2cdc9cb42b993 13751 lxqt-config_1.1.0-2_arm64.buildinfo
+ 6fc74ef884c140ed07a0c909a2efa6244908e24f 314616 lxqt-config_1.1.0-2_arm64.deb
+Checksums-Sha256:
+ 0b44f04f8ffd11b54d9cd861d6ef786ab4912354146f060847d33b9fb3b5d7da 8733752 lxqt-config-dbgsym_1.1.0-2_arm64.deb
+ 4f2b5afca6151b5aed64c63417d7a3a5ae48d6ecf2758f7f307b0e956f492b51 162832 lxqt-config-l10n_1.1.0-2_all.deb
+ 35db0f4269daf50feb758606567d34b5486fc998cc15187e961fa2508647a228 13751 lxqt-config_1.1.0-2_arm64.buildinfo
+ e826edfd5953e476730670ddc43c844be0a8c10bd07bec0aa81320764c5e47f3 314616 lxqt-config_1.1.0-2_arm64.deb
+Files:
+ 8aa7ab38e7514aa1d01bef854dcacca2 8733752 debug optional lxqt-config-dbgsym_1.1.0-2_arm64.deb
+ 8964ecff33cded509ac7858be143052b 162832 localization optional lxqt-config-l10n_1.1.0-2_all.deb
+ 1c6a9f3dd851a4e3c1d0acefe6131e3f 13751 x11 optional lxqt-config_1.1.0-2_arm64.buildinfo
+ daae5e0119ef367964340d87bc2eada0 314616 x11 optional lxqt-config_1.1.0-2_arm64.deb

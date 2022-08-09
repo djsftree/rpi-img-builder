@@ -1,0 +1,42 @@
+Format: 1.8
+Date: Thu, 14 Jul 2022 14:26:41 -0500
+Source: qterminal
+Binary: qterminal qterminal-dbgsym qterminal-l10n
+Architecture: arm64 all
+Version: 1.1.0-1
+Distribution: experimental
+Urgency: medium
+Maintainer: LXQt Packaging Team <pkg-lxqt-devel@lists.alioth.debian.org>
+Changed-By: Simon Quigley <tsimonq2@debian.org>
+Description:
+ qterminal  - Lightweight Qt terminal emulator
+ qterminal-l10n - Language package for qterminal
+Changes:
+ qterminal (1.1.0-1) experimental; urgency=medium
+ .
+   [ Simon Quigley ]
+   * New upstream release.
+   * Run wrap-and-sort.
+   * Bump build dependencies.
+   * Bump Standards-version to 4.6.1, no changes needed.
+   * Bump debhelper compat to 13, no changes needed.
+   * Drop some old Breaks/Replaces.
+   * Upstream some useful changes from Ubuntu so we can sync.
+ .
+   [ djsftree ]
+   * compiled by djsftree
+Checksums-Sha1:
+ f58ddd935df4226358e91f2dd8762b1b18fea245 4263108 qterminal-dbgsym_1.1.0-1_arm64.deb
+ 1c0425652fc588c624ec11db11385133cf10a2cb 110924 qterminal-l10n_1.1.0-1_all.deb
+ c25f723931e59f88f04a23661390e44f4108fee3 12499 qterminal_1.1.0-1_arm64.buildinfo
+ 4b941b14c669562d735faccee7dfd0182eb4167d 141588 qterminal_1.1.0-1_arm64.deb
+Checksums-Sha256:
+ 8ff37a5e7ba01d44b1f472afce658439c93e22f7c89f81a05b59400e0c7413be 4263108 qterminal-dbgsym_1.1.0-1_arm64.deb
+ e71574d414f58783b437dde18bb79ea750719babfcd2100dbb94fd545582b8b0 110924 qterminal-l10n_1.1.0-1_all.deb
+ d94959136e11b7f0665d9e415e12578818df017881f5a7b76719aae102523ee9 12499 qterminal_1.1.0-1_arm64.buildinfo
+ 602b984255448d9e79cbcad0c3799b9647eda8261d902641ea4f25422a4b7250 141588 qterminal_1.1.0-1_arm64.deb
+Files:
+ 6b5d631924406156f6ec1101e056e9af 4263108 debug optional qterminal-dbgsym_1.1.0-1_arm64.deb
+ a21c410b72621dbd9cdf6938e66e157a 110924 localization optional qterminal-l10n_1.1.0-1_all.deb
+ d1ebb0a78a51a457dcc59454744482a8 12499 x11 optional qterminal_1.1.0-1_arm64.buildinfo
+ 1c6f0334768301590c13e8e5fddd1439 141588 x11 optional qterminal_1.1.0-1_arm64.deb

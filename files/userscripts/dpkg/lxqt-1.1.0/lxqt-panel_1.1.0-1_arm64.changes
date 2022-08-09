@@ -1,0 +1,49 @@
+Format: 1.8
+Date: Sat, 16 Jul 2022 00:26:18 +0800
+Source: lxqt-panel
+Binary: lxqt-panel lxqt-panel-dbgsym lxqt-panel-l10n
+Architecture: arm64 all
+Version: 1.1.0-1
+Distribution: experimental
+Urgency: medium
+Maintainer: LXQt Packaging Team <pkg-lxqt-devel@lists.alioth.debian.org>
+Changed-By: Andrew Lee (李健秋) <ajqlee@debian.org>
+Description:
+ lxqt-panel - LXQt desktop panel
+ lxqt-panel-l10n - Language package for lxqt-panel
+Changes:
+ lxqt-panel (1.1.0-1) experimental; urgency=medium
+ .
+   [ Andrew Lee (李健秋) ]
+   * Add debian/salsa-ci.yml file.
+   * Update debian/upstream/signing-key.asc.
+   * New upstream version 1.0.0
+   * New upstream version 1.1.0
+   * Build-deps on liblxqt1-dev (>= 1.1.0~).
+   * Build-deps on liblxqt-globalkeys1-dev (>= 1.1.0~).
+   * Build-deps on liblxqt-globalkeys-ui1-dev (>= 1.1.0~).
+   * Build-deps on libsysstat-qt5-0-dev (>= 0.4.6~).
+   * Drop obsoleted Breaks and Replaces lines.
+   * debian/copyright: update years.
+   * Build-deps on libxcb-randr0-dev.
+   * Build-deps on libxcb-image0-dev.
+   * Build-deps on libxtst-dev.
+   * Build-deps on libxcb-composite0-dev.
+ .
+   [ djsftree ]
+   * compiled by djsftree
+Checksums-Sha1:
+ d86011044f58a61a87d5ac37be2f2f7d6c27f3df 16575296 lxqt-panel-dbgsym_1.1.0-1_arm64.deb
+ 1b015c6b6d47771123055775b9911c30843543e2 309272 lxqt-panel-l10n_1.1.0-1_all.deb
+ 69aedcb335da6605560245bcb75db6506b5b332e 14666 lxqt-panel_1.1.0-1_arm64.buildinfo
+ 4a65b9cd77322cec7c61bf80b02b66a146cf827b 567076 lxqt-panel_1.1.0-1_arm64.deb
+Checksums-Sha256:
+ ead33f34341a207b8a31957668a7df7139a738bdab05b83dda923b1ccecdeb34 16575296 lxqt-panel-dbgsym_1.1.0-1_arm64.deb
+ 2114ac789b48824db8398dbadaf3dd267e62d14f3809a4914cd5a1bf8e225569 309272 lxqt-panel-l10n_1.1.0-1_all.deb
+ c4438bfab95f219053b036e0fe0062a0545300acc3b3bb150e97c63c52f74a62 14666 lxqt-panel_1.1.0-1_arm64.buildinfo
+ e9385d22490b980a6a4ac2153d2df52eef59b6e4ba015ba15dca489bc677bccf 567076 lxqt-panel_1.1.0-1_arm64.deb
+Files:
+ 4b876de3b9aaa24ed30795be87b9907f 16575296 debug optional lxqt-panel-dbgsym_1.1.0-1_arm64.deb
+ d6d9ff912c8aa0750ac034b1aa0cbb4f 309272 localization optional lxqt-panel-l10n_1.1.0-1_all.deb
+ e64540b18efadcdac63bc511e0b49697 14666 x11 optional lxqt-panel_1.1.0-1_arm64.buildinfo
+ 522dfb689c9769dfb8fdef9ba114fda3 567076 x11 optional lxqt-panel_1.1.0-1_arm64.deb

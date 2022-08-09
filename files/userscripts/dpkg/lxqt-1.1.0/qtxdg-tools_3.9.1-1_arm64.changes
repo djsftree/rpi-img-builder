@@ -1,0 +1,33 @@
+Format: 1.8
+Date: Sat, 02 Jul 2022 20:54:54 -0500
+Source: qtxdg-tools
+Binary: qtxdg-tools qtxdg-tools-dbgsym
+Architecture: arm64
+Version: 3.9.1-1
+Distribution: experimental
+Urgency: medium
+Maintainer: LXQt Packaging Team <pkg-lxqt-devel@lists.alioth.debian.org>
+Changed-By: Simon Quigley <tsimonq2@debian.org>
+Description:
+ qtxdg-tools - User tools for libqtxdg
+Closes: 1014257
+Changes:
+ qtxdg-tools (3.9.1-1) experimental; urgency=medium
+ .
+   [ Simon Quigley ]
+   * Initial release (Closes: #1014257).
+ .
+   [ djsftree ]
+   * compiled by djsftree
+Checksums-Sha1:
+ f9972d43d88f9ebcbf6714d14359cca0d8996b96 695884 qtxdg-tools-dbgsym_3.9.1-1_arm64.deb
+ eea335df0a35d57b9a0be1d19e578195becfb2aa 12272 qtxdg-tools_3.9.1-1_arm64.buildinfo
+ d1694f86570a6734a03f20f604fdc20727dcb7be 22492 qtxdg-tools_3.9.1-1_arm64.deb
+Checksums-Sha256:
+ c40159931f505b1b4f891dd287bfde9359a5fbd0b111d3f7ccdcdadf5e6fd546 695884 qtxdg-tools-dbgsym_3.9.1-1_arm64.deb
+ 7ac0f85aba98fa8f96e2cd4851de4530d0d69dedef3f3dad833ece1d4b14cda4 12272 qtxdg-tools_3.9.1-1_arm64.buildinfo
+ 0a1e46e098f211f6fd8d0f3965dafab0c747540da8aedb589702f29b93edffb0 22492 qtxdg-tools_3.9.1-1_arm64.deb
+Files:
+ e01eb66075ac9a9a875b9e094834933c 695884 debug optional qtxdg-tools-dbgsym_3.9.1-1_arm64.deb
+ d923bd70620bc74bec580208d7d30b3d 12272 libs optional qtxdg-tools_3.9.1-1_arm64.buildinfo
+ b4e40b14e64544a83be7828a9124bcf6 22492 libs optional qtxdg-tools_3.9.1-1_arm64.deb

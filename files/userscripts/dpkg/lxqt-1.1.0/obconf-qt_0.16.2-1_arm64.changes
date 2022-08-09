@@ -1,0 +1,46 @@
+Format: 1.8
+Date: Sun, 10 Jul 2022 02:53:45 -0500
+Source: obconf-qt
+Binary: obconf-qt obconf-qt-dbgsym obconf-qt-l10n
+Architecture: arm64 all
+Version: 0.16.2-1
+Distribution: experimental
+Urgency: medium
+Maintainer: LXQt Packaging Team <pkg-lxqt-devel@lists.alioth.debian.org>
+Changed-By: Aaron Rainbolt <arraybolt3@gmail.com>
+Description:
+ obconf-qt  - Openbox configuration with a Qt interface
+ obconf-qt-l10n - Language package for obconf-qt
+Changes:
+ obconf-qt (0.16.2-1) experimental; urgency=medium
+ .
+   [ Aaron Rainbolt ]
+   * New upstream release 0.16.2.
+   * Removed obsolete debian/compat file.
+   * Switched to GBP.
+   * Upstreamed non-Ubuntu-specific packaging changes from Ubuntu, modifying
+     the following files:
+     - control
+     - copyright
+     - lintian-overrides
+     - *.install
+     - rules
+     - upstream/*
+ .
+   [ djsftree ]
+   * compiled by djsftree
+Checksums-Sha1:
+ d44ced58666e600dd6066a9075ff5b231bb7913b 1110788 obconf-qt-dbgsym_0.16.2-1_arm64.deb
+ 36b4e42cc0b47610d42f62048c18c24f1ecafe75 87488 obconf-qt-l10n_0.16.2-1_all.deb
+ d220df0d93b3f4aa08597cd08c308e955fc22601 14936 obconf-qt_0.16.2-1_arm64.buildinfo
+ 1d627afaf121054c3da34d08f3b14fc91a9c1d9f 46264 obconf-qt_0.16.2-1_arm64.deb
+Checksums-Sha256:
+ f3cdd6d000cf89f0deebe6770b380353a8a401d5f7f98f95bcc736e2fd51ede5 1110788 obconf-qt-dbgsym_0.16.2-1_arm64.deb
+ d4c0ba51c657ccacd56349569b364d3ec6b6d7c52c24b09f308840f7b1b7ddf9 87488 obconf-qt-l10n_0.16.2-1_all.deb
+ 16128112b2460a36d35db508ee08f815390ce014191272888adca8422131ff07 14936 obconf-qt_0.16.2-1_arm64.buildinfo
+ c4e6e98cc0315b2ec64676bb732e9fc7e35350e08f063b793f4c787c5e4c757b 46264 obconf-qt_0.16.2-1_arm64.deb
+Files:
+ b5dfe670e296d91992574b262cb5d4ea 1110788 debug optional obconf-qt-dbgsym_0.16.2-1_arm64.deb
+ 5ccbe1ab034dbadc3bbe8e825f074040 87488 localization optional obconf-qt-l10n_0.16.2-1_all.deb
+ d11e67b9b6433f1b5ba1f9ee63e585ff 14936 utils optional obconf-qt_0.16.2-1_arm64.buildinfo
+ 9415f1fa3ebbe3d3162724ce3860ab67 46264 utils optional obconf-qt_0.16.2-1_arm64.deb

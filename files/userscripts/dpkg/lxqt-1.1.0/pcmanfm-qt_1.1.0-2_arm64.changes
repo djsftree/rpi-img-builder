@@ -1,0 +1,43 @@
+Format: 1.8
+Date: Fri, 15 Jul 2022 04:57:59 -0500
+Source: pcmanfm-qt
+Binary: pcmanfm-qt pcmanfm-qt-dbgsym pcmanfm-qt-l10n
+Architecture: arm64 all
+Version: 1.1.0-2
+Distribution: experimental
+Urgency: medium
+Maintainer: LXQt Packaging Team <pkg-lxqt-devel@lists.alioth.debian.org>
+Changed-By: Aaron Rainbolt <arraybolt3@gmail.com>
+Description:
+ pcmanfm-qt - extremely fast and lightweight file and desktop icon manager
+ pcmanfm-qt-l10n - Language package for pcmanfm-qt
+Changes:
+ pcmanfm-qt (1.1.0-2) experimental; urgency=medium
+ .
+   [ Aaron Rainbolt ]
+   * Removed redundant "Repository-Browse" field from debian/upstream/metadata.
+   * Upstreamed compatible Ubuntu changes, modifying the following files:
+     - control
+     - copyright
+     - lintian-overrides
+     - rules
+     - upstream/signing-key.asc
+     - patches directory
+ .
+   [ djsftree ]
+   * compiled by djsftree
+Checksums-Sha1:
+ 980822e9819369c0610f0c400be282ac33080b2e 4618448 pcmanfm-qt-dbgsym_1.1.0-2_arm64.deb
+ 8cb42966c74c6aaecec934e10a60c65d955658f8 234128 pcmanfm-qt-l10n_1.1.0-2_all.deb
+ dc7e00a6cb477220b69d62dede2e57dd349e620d 12617 pcmanfm-qt_1.1.0-2_arm64.buildinfo
+ a0a88db978d0814d88d3a70727f635cc55dc3a07 221436 pcmanfm-qt_1.1.0-2_arm64.deb
+Checksums-Sha256:
+ 576aad9b1ef5c72bd09806da5d21bb0e70226c863c87b813a7640539bb0f6346 4618448 pcmanfm-qt-dbgsym_1.1.0-2_arm64.deb
+ c286e2968ab8601b9b49fddc8381a5f208c92607e39c41f7161ae629d4b78d3a 234128 pcmanfm-qt-l10n_1.1.0-2_all.deb
+ 1f3dcf01739a261863c82088ead32b918b110d8c7adb93bbb5acc308140da37f 12617 pcmanfm-qt_1.1.0-2_arm64.buildinfo
+ a17f9173b059fb389485fce2017e0819addd6710a3d14ce07ebbf34be5b7b520 221436 pcmanfm-qt_1.1.0-2_arm64.deb
+Files:
+ 9ac2f903f1b4b7d76a8f95491ee00873 4618448 debug optional pcmanfm-qt-dbgsym_1.1.0-2_arm64.deb
+ 05c4e8d92c196a52974cb548040bd7aa 234128 localization optional pcmanfm-qt-l10n_1.1.0-2_all.deb
+ fd63fbf3df5a521bfc280bce52366e82 12617 x11 optional pcmanfm-qt_1.1.0-2_arm64.buildinfo
+ eaeec274881e929c66c9c8d7d5d16950 221436 x11 optional pcmanfm-qt_1.1.0-2_arm64.deb

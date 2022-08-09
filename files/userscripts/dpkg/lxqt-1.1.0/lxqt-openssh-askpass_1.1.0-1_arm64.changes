@@ -1,0 +1,42 @@
+Format: 1.8
+Date: Wed, 13 Jul 2022 19:27:49 -0500
+Source: lxqt-openssh-askpass
+Binary: lxqt-openssh-askpass lxqt-openssh-askpass-dbgsym lxqt-openssh-askpass-l10n
+Architecture: arm64 all
+Version: 1.1.0-1
+Distribution: experimental
+Urgency: medium
+Maintainer: LXQt Packaging Team <pkg-lxqt-devel@lists.alioth.debian.org>
+Changed-By: Simon Quigley <tsimonq2@debian.org>
+Description:
+ lxqt-openssh-askpass - OpenSSH user/password GUI dialog for LXQt
+ lxqt-openssh-askpass-l10n - Language package for lxqt-openssh-askpass
+Changes:
+ lxqt-openssh-askpass (1.1.0-1) experimental; urgency=medium
+ .
+   [ Simon Quigley ]
+   * New upstream release.
+   * Bump build dependencies.
+   * Bump Standards-version to 4.6.1, no changes needed.
+   * Bump debhelper compat to 13, no changes needed.
+   * Run wrap-and-sort.
+   * Remove some old Breaks/Replaces.
+   * Grab some useful changes from Ubuntu so we can sync.
+ .
+   [ djsftree ]
+   * compiled by djsftree
+Checksums-Sha1:
+ d57a1cec020313307990d5f4c6ec5ae8b8c01f28 430772 lxqt-openssh-askpass-dbgsym_1.1.0-1_arm64.deb
+ a8acc018a456bd0e59f0dfa6a51b4048d22ac763 9812 lxqt-openssh-askpass-l10n_1.1.0-1_all.deb
+ 1b416769a01a41ee9ddfb108594c0cc784a074d4 12995 lxqt-openssh-askpass_1.1.0-1_arm64.buildinfo
+ ecf97e98020f1d8213f9d613454e2657e5b99dd5 16332 lxqt-openssh-askpass_1.1.0-1_arm64.deb
+Checksums-Sha256:
+ 2ba60584a494ba6d571157cb4071dbf51a3aaa1e98b00531436ba801d68d9ac2 430772 lxqt-openssh-askpass-dbgsym_1.1.0-1_arm64.deb
+ b37cce2ac180264e419a6ff40bc779c429e3d2e0c0adec41d4af922a665d1a0e 9812 lxqt-openssh-askpass-l10n_1.1.0-1_all.deb
+ afcf05d9277b6830fc98efe90f0e3e292266c0a4d95c6ccaa90849d79fd45afc 12995 lxqt-openssh-askpass_1.1.0-1_arm64.buildinfo
+ 9958c087e9260acf65782445dce168feda7aebe56cf4375c267f959f3ebde6ac 16332 lxqt-openssh-askpass_1.1.0-1_arm64.deb
+Files:
+ b437912571b375a88d7992f4aafee69c 430772 debug optional lxqt-openssh-askpass-dbgsym_1.1.0-1_arm64.deb
+ 7f3add7ddeff33729d9a57e8c2e62088 9812 localization optional lxqt-openssh-askpass-l10n_1.1.0-1_all.deb
+ 5c1ca4ef454ef5f3b3baa5cda964110f 12995 x11 optional lxqt-openssh-askpass_1.1.0-1_arm64.buildinfo
+ 5abe31adfa4060d21b2b822562af23ac 16332 x11 optional lxqt-openssh-askpass_1.1.0-1_arm64.deb

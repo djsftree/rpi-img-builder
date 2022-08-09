@@ -1,0 +1,684 @@
+ dpkg-buildpackage -us -uc -ui -i -b
+dpkg-buildpackage: info: source package lxqt-notificationd
+dpkg-buildpackage: info: source version 1.1.0-1
+dpkg-buildpackage: info: source distribution experimental
+dpkg-buildpackage: info: source changed by Simon Quigley <tsimonq2@debian.org>
+ dpkg-source -i --before-build .
+dpkg-buildpackage: info: host architecture arm64
+dpkg-source: info: using options from lxqt-notificationd-1.1.0/debian/source/options: --tar-ignore=.gitignore
+ debian/rules clean
+dh clean --buildsystem cmake
+   dh_auto_clean -O--buildsystem=cmake
+   dh_autoreconf_clean -O--buildsystem=cmake
+   dh_clean -O--buildsystem=cmake
+ debian/rules build
+dh build --buildsystem cmake
+   dh_update_autotools_config -O--buildsystem=cmake
+   dh_autoreconf -O--buildsystem=cmake
+   debian/rules override_dh_auto_configure
+make[1]: Entering directory '/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0'
+dh_auto_configure -- \
+	-DPULL_TRANSLATIONS=OFF \
+	-DUPDATE_TRANSLATIONS=OFF \
+	-DCMAKE_BUILD_TYPE=RelWithDebInfo
+	cd obj-aarch64-linux-gnu && cmake -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=None -DCMAKE_INSTALL_SYSCONFDIR=/etc -DCMAKE_INSTALL_LOCALSTATEDIR=/var -DCMAKE_EXPORT_NO_PACKAGE_REGISTRY=ON -DCMAKE_FIND_USE_PACKAGE_REGISTRY=OFF -DCMAKE_FIND_PACKAGE_NO_PACKAGE_REGISTRY=ON -DFETCHCONTENT_FULLY_DISCONNECTED=ON -DCMAKE_INSTALL_RUNSTATEDIR=/run -DCMAKE_SKIP_INSTALL_ALL_DEPENDENCY=ON "-GUnix Makefiles" -DCMAKE_VERBOSE_MAKEFILE=ON -DCMAKE_INSTALL_LIBDIR=lib/aarch64-linux-gnu -DPULL_TRANSLATIONS=OFF -DUPDATE_TRANSLATIONS=OFF -DCMAKE_BUILD_TYPE=RelWithDebInfo ..
+-- The C compiler identification is GNU 11.3.0
+-- The CXX compiler identification is GNU 11.3.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found X11: /usr/include   
+-- Looking for XOpenDisplay in /usr/lib/aarch64-linux-gnu/libX11.so;/usr/lib/aarch64-linux-gnu/libXext.so
+-- Looking for XOpenDisplay in /usr/lib/aarch64-linux-gnu/libX11.so;/usr/lib/aarch64-linux-gnu/libXext.so - found
+-- Looking for gethostbyname
+-- Looking for gethostbyname - found
+-- Looking for connect
+-- Looking for connect - found
+-- Looking for remove
+-- Looking for remove - found
+-- Looking for shmat
+-- Looking for shmat - found
+-- Looking for IceConnectionNumber in ICE
+-- Looking for IceConnectionNumber in ICE - found
+-- Building with Qt5.15.4
+-- Found Perl: /usr/bin/perl (found version "5.34.0") 
+-- Configuring done
+-- Generating done
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    CMAKE_EXPORT_NO_PACKAGE_REGISTRY
+    CMAKE_FIND_PACKAGE_NO_PACKAGE_REGISTRY
+    FETCHCONTENT_FULLY_DISCONNECTED
+    PULL_TRANSLATIONS
+
+
+-- Build files have been written to: /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu
+make[1]: Leaving directory '/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0'
+   dh_auto_build -O--buildsystem=cmake
+	cd obj-aarch64-linux-gnu && make -j4 "INSTALL=install --strip-program=true" VERBOSE=1
+make[1]: Entering directory '/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu'
+/usr/bin/cmake -S/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0 -B/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu --check-build-system CMakeFiles/Makefile.cmake 0
+/usr/bin/cmake -E cmake_progress_start /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/CMakeFiles /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu//CMakeFiles/progress.marks
+make  -f CMakeFiles/Makefile2 all
+make[2]: Entering directory '/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu'
+make  -f config/CMakeFiles/lxqt-config-notificationd_autogen.dir/build.make config/CMakeFiles/lxqt-config-notificationd_autogen.dir/depend
+make  -f src/CMakeFiles/lxqt-notificationd_autogen.dir/build.make src/CMakeFiles/lxqt-notificationd_autogen.dir/depend
+make  -f autostart/CMakeFiles/lxqt_notificationd_autostart_desktop_files.dir/build.make autostart/CMakeFiles/lxqt_notificationd_autostart_desktop_files.dir/depend
+make[3]: Entering directory '/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu'
+cd /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0 /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/config /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config/CMakeFiles/lxqt-config-notificationd_autogen.dir/DependInfo.cmake --color=
+make[3]: Entering directory '/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu'
+cd /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0 /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/src /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src/CMakeFiles/lxqt-notificationd_autogen.dir/DependInfo.cmake --color=
+make[3]: Entering directory '/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu'
+cd /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0 /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/autostart /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/autostart /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/autostart/CMakeFiles/lxqt_notificationd_autostart_desktop_files.dir/DependInfo.cmake --color=
+make[3]: Leaving directory '/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu'
+make  -f config/CMakeFiles/lxqt-config-notificationd_autogen.dir/build.make config/CMakeFiles/lxqt-config-notificationd_autogen.dir/build
+make[3]: Entering directory '/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu'
+make[3]: Leaving directory '/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu'
+make  -f autostart/CMakeFiles/lxqt_notificationd_autostart_desktop_files.dir/build.make autostart/CMakeFiles/lxqt_notificationd_autostart_desktop_files.dir/build
+make[3]: Entering directory '/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu'
+make[3]: Leaving directory '/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu'
+make  -f src/CMakeFiles/lxqt-notificationd_autogen.dir/build.make src/CMakeFiles/lxqt-notificationd_autogen.dir/build
+[  1%] Generating lxqt-notifications.desktop
+cd /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/autostart && /usr/bin/perl /usr/share/cmake/lxqt-build-tools/modules//LXQtTranslateDesktopYaml.pl /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/autostart/lxqt-notifications.desktop.in lxqt-notifications "/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/autostart/translations/lxqt-notifications[_.]*desktop.yaml" >> /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/autostart/lxqt-notifications.desktop
+make[3]: Entering directory '/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu'
+[  2%] Automatic MOC and UIC for target lxqt-config-notificationd
+cd /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config && /usr/bin/cmake -E cmake_autogen /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config/CMakeFiles/lxqt-config-notificationd_autogen.dir/AutogenInfo.json RelWithDebInfo
+[  3%] Automatic MOC and UIC for target lxqt-notificationd
+cd /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src && /usr/bin/cmake -E cmake_autogen /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src/CMakeFiles/lxqt-notificationd_autogen.dir/AutogenInfo.json RelWithDebInfo
+AutoGen: Refreshing parse cache because it doesn't exist.
+AutoMoc: Generating "SRC:/obj-aarch64-linux-gnu/config/lxqt-config-notificationd_autogen/moc_predefs.h", because it doesn't exist.
+/usr/bin/c++ -dM -E -c /usr/share/cmake-3.23/Modules/CMakeCXXCompilerABI.cpp "-DLXQT_DATA_DIR=\"/usr/share\"" "-DLXQT_ETC_XDG_DIR=\"/etc/xdg\"" "-DLXQT_GRAPHICS_DIR=\"/usr/share/lxqt/graphics\"" "-DLXQT_MAJOR_VERSION=\"1\"" "-DLXQT_MINOR_VERSION=\"1\"" "-DLXQT_NOTIFICATIOND_VERSION=\"1.1.0\"" "-DLXQT_PATCH_VERSION=\"0\"" "-DLXQT_RELATIVE_SHARE_DIR=\"lxqt\"" "-DLXQT_RELATIVE_SHARE_TRANSLATIONS_DIR=\"lxqt/translations\"" "-DLXQT_SHARE_DIR=\"/usr/share/lxqt\"" "-DLXQT_SHARE_TRANSLATIONS_DIR=\"/usr/share/lxqt/translations\"" "-DLXQT_VERSION=\"1.1.0\"" -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_SVG_LIB -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DQT_XML_LIB -I/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config -I/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/config -I/usr/include/KF5/KWindowSystem -I/usr/include/KF5 -I/usr/include/aarch64-linux-gnu/qt5 -I/usr/include/aarch64-linux-gnu/qt5/QtGui -I/usr/include/aarch64-linux-gnu/qt5/QtCore -I/usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -I/usr/include/aarch64-linux-gnu/qt5/QtWidgets -I/usr/include/lxqt -I/usr/include/lxqt/LXQt -I/usr/include/aarch64-linux-gnu/qt5/QtDBus -I/usr/include/qt5xdg -I/usr/include/aarch64-linux-gnu/qt5/QtXml -I/usr/include/qt5xdgiconloader -I/usr/include/qt5xdgiconloader/3.9.1 -I/usr/include/aarch64-linux-gnu/qt5/QtSvg -I/usr/include/aarch64-linux-gnu/qt5/QtX11Extras -I/usr/include -I/usr/include/c++/11 -I/usr/include/aarch64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/aarch64-linux-gnu/11/include -I/usr/local/include -I/usr/include/aarch64-linux-gnu
+AutoGen: Parsing "SRC:/config/advancedsettings.h"
+AutoGen: Parsing "SRC:/config/basicsettings.h"
+AutoGen: Parsing "SRC:/config/mainwindow.h"
+AutoGen: Parsing "SRC:/config/advancedsettings.cpp"
+AutoGen: Parsing "SRC:/config/basicsettings.cpp"
+AutoGen: Parsing "SRC:/config/main.cpp"
+AutoGen: Parsing "SRC:/config/mainwindow.cpp"
+AutoGen: Parsing "SRC:/obj-aarch64-linux-gnu/config/LXQtAppTranslationLoader.cpp"
+AutoMoc: Generating "SRC:/obj-aarch64-linux-gnu/config/lxqt-config-notificationd_autogen/EWIEGA46WW/moc_advancedsettings.cpp", because it doesn't exist, from "SRC:/config/advancedsettings.h"
+/usr/lib/qt5/bin/moc "-DLXQT_DATA_DIR=\"/usr/share\"" "-DLXQT_ETC_XDG_DIR=\"/etc/xdg\"" "-DLXQT_GRAPHICS_DIR=\"/usr/share/lxqt/graphics\"" "-DLXQT_MAJOR_VERSION=\"1\"" "-DLXQT_MINOR_VERSION=\"1\"" "-DLXQT_NOTIFICATIOND_VERSION=\"1.1.0\"" "-DLXQT_PATCH_VERSION=\"0\"" "-DLXQT_RELATIVE_SHARE_DIR=\"lxqt\"" "-DLXQT_RELATIVE_SHARE_TRANSLATIONS_DIR=\"lxqt/translations\"" "-DLXQT_SHARE_DIR=\"/usr/share/lxqt\"" "-DLXQT_SHARE_TRANSLATIONS_DIR=\"/usr/share/lxqt/translations\"" "-DLXQT_VERSION=\"1.1.0\"" -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_SVG_LIB -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DQT_XML_LIB -I/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config -I/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/config -I/usr/include/KF5/KWindowSystem -I/usr/include/KF5 -I/usr/include/aarch64-linux-gnu/qt5 -I/usr/include/aarch64-linux-gnu/qt5/QtGui -I/usr/include/aarch64-linux-gnu/qt5/QtCore -I/usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -I/usr/include/aarch64-linux-gnu/qt5/QtWidgets -I/usr/include/lxqt -I/usr/include/lxqt/LXQt -I/usr/include/aarch64-linux-gnu/qt5/QtDBus -I/usr/include/qt5xdg -I/usr/include/aarch64-linux-gnu/qt5/QtXml -I/usr/include/qt5xdgiconloader -I/usr/include/qt5xdgiconloader/3.9.1 -I/usr/include/aarch64-linux-gnu/qt5/QtSvg -I/usr/include/aarch64-linux-gnu/qt5/QtX11Extras -I/usr/include -I/usr/include/c++/11 -I/usr/include/aarch64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/aarch64-linux-gnu/11/include -I/usr/local/include -I/usr/include/aarch64-linux-gnu --include /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config/lxqt-config-notificationd_autogen/moc_predefs.h --output-dep-file -o /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config/lxqt-config-notificationd_autogen/EWIEGA46WW/moc_advancedsettings.cpp /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/config/advancedsettings.h
+AutoGen: Refreshing parse cache because it doesn't exist.
+AutoMoc: Generating "SRC:/obj-aarch64-linux-gnu/src/lxqt-notificationd_autogen/moc_predefs.h", because it doesn't exist.
+/usr/bin/c++ -dM -E -c /usr/share/cmake-3.23/Modules/CMakeCXXCompilerABI.cpp "-DLXQT_DATA_DIR=\"/usr/share\"" "-DLXQT_ETC_XDG_DIR=\"/etc/xdg\"" "-DLXQT_GRAPHICS_DIR=\"/usr/share/lxqt/graphics\"" "-DLXQT_MAJOR_VERSION=\"1\"" "-DLXQT_MINOR_VERSION=\"1\"" "-DLXQT_NOTIFICATIOND_VERSION=\"1.1.0\"" "-DLXQT_PATCH_VERSION=\"0\"" "-DLXQT_RELATIVE_SHARE_DIR=\"lxqt\"" "-DLXQT_RELATIVE_SHARE_TRANSLATIONS_DIR=\"lxqt/translations\"" "-DLXQT_SHARE_DIR=\"/usr/share/lxqt\"" "-DLXQT_SHARE_TRANSLATIONS_DIR=\"/usr/share/lxqt/translations\"" "-DLXQT_VERSION=\"1.1.0\"" -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_SVG_LIB -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DQT_XML_LIB -I/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src -I/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/src -I/usr/include/aarch64-linux-gnu/qt5 -I/usr/include/aarch64-linux-gnu/qt5/QtWidgets -I/usr/include/aarch64-linux-gnu/qt5/QtGui -I/usr/include/aarch64-linux-gnu/qt5/QtCore -I/usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -I/usr/include/aarch64-linux-gnu/qt5/QtDBus -I/usr/include/lxqt -I/usr/include/lxqt/LXQt -I/usr/include/KF5/KWindowSystem -I/usr/include/KF5 -I/usr/include/qt5xdg -I/usr/include/aarch64-linux-gnu/qt5/QtXml -I/usr/include/qt5xdgiconloader -I/usr/include/qt5xdgiconloader/3.9.1 -I/usr/include/aarch64-linux-gnu/qt5/QtSvg -I/usr/include/aarch64-linux-gnu/qt5/QtX11Extras -I/usr/include -I/usr/include/c++/11 -I/usr/include/aarch64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/aarch64-linux-gnu/11/include -I/usr/local/include -I/usr/include/aarch64-linux-gnu
+make[3]: Leaving directory '/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu'
+[  3%] Built target lxqt_notificationd_autostart_desktop_files
+AutoGen: Parsing "SRC:/src/notification.h"
+AutoGen: Parsing "SRC:/src/notificationarea.h"
+AutoGen: Parsing "SRC:/src/notificationlayout.h"
+AutoGen: Parsing "SRC:/src/notificationwidgets.h"
+AutoGen: Parsing "SRC:/src/notifyd.h"
+AutoGen: Parsing "SRC:/obj-aarch64-linux-gnu/src/LXQtAppTranslationLoader.cpp"
+AutoGen: Parsing "SRC:/src/main.cpp"
+AutoGen: Parsing "SRC:/src/notification.cpp"
+AutoGen: Parsing "SRC:/src/notificationarea.cpp"
+AutoGen: Parsing "SRC:/src/notificationlayout.cpp"
+AutoGen: Parsing "SRC:/src/notificationwidgets.cpp"
+AutoGen: Parsing "SRC:/src/notifyd.cpp"
+AutoMoc: Generating "SRC:/obj-aarch64-linux-gnu/src/lxqt-notificationd_autogen/EWIEGA46WW/moc_notification.cpp", because it doesn't exist, from "SRC:/src/notification.h"
+/usr/lib/qt5/bin/moc "-DLXQT_DATA_DIR=\"/usr/share\"" "-DLXQT_ETC_XDG_DIR=\"/etc/xdg\"" "-DLXQT_GRAPHICS_DIR=\"/usr/share/lxqt/graphics\"" "-DLXQT_MAJOR_VERSION=\"1\"" "-DLXQT_MINOR_VERSION=\"1\"" "-DLXQT_NOTIFICATIOND_VERSION=\"1.1.0\"" "-DLXQT_PATCH_VERSION=\"0\"" "-DLXQT_RELATIVE_SHARE_DIR=\"lxqt\"" "-DLXQT_RELATIVE_SHARE_TRANSLATIONS_DIR=\"lxqt/translations\"" "-DLXQT_SHARE_DIR=\"/usr/share/lxqt\"" "-DLXQT_SHARE_TRANSLATIONS_DIR=\"/usr/share/lxqt/translations\"" "-DLXQT_VERSION=\"1.1.0\"" -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_SVG_LIB -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DQT_XML_LIB -I/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src -I/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/src -I/usr/include/aarch64-linux-gnu/qt5 -I/usr/include/aarch64-linux-gnu/qt5/QtWidgets -I/usr/include/aarch64-linux-gnu/qt5/QtGui -I/usr/include/aarch64-linux-gnu/qt5/QtCore -I/usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -I/usr/include/aarch64-linux-gnu/qt5/QtDBus -I/usr/include/lxqt -I/usr/include/lxqt/LXQt -I/usr/include/KF5/KWindowSystem -I/usr/include/KF5 -I/usr/include/qt5xdg -I/usr/include/aarch64-linux-gnu/qt5/QtXml -I/usr/include/qt5xdgiconloader -I/usr/include/qt5xdgiconloader/3.9.1 -I/usr/include/aarch64-linux-gnu/qt5/QtSvg -I/usr/include/aarch64-linux-gnu/qt5/QtX11Extras -I/usr/include -I/usr/include/c++/11 -I/usr/include/aarch64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/aarch64-linux-gnu/11/include -I/usr/local/include -I/usr/include/aarch64-linux-gnu --include /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src/lxqt-notificationd_autogen/moc_predefs.h --output-dep-file -o /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src/lxqt-notificationd_autogen/EWIEGA46WW/moc_notification.cpp /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/src/notification.h
+AutoMoc: Reading dependencies from "SRC:/obj-aarch64-linux-gnu/config/lxqt-config-notificationd_autogen/EWIEGA46WW/moc_advancedsettings.cpp.d"
+AutoMoc: Generating "SRC:/obj-aarch64-linux-gnu/config/lxqt-config-notificationd_autogen/EWIEGA46WW/moc_basicsettings.cpp", because it doesn't exist, from "SRC:/config/basicsettings.h"
+/usr/lib/qt5/bin/moc "-DLXQT_DATA_DIR=\"/usr/share\"" "-DLXQT_ETC_XDG_DIR=\"/etc/xdg\"" "-DLXQT_GRAPHICS_DIR=\"/usr/share/lxqt/graphics\"" "-DLXQT_MAJOR_VERSION=\"1\"" "-DLXQT_MINOR_VERSION=\"1\"" "-DLXQT_NOTIFICATIOND_VERSION=\"1.1.0\"" "-DLXQT_PATCH_VERSION=\"0\"" "-DLXQT_RELATIVE_SHARE_DIR=\"lxqt\"" "-DLXQT_RELATIVE_SHARE_TRANSLATIONS_DIR=\"lxqt/translations\"" "-DLXQT_SHARE_DIR=\"/usr/share/lxqt\"" "-DLXQT_SHARE_TRANSLATIONS_DIR=\"/usr/share/lxqt/translations\"" "-DLXQT_VERSION=\"1.1.0\"" -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_SVG_LIB -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DQT_XML_LIB -I/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config -I/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/config -I/usr/include/KF5/KWindowSystem -I/usr/include/KF5 -I/usr/include/aarch64-linux-gnu/qt5 -I/usr/include/aarch64-linux-gnu/qt5/QtGui -I/usr/include/aarch64-linux-gnu/qt5/QtCore -I/usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -I/usr/include/aarch64-linux-gnu/qt5/QtWidgets -I/usr/include/lxqt -I/usr/include/lxqt/LXQt -I/usr/include/aarch64-linux-gnu/qt5/QtDBus -I/usr/include/qt5xdg -I/usr/include/aarch64-linux-gnu/qt5/QtXml -I/usr/include/qt5xdgiconloader -I/usr/include/qt5xdgiconloader/3.9.1 -I/usr/include/aarch64-linux-gnu/qt5/QtSvg -I/usr/include/aarch64-linux-gnu/qt5/QtX11Extras -I/usr/include -I/usr/include/c++/11 -I/usr/include/aarch64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/aarch64-linux-gnu/11/include -I/usr/local/include -I/usr/include/aarch64-linux-gnu --include /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config/lxqt-config-notificationd_autogen/moc_predefs.h --output-dep-file -o /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config/lxqt-config-notificationd_autogen/EWIEGA46WW/moc_basicsettings.cpp /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/config/basicsettings.h
+AutoMoc: Reading dependencies from "SRC:/obj-aarch64-linux-gnu/src/lxqt-notificationd_autogen/EWIEGA46WW/moc_notification.cpp.d"
+AutoMoc: Generating "SRC:/obj-aarch64-linux-gnu/src/lxqt-notificationd_autogen/EWIEGA46WW/moc_notificationarea.cpp", because it doesn't exist, from "SRC:/src/notificationarea.h"
+/usr/lib/qt5/bin/moc "-DLXQT_DATA_DIR=\"/usr/share\"" "-DLXQT_ETC_XDG_DIR=\"/etc/xdg\"" "-DLXQT_GRAPHICS_DIR=\"/usr/share/lxqt/graphics\"" "-DLXQT_MAJOR_VERSION=\"1\"" "-DLXQT_MINOR_VERSION=\"1\"" "-DLXQT_NOTIFICATIOND_VERSION=\"1.1.0\"" "-DLXQT_PATCH_VERSION=\"0\"" "-DLXQT_RELATIVE_SHARE_DIR=\"lxqt\"" "-DLXQT_RELATIVE_SHARE_TRANSLATIONS_DIR=\"lxqt/translations\"" "-DLXQT_SHARE_DIR=\"/usr/share/lxqt\"" "-DLXQT_SHARE_TRANSLATIONS_DIR=\"/usr/share/lxqt/translations\"" "-DLXQT_VERSION=\"1.1.0\"" -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_SVG_LIB -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DQT_XML_LIB -I/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src -I/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/src -I/usr/include/aarch64-linux-gnu/qt5 -I/usr/include/aarch64-linux-gnu/qt5/QtWidgets -I/usr/include/aarch64-linux-gnu/qt5/QtGui -I/usr/include/aarch64-linux-gnu/qt5/QtCore -I/usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -I/usr/include/aarch64-linux-gnu/qt5/QtDBus -I/usr/include/lxqt -I/usr/include/lxqt/LXQt -I/usr/include/KF5/KWindowSystem -I/usr/include/KF5 -I/usr/include/qt5xdg -I/usr/include/aarch64-linux-gnu/qt5/QtXml -I/usr/include/qt5xdgiconloader -I/usr/include/qt5xdgiconloader/3.9.1 -I/usr/include/aarch64-linux-gnu/qt5/QtSvg -I/usr/include/aarch64-linux-gnu/qt5/QtX11Extras -I/usr/include -I/usr/include/c++/11 -I/usr/include/aarch64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/aarch64-linux-gnu/11/include -I/usr/local/include -I/usr/include/aarch64-linux-gnu --include /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src/lxqt-notificationd_autogen/moc_predefs.h --output-dep-file -o /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src/lxqt-notificationd_autogen/EWIEGA46WW/moc_notificationarea.cpp /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/src/notificationarea.h
+AutoMoc: Reading dependencies from "SRC:/obj-aarch64-linux-gnu/config/lxqt-config-notificationd_autogen/EWIEGA46WW/moc_basicsettings.cpp.d"
+AutoMoc: Generating "SRC:/obj-aarch64-linux-gnu/config/lxqt-config-notificationd_autogen/EWIEGA46WW/moc_mainwindow.cpp", because it doesn't exist, from "SRC:/config/mainwindow.h"
+/usr/lib/qt5/bin/moc "-DLXQT_DATA_DIR=\"/usr/share\"" "-DLXQT_ETC_XDG_DIR=\"/etc/xdg\"" "-DLXQT_GRAPHICS_DIR=\"/usr/share/lxqt/graphics\"" "-DLXQT_MAJOR_VERSION=\"1\"" "-DLXQT_MINOR_VERSION=\"1\"" "-DLXQT_NOTIFICATIOND_VERSION=\"1.1.0\"" "-DLXQT_PATCH_VERSION=\"0\"" "-DLXQT_RELATIVE_SHARE_DIR=\"lxqt\"" "-DLXQT_RELATIVE_SHARE_TRANSLATIONS_DIR=\"lxqt/translations\"" "-DLXQT_SHARE_DIR=\"/usr/share/lxqt\"" "-DLXQT_SHARE_TRANSLATIONS_DIR=\"/usr/share/lxqt/translations\"" "-DLXQT_VERSION=\"1.1.0\"" -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_SVG_LIB -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DQT_XML_LIB -I/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config -I/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/config -I/usr/include/KF5/KWindowSystem -I/usr/include/KF5 -I/usr/include/aarch64-linux-gnu/qt5 -I/usr/include/aarch64-linux-gnu/qt5/QtGui -I/usr/include/aarch64-linux-gnu/qt5/QtCore -I/usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -I/usr/include/aarch64-linux-gnu/qt5/QtWidgets -I/usr/include/lxqt -I/usr/include/lxqt/LXQt -I/usr/include/aarch64-linux-gnu/qt5/QtDBus -I/usr/include/qt5xdg -I/usr/include/aarch64-linux-gnu/qt5/QtXml -I/usr/include/qt5xdgiconloader -I/usr/include/qt5xdgiconloader/3.9.1 -I/usr/include/aarch64-linux-gnu/qt5/QtSvg -I/usr/include/aarch64-linux-gnu/qt5/QtX11Extras -I/usr/include -I/usr/include/c++/11 -I/usr/include/aarch64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/aarch64-linux-gnu/11/include -I/usr/local/include -I/usr/include/aarch64-linux-gnu --include /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config/lxqt-config-notificationd_autogen/moc_predefs.h --output-dep-file -o /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config/lxqt-config-notificationd_autogen/EWIEGA46WW/moc_mainwindow.cpp /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/config/mainwindow.h
+AutoMoc: Reading dependencies from "SRC:/obj-aarch64-linux-gnu/src/lxqt-notificationd_autogen/EWIEGA46WW/moc_notificationarea.cpp.d"
+AutoMoc: Generating "SRC:/obj-aarch64-linux-gnu/src/lxqt-notificationd_autogen/EWIEGA46WW/moc_notificationlayout.cpp", because it doesn't exist, from "SRC:/src/notificationlayout.h"
+/usr/lib/qt5/bin/moc "-DLXQT_DATA_DIR=\"/usr/share\"" "-DLXQT_ETC_XDG_DIR=\"/etc/xdg\"" "-DLXQT_GRAPHICS_DIR=\"/usr/share/lxqt/graphics\"" "-DLXQT_MAJOR_VERSION=\"1\"" "-DLXQT_MINOR_VERSION=\"1\"" "-DLXQT_NOTIFICATIOND_VERSION=\"1.1.0\"" "-DLXQT_PATCH_VERSION=\"0\"" "-DLXQT_RELATIVE_SHARE_DIR=\"lxqt\"" "-DLXQT_RELATIVE_SHARE_TRANSLATIONS_DIR=\"lxqt/translations\"" "-DLXQT_SHARE_DIR=\"/usr/share/lxqt\"" "-DLXQT_SHARE_TRANSLATIONS_DIR=\"/usr/share/lxqt/translations\"" "-DLXQT_VERSION=\"1.1.0\"" -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_SVG_LIB -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DQT_XML_LIB -I/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src -I/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/src -I/usr/include/aarch64-linux-gnu/qt5 -I/usr/include/aarch64-linux-gnu/qt5/QtWidgets -I/usr/include/aarch64-linux-gnu/qt5/QtGui -I/usr/include/aarch64-linux-gnu/qt5/QtCore -I/usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -I/usr/include/aarch64-linux-gnu/qt5/QtDBus -I/usr/include/lxqt -I/usr/include/lxqt/LXQt -I/usr/include/KF5/KWindowSystem -I/usr/include/KF5 -I/usr/include/qt5xdg -I/usr/include/aarch64-linux-gnu/qt5/QtXml -I/usr/include/qt5xdgiconloader -I/usr/include/qt5xdgiconloader/3.9.1 -I/usr/include/aarch64-linux-gnu/qt5/QtSvg -I/usr/include/aarch64-linux-gnu/qt5/QtX11Extras -I/usr/include -I/usr/include/c++/11 -I/usr/include/aarch64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/aarch64-linux-gnu/11/include -I/usr/local/include -I/usr/include/aarch64-linux-gnu --include /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src/lxqt-notificationd_autogen/moc_predefs.h --output-dep-file -o /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src/lxqt-notificationd_autogen/EWIEGA46WW/moc_notificationlayout.cpp /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/src/notificationlayout.h
+AutoMoc: Reading dependencies from "SRC:/obj-aarch64-linux-gnu/config/lxqt-config-notificationd_autogen/EWIEGA46WW/moc_mainwindow.cpp.d"
+AutoUic: Generating "SRC:/obj-aarch64-linux-gnu/config/lxqt-config-notificationd_autogen/include/ui_advancedsettings.h", because it doesn't exist, from "SRC:/config/advancedsettings.ui"
+/usr/lib/qt5/bin/uic -o /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config/lxqt-config-notificationd_autogen/include/ui_advancedsettings.h /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/config/advancedsettings.ui
+AutoUic: Generating "SRC:/obj-aarch64-linux-gnu/config/lxqt-config-notificationd_autogen/include/ui_basicsettings.h", because it doesn't exist, from "SRC:/config/basicsettings.ui"
+/usr/lib/qt5/bin/uic -o /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config/lxqt-config-notificationd_autogen/include/ui_basicsettings.h /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/config/basicsettings.ui
+AutoMoc: Generating MOC compilation "SRC:/obj-aarch64-linux-gnu/config/lxqt-config-notificationd_autogen/mocs_compilation.cpp"
+AutoGen: Writing the parse cache file "SRC:/obj-aarch64-linux-gnu/config/CMakeFiles/lxqt-config-notificationd_autogen.dir/ParseCache.txt"
+AutoGen: Writing the settings file "SRC:/obj-aarch64-linux-gnu/config/CMakeFiles/lxqt-config-notificationd_autogen.dir/AutogenUsed.txt"
+make[3]: Leaving directory '/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu'
+[  3%] Built target lxqt-config-notificationd_autogen
+make  -f config/CMakeFiles/lxqt-config-notificationd.dir/build.make config/CMakeFiles/lxqt-config-notificationd.dir/depend
+make[3]: Entering directory '/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu'
+[  4%] Generating lxqt-config-notificationd_zh_CN.qm
+cd /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/config/translations/lxqt-config-notificationd_zh_CN.ts -qm /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config/lxqt-config-notificationd_zh_CN.qm
+[  5%] Generating lxqt-config-notificationd.desktop
+cd /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config && /usr/bin/perl /usr/share/cmake/lxqt-build-tools/modules//LXQtTranslateDesktopYaml.pl /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/config/lxqt-config-notificationd.desktop.in lxqt-config-notificationd "/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/config/translations/lxqt-config-notificationd[_.]*desktop.yaml" >> /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config/lxqt-config-notificationd.desktop
+[  6%] Generating lxqt-config-notificationd_ar.qm
+cd /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/config/translations/lxqt-config-notificationd_ar.ts -qm /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config/lxqt-config-notificationd_ar.qm
+Updating '/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config/lxqt-config-notificationd_zh_CN.qm'...
+    Generated 25 translation(s) (25 finished and 0 unfinished)
+    Ignored 11 untranslated source text(s)
+Updating '/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config/lxqt-config-notificationd_ar.qm'...
+    Generated 17 translation(s) (17 finished and 0 unfinished)
+    Ignored 19 untranslated source text(s)
+[  7%] Generating lxqt-config-notificationd_arn.qm
+cd /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/config/translations/lxqt-config-notificationd_arn.ts -qm /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config/lxqt-config-notificationd_arn.qm
+[  8%] Generating lxqt-config-notificationd_ast.qm
+cd /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/config/translations/lxqt-config-notificationd_ast.ts -qm /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config/lxqt-config-notificationd_ast.qm
+[  9%] Generating lxqt-config-notificationd_bg.qm
+cd /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/config/translations/lxqt-config-notificationd_bg.ts -qm /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config/lxqt-config-notificationd_bg.qm
+Updating '/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config/lxqt-config-notificationd_arn.qm'...
+    Generated 0 translation(s) (0 finished and 0 unfinished)
+    Ignored 36 untranslated source text(s)
+Updating '/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config/lxqt-config-notificationd_ast.qm'...
+    Generated 0 translation(s) (0 finished and 0 unfinished)
+    Ignored 36 untranslated source text(s)
+Updating '/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config/lxqt-config-notificationd_bg.qm'...
+    Generated 36 translation(s) (36 finished and 0 unfinished)
+[ 10%] Generating lxqt-config-notificationd_cs.qm
+cd /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/config/translations/lxqt-config-notificationd_cs.ts -qm /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config/lxqt-config-notificationd_cs.qm
+[ 11%] Generating lxqt-config-notificationd_cy.qm
+cd /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/config/translations/lxqt-config-notificationd_cy.ts -qm /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config/lxqt-config-notificationd_cy.qm
+Updating '/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config/lxqt-config-notificationd_cs.qm'...
+    Generated 36 translation(s) (36 finished and 0 unfinished)
+[ 12%] Generating lxqt-config-notificationd_ca.qm
+cd /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/config/translations/lxqt-config-notificationd_ca.ts -qm /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config/lxqt-config-notificationd_ca.qm
+Updating '/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config/lxqt-config-notificationd_cy.qm'...
+    Generated 14 translation(s) (14 finished and 0 unfinished)
+    Ignored 22 untranslated source text(s)
+[ 13%] Generating lxqt-config-notificationd_da.qm
+cd /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/config/translations/lxqt-config-notificationd_da.ts -qm /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config/lxqt-config-notificationd_da.qm
+Updating '/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config/lxqt-config-notificationd_ca.qm'...
+    Generated 25 translation(s) (25 finished and 0 unfinished)
+    Ignored 11 untranslated source text(s)
+AutoMoc: Reading dependencies from "SRC:/obj-aarch64-linux-gnu/src/lxqt-notificationd_autogen/EWIEGA46WW/moc_notificationlayout.cpp.d"
+AutoMoc: Generating "SRC:/obj-aarch64-linux-gnu/src/lxqt-notificationd_autogen/EWIEGA46WW/moc_notificationwidgets.cpp", because it doesn't exist, from "SRC:/src/notificationwidgets.h"
+/usr/lib/qt5/bin/moc "-DLXQT_DATA_DIR=\"/usr/share\"" "-DLXQT_ETC_XDG_DIR=\"/etc/xdg\"" "-DLXQT_GRAPHICS_DIR=\"/usr/share/lxqt/graphics\"" "-DLXQT_MAJOR_VERSION=\"1\"" "-DLXQT_MINOR_VERSION=\"1\"" "-DLXQT_NOTIFICATIOND_VERSION=\"1.1.0\"" "-DLXQT_PATCH_VERSION=\"0\"" "-DLXQT_RELATIVE_SHARE_DIR=\"lxqt\"" "-DLXQT_RELATIVE_SHARE_TRANSLATIONS_DIR=\"lxqt/translations\"" "-DLXQT_SHARE_DIR=\"/usr/share/lxqt\"" "-DLXQT_SHARE_TRANSLATIONS_DIR=\"/usr/share/lxqt/translations\"" "-DLXQT_VERSION=\"1.1.0\"" -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_SVG_LIB -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DQT_XML_LIB -I/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src -I/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/src -I/usr/include/aarch64-linux-gnu/qt5 -I/usr/include/aarch64-linux-gnu/qt5/QtWidgets -I/usr/include/aarch64-linux-gnu/qt5/QtGui -I/usr/include/aarch64-linux-gnu/qt5/QtCore -I/usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -I/usr/include/aarch64-linux-gnu/qt5/QtDBus -I/usr/include/lxqt -I/usr/include/lxqt/LXQt -I/usr/include/KF5/KWindowSystem -I/usr/include/KF5 -I/usr/include/qt5xdg -I/usr/include/aarch64-linux-gnu/qt5/QtXml -I/usr/include/qt5xdgiconloader -I/usr/include/qt5xdgiconloader/3.9.1 -I/usr/include/aarch64-linux-gnu/qt5/QtSvg -I/usr/include/aarch64-linux-gnu/qt5/QtX11Extras -I/usr/include -I/usr/include/c++/11 -I/usr/include/aarch64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/aarch64-linux-gnu/11/include -I/usr/local/include -I/usr/include/aarch64-linux-gnu --include /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src/lxqt-notificationd_autogen/moc_predefs.h --output-dep-file -o /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src/lxqt-notificationd_autogen/EWIEGA46WW/moc_notificationwidgets.cpp /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/src/notificationwidgets.h
+Updating '/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config/lxqt-config-notificationd_da.qm'...
+    Generated 36 translation(s) (36 finished and 0 unfinished)
+[ 14%] Generating lxqt-config-notificationd_de.qm
+cd /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/config/translations/lxqt-config-notificationd_de.ts -qm /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config/lxqt-config-notificationd_de.qm
+[ 15%] Generating lxqt-config-notificationd_el.qm
+cd /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/config/translations/lxqt-config-notificationd_el.ts -qm /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config/lxqt-config-notificationd_el.qm
+Updating '/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config/lxqt-config-notificationd_de.qm'...
+    Generated 25 translation(s) (25 finished and 0 unfinished)
+    Ignored 11 untranslated source text(s)
+Updating '/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config/lxqt-config-notificationd_el.qm'...
+    Generated 36 translation(s) (36 finished and 0 unfinished)
+[ 16%] Generating lxqt-config-notificationd_en_GB.qm
+cd /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/config/translations/lxqt-config-notificationd_en_GB.ts -qm /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config/lxqt-config-notificationd_en_GB.qm
+[ 17%] Generating lxqt-config-notificationd_et.qm
+cd /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/config/translations/lxqt-config-notificationd_et.ts -qm /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config/lxqt-config-notificationd_et.qm
+Updating '/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config/lxqt-config-notificationd_en_GB.qm'...
+    Generated 19 translation(s) (19 finished and 0 unfinished)
+    Ignored 17 untranslated source text(s)
+Updating '/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config/lxqt-config-notificationd_et.qm'...
+    Generated 36 translation(s) (36 finished and 0 unfinished)
+[ 18%] Generating lxqt-config-notificationd_es.qm
+cd /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/config/translations/lxqt-config-notificationd_es.ts -qm /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config/lxqt-config-notificationd_es.qm
+Updating '/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config/lxqt-config-notificationd_es.qm'...
+    Generated 25 translation(s) (25 finished and 0 unfinished)
+    Ignored 11 untranslated source text(s)
+[ 19%] Generating lxqt-config-notificationd_fr.qm
+cd /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/config/translations/lxqt-config-notificationd_fr.ts -qm /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config/lxqt-config-notificationd_fr.qm
+[ 20%] Generating lxqt-config-notificationd_gl.qm
+cd /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/config/translations/lxqt-config-notificationd_gl.ts -qm /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config/lxqt-config-notificationd_gl.qm
+[ 21%] Generating lxqt-config-notificationd_he.qm
+Updating '/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config/lxqt-config-notificationd_fr.qm'...
+cd /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/config/translations/lxqt-config-notificationd_he.ts -qm /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config/lxqt-config-notificationd_he.qm
+    Generated 36 translation(s) (36 finished and 0 unfinished)
+Updating '/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config/lxqt-config-notificationd_gl.qm'...
+    Generated 19 translation(s) (19 finished and 0 unfinished)
+    Ignored 17 untranslated source text(s)
+Updating '/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config/lxqt-config-notificationd_he.qm'...
+    Generated 36 translation(s) (36 finished and 0 unfinished)
+[ 22%] Generating lxqt-config-notificationd_hr.qm
+cd /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/config/translations/lxqt-config-notificationd_hr.ts -qm /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config/lxqt-config-notificationd_hr.qm
+[ 23%] Generating lxqt-config-notificationd_hu.qm
+cd /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/config/translations/lxqt-config-notificationd_hu.ts -qm /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config/lxqt-config-notificationd_hu.qm
+Updating '/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config/lxqt-config-notificationd_hr.qm'...
+[ 24%] Generating lxqt-config-notificationd_id.qm
+    Generated 36 translation(s) (36 finished and 0 unfinished)
+cd /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/config/translations/lxqt-config-notificationd_id.ts -qm /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config/lxqt-config-notificationd_id.qm
+Updating '/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config/lxqt-config-notificationd_hu.qm'...
+    Generated 23 translation(s) (23 finished and 0 unfinished)
+    Ignored 13 untranslated source text(s)
+Updating '/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config/lxqt-config-notificationd_id.qm'...
+    Generated 19 translation(s) (19 finished and 0 unfinished)
+    Ignored 17 untranslated source text(s)
+[ 25%] Generating lxqt-config-notificationd_it.qm
+cd /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/config/translations/lxqt-config-notificationd_it.ts -qm /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config/lxqt-config-notificationd_it.qm
+[ 26%] Generating lxqt-config-notificationd_ko.qm
+cd /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/config/translations/lxqt-config-notificationd_ko.ts -qm /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config/lxqt-config-notificationd_ko.qm
+[ 27%] Generating lxqt-config-notificationd_ja.qm
+cd /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/config/translations/lxqt-config-notificationd_ja.ts -qm /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config/lxqt-config-notificationd_ja.qm
+Updating '/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config/lxqt-config-notificationd_it.qm'...
+    Generated 36 translation(s) (36 finished and 0 unfinished)
+Updating '/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config/lxqt-config-notificationd_ja.qm'...
+    Generated 25 translation(s) (25 finished and 0 unfinished)
+    Ignored 11 untranslated source text(s)
+Updating '/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config/lxqt-config-notificationd_ko.qm'...
+    Generated 36 translation(s) (36 finished and 0 unfinished)
+[ 28%] Generating lxqt-config-notificationd_lt.qm
+cd /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/config/translations/lxqt-config-notificationd_lt.ts -qm /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config/lxqt-config-notificationd_lt.qm
+AutoMoc: Reading dependencies from "SRC:/obj-aarch64-linux-gnu/src/lxqt-notificationd_autogen/EWIEGA46WW/moc_notificationwidgets.cpp.d"
+AutoMoc: Generating "SRC:/obj-aarch64-linux-gnu/src/lxqt-notificationd_autogen/EWIEGA46WW/moc_notifyd.cpp", because it doesn't exist, from "SRC:/src/notifyd.h"
+/usr/lib/qt5/bin/moc "-DLXQT_DATA_DIR=\"/usr/share\"" "-DLXQT_ETC_XDG_DIR=\"/etc/xdg\"" "-DLXQT_GRAPHICS_DIR=\"/usr/share/lxqt/graphics\"" "-DLXQT_MAJOR_VERSION=\"1\"" "-DLXQT_MINOR_VERSION=\"1\"" "-DLXQT_NOTIFICATIOND_VERSION=\"1.1.0\"" "-DLXQT_PATCH_VERSION=\"0\"" "-DLXQT_RELATIVE_SHARE_DIR=\"lxqt\"" "-DLXQT_RELATIVE_SHARE_TRANSLATIONS_DIR=\"lxqt/translations\"" "-DLXQT_SHARE_DIR=\"/usr/share/lxqt\"" "-DLXQT_SHARE_TRANSLATIONS_DIR=\"/usr/share/lxqt/translations\"" "-DLXQT_VERSION=\"1.1.0\"" -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_SVG_LIB -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DQT_XML_LIB -I/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src -I/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/src -I/usr/include/aarch64-linux-gnu/qt5 -I/usr/include/aarch64-linux-gnu/qt5/QtWidgets -I/usr/include/aarch64-linux-gnu/qt5/QtGui -I/usr/include/aarch64-linux-gnu/qt5/QtCore -I/usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -I/usr/include/aarch64-linux-gnu/qt5/QtDBus -I/usr/include/lxqt -I/usr/include/lxqt/LXQt -I/usr/include/KF5/KWindowSystem -I/usr/include/KF5 -I/usr/include/qt5xdg -I/usr/include/aarch64-linux-gnu/qt5/QtXml -I/usr/include/qt5xdgiconloader -I/usr/include/qt5xdgiconloader/3.9.1 -I/usr/include/aarch64-linux-gnu/qt5/QtSvg -I/usr/include/aarch64-linux-gnu/qt5/QtX11Extras -I/usr/include -I/usr/include/c++/11 -I/usr/include/aarch64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/aarch64-linux-gnu/11/include -I/usr/local/include -I/usr/include/aarch64-linux-gnu --include /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src/lxqt-notificationd_autogen/moc_predefs.h --output-dep-file -o /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src/lxqt-notificationd_autogen/EWIEGA46WW/moc_notifyd.cpp /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/src/notifyd.h
+Updating '/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config/lxqt-config-notificationd_lt.qm'...
+    Generated 25 translation(s) (25 finished and 0 unfinished)
+    Ignored 11 untranslated source text(s)
+[ 29%] Generating lxqt-config-notificationd_lv.qm
+cd /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/config/translations/lxqt-config-notificationd_lv.ts -qm /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config/lxqt-config-notificationd_lv.qm
+Updating '/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config/lxqt-config-notificationd_lv.qm'...
+    Generated 23 translation(s) (23 finished and 0 unfinished)
+    Ignored 13 untranslated source text(s)
+[ 30%] Generating lxqt-config-notificationd_nl.qm
+cd /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/config/translations/lxqt-config-notificationd_nl.ts -qm /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config/lxqt-config-notificationd_nl.qm
+[ 31%] Generating lxqt-config-notificationd_nb_NO.qm
+cd /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/config/translations/lxqt-config-notificationd_nb_NO.ts -qm /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config/lxqt-config-notificationd_nb_NO.qm
+Updating '/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config/lxqt-config-notificationd_nl.qm'...
+    Generated 36 translation(s) (36 finished and 0 unfinished)
+[ 32%] Generating lxqt-config-notificationd_oc.qm
+Updating '/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config/lxqt-config-notificationd_nb_NO.qm'...
+    Generated 36 translation(s) (36 finished and 0 unfinished)
+cd /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/config/translations/lxqt-config-notificationd_oc.ts -qm /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config/lxqt-config-notificationd_oc.qm
+Updating '/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config/lxqt-config-notificationd_oc.qm'...
+    Generated 8 translation(s) (8 finished and 0 unfinished)
+    Ignored 28 untranslated source text(s)
+[ 34%] Generating lxqt-config-notificationd_pl.qm
+cd /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/config/translations/lxqt-config-notificationd_pl.ts -qm /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config/lxqt-config-notificationd_pl.qm
+[ 35%] Generating lxqt-config-notificationd_pt.qm
+cd /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/config/translations/lxqt-config-notificationd_pt.ts -qm /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config/lxqt-config-notificationd_pt.qm
+Updating '/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config/lxqt-config-notificationd_pl.qm'...
+    Generated 25 translation(s) (25 finished and 0 unfinished)
+    Ignored 11 untranslated source text(s)
+Updating '/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config/lxqt-config-notificationd_pt.qm'...
+    Generated 36 translation(s) (36 finished and 0 unfinished)
+[ 36%] Generating lxqt-config-notificationd_ru.qm
+cd /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/config/translations/lxqt-config-notificationd_ru.ts -qm /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config/lxqt-config-notificationd_ru.qm
+[ 38%] Generating lxqt-config-notificationd_si.qm
+cd /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/config/translations/lxqt-config-notificationd_si.ts -qm /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config/lxqt-config-notificationd_si.qm
+[ 38%] Generating lxqt-config-notificationd_pt_BR.qm
+cd /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/config/translations/lxqt-config-notificationd_pt_BR.ts -qm /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config/lxqt-config-notificationd_pt_BR.qm
+Updating '/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config/lxqt-config-notificationd_si.qm'...
+    Generated 0 translation(s) (0 finished and 0 unfinished)
+    Ignored 36 untranslated source text(s)
+Updating '/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config/lxqt-config-notificationd_ru.qm'...
+    Generated 36 translation(s) (36 finished and 0 unfinished)
+Updating '/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config/lxqt-config-notificationd_pt_BR.qm'...
+    Generated 36 translation(s) (36 finished and 0 unfinished)
+[ 39%] Generating lxqt-config-notificationd_sk_SK.qm
+cd /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/config/translations/lxqt-config-notificationd_sk_SK.ts -qm /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config/lxqt-config-notificationd_sk_SK.qm
+Updating '/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config/lxqt-config-notificationd_sk_SK.qm'...
+    Generated 36 translation(s) (36 finished and 0 unfinished)
+[ 40%] Generating lxqt-config-notificationd_tr.qm
+cd /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/config/translations/lxqt-config-notificationd_tr.ts -qm /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config/lxqt-config-notificationd_tr.qm
+Updating '/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config/lxqt-config-notificationd_tr.qm'...
+    Generated 36 translation(s) (36 finished and 0 unfinished)
+[ 41%] Generating lxqt-config-notificationd_uk.qm
+cd /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/config/translations/lxqt-config-notificationd_uk.ts -qm /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config/lxqt-config-notificationd_uk.qm
+Updating '/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config/lxqt-config-notificationd_uk.qm'...
+    Generated 36 translation(s) (36 finished and 0 unfinished)
+cd /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0 /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/config /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config/CMakeFiles/lxqt-config-notificationd.dir/DependInfo.cmake --color=
+make[3]: Leaving directory '/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu'
+make  -f config/CMakeFiles/lxqt-config-notificationd.dir/build.make config/CMakeFiles/lxqt-config-notificationd.dir/build
+make[3]: Entering directory '/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu'
+[ 42%] Building CXX object config/CMakeFiles/lxqt-config-notificationd.dir/lxqt-config-notificationd_autogen/mocs_compilation.cpp.o
+cd /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config && /usr/bin/c++ -DLXQT_DATA_DIR=\"/usr/share\" -DLXQT_ETC_XDG_DIR=\"/etc/xdg\" -DLXQT_GRAPHICS_DIR=\"/usr/share/lxqt/graphics\" -DLXQT_MAJOR_VERSION=\"1\" -DLXQT_MINOR_VERSION=\"1\" -DLXQT_NOTIFICATIOND_VERSION=\"1.1.0\" -DLXQT_PATCH_VERSION=\"0\" -DLXQT_RELATIVE_SHARE_DIR=\"lxqt\" -DLXQT_RELATIVE_SHARE_TRANSLATIONS_DIR=\"lxqt/translations\" -DLXQT_SHARE_DIR=\"/usr/share/lxqt\" -DLXQT_SHARE_TRANSLATIONS_DIR=\"/usr/share/lxqt/translations\" -DLXQT_VERSION=\"1.1.0\" -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_SVG_LIB -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DQT_XML_LIB -I/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config -I/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/config -I/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config/lxqt-config-notificationd_autogen/include -isystem /usr/include/KF5/KWindowSystem -isystem /usr/include/KF5 -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/lxqt -isystem /usr/include/lxqt/LXQt -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/qt5xdg -isystem /usr/include/aarch64-linux-gnu/qt5/QtXml -isystem /usr/include/qt5xdgiconloader -isystem /usr/include/qt5xdgiconloader/3.9.1 -isystem /usr/include/aarch64-linux-gnu/qt5/QtSvg -isystem /usr/include/aarch64-linux-gnu/qt5/QtX11Extras -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -fPIE -fvisibility=hidden -fvisibility-inlines-hidden -fPIC -std=c++14 -MD -MT config/CMakeFiles/lxqt-config-notificationd.dir/lxqt-config-notificationd_autogen/mocs_compilation.cpp.o -MF CMakeFiles/lxqt-config-notificationd.dir/lxqt-config-notificationd_autogen/mocs_compilation.cpp.o.d -o CMakeFiles/lxqt-config-notificationd.dir/lxqt-config-notificationd_autogen/mocs_compilation.cpp.o -c /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config/lxqt-config-notificationd_autogen/mocs_compilation.cpp
+[ 43%] Building CXX object config/CMakeFiles/lxqt-config-notificationd.dir/basicsettings.cpp.o
+[ 44%] Building CXX object config/CMakeFiles/lxqt-config-notificationd.dir/advancedsettings.cpp.o
+cd /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config && /usr/bin/c++ -DLXQT_DATA_DIR=\"/usr/share\" -DLXQT_ETC_XDG_DIR=\"/etc/xdg\" -DLXQT_GRAPHICS_DIR=\"/usr/share/lxqt/graphics\" -DLXQT_MAJOR_VERSION=\"1\" -DLXQT_MINOR_VERSION=\"1\" -DLXQT_NOTIFICATIOND_VERSION=\"1.1.0\" -DLXQT_PATCH_VERSION=\"0\" -DLXQT_RELATIVE_SHARE_DIR=\"lxqt\" -DLXQT_RELATIVE_SHARE_TRANSLATIONS_DIR=\"lxqt/translations\" -DLXQT_SHARE_DIR=\"/usr/share/lxqt\" -DLXQT_SHARE_TRANSLATIONS_DIR=\"/usr/share/lxqt/translations\" -DLXQT_VERSION=\"1.1.0\" -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_SVG_LIB -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DQT_XML_LIB -I/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config -I/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/config -I/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config/lxqt-config-notificationd_autogen/include -isystem /usr/include/KF5/KWindowSystem -isystem /usr/include/KF5 -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/lxqt -isystem /usr/include/lxqt/LXQt -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/qt5xdg -isystem /usr/include/aarch64-linux-gnu/qt5/QtXml -isystem /usr/include/qt5xdgiconloader -isystem /usr/include/qt5xdgiconloader/3.9.1 -isystem /usr/include/aarch64-linux-gnu/qt5/QtSvg -isystem /usr/include/aarch64-linux-gnu/qt5/QtX11Extras -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -fPIE -fvisibility=hidden -fvisibility-inlines-hidden -fPIC -std=c++14 -MD -MT config/CMakeFiles/lxqt-config-notificationd.dir/basicsettings.cpp.o -MF CMakeFiles/lxqt-config-notificationd.dir/basicsettings.cpp.o.d -o CMakeFiles/lxqt-config-notificationd.dir/basicsettings.cpp.o -c /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/config/basicsettings.cpp
+cd /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config && /usr/bin/c++ -DLXQT_DATA_DIR=\"/usr/share\" -DLXQT_ETC_XDG_DIR=\"/etc/xdg\" -DLXQT_GRAPHICS_DIR=\"/usr/share/lxqt/graphics\" -DLXQT_MAJOR_VERSION=\"1\" -DLXQT_MINOR_VERSION=\"1\" -DLXQT_NOTIFICATIOND_VERSION=\"1.1.0\" -DLXQT_PATCH_VERSION=\"0\" -DLXQT_RELATIVE_SHARE_DIR=\"lxqt\" -DLXQT_RELATIVE_SHARE_TRANSLATIONS_DIR=\"lxqt/translations\" -DLXQT_SHARE_DIR=\"/usr/share/lxqt\" -DLXQT_SHARE_TRANSLATIONS_DIR=\"/usr/share/lxqt/translations\" -DLXQT_VERSION=\"1.1.0\" -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_SVG_LIB -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DQT_XML_LIB -I/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config -I/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/config -I/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config/lxqt-config-notificationd_autogen/include -isystem /usr/include/KF5/KWindowSystem -isystem /usr/include/KF5 -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/lxqt -isystem /usr/include/lxqt/LXQt -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/qt5xdg -isystem /usr/include/aarch64-linux-gnu/qt5/QtXml -isystem /usr/include/qt5xdgiconloader -isystem /usr/include/qt5xdgiconloader/3.9.1 -isystem /usr/include/aarch64-linux-gnu/qt5/QtSvg -isystem /usr/include/aarch64-linux-gnu/qt5/QtX11Extras -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -fPIE -fvisibility=hidden -fvisibility-inlines-hidden -fPIC -std=c++14 -MD -MT config/CMakeFiles/lxqt-config-notificationd.dir/advancedsettings.cpp.o -MF CMakeFiles/lxqt-config-notificationd.dir/advancedsettings.cpp.o.d -o CMakeFiles/lxqt-config-notificationd.dir/advancedsettings.cpp.o -c /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/config/advancedsettings.cpp
+AutoMoc: Reading dependencies from "SRC:/obj-aarch64-linux-gnu/src/lxqt-notificationd_autogen/EWIEGA46WW/moc_notifyd.cpp.d"
+AutoUic: Generating "SRC:/obj-aarch64-linux-gnu/src/lxqt-notificationd_autogen/include/ui_notification.h", because it doesn't exist, from "SRC:/src/notification.ui"
+/usr/lib/qt5/bin/uic -o /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src/lxqt-notificationd_autogen/include/ui_notification.h /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/src/notification.ui
+AutoMoc: Generating MOC compilation "SRC:/obj-aarch64-linux-gnu/src/lxqt-notificationd_autogen/mocs_compilation.cpp"
+AutoGen: Writing the parse cache file "SRC:/obj-aarch64-linux-gnu/src/CMakeFiles/lxqt-notificationd_autogen.dir/ParseCache.txt"
+AutoGen: Writing the settings file "SRC:/obj-aarch64-linux-gnu/src/CMakeFiles/lxqt-notificationd_autogen.dir/AutogenUsed.txt"
+make[3]: Leaving directory '/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu'
+[ 44%] Built target lxqt-notificationd_autogen
+[ 45%] Building CXX object config/CMakeFiles/lxqt-config-notificationd.dir/mainwindow.cpp.o
+cd /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config && /usr/bin/c++ -DLXQT_DATA_DIR=\"/usr/share\" -DLXQT_ETC_XDG_DIR=\"/etc/xdg\" -DLXQT_GRAPHICS_DIR=\"/usr/share/lxqt/graphics\" -DLXQT_MAJOR_VERSION=\"1\" -DLXQT_MINOR_VERSION=\"1\" -DLXQT_NOTIFICATIOND_VERSION=\"1.1.0\" -DLXQT_PATCH_VERSION=\"0\" -DLXQT_RELATIVE_SHARE_DIR=\"lxqt\" -DLXQT_RELATIVE_SHARE_TRANSLATIONS_DIR=\"lxqt/translations\" -DLXQT_SHARE_DIR=\"/usr/share/lxqt\" -DLXQT_SHARE_TRANSLATIONS_DIR=\"/usr/share/lxqt/translations\" -DLXQT_VERSION=\"1.1.0\" -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_SVG_LIB -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DQT_XML_LIB -I/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config -I/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/config -I/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config/lxqt-config-notificationd_autogen/include -isystem /usr/include/KF5/KWindowSystem -isystem /usr/include/KF5 -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/lxqt -isystem /usr/include/lxqt/LXQt -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/qt5xdg -isystem /usr/include/aarch64-linux-gnu/qt5/QtXml -isystem /usr/include/qt5xdgiconloader -isystem /usr/include/qt5xdgiconloader/3.9.1 -isystem /usr/include/aarch64-linux-gnu/qt5/QtSvg -isystem /usr/include/aarch64-linux-gnu/qt5/QtX11Extras -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -fPIE -fvisibility=hidden -fvisibility-inlines-hidden -fPIC -std=c++14 -MD -MT config/CMakeFiles/lxqt-config-notificationd.dir/mainwindow.cpp.o -MF CMakeFiles/lxqt-config-notificationd.dir/mainwindow.cpp.o.d -o CMakeFiles/lxqt-config-notificationd.dir/mainwindow.cpp.o -c /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/config/mainwindow.cpp
+[ 46%] Building CXX object config/CMakeFiles/lxqt-config-notificationd.dir/main.cpp.o
+cd /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config && /usr/bin/c++ -DLXQT_DATA_DIR=\"/usr/share\" -DLXQT_ETC_XDG_DIR=\"/etc/xdg\" -DLXQT_GRAPHICS_DIR=\"/usr/share/lxqt/graphics\" -DLXQT_MAJOR_VERSION=\"1\" -DLXQT_MINOR_VERSION=\"1\" -DLXQT_NOTIFICATIOND_VERSION=\"1.1.0\" -DLXQT_PATCH_VERSION=\"0\" -DLXQT_RELATIVE_SHARE_DIR=\"lxqt\" -DLXQT_RELATIVE_SHARE_TRANSLATIONS_DIR=\"lxqt/translations\" -DLXQT_SHARE_DIR=\"/usr/share/lxqt\" -DLXQT_SHARE_TRANSLATIONS_DIR=\"/usr/share/lxqt/translations\" -DLXQT_VERSION=\"1.1.0\" -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_SVG_LIB -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DQT_XML_LIB -I/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config -I/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/config -I/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config/lxqt-config-notificationd_autogen/include -isystem /usr/include/KF5/KWindowSystem -isystem /usr/include/KF5 -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/lxqt -isystem /usr/include/lxqt/LXQt -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/qt5xdg -isystem /usr/include/aarch64-linux-gnu/qt5/QtXml -isystem /usr/include/qt5xdgiconloader -isystem /usr/include/qt5xdgiconloader/3.9.1 -isystem /usr/include/aarch64-linux-gnu/qt5/QtSvg -isystem /usr/include/aarch64-linux-gnu/qt5/QtX11Extras -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -fPIE -fvisibility=hidden -fvisibility-inlines-hidden -fPIC -std=c++14 -MD -MT config/CMakeFiles/lxqt-config-notificationd.dir/main.cpp.o -MF CMakeFiles/lxqt-config-notificationd.dir/main.cpp.o.d -o CMakeFiles/lxqt-config-notificationd.dir/main.cpp.o -c /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/config/main.cpp
+[ 47%] Building CXX object config/CMakeFiles/lxqt-config-notificationd.dir/LXQtAppTranslationLoader.cpp.o
+cd /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config && /usr/bin/c++ -DLXQT_DATA_DIR=\"/usr/share\" -DLXQT_ETC_XDG_DIR=\"/etc/xdg\" -DLXQT_GRAPHICS_DIR=\"/usr/share/lxqt/graphics\" -DLXQT_MAJOR_VERSION=\"1\" -DLXQT_MINOR_VERSION=\"1\" -DLXQT_NOTIFICATIOND_VERSION=\"1.1.0\" -DLXQT_PATCH_VERSION=\"0\" -DLXQT_RELATIVE_SHARE_DIR=\"lxqt\" -DLXQT_RELATIVE_SHARE_TRANSLATIONS_DIR=\"lxqt/translations\" -DLXQT_SHARE_DIR=\"/usr/share/lxqt\" -DLXQT_SHARE_TRANSLATIONS_DIR=\"/usr/share/lxqt/translations\" -DLXQT_VERSION=\"1.1.0\" -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_SVG_LIB -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DQT_XML_LIB -I/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config -I/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/config -I/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config/lxqt-config-notificationd_autogen/include -isystem /usr/include/KF5/KWindowSystem -isystem /usr/include/KF5 -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/lxqt -isystem /usr/include/lxqt/LXQt -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/qt5xdg -isystem /usr/include/aarch64-linux-gnu/qt5/QtXml -isystem /usr/include/qt5xdgiconloader -isystem /usr/include/qt5xdgiconloader/3.9.1 -isystem /usr/include/aarch64-linux-gnu/qt5/QtSvg -isystem /usr/include/aarch64-linux-gnu/qt5/QtX11Extras -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -fPIE -fvisibility=hidden -fvisibility-inlines-hidden -fPIC -std=c++14 -MD -MT config/CMakeFiles/lxqt-config-notificationd.dir/LXQtAppTranslationLoader.cpp.o -MF CMakeFiles/lxqt-config-notificationd.dir/LXQtAppTranslationLoader.cpp.o.d -o CMakeFiles/lxqt-config-notificationd.dir/LXQtAppTranslationLoader.cpp.o -c /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config/LXQtAppTranslationLoader.cpp
+make  -f src/CMakeFiles/lxqt-notificationd.dir/build.make src/CMakeFiles/lxqt-notificationd.dir/depend
+make[3]: Entering directory '/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu'
+[ 48%] Generating notificationsadaptor.cpp, notificationsadaptor.h
+cd /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src && /usr/lib/qt5/bin/qdbusxml2cpp -m -a notificationsadaptor -i notifyd.h -l Notifyd /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/src/org.freedesktop.Notifications.xml
+[ 49%] Generating lxqt-notificationd_ar.qm
+cd /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/src/translations/lxqt-notificationd_ar.ts -qm /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src/lxqt-notificationd_ar.qm
+Updating '/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src/lxqt-notificationd_ar.qm'...
+    Generated 4 translation(s) (4 finished and 0 unfinished)
+    Ignored 1 untranslated source text(s)
+[ 50%] Generating lxqt-notificationd_arn.qm
+cd /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/src/translations/lxqt-notificationd_arn.ts -qm /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src/lxqt-notificationd_arn.qm
+[ 51%] Generating lxqt-notificationd_ast.qm
+cd /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/src/translations/lxqt-notificationd_ast.ts -qm /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src/lxqt-notificationd_ast.qm
+Updating '/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src/lxqt-notificationd_arn.qm'...
+    Generated 0 translation(s) (0 finished and 0 unfinished)
+    Ignored 5 untranslated source text(s)
+Updating '/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src/lxqt-notificationd_ast.qm'...
+    Generated 0 translation(s) (0 finished and 0 unfinished)
+    Ignored 5 untranslated source text(s)
+[ 52%] Generating lxqt-notificationd_bg.qm
+cd /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/src/translations/lxqt-notificationd_bg.ts -qm /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src/lxqt-notificationd_bg.qm
+[ 53%] Generating lxqt-notificationd_ca.qm
+cd /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/src/translations/lxqt-notificationd_ca.ts -qm /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src/lxqt-notificationd_ca.qm
+Updating '/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src/lxqt-notificationd_ca.qm'...
+    Generated 5 translation(s) (5 finished and 0 unfinished)
+Updating '/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src/lxqt-notificationd_bg.qm'...
+    Generated 5 translation(s) (5 finished and 0 unfinished)
+[ 54%] Generating lxqt-notificationd_cs.qm
+cd /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/src/translations/lxqt-notificationd_cs.ts -qm /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src/lxqt-notificationd_cs.qm
+Updating '/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src/lxqt-notificationd_cs.qm'...
+    Generated 5 translation(s) (5 finished and 0 unfinished)
+[ 55%] Generating lxqt-notificationd_cy.qm
+cd /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/src/translations/lxqt-notificationd_cy.ts -qm /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src/lxqt-notificationd_cy.qm
+Updating '/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src/lxqt-notificationd_cy.qm'...
+    Generated 2 translation(s) (2 finished and 0 unfinished)
+    Ignored 3 untranslated source text(s)
+[ 56%] Generating lxqt-notificationd_da.qm
+cd /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/src/translations/lxqt-notificationd_da.ts -qm /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src/lxqt-notificationd_da.qm
+Updating '/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src/lxqt-notificationd_da.qm'...
+    Generated 5 translation(s) (5 finished and 0 unfinished)
+[ 57%] Generating lxqt-notificationd_de.qm
+cd /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/src/translations/lxqt-notificationd_de.ts -qm /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src/lxqt-notificationd_de.qm
+Updating '/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src/lxqt-notificationd_de.qm'...
+    Generated 5 translation(s) (5 finished and 0 unfinished)
+[ 58%] Generating lxqt-notificationd_el.qm
+cd /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/src/translations/lxqt-notificationd_el.ts -qm /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src/lxqt-notificationd_el.qm
+Updating '/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src/lxqt-notificationd_el.qm'...
+    Generated 5 translation(s) (5 finished and 0 unfinished)
+[ 59%] Generating lxqt-notificationd_en_GB.qm
+cd /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/src/translations/lxqt-notificationd_en_GB.ts -qm /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src/lxqt-notificationd_en_GB.qm
+Updating '/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src/lxqt-notificationd_en_GB.qm'...
+    Generated 4 translation(s) (4 finished and 0 unfinished)
+    Ignored 1 untranslated source text(s)
+[ 60%] Generating lxqt-notificationd_es.qm
+cd /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/src/translations/lxqt-notificationd_es.ts -qm /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src/lxqt-notificationd_es.qm
+[ 61%] Generating lxqt-notificationd_et.qm
+cd /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/src/translations/lxqt-notificationd_et.ts -qm /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src/lxqt-notificationd_et.qm
+Updating '/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src/lxqt-notificationd_es.qm'...
+    Generated 5 translation(s) (5 finished and 0 unfinished)
+Updating '/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src/lxqt-notificationd_et.qm'...
+    Generated 5 translation(s) (5 finished and 0 unfinished)
+[ 62%] Generating lxqt-notificationd_fr.qm
+cd /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/src/translations/lxqt-notificationd_fr.ts -qm /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src/lxqt-notificationd_fr.qm
+[ 63%] Generating lxqt-notificationd_gl.qm
+Updating '/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src/lxqt-notificationd_fr.qm'...
+    Generated 5 translation(s) (5 finished and 0 unfinished)
+cd /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/src/translations/lxqt-notificationd_gl.ts -qm /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src/lxqt-notificationd_gl.qm
+Updating '/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src/lxqt-notificationd_gl.qm'...
+    Generated 5 translation(s) (5 finished and 0 unfinished)
+[ 64%] Generating lxqt-notificationd_he.qm
+cd /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/src/translations/lxqt-notificationd_he.ts -qm /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src/lxqt-notificationd_he.qm
+[ 65%] Generating lxqt-notificationd_hr.qm
+Updating '/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src/lxqt-notificationd_he.qm'...
+Removed plural forms as the target language has less forms.
+If this sounds wrong, possibly the target language is not set or recognized.
+    Generated 5 translation(s) (5 finished and 0 unfinished)
+cd /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/src/translations/lxqt-notificationd_hr.ts -qm /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src/lxqt-notificationd_hr.qm
+Updating '/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src/lxqt-notificationd_hr.qm'...
+    Generated 5 translation(s) (5 finished and 0 unfinished)
+[ 67%] Generating lxqt-notificationd_hu.qm
+cd /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/src/translations/lxqt-notificationd_hu.ts -qm /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src/lxqt-notificationd_hu.qm
+Updating '/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src/lxqt-notificationd_hu.qm'...
+    Generated 5 translation(s) (5 finished and 0 unfinished)
+[ 68%] Generating lxqt-notificationd_id.qm
+cd /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/src/translations/lxqt-notificationd_id.ts -qm /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src/lxqt-notificationd_id.qm
+Updating '/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src/lxqt-notificationd_id.qm'...
+    Generated 5 translation(s) (5 finished and 0 unfinished)
+[ 69%] Generating lxqt-notificationd_it.qm
+cd /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/src/translations/lxqt-notificationd_it.ts -qm /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src/lxqt-notificationd_it.qm
+Updating '/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src/lxqt-notificationd_it.qm'...
+    Generated 5 translation(s) (5 finished and 0 unfinished)
+[ 70%] Generating lxqt-notificationd_ja.qm
+cd /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/src/translations/lxqt-notificationd_ja.ts -qm /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src/lxqt-notificationd_ja.qm
+Updating '/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src/lxqt-notificationd_ja.qm'...
+    Generated 5 translation(s) (5 finished and 0 unfinished)
+[ 71%] Generating lxqt-notificationd_ko.qm
+cd /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/src/translations/lxqt-notificationd_ko.ts -qm /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src/lxqt-notificationd_ko.qm
+Updating '/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src/lxqt-notificationd_ko.qm'...
+    Generated 5 translation(s) (5 finished and 0 unfinished)
+[ 72%] Generating lxqt-notificationd_lt.qm
+cd /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/src/translations/lxqt-notificationd_lt.ts -qm /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src/lxqt-notificationd_lt.qm
+Updating '/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src/lxqt-notificationd_lt.qm'...
+    Generated 5 translation(s) (5 finished and 0 unfinished)
+[ 73%] Generating lxqt-notificationd_lv.qm
+cd /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/src/translations/lxqt-notificationd_lv.ts -qm /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src/lxqt-notificationd_lv.qm
+[ 74%] Generating lxqt-notificationd_nb_NO.qm
+cd /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/src/translations/lxqt-notificationd_nb_NO.ts -qm /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src/lxqt-notificationd_nb_NO.qm
+Updating '/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src/lxqt-notificationd_lv.qm'...
+    Generated 5 translation(s) (5 finished and 0 unfinished)
+Updating '/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src/lxqt-notificationd_nb_NO.qm'...
+    Generated 5 translation(s) (5 finished and 0 unfinished)
+[ 75%] Generating lxqt-notificationd_nl.qm
+cd /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/src/translations/lxqt-notificationd_nl.ts -qm /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src/lxqt-notificationd_nl.qm
+Updating '/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src/lxqt-notificationd_nl.qm'...
+    Generated 5 translation(s) (5 finished and 0 unfinished)
+[ 76%] Generating lxqt-notificationd_pl.qm
+cd /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/src/translations/lxqt-notificationd_pl.ts -qm /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src/lxqt-notificationd_pl.qm
+Updating '/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src/lxqt-notificationd_pl.qm'...
+    Generated 5 translation(s) (5 finished and 0 unfinished)
+[ 77%] Generating lxqt-notificationd_pt.qm
+cd /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/src/translations/lxqt-notificationd_pt.ts -qm /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src/lxqt-notificationd_pt.qm
+[ 78%] Generating lxqt-notificationd_pt_BR.qm
+cd /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/src/translations/lxqt-notificationd_pt_BR.ts -qm /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src/lxqt-notificationd_pt_BR.qm
+Updating '/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src/lxqt-notificationd_pt.qm'...
+    Generated 5 translation(s) (5 finished and 0 unfinished)
+Updating '/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src/lxqt-notificationd_pt_BR.qm'...
+    Generated 5 translation(s) (5 finished and 0 unfinished)
+[ 79%] Generating lxqt-notificationd_ru.qm
+cd /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/src/translations/lxqt-notificationd_ru.ts -qm /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src/lxqt-notificationd_ru.qm
+[ 80%] Generating lxqt-notificationd_si.qm
+cd /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/src/translations/lxqt-notificationd_si.ts -qm /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src/lxqt-notificationd_si.qm
+Updating '/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src/lxqt-notificationd_ru.qm'...
+    Generated 5 translation(s) (5 finished and 0 unfinished)
+Updating '/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src/lxqt-notificationd_si.qm'...
+    Generated 0 translation(s) (0 finished and 0 unfinished)
+    Ignored 5 untranslated source text(s)
+[ 81%] Generating lxqt-notificationd_sk_SK.qm
+cd /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/src/translations/lxqt-notificationd_sk_SK.ts -qm /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src/lxqt-notificationd_sk_SK.qm
+[ 82%] Generating lxqt-notificationd_sv.qm
+cd /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/src/translations/lxqt-notificationd_sv.ts -qm /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src/lxqt-notificationd_sv.qm
+Updating '/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src/lxqt-notificationd_sk_SK.qm'...
+    Generated 5 translation(s) (5 finished and 0 unfinished)
+Updating '/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src/lxqt-notificationd_sv.qm'...
+    Generated 5 translation(s) (5 finished and 0 unfinished)
+[ 83%] Generating lxqt-notificationd_tr.qm
+cd /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/src/translations/lxqt-notificationd_tr.ts -qm /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src/lxqt-notificationd_tr.qm
+[ 84%] Generating lxqt-notificationd_uk.qm
+cd /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/src/translations/lxqt-notificationd_uk.ts -qm /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src/lxqt-notificationd_uk.qm
+Updating '/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src/lxqt-notificationd_tr.qm'...
+    Generated 5 translation(s) (5 finished and 0 unfinished)
+Updating '/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src/lxqt-notificationd_uk.qm'...
+    Generated 5 translation(s) (5 finished and 0 unfinished)
+[ 85%] Generating lxqt-notificationd_vi.qm
+[ 86%] Generating lxqt-notificationd_zh_CN.qm
+cd /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/src/translations/lxqt-notificationd_vi.ts -qm /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src/lxqt-notificationd_vi.qm
+cd /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/src/translations/lxqt-notificationd_zh_CN.ts -qm /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src/lxqt-notificationd_zh_CN.qm
+Updating '/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src/lxqt-notificationd_vi.qm'...
+    Generated 5 translation(s) (5 finished and 0 unfinished)
+Updating '/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src/lxqt-notificationd_zh_CN.qm'...
+    Generated 5 translation(s) (5 finished and 0 unfinished)
+[ 87%] Generating lxqt-notificationd_zh_TW.qm
+cd /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src && /usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/src/translations/lxqt-notificationd_zh_TW.ts -qm /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src/lxqt-notificationd_zh_TW.qm
+Updating '/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src/lxqt-notificationd_zh_TW.qm'...
+    Generated 4 translation(s) (4 finished and 0 unfinished)
+    Ignored 1 untranslated source text(s)
+[ 88%] Generating notificationsadaptor.moc
+cd /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src && /usr/lib/qt5/bin/moc @/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src/notificationsadaptor.moc_parameters
+cd /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0 /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/src /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src/CMakeFiles/lxqt-notificationd.dir/DependInfo.cmake --color=
+make[3]: Leaving directory '/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu'
+make  -f src/CMakeFiles/lxqt-notificationd.dir/build.make src/CMakeFiles/lxqt-notificationd.dir/build
+make[3]: Entering directory '/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu'
+[ 89%] Building CXX object src/CMakeFiles/lxqt-notificationd.dir/lxqt-notificationd_autogen/mocs_compilation.cpp.o
+cd /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src && /usr/bin/c++ -DLXQT_DATA_DIR=\"/usr/share\" -DLXQT_ETC_XDG_DIR=\"/etc/xdg\" -DLXQT_GRAPHICS_DIR=\"/usr/share/lxqt/graphics\" -DLXQT_MAJOR_VERSION=\"1\" -DLXQT_MINOR_VERSION=\"1\" -DLXQT_NOTIFICATIOND_VERSION=\"1.1.0\" -DLXQT_PATCH_VERSION=\"0\" -DLXQT_RELATIVE_SHARE_DIR=\"lxqt\" -DLXQT_RELATIVE_SHARE_TRANSLATIONS_DIR=\"lxqt/translations\" -DLXQT_SHARE_DIR=\"/usr/share/lxqt\" -DLXQT_SHARE_TRANSLATIONS_DIR=\"/usr/share/lxqt/translations\" -DLXQT_VERSION=\"1.1.0\" -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_SVG_LIB -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DQT_XML_LIB -I/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src -I/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/src -I/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src/lxqt-notificationd_autogen/include -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/lxqt -isystem /usr/include/lxqt/LXQt -isystem /usr/include/KF5/KWindowSystem -isystem /usr/include/KF5 -isystem /usr/include/qt5xdg -isystem /usr/include/aarch64-linux-gnu/qt5/QtXml -isystem /usr/include/qt5xdgiconloader -isystem /usr/include/qt5xdgiconloader/3.9.1 -isystem /usr/include/aarch64-linux-gnu/qt5/QtSvg -isystem /usr/include/aarch64-linux-gnu/qt5/QtX11Extras -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -fPIE -fvisibility=hidden -fvisibility-inlines-hidden -fPIC -std=c++14 -MD -MT src/CMakeFiles/lxqt-notificationd.dir/lxqt-notificationd_autogen/mocs_compilation.cpp.o -MF CMakeFiles/lxqt-notificationd.dir/lxqt-notificationd_autogen/mocs_compilation.cpp.o.d -o CMakeFiles/lxqt-notificationd.dir/lxqt-notificationd_autogen/mocs_compilation.cpp.o -c /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src/lxqt-notificationd_autogen/mocs_compilation.cpp
+[ 90%] Building CXX object src/CMakeFiles/lxqt-notificationd.dir/main.cpp.o
+cd /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src && /usr/bin/c++ -DLXQT_DATA_DIR=\"/usr/share\" -DLXQT_ETC_XDG_DIR=\"/etc/xdg\" -DLXQT_GRAPHICS_DIR=\"/usr/share/lxqt/graphics\" -DLXQT_MAJOR_VERSION=\"1\" -DLXQT_MINOR_VERSION=\"1\" -DLXQT_NOTIFICATIOND_VERSION=\"1.1.0\" -DLXQT_PATCH_VERSION=\"0\" -DLXQT_RELATIVE_SHARE_DIR=\"lxqt\" -DLXQT_RELATIVE_SHARE_TRANSLATIONS_DIR=\"lxqt/translations\" -DLXQT_SHARE_DIR=\"/usr/share/lxqt\" -DLXQT_SHARE_TRANSLATIONS_DIR=\"/usr/share/lxqt/translations\" -DLXQT_VERSION=\"1.1.0\" -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_SVG_LIB -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DQT_XML_LIB -I/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src -I/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/src -I/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src/lxqt-notificationd_autogen/include -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/lxqt -isystem /usr/include/lxqt/LXQt -isystem /usr/include/KF5/KWindowSystem -isystem /usr/include/KF5 -isystem /usr/include/qt5xdg -isystem /usr/include/aarch64-linux-gnu/qt5/QtXml -isystem /usr/include/qt5xdgiconloader -isystem /usr/include/qt5xdgiconloader/3.9.1 -isystem /usr/include/aarch64-linux-gnu/qt5/QtSvg -isystem /usr/include/aarch64-linux-gnu/qt5/QtX11Extras -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -fPIE -fvisibility=hidden -fvisibility-inlines-hidden -fPIC -std=c++14 -MD -MT src/CMakeFiles/lxqt-notificationd.dir/main.cpp.o -MF CMakeFiles/lxqt-notificationd.dir/main.cpp.o.d -o CMakeFiles/lxqt-notificationd.dir/main.cpp.o -c /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/src/main.cpp
+[ 91%] Building CXX object src/CMakeFiles/lxqt-notificationd.dir/notificationarea.cpp.o
+cd /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src && /usr/bin/c++ -DLXQT_DATA_DIR=\"/usr/share\" -DLXQT_ETC_XDG_DIR=\"/etc/xdg\" -DLXQT_GRAPHICS_DIR=\"/usr/share/lxqt/graphics\" -DLXQT_MAJOR_VERSION=\"1\" -DLXQT_MINOR_VERSION=\"1\" -DLXQT_NOTIFICATIOND_VERSION=\"1.1.0\" -DLXQT_PATCH_VERSION=\"0\" -DLXQT_RELATIVE_SHARE_DIR=\"lxqt\" -DLXQT_RELATIVE_SHARE_TRANSLATIONS_DIR=\"lxqt/translations\" -DLXQT_SHARE_DIR=\"/usr/share/lxqt\" -DLXQT_SHARE_TRANSLATIONS_DIR=\"/usr/share/lxqt/translations\" -DLXQT_VERSION=\"1.1.0\" -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_SVG_LIB -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DQT_XML_LIB -I/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src -I/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/src -I/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src/lxqt-notificationd_autogen/include -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/lxqt -isystem /usr/include/lxqt/LXQt -isystem /usr/include/KF5/KWindowSystem -isystem /usr/include/KF5 -isystem /usr/include/qt5xdg -isystem /usr/include/aarch64-linux-gnu/qt5/QtXml -isystem /usr/include/qt5xdgiconloader -isystem /usr/include/qt5xdgiconloader/3.9.1 -isystem /usr/include/aarch64-linux-gnu/qt5/QtSvg -isystem /usr/include/aarch64-linux-gnu/qt5/QtX11Extras -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -fPIE -fvisibility=hidden -fvisibility-inlines-hidden -fPIC -std=c++14 -MD -MT src/CMakeFiles/lxqt-notificationd.dir/notificationarea.cpp.o -MF CMakeFiles/lxqt-notificationd.dir/notificationarea.cpp.o.d -o CMakeFiles/lxqt-notificationd.dir/notificationarea.cpp.o -c /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/src/notificationarea.cpp
+[ 92%] Linking CXX executable lxqt-config-notificationd
+cd /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/config && /usr/bin/cmake -E cmake_link_script CMakeFiles/lxqt-config-notificationd.dir/link.txt --verbose=1
+/usr/bin/c++ -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -Wl,-Bsymbolic-functions -Wl,-Bsymbolic -Wl,-z,relro -Wl,-z,now -Wl,--as-needed -rdynamic "CMakeFiles/lxqt-config-notificationd.dir/lxqt-config-notificationd_autogen/mocs_compilation.cpp.o" "CMakeFiles/lxqt-config-notificationd.dir/advancedsettings.cpp.o" "CMakeFiles/lxqt-config-notificationd.dir/basicsettings.cpp.o" "CMakeFiles/lxqt-config-notificationd.dir/mainwindow.cpp.o" "CMakeFiles/lxqt-config-notificationd.dir/main.cpp.o" "CMakeFiles/lxqt-config-notificationd.dir/LXQtAppTranslationLoader.cpp.o" -o lxqt-config-notificationd  /usr/lib/aarch64-linux-gnu/liblxqt.so.1.1.0 /usr/lib/aarch64-linux-gnu/libKF5WindowSystem.so.5.96.0 /usr/lib/aarch64-linux-gnu/libX11.so /usr/lib/aarch64-linux-gnu/libQt5Xdg.so.3.9.1 /usr/lib/aarch64-linux-gnu/libQt5DBus.so.5.15.4 /usr/lib/aarch64-linux-gnu/libQt5Xml.so.5.15.4 /usr/lib/aarch64-linux-gnu/libQt5XdgIconLoader.so.3.9.1 /usr/lib/aarch64-linux-gnu/libQt5Svg.so.5.15.4 /usr/lib/aarch64-linux-gnu/libQt5Widgets.so.5.15.4 -lglib-2.0 -lgobject-2.0 -lgio-2.0 /usr/lib/aarch64-linux-gnu/libQt5X11Extras.so.5.15.4 /usr/lib/aarch64-linux-gnu/libQt5Gui.so.5.15.4 /usr/lib/aarch64-linux-gnu/libQt5Core.so.5.15.4 
+make[3]: Leaving directory '/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu'
+[ 92%] Built target lxqt-config-notificationd
+[ 93%] Building CXX object src/CMakeFiles/lxqt-notificationd.dir/notification.cpp.o
+cd /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src && /usr/bin/c++ -DLXQT_DATA_DIR=\"/usr/share\" -DLXQT_ETC_XDG_DIR=\"/etc/xdg\" -DLXQT_GRAPHICS_DIR=\"/usr/share/lxqt/graphics\" -DLXQT_MAJOR_VERSION=\"1\" -DLXQT_MINOR_VERSION=\"1\" -DLXQT_NOTIFICATIOND_VERSION=\"1.1.0\" -DLXQT_PATCH_VERSION=\"0\" -DLXQT_RELATIVE_SHARE_DIR=\"lxqt\" -DLXQT_RELATIVE_SHARE_TRANSLATIONS_DIR=\"lxqt/translations\" -DLXQT_SHARE_DIR=\"/usr/share/lxqt\" -DLXQT_SHARE_TRANSLATIONS_DIR=\"/usr/share/lxqt/translations\" -DLXQT_VERSION=\"1.1.0\" -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_SVG_LIB -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DQT_XML_LIB -I/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src -I/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/src -I/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src/lxqt-notificationd_autogen/include -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/lxqt -isystem /usr/include/lxqt/LXQt -isystem /usr/include/KF5/KWindowSystem -isystem /usr/include/KF5 -isystem /usr/include/qt5xdg -isystem /usr/include/aarch64-linux-gnu/qt5/QtXml -isystem /usr/include/qt5xdgiconloader -isystem /usr/include/qt5xdgiconloader/3.9.1 -isystem /usr/include/aarch64-linux-gnu/qt5/QtSvg -isystem /usr/include/aarch64-linux-gnu/qt5/QtX11Extras -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -fPIE -fvisibility=hidden -fvisibility-inlines-hidden -fPIC -std=c++14 -MD -MT src/CMakeFiles/lxqt-notificationd.dir/notification.cpp.o -MF CMakeFiles/lxqt-notificationd.dir/notification.cpp.o.d -o CMakeFiles/lxqt-notificationd.dir/notification.cpp.o -c /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/src/notification.cpp
+[ 94%] Building CXX object src/CMakeFiles/lxqt-notificationd.dir/notificationlayout.cpp.o
+cd /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src && /usr/bin/c++ -DLXQT_DATA_DIR=\"/usr/share\" -DLXQT_ETC_XDG_DIR=\"/etc/xdg\" -DLXQT_GRAPHICS_DIR=\"/usr/share/lxqt/graphics\" -DLXQT_MAJOR_VERSION=\"1\" -DLXQT_MINOR_VERSION=\"1\" -DLXQT_NOTIFICATIOND_VERSION=\"1.1.0\" -DLXQT_PATCH_VERSION=\"0\" -DLXQT_RELATIVE_SHARE_DIR=\"lxqt\" -DLXQT_RELATIVE_SHARE_TRANSLATIONS_DIR=\"lxqt/translations\" -DLXQT_SHARE_DIR=\"/usr/share/lxqt\" -DLXQT_SHARE_TRANSLATIONS_DIR=\"/usr/share/lxqt/translations\" -DLXQT_VERSION=\"1.1.0\" -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_SVG_LIB -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DQT_XML_LIB -I/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src -I/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/src -I/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src/lxqt-notificationd_autogen/include -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/lxqt -isystem /usr/include/lxqt/LXQt -isystem /usr/include/KF5/KWindowSystem -isystem /usr/include/KF5 -isystem /usr/include/qt5xdg -isystem /usr/include/aarch64-linux-gnu/qt5/QtXml -isystem /usr/include/qt5xdgiconloader -isystem /usr/include/qt5xdgiconloader/3.9.1 -isystem /usr/include/aarch64-linux-gnu/qt5/QtSvg -isystem /usr/include/aarch64-linux-gnu/qt5/QtX11Extras -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -fPIE -fvisibility=hidden -fvisibility-inlines-hidden -fPIC -std=c++14 -MD -MT src/CMakeFiles/lxqt-notificationd.dir/notificationlayout.cpp.o -MF CMakeFiles/lxqt-notificationd.dir/notificationlayout.cpp.o.d -o CMakeFiles/lxqt-notificationd.dir/notificationlayout.cpp.o -c /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/src/notificationlayout.cpp
+[ 95%] Building CXX object src/CMakeFiles/lxqt-notificationd.dir/notificationwidgets.cpp.o
+cd /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src && /usr/bin/c++ -DLXQT_DATA_DIR=\"/usr/share\" -DLXQT_ETC_XDG_DIR=\"/etc/xdg\" -DLXQT_GRAPHICS_DIR=\"/usr/share/lxqt/graphics\" -DLXQT_MAJOR_VERSION=\"1\" -DLXQT_MINOR_VERSION=\"1\" -DLXQT_NOTIFICATIOND_VERSION=\"1.1.0\" -DLXQT_PATCH_VERSION=\"0\" -DLXQT_RELATIVE_SHARE_DIR=\"lxqt\" -DLXQT_RELATIVE_SHARE_TRANSLATIONS_DIR=\"lxqt/translations\" -DLXQT_SHARE_DIR=\"/usr/share/lxqt\" -DLXQT_SHARE_TRANSLATIONS_DIR=\"/usr/share/lxqt/translations\" -DLXQT_VERSION=\"1.1.0\" -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_SVG_LIB -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DQT_XML_LIB -I/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src -I/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/src -I/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src/lxqt-notificationd_autogen/include -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/lxqt -isystem /usr/include/lxqt/LXQt -isystem /usr/include/KF5/KWindowSystem -isystem /usr/include/KF5 -isystem /usr/include/qt5xdg -isystem /usr/include/aarch64-linux-gnu/qt5/QtXml -isystem /usr/include/qt5xdgiconloader -isystem /usr/include/qt5xdgiconloader/3.9.1 -isystem /usr/include/aarch64-linux-gnu/qt5/QtSvg -isystem /usr/include/aarch64-linux-gnu/qt5/QtX11Extras -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -fPIE -fvisibility=hidden -fvisibility-inlines-hidden -fPIC -std=c++14 -MD -MT src/CMakeFiles/lxqt-notificationd.dir/notificationwidgets.cpp.o -MF CMakeFiles/lxqt-notificationd.dir/notificationwidgets.cpp.o.d -o CMakeFiles/lxqt-notificationd.dir/notificationwidgets.cpp.o -c /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/src/notificationwidgets.cpp
+[ 96%] Building CXX object src/CMakeFiles/lxqt-notificationd.dir/notifyd.cpp.o
+cd /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src && /usr/bin/c++ -DLXQT_DATA_DIR=\"/usr/share\" -DLXQT_ETC_XDG_DIR=\"/etc/xdg\" -DLXQT_GRAPHICS_DIR=\"/usr/share/lxqt/graphics\" -DLXQT_MAJOR_VERSION=\"1\" -DLXQT_MINOR_VERSION=\"1\" -DLXQT_NOTIFICATIOND_VERSION=\"1.1.0\" -DLXQT_PATCH_VERSION=\"0\" -DLXQT_RELATIVE_SHARE_DIR=\"lxqt\" -DLXQT_RELATIVE_SHARE_TRANSLATIONS_DIR=\"lxqt/translations\" -DLXQT_SHARE_DIR=\"/usr/share/lxqt\" -DLXQT_SHARE_TRANSLATIONS_DIR=\"/usr/share/lxqt/translations\" -DLXQT_VERSION=\"1.1.0\" -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_SVG_LIB -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DQT_XML_LIB -I/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src -I/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/src -I/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src/lxqt-notificationd_autogen/include -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/lxqt -isystem /usr/include/lxqt/LXQt -isystem /usr/include/KF5/KWindowSystem -isystem /usr/include/KF5 -isystem /usr/include/qt5xdg -isystem /usr/include/aarch64-linux-gnu/qt5/QtXml -isystem /usr/include/qt5xdgiconloader -isystem /usr/include/qt5xdgiconloader/3.9.1 -isystem /usr/include/aarch64-linux-gnu/qt5/QtSvg -isystem /usr/include/aarch64-linux-gnu/qt5/QtX11Extras -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -fPIE -fvisibility=hidden -fvisibility-inlines-hidden -fPIC -std=c++14 -MD -MT src/CMakeFiles/lxqt-notificationd.dir/notifyd.cpp.o -MF CMakeFiles/lxqt-notificationd.dir/notifyd.cpp.o.d -o CMakeFiles/lxqt-notificationd.dir/notifyd.cpp.o -c /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/src/notifyd.cpp
+[ 97%] Building CXX object src/CMakeFiles/lxqt-notificationd.dir/notificationsadaptor.cpp.o
+cd /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src && /usr/bin/c++ -DLXQT_DATA_DIR=\"/usr/share\" -DLXQT_ETC_XDG_DIR=\"/etc/xdg\" -DLXQT_GRAPHICS_DIR=\"/usr/share/lxqt/graphics\" -DLXQT_MAJOR_VERSION=\"1\" -DLXQT_MINOR_VERSION=\"1\" -DLXQT_NOTIFICATIOND_VERSION=\"1.1.0\" -DLXQT_PATCH_VERSION=\"0\" -DLXQT_RELATIVE_SHARE_DIR=\"lxqt\" -DLXQT_RELATIVE_SHARE_TRANSLATIONS_DIR=\"lxqt/translations\" -DLXQT_SHARE_DIR=\"/usr/share/lxqt\" -DLXQT_SHARE_TRANSLATIONS_DIR=\"/usr/share/lxqt/translations\" -DLXQT_VERSION=\"1.1.0\" -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_SVG_LIB -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DQT_XML_LIB -I/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src -I/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/src -I/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src/lxqt-notificationd_autogen/include -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/lxqt -isystem /usr/include/lxqt/LXQt -isystem /usr/include/KF5/KWindowSystem -isystem /usr/include/KF5 -isystem /usr/include/qt5xdg -isystem /usr/include/aarch64-linux-gnu/qt5/QtXml -isystem /usr/include/qt5xdgiconloader -isystem /usr/include/qt5xdgiconloader/3.9.1 -isystem /usr/include/aarch64-linux-gnu/qt5/QtSvg -isystem /usr/include/aarch64-linux-gnu/qt5/QtX11Extras -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -fPIE -fvisibility=hidden -fvisibility-inlines-hidden -fPIC -std=c++14 -MD -MT src/CMakeFiles/lxqt-notificationd.dir/notificationsadaptor.cpp.o -MF CMakeFiles/lxqt-notificationd.dir/notificationsadaptor.cpp.o.d -o CMakeFiles/lxqt-notificationd.dir/notificationsadaptor.cpp.o -c /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src/notificationsadaptor.cpp
+[ 98%] Building CXX object src/CMakeFiles/lxqt-notificationd.dir/LXQtAppTranslationLoader.cpp.o
+cd /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src && /usr/bin/c++ -DLXQT_DATA_DIR=\"/usr/share\" -DLXQT_ETC_XDG_DIR=\"/etc/xdg\" -DLXQT_GRAPHICS_DIR=\"/usr/share/lxqt/graphics\" -DLXQT_MAJOR_VERSION=\"1\" -DLXQT_MINOR_VERSION=\"1\" -DLXQT_NOTIFICATIOND_VERSION=\"1.1.0\" -DLXQT_PATCH_VERSION=\"0\" -DLXQT_RELATIVE_SHARE_DIR=\"lxqt\" -DLXQT_RELATIVE_SHARE_TRANSLATIONS_DIR=\"lxqt/translations\" -DLXQT_SHARE_DIR=\"/usr/share/lxqt\" -DLXQT_SHARE_TRANSLATIONS_DIR=\"/usr/share/lxqt/translations\" -DLXQT_VERSION=\"1.1.0\" -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_SVG_LIB -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DQT_XML_LIB -I/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src -I/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/src -I/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src/lxqt-notificationd_autogen/include -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/lxqt -isystem /usr/include/lxqt/LXQt -isystem /usr/include/KF5/KWindowSystem -isystem /usr/include/KF5 -isystem /usr/include/qt5xdg -isystem /usr/include/aarch64-linux-gnu/qt5/QtXml -isystem /usr/include/qt5xdgiconloader -isystem /usr/include/qt5xdgiconloader/3.9.1 -isystem /usr/include/aarch64-linux-gnu/qt5/QtSvg -isystem /usr/include/aarch64-linux-gnu/qt5/QtX11Extras -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -fPIE -fvisibility=hidden -fvisibility-inlines-hidden -fPIC -std=c++14 -MD -MT src/CMakeFiles/lxqt-notificationd.dir/LXQtAppTranslationLoader.cpp.o -MF CMakeFiles/lxqt-notificationd.dir/LXQtAppTranslationLoader.cpp.o.d -o CMakeFiles/lxqt-notificationd.dir/LXQtAppTranslationLoader.cpp.o -c /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src/LXQtAppTranslationLoader.cpp
+[100%] Linking CXX executable lxqt-notificationd
+cd /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/src && /usr/bin/cmake -E cmake_link_script CMakeFiles/lxqt-notificationd.dir/link.txt --verbose=1
+/usr/bin/c++ -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -Wl,-Bsymbolic-functions -Wl,-Bsymbolic -Wl,-z,relro -Wl,-z,now -Wl,--as-needed -rdynamic "CMakeFiles/lxqt-notificationd.dir/lxqt-notificationd_autogen/mocs_compilation.cpp.o" "CMakeFiles/lxqt-notificationd.dir/main.cpp.o" "CMakeFiles/lxqt-notificationd.dir/notificationarea.cpp.o" "CMakeFiles/lxqt-notificationd.dir/notification.cpp.o" "CMakeFiles/lxqt-notificationd.dir/notificationlayout.cpp.o" "CMakeFiles/lxqt-notificationd.dir/notificationwidgets.cpp.o" "CMakeFiles/lxqt-notificationd.dir/notifyd.cpp.o" "CMakeFiles/lxqt-notificationd.dir/notificationsadaptor.cpp.o" "CMakeFiles/lxqt-notificationd.dir/LXQtAppTranslationLoader.cpp.o" -o lxqt-notificationd  /usr/lib/aarch64-linux-gnu/liblxqt.so.1.1.0 /usr/lib/aarch64-linux-gnu/libKF5WindowSystem.so.5.96.0 /usr/lib/aarch64-linux-gnu/libX11.so /usr/lib/aarch64-linux-gnu/libQt5Xdg.so.3.9.1 /usr/lib/aarch64-linux-gnu/libQt5DBus.so.5.15.4 /usr/lib/aarch64-linux-gnu/libQt5Xml.so.5.15.4 /usr/lib/aarch64-linux-gnu/libQt5XdgIconLoader.so.3.9.1 /usr/lib/aarch64-linux-gnu/libQt5Svg.so.5.15.4 /usr/lib/aarch64-linux-gnu/libQt5Widgets.so.5.15.4 -lglib-2.0 -lgobject-2.0 -lgio-2.0 /usr/lib/aarch64-linux-gnu/libQt5X11Extras.so.5.15.4 /usr/lib/aarch64-linux-gnu/libQt5Gui.so.5.15.4 /usr/lib/aarch64-linux-gnu/libQt5Core.so.5.15.4 
+make[3]: Leaving directory '/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu'
+[100%] Built target lxqt-notificationd
+make[2]: Leaving directory '/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu'
+/usr/bin/cmake -E cmake_progress_start /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu/CMakeFiles 0
+make[1]: Leaving directory '/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu'
+   dh_auto_test -O--buildsystem=cmake
+   create-stamp debian/debhelper-build-stamp
+ debian/rules binary
+dh binary --buildsystem cmake
+   dh_testroot -O--buildsystem=cmake
+   dh_prep -O--buildsystem=cmake
+   dh_auto_install -O--buildsystem=cmake
+	cd obj-aarch64-linux-gnu && make -j4 install DESTDIR=/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/debian/tmp AM_UPDATE_INFO_DIR=no "INSTALL=install --strip-program=true"
+make[1]: Entering directory '/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu'
+/usr/bin/cmake -S/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0 -B/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu --check-build-system CMakeFiles/Makefile.cmake 0
+make  -f CMakeFiles/Makefile2 preinstall
+make[2]: Entering directory '/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu'
+make[2]: Nothing to be done for 'preinstall'.
+make[2]: Leaving directory '/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu'
+Install the project...
+/usr/bin/cmake -P cmake_install.cmake
+-- Install configuration: "RelWithDebInfo"
+-- Installing: /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-config-notificationd/lxqt-config-notificationd_ar.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-config-notificationd/lxqt-config-notificationd_arn.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-config-notificationd/lxqt-config-notificationd_ast.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-config-notificationd/lxqt-config-notificationd_bg.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-config-notificationd/lxqt-config-notificationd_ca.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-config-notificationd/lxqt-config-notificationd_cs.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-config-notificationd/lxqt-config-notificationd_cy.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-config-notificationd/lxqt-config-notificationd_da.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-config-notificationd/lxqt-config-notificationd_de.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-config-notificationd/lxqt-config-notificationd_el.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-config-notificationd/lxqt-config-notificationd_en_GB.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-config-notificationd/lxqt-config-notificationd_es.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-config-notificationd/lxqt-config-notificationd_et.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-config-notificationd/lxqt-config-notificationd_fr.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-config-notificationd/lxqt-config-notificationd_gl.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-config-notificationd/lxqt-config-notificationd_he.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-config-notificationd/lxqt-config-notificationd_hr.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-config-notificationd/lxqt-config-notificationd_hu.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-config-notificationd/lxqt-config-notificationd_id.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-config-notificationd/lxqt-config-notificationd_it.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-config-notificationd/lxqt-config-notificationd_ja.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-config-notificationd/lxqt-config-notificationd_ko.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-config-notificationd/lxqt-config-notificationd_lt.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-config-notificationd/lxqt-config-notificationd_lv.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-config-notificationd/lxqt-config-notificationd_nb_NO.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-config-notificationd/lxqt-config-notificationd_nl.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-config-notificationd/lxqt-config-notificationd_oc.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-config-notificationd/lxqt-config-notificationd_pl.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-config-notificationd/lxqt-config-notificationd_pt.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-config-notificationd/lxqt-config-notificationd_pt_BR.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-config-notificationd/lxqt-config-notificationd_ru.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-config-notificationd/lxqt-config-notificationd_si.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-config-notificationd/lxqt-config-notificationd_sk_SK.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-config-notificationd/lxqt-config-notificationd_tr.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-config-notificationd/lxqt-config-notificationd_uk.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-config-notificationd/lxqt-config-notificationd_zh_CN.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/debian/tmp/usr/bin/lxqt-config-notificationd
+-- Installing: /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/debian/tmp/usr/share/applications/lxqt-config-notificationd.desktop
+-- Installing: /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_ar.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_arn.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_ast.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_bg.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_ca.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_cs.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_cy.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_da.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_de.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_el.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_en_GB.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_es.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_et.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_fr.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_gl.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_he.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_hr.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_hu.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_id.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_it.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_ja.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_ko.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_lt.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_lv.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_nb_NO.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_nl.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_pl.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_pt.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_pt_BR.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_ru.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_si.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_sk_SK.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_sv.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_tr.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_uk.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_vi.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_zh_CN.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_zh_TW.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/debian/tmp/usr/bin/lxqt-notificationd
+-- Installing: /home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/debian/tmp/etc/xdg/autostart/lxqt-notifications.desktop
+make[1]: Leaving directory '/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0/obj-aarch64-linux-gnu'
+   dh_install -O--buildsystem=cmake
+   dh_installdocs -O--buildsystem=cmake
+   dh_installchangelogs -O--buildsystem=cmake
+   dh_installsystemduser -O--buildsystem=cmake
+   dh_lintian -O--buildsystem=cmake
+   dh_perl -O--buildsystem=cmake
+   dh_link -O--buildsystem=cmake
+   dh_strip_nondeterminism -O--buildsystem=cmake
+   dh_compress -O--buildsystem=cmake
+   dh_fixperms -O--buildsystem=cmake
+   debian/rules override_dh_missing
+make[1]: Entering directory '/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0'
+dh_missing --fail-missing
+make[1]: Leaving directory '/home/cnc/lxqt-dev/lxqt-notificationd-1.1.0'
+   dh_dwz -a -O--buildsystem=cmake
+   dh_strip -a -O--buildsystem=cmake
+   dh_makeshlibs -a -O--buildsystem=cmake
+   dh_shlibdeps -a -O--buildsystem=cmake
+   dh_installdeb -O--buildsystem=cmake
+   dh_gencontrol -O--buildsystem=cmake
+   dh_md5sums -O--buildsystem=cmake
+   dh_builddeb -O--buildsystem=cmake
+dpkg-deb: building package 'lxqt-notificationd' in '../lxqt-notificationd_1.1.0-1_arm64.deb'.
+dpkg-deb: building package 'lxqt-notificationd-dbgsym' in '../lxqt-notificationd-dbgsym_1.1.0-1_arm64.deb'.
+dpkg-deb: building package 'lxqt-notificationd-l10n' in '../lxqt-notificationd-l10n_1.1.0-1_all.deb'.
+ dpkg-genbuildinfo --build=binary -O../lxqt-notificationd_1.1.0-1_arm64.buildinfo
+ dpkg-genchanges --build=binary -O../lxqt-notificationd_1.1.0-1_arm64.changes
+dpkg-genchanges: info: binary-only upload (no source code included)
+ dpkg-source -i --after-build .
+dpkg-source: info: using options from lxqt-notificationd-1.1.0/debian/source/options: --tar-ignore=.gitignore
+dpkg-buildpackage: info: binary-only upload (no source included)
+Now running lintian lxqt-notificationd_1.1.0-1_arm64.changes ...
+running with root privileges is not recommended!
+W: lxqt-notificationd: desktop-entry-invalid-category LXQt [usr/share/applications/lxqt-config-notificationd.desktop]
+W: lxqt-notificationd: mismatched-override desktop-entry-invalid-category LXQt usr/share/applications/lxqt-config-notificationd.desktop [usr/share/lintian/overrides/lxqt-notificationd:6]
+W: lxqt-notificationd: mismatched-override no-manual-page usr/bin/lxqt-config-notificationd [usr/share/lintian/overrides/lxqt-notificationd:2]
+W: lxqt-notificationd: mismatched-override no-manual-page usr/bin/lxqt-notificationd [usr/share/lintian/overrides/lxqt-notificationd:3]
+W: lxqt-notificationd: no-manual-page [usr/bin/lxqt-config-notificationd]
+W: lxqt-notificationd: no-manual-page [usr/bin/lxqt-notificationd]
+N: 0 hints overridden; 3 unused overrides
+Finished running lintian.

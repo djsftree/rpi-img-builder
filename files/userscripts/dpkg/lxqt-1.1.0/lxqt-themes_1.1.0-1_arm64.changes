@@ -1,0 +1,46 @@
+Format: 1.8
+Date: Sat, 09 Jul 2022 23:16:23 -0500
+Source: lxqt-themes
+Binary: lxqt-system-theme lxqt-themes
+Architecture: all
+Version: 1.1.0-1
+Distribution: experimental
+Urgency: medium
+Maintainer: LXQt Packaging Team <pkg-lxqt-devel@lists.alioth.debian.org>
+Changed-By: Aaron Rainbolt <arraybolt3@gmail.com>
+Description:
+ lxqt-system-theme - System theme for LXQt
+ lxqt-themes - Themes for LXQt
+Changes:
+ lxqt-themes (1.1.0-1) experimental; urgency=medium
+ .
+   [ Aaron Rainbolt ]
+   * New upstream release 1.1.0.
+   * Removed obsolete debian/compat file.
+   * Switched to GBP.
+   * Created debian/upstream/metadata.
+   * Upstreamed non-Ubuntu-specific packaging changes from Ubuntu, modifying
+     the following files:
+     - control
+     - copyright
+     - *.install
+     - rules
+     - upstream/signing-key.asc
+ .
+   [ Simon Quigley ]
+   * Fix some various merge errors.
+ .
+   [ djsftree ]
+   * compiled by djsftree
+Checksums-Sha1:
+ 5f14195862303f1aae21911a14498c1a5e3198b7 896016 lxqt-system-theme_1.1.0-1_all.deb
+ c3006e0579f59fd86c988a2fe0d544305f4b81d4 25788908 lxqt-themes_1.1.0-1_all.deb
+ dc5f7d6c86d8bce3fe6fed2389f281a34e7d5f97 11813 lxqt-themes_1.1.0-1_arm64.buildinfo
+Checksums-Sha256:
+ ed8ce84c21599ad6c75ef88e8b4126145776b9b15b68db952ddac7080dafabfc 896016 lxqt-system-theme_1.1.0-1_all.deb
+ c6c83b77d4f7b557c13cefc6686bdc31f7400addcb1abdaffef60628b5180232 25788908 lxqt-themes_1.1.0-1_all.deb
+ 2352b274386b7e1e6f1cd713567f1194ef9f7d882b858559bf86257c766df3ef 11813 lxqt-themes_1.1.0-1_arm64.buildinfo
+Files:
+ d6474509558cccd1bf684c9c86923f4a 896016 x11 optional lxqt-system-theme_1.1.0-1_all.deb
+ 88093565d13fc171836b6ad056874832 25788908 x11 optional lxqt-themes_1.1.0-1_all.deb
+ e78aaf8d5cb425bec59d6c162bd60946 11813 x11 optional lxqt-themes_1.1.0-1_arm64.buildinfo

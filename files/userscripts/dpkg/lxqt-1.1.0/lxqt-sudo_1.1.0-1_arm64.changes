@@ -1,0 +1,43 @@
+Format: 1.8
+Date: Wed, 13 Jul 2022 19:57:33 -0500
+Source: lxqt-sudo
+Binary: lxqt-sudo lxqt-sudo-dbgsym lxqt-sudo-l10n
+Architecture: arm64 all
+Version: 1.1.0-1
+Distribution: experimental
+Urgency: medium
+Maintainer: LXQt Packaging Team <pkg-lxqt-devel@lists.alioth.debian.org>
+Changed-By: Aaron Rainbolt <arraybolt3@gmail.com>
+Description:
+ lxqt-sudo  - Graphical Qt frontend for plain sudo
+ lxqt-sudo-l10n - Language package for lxqt-sudo
+Changes:
+ lxqt-sudo (1.1.0-1) experimental; urgency=medium
+ .
+   [ Aaron Rainbolt ]
+   * New upstream release.
+   * Removed trailing whitespace from changelog.
+   * Ran wrap-and-sort.
+   * Upstreamed packaging changes from Ubuntu, modifying the following files:
+     - control
+     - copyright
+     - rules
+     - upstream/*
+ .
+   [ djsftree ]
+   * compiled by djsftree
+Checksums-Sha1:
+ b13a635a038089486e17af033924b38e48b83005 628128 lxqt-sudo-dbgsym_1.1.0-1_arm64.deb
+ c4936e3edc32b1c017e4b805ab0cc0ce9a0510d7 26776 lxqt-sudo-l10n_1.1.0-1_all.deb
+ 7bf4e619e889b4ea9edd76d93df2f38dcfc65600 12833 lxqt-sudo_1.1.0-1_arm64.buildinfo
+ 4d316f9fbf42ba9afe1cc9361a1b0bdd77b50366 24800 lxqt-sudo_1.1.0-1_arm64.deb
+Checksums-Sha256:
+ 9153b6775e7b48c92bf0b2a9b275483076971cd229fd961eb5f007f576d55551 628128 lxqt-sudo-dbgsym_1.1.0-1_arm64.deb
+ a5e4d09f1e9095e2699ad701e14b0529a9b0ae61fd9053b28691b4661905fca9 26776 lxqt-sudo-l10n_1.1.0-1_all.deb
+ 6527708126cea63643044d0c8969cd7cd1d964eea6aeeb681324853d8fe485e2 12833 lxqt-sudo_1.1.0-1_arm64.buildinfo
+ febcc2f09387281cfc042d5b2101b9e88c9962302e4d6a317bec540ae5e6e26b 24800 lxqt-sudo_1.1.0-1_arm64.deb
+Files:
+ f3a680c5fd6f1deb8d8b33b3534fdd64 628128 debug optional lxqt-sudo-dbgsym_1.1.0-1_arm64.deb
+ b493cf95a72d3fdefe2628344fa6baba 26776 localization optional lxqt-sudo-l10n_1.1.0-1_all.deb
+ f4a438a6421b968e739925fae6ef81a5 12833 x11 optional lxqt-sudo_1.1.0-1_arm64.buildinfo
+ 0e51e4a03754d11bde5e28341212b239 24800 x11 optional lxqt-sudo_1.1.0-1_arm64.deb

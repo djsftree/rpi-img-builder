@@ -1,0 +1,50 @@
+Format: 1.8
+Date: Wed, 13 Jul 2022 19:06:28 -0500
+Source: lximage-qt
+Binary: lximage-qt lximage-qt-dbgsym lximage-qt-l10n
+Architecture: arm64 all
+Version: 1.1.0-1
+Distribution: experimental
+Urgency: medium
+Maintainer: LXQt Packaging Team <pkg-lxqt-devel@lists.alioth.debian.org>
+Changed-By: Aaron Rainbolt <arraybolt3@gmail.com>
+Description:
+ lximage-qt - Image viewer for LXQt
+ lximage-qt-l10n - Language-package for lximage-qt
+Changes:
+ lximage-qt (1.1.0-1) experimental; urgency=medium
+ .
+   [ S. 7 ]
+   * New upstream release
+   * Bumped Standards-Version to 4.6.0, no changes needed
+   * Update debian/copyright
+ .
+   [ Aaron Rainbolt ]
+   * New upstream release.
+   * Removed trailing whitespace from changelog.
+   * Upstreamed packaging changes from Ubuntu, modifying the following files:
+     - control
+     - copyright
+     - lintian-overrides
+     - lximage-qt.install
+     - rules
+     - upstream/*
+     - patches directory
+ .
+   [ djsftree ]
+   * compiled by djsftree
+Checksums-Sha1:
+ bc10acf56f790899c1c991b8c09fc62c0c674f38 3880048 lximage-qt-dbgsym_1.1.0-1_arm64.deb
+ c80f17958112714df7a036cab6cd11f2e761969b 94568 lximage-qt-l10n_1.1.0-1_all.deb
+ af6ea42cdf36067122939dad4f619e6ec556984c 12644 lximage-qt_1.1.0-1_arm64.buildinfo
+ a9d34d19471125d20afec2a9ad65a11a52409069 123600 lximage-qt_1.1.0-1_arm64.deb
+Checksums-Sha256:
+ dba17735a98a7d9f21c007c33dacb68aa1eac93f4e8fbabdbf679d0ca285c44d 3880048 lximage-qt-dbgsym_1.1.0-1_arm64.deb
+ 379476401cda73d785a7be288096d47f925d8e443b5bae082a14bb38ef5ea317 94568 lximage-qt-l10n_1.1.0-1_all.deb
+ 5809673e2e8a57bdc3db12dce200af408b0d1423b2467dfc987bb1de0e623964 12644 lximage-qt_1.1.0-1_arm64.buildinfo
+ 4187a69ec5bc81bba0d21c737b1e366b30e2fdf7311afa44ef36ef5e37f76b94 123600 lximage-qt_1.1.0-1_arm64.deb
+Files:
+ 352e0a8ae5d263000a64461ce4d3a5dc 3880048 debug optional lximage-qt-dbgsym_1.1.0-1_arm64.deb
+ a05c6bdada78324ef3c5b796857c4979 94568 localization optional lximage-qt-l10n_1.1.0-1_all.deb
+ 0142a78d1e775a6f9a92216bcb070724 12644 x11 optional lximage-qt_1.1.0-1_arm64.buildinfo
+ 3025306eba2c942ab1bf418d5e85fdb0 123600 x11 optional lximage-qt_1.1.0-1_arm64.deb

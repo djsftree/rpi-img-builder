@@ -1,0 +1,376 @@
+ dpkg-buildpackage -us -uc -ui -i -b
+dpkg-buildpackage: info: source package lxqt-sudo
+dpkg-buildpackage: info: source version 1.1.0-1
+dpkg-buildpackage: info: source distribution experimental
+dpkg-buildpackage: info: source changed by Aaron Rainbolt <arraybolt3@gmail.com>
+ dpkg-source -i --before-build .
+dpkg-buildpackage: info: host architecture arm64
+dpkg-source: info: using options from lxqt-sudo-1.1.0/debian/source/options: --tar-ignore=.gitignore
+ debian/rules clean
+dh clean --buildsystem cmake
+   dh_auto_clean -O--buildsystem=cmake
+   dh_autoreconf_clean -O--buildsystem=cmake
+   dh_clean -O--buildsystem=cmake
+ debian/rules binary
+dh binary --buildsystem cmake
+   dh_update_autotools_config -O--buildsystem=cmake
+   dh_autoreconf -O--buildsystem=cmake
+   debian/rules override_dh_auto_configure
+make[1]: Entering directory '/home/cnc/lxqt-dev/lxqt-sudo-1.1.0'
+dh_auto_configure -- \
+	-DUPDATE_TRANSLATIONS=OFF \
+	-DCMAKE_BUILD_TYPE=RelWithDebInfo
+	cd obj-aarch64-linux-gnu && cmake -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=None -DCMAKE_INSTALL_SYSCONFDIR=/etc -DCMAKE_INSTALL_LOCALSTATEDIR=/var -DCMAKE_EXPORT_NO_PACKAGE_REGISTRY=ON -DCMAKE_FIND_USE_PACKAGE_REGISTRY=OFF -DCMAKE_FIND_PACKAGE_NO_PACKAGE_REGISTRY=ON -DFETCHCONTENT_FULLY_DISCONNECTED=ON -DCMAKE_INSTALL_RUNSTATEDIR=/run -DCMAKE_SKIP_INSTALL_ALL_DEPENDENCY=ON "-GUnix Makefiles" -DCMAKE_VERBOSE_MAKEFILE=ON -DCMAKE_INSTALL_LIBDIR=lib/aarch64-linux-gnu -DUPDATE_TRANSLATIONS=OFF -DCMAKE_BUILD_TYPE=RelWithDebInfo ..
+-- The C compiler identification is GNU 11.3.0
+-- The CXX compiler identification is GNU 11.3.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found X11: /usr/include   
+-- Looking for XOpenDisplay in /usr/lib/aarch64-linux-gnu/libX11.so;/usr/lib/aarch64-linux-gnu/libXext.so
+-- Looking for XOpenDisplay in /usr/lib/aarch64-linux-gnu/libX11.so;/usr/lib/aarch64-linux-gnu/libXext.so - found
+-- Looking for gethostbyname
+-- Looking for gethostbyname - found
+-- Looking for connect
+-- Looking for connect - found
+-- Looking for remove
+-- Looking for remove - found
+-- Looking for shmat
+-- Looking for shmat - found
+-- Looking for IceConnectionNumber in ICE
+-- Looking for IceConnectionNumber in ICE - found
+-- Building with Qt5.15.4
+-- Found Perl: /usr/bin/perl (found version "5.34.0") 
+-- Configuring done
+-- Generating done
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    CMAKE_EXPORT_NO_PACKAGE_REGISTRY
+    CMAKE_FIND_PACKAGE_NO_PACKAGE_REGISTRY
+    FETCHCONTENT_FULLY_DISCONNECTED
+
+
+-- Build files have been written to: /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu
+make[1]: Leaving directory '/home/cnc/lxqt-dev/lxqt-sudo-1.1.0'
+   dh_auto_build -O--buildsystem=cmake
+	cd obj-aarch64-linux-gnu && make -j4 "INSTALL=install --strip-program=true" VERBOSE=1
+make[1]: Entering directory '/home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu'
+/usr/bin/cmake -S/home/cnc/lxqt-dev/lxqt-sudo-1.1.0 -B/home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu --check-build-system CMakeFiles/Makefile.cmake 0
+/usr/bin/cmake -E cmake_progress_start /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu/CMakeFiles /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu//CMakeFiles/progress.marks
+make  -f CMakeFiles/Makefile2 all
+make[2]: Entering directory '/home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu'
+make  -f CMakeFiles/lxqt-sudo_autogen.dir/build.make CMakeFiles/lxqt-sudo_autogen.dir/depend
+make[3]: Entering directory '/home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu'
+cd /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/cnc/lxqt-dev/lxqt-sudo-1.1.0 /home/cnc/lxqt-dev/lxqt-sudo-1.1.0 /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu/CMakeFiles/lxqt-sudo_autogen.dir/DependInfo.cmake --color=
+make[3]: Leaving directory '/home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu'
+make  -f CMakeFiles/lxqt-sudo_autogen.dir/build.make CMakeFiles/lxqt-sudo_autogen.dir/build
+make[3]: Entering directory '/home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu'
+[  2%] Automatic MOC and UIC for target lxqt-sudo
+/usr/bin/cmake -E cmake_autogen /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu/CMakeFiles/lxqt-sudo_autogen.dir/AutogenInfo.json RelWithDebInfo
+AutoGen: Refreshing parse cache because it doesn't exist.
+AutoMoc: Generating "SRC:/obj-aarch64-linux-gnu/lxqt-sudo_autogen/moc_predefs.h", because it doesn't exist.
+/usr/bin/c++ -dM -E -c /usr/share/cmake-3.23/Modules/CMakeCXXCompilerABI.cpp "-DLXQTSUDO=\"lxqt-sudo\"" "-DLXQTSUDO_LXSU=\"lxsu\"" "-DLXQTSUDO_LXSUDO=\"lxsudo\"" "-DLXQTSUDO_SU=\"su\"" "-DLXQTSUDO_SUDO=\"sudo\"" "-DLXQT_DATA_DIR=\"/usr/share\"" "-DLXQT_ETC_XDG_DIR=\"/etc/xdg\"" "-DLXQT_GRAPHICS_DIR=\"/usr/share/lxqt/graphics\"" "-DLXQT_MAJOR_VERSION=\"1\"" "-DLXQT_MINOR_VERSION=\"1\"" "-DLXQT_PATCH_VERSION=\"0\"" "-DLXQT_RELATIVE_SHARE_DIR=\"lxqt\"" "-DLXQT_RELATIVE_SHARE_TRANSLATIONS_DIR=\"lxqt/translations\"" "-DLXQT_SHARE_DIR=\"/usr/share/lxqt\"" "-DLXQT_SHARE_TRANSLATIONS_DIR=\"/usr/share/lxqt/translations\"" "-DLXQT_VERSION=\"1.1.0\"" -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_SVG_LIB -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DQT_XML_LIB -I/home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu -I/home/cnc/lxqt-dev/lxqt-sudo-1.1.0 -I/usr/include/aarch64-linux-gnu/qt5 -I/usr/include/aarch64-linux-gnu/qt5/QtWidgets -I/usr/include/aarch64-linux-gnu/qt5/QtGui -I/usr/include/aarch64-linux-gnu/qt5/QtCore -I/usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -I/usr/include/lxqt -I/usr/include/lxqt/LXQt -I/usr/include/KF5/KWindowSystem -I/usr/include/KF5 -I/usr/include/aarch64-linux-gnu/qt5/QtDBus -I/usr/include/qt5xdg -I/usr/include/aarch64-linux-gnu/qt5/QtXml -I/usr/include/qt5xdgiconloader -I/usr/include/qt5xdgiconloader/3.9.1 -I/usr/include/aarch64-linux-gnu/qt5/QtSvg -I/usr/include/aarch64-linux-gnu/qt5/QtX11Extras -I/usr/include -I/usr/include/c++/11 -I/usr/include/aarch64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/aarch64-linux-gnu/11/include -I/usr/local/include -I/usr/include/aarch64-linux-gnu
+AutoGen: Parsing "SRC:/passworddialog.h"
+AutoGen: Parsing "SRC:/sudo.h"
+AutoGen: Parsing "SRC:/main.cpp"
+AutoGen: Parsing "SRC:/obj-aarch64-linux-gnu/LXQtAppTranslationLoader.cpp"
+AutoGen: Parsing "SRC:/passworddialog.cpp"
+AutoGen: Parsing "SRC:/sudo.cpp"
+AutoMoc: Generating "SRC:/obj-aarch64-linux-gnu/lxqt-sudo_autogen/EWIEGA46WW/moc_passworddialog.cpp", because it doesn't exist, from "SRC:/passworddialog.h"
+/usr/lib/qt5/bin/moc "-DLXQTSUDO=\"lxqt-sudo\"" "-DLXQTSUDO_LXSU=\"lxsu\"" "-DLXQTSUDO_LXSUDO=\"lxsudo\"" "-DLXQTSUDO_SU=\"su\"" "-DLXQTSUDO_SUDO=\"sudo\"" "-DLXQT_DATA_DIR=\"/usr/share\"" "-DLXQT_ETC_XDG_DIR=\"/etc/xdg\"" "-DLXQT_GRAPHICS_DIR=\"/usr/share/lxqt/graphics\"" "-DLXQT_MAJOR_VERSION=\"1\"" "-DLXQT_MINOR_VERSION=\"1\"" "-DLXQT_PATCH_VERSION=\"0\"" "-DLXQT_RELATIVE_SHARE_DIR=\"lxqt\"" "-DLXQT_RELATIVE_SHARE_TRANSLATIONS_DIR=\"lxqt/translations\"" "-DLXQT_SHARE_DIR=\"/usr/share/lxqt\"" "-DLXQT_SHARE_TRANSLATIONS_DIR=\"/usr/share/lxqt/translations\"" "-DLXQT_VERSION=\"1.1.0\"" -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_SVG_LIB -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DQT_XML_LIB -I/home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu -I/home/cnc/lxqt-dev/lxqt-sudo-1.1.0 -I/usr/include/aarch64-linux-gnu/qt5 -I/usr/include/aarch64-linux-gnu/qt5/QtWidgets -I/usr/include/aarch64-linux-gnu/qt5/QtGui -I/usr/include/aarch64-linux-gnu/qt5/QtCore -I/usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -I/usr/include/lxqt -I/usr/include/lxqt/LXQt -I/usr/include/KF5/KWindowSystem -I/usr/include/KF5 -I/usr/include/aarch64-linux-gnu/qt5/QtDBus -I/usr/include/qt5xdg -I/usr/include/aarch64-linux-gnu/qt5/QtXml -I/usr/include/qt5xdgiconloader -I/usr/include/qt5xdgiconloader/3.9.1 -I/usr/include/aarch64-linux-gnu/qt5/QtSvg -I/usr/include/aarch64-linux-gnu/qt5/QtX11Extras -I/usr/include -I/usr/include/c++/11 -I/usr/include/aarch64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/aarch64-linux-gnu/11/include -I/usr/local/include -I/usr/include/aarch64-linux-gnu --include /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu/lxqt-sudo_autogen/moc_predefs.h --output-dep-file -o /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu/lxqt-sudo_autogen/EWIEGA46WW/moc_passworddialog.cpp /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/passworddialog.h
+AutoMoc: Reading dependencies from "SRC:/obj-aarch64-linux-gnu/lxqt-sudo_autogen/EWIEGA46WW/moc_passworddialog.cpp.d"
+AutoMoc: Generating "SRC:/obj-aarch64-linux-gnu/lxqt-sudo_autogen/EWIEGA46WW/moc_sudo.cpp", because it doesn't exist, from "SRC:/sudo.h"
+/usr/lib/qt5/bin/moc "-DLXQTSUDO=\"lxqt-sudo\"" "-DLXQTSUDO_LXSU=\"lxsu\"" "-DLXQTSUDO_LXSUDO=\"lxsudo\"" "-DLXQTSUDO_SU=\"su\"" "-DLXQTSUDO_SUDO=\"sudo\"" "-DLXQT_DATA_DIR=\"/usr/share\"" "-DLXQT_ETC_XDG_DIR=\"/etc/xdg\"" "-DLXQT_GRAPHICS_DIR=\"/usr/share/lxqt/graphics\"" "-DLXQT_MAJOR_VERSION=\"1\"" "-DLXQT_MINOR_VERSION=\"1\"" "-DLXQT_PATCH_VERSION=\"0\"" "-DLXQT_RELATIVE_SHARE_DIR=\"lxqt\"" "-DLXQT_RELATIVE_SHARE_TRANSLATIONS_DIR=\"lxqt/translations\"" "-DLXQT_SHARE_DIR=\"/usr/share/lxqt\"" "-DLXQT_SHARE_TRANSLATIONS_DIR=\"/usr/share/lxqt/translations\"" "-DLXQT_VERSION=\"1.1.0\"" -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_SVG_LIB -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DQT_XML_LIB -I/home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu -I/home/cnc/lxqt-dev/lxqt-sudo-1.1.0 -I/usr/include/aarch64-linux-gnu/qt5 -I/usr/include/aarch64-linux-gnu/qt5/QtWidgets -I/usr/include/aarch64-linux-gnu/qt5/QtGui -I/usr/include/aarch64-linux-gnu/qt5/QtCore -I/usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -I/usr/include/lxqt -I/usr/include/lxqt/LXQt -I/usr/include/KF5/KWindowSystem -I/usr/include/KF5 -I/usr/include/aarch64-linux-gnu/qt5/QtDBus -I/usr/include/qt5xdg -I/usr/include/aarch64-linux-gnu/qt5/QtXml -I/usr/include/qt5xdgiconloader -I/usr/include/qt5xdgiconloader/3.9.1 -I/usr/include/aarch64-linux-gnu/qt5/QtSvg -I/usr/include/aarch64-linux-gnu/qt5/QtX11Extras -I/usr/include -I/usr/include/c++/11 -I/usr/include/aarch64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/aarch64-linux-gnu/11/include -I/usr/local/include -I/usr/include/aarch64-linux-gnu --include /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu/lxqt-sudo_autogen/moc_predefs.h --output-dep-file -o /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu/lxqt-sudo_autogen/EWIEGA46WW/moc_sudo.cpp /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/sudo.h
+AutoMoc: Reading dependencies from "SRC:/obj-aarch64-linux-gnu/lxqt-sudo_autogen/EWIEGA46WW/moc_sudo.cpp.d"
+AutoUic: Generating "SRC:/obj-aarch64-linux-gnu/lxqt-sudo_autogen/include/ui_passworddialog.h", because it doesn't exist, from "SRC:/passworddialog.ui"
+/usr/lib/qt5/bin/uic -o /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu/lxqt-sudo_autogen/include/ui_passworddialog.h /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/passworddialog.ui
+AutoMoc: Generating MOC compilation "SRC:/obj-aarch64-linux-gnu/lxqt-sudo_autogen/mocs_compilation.cpp"
+AutoGen: Writing the parse cache file "SRC:/obj-aarch64-linux-gnu/CMakeFiles/lxqt-sudo_autogen.dir/ParseCache.txt"
+AutoGen: Writing the settings file "SRC:/obj-aarch64-linux-gnu/CMakeFiles/lxqt-sudo_autogen.dir/AutogenUsed.txt"
+make[3]: Leaving directory '/home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu'
+[  2%] Built target lxqt-sudo_autogen
+make  -f CMakeFiles/lxqt-sudo.dir/build.make CMakeFiles/lxqt-sudo.dir/depend
+make[3]: Entering directory '/home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu'
+[  6%] Generating lxqt-sudo_ar.qm
+[  6%] Generating lxqt-sudo_zh_TW.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/translations/lxqt-sudo_zh_TW.ts -qm /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu/lxqt-sudo_zh_TW.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/translations/lxqt-sudo_ar.ts -qm /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu/lxqt-sudo_ar.qm
+[  9%] Generating lxqt-sudo_arn.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/translations/lxqt-sudo_arn.ts -qm /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu/lxqt-sudo_arn.qm
+Updating '/home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu/lxqt-sudo_zh_TW.qm'...
+    Generated 20 translation(s) (20 finished and 0 unfinished)
+    Ignored 1 untranslated source text(s)
+[ 11%] Generating lxqt-sudo_ast.qm
+Updating '/home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu/lxqt-sudo_arn.qm'...
+    Generated 0 translation(s) (0 finished and 0 unfinished)
+    Ignored 21 untranslated source text(s)
+Updating '/home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu/lxqt-sudo_ar.qm'...
+    Generated 17 translation(s) (17 finished and 0 unfinished)
+    Ignored 4 untranslated source text(s)
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/translations/lxqt-sudo_ast.ts -qm /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu/lxqt-sudo_ast.qm
+Updating '/home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu/lxqt-sudo_ast.qm'...
+    Generated 20 translation(s) (20 finished and 0 unfinished)
+    Ignored 1 untranslated source text(s)
+[ 13%] Generating lxqt-sudo_bg.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/translations/lxqt-sudo_bg.ts -qm /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu/lxqt-sudo_bg.qm
+[ 15%] Generating lxqt-sudo_ca.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/translations/lxqt-sudo_ca.ts -qm /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu/lxqt-sudo_ca.qm
+Updating '/home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu/lxqt-sudo_bg.qm'...
+    Generated 21 translation(s) (21 finished and 0 unfinished)
+[ 18%] Generating lxqt-sudo_cy.qm
+Updating '/home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu/lxqt-sudo_ca.qm'...
+    Generated 21 translation(s) (20 finished and 1 unfinished)
+[ 20%] Generating lxqt-sudo_cs.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/translations/lxqt-sudo_cs.ts -qm /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu/lxqt-sudo_cs.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/translations/lxqt-sudo_cy.ts -qm /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu/lxqt-sudo_cy.qm
+Updating '/home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu/lxqt-sudo_cs.qm'...
+    Generated 21 translation(s) (21 finished and 0 unfinished)
+[ 22%] Generating lxqt-sudo_da.qm
+[ 25%] Generating lxqt-sudo_de.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/translations/lxqt-sudo_da.ts -qm /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu/lxqt-sudo_da.qm
+Updating '/home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu/lxqt-sudo_cy.qm'...
+    Generated 10 translation(s) (10 finished and 0 unfinished)
+    Ignored 11 untranslated source text(s)
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/translations/lxqt-sudo_de.ts -qm /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu/lxqt-sudo_de.qm
+Updating '/home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu/lxqt-sudo_da.qm'...
+    Generated 21 translation(s) (21 finished and 0 unfinished)
+Updating '/home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu/lxqt-sudo_de.qm'...
+    Generated 21 translation(s) (21 finished and 0 unfinished)
+[ 27%] Generating lxqt-sudo_el.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/translations/lxqt-sudo_el.ts -qm /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu/lxqt-sudo_el.qm
+[ 29%] Generating lxqt-sudo_es.qm
+Updating '/home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu/lxqt-sudo_el.qm'...
+    Generated 21 translation(s) (21 finished and 0 unfinished)
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/translations/lxqt-sudo_es.ts -qm /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu/lxqt-sudo_es.qm
+[ 31%] Generating lxqt-sudo_et.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/translations/lxqt-sudo_et.ts -qm /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu/lxqt-sudo_et.qm
+[ 34%] Generating lxqt-sudo_fi.qm
+Updating '/home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu/lxqt-sudo_et.qm'...
+    Generated 21 translation(s) (21 finished and 0 unfinished)
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/translations/lxqt-sudo_fi.ts -qm /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu/lxqt-sudo_fi.qm
+Updating '/home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu/lxqt-sudo_es.qm'...
+    Generated 21 translation(s) (21 finished and 0 unfinished)
+[ 36%] Generating lxqt-sudo_fr.qm
+Updating '/home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu/lxqt-sudo_fi.qm'...
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/translations/lxqt-sudo_fr.ts -qm /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu/lxqt-sudo_fr.qm
+    Generated 21 translation(s) (21 finished and 0 unfinished)
+Updating '/home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu/lxqt-sudo_fr.qm'...
+    Generated 21 translation(s) (21 finished and 0 unfinished)
+[ 38%] Generating lxqt-sudo_gl.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/translations/lxqt-sudo_gl.ts -qm /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu/lxqt-sudo_gl.qm
+[ 40%] Generating lxqt-sudo_he.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/translations/lxqt-sudo_he.ts -qm /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu/lxqt-sudo_he.qm
+[ 43%] Generating lxqt-sudo_hr.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/translations/lxqt-sudo_hr.ts -qm /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu/lxqt-sudo_hr.qm
+[ 45%] Generating lxqt-sudo_hu.qm
+Updating '/home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu/lxqt-sudo_gl.qm'...
+    Generated 21 translation(s) (21 finished and 0 unfinished)
+Updating '/home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu/lxqt-sudo_he.qm'...
+    Generated 21 translation(s) (21 finished and 0 unfinished)
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/translations/lxqt-sudo_hu.ts -qm /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu/lxqt-sudo_hu.qm
+Updating '/home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu/lxqt-sudo_hr.qm'...
+    Generated 21 translation(s) (21 finished and 0 unfinished)
+Updating '/home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu/lxqt-sudo_hu.qm'...
+    Generated 20 translation(s) (18 finished and 2 unfinished)
+    Ignored 1 untranslated source text(s)
+[ 47%] Generating lxqt-sudo_id.qm
+[ 50%] Generating lxqt-sudo_ko.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/translations/lxqt-sudo_id.ts -qm /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu/lxqt-sudo_id.qm
+[ 52%] Generating lxqt-sudo_it.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/translations/lxqt-sudo_ko.ts -qm /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu/lxqt-sudo_ko.qm
+[ 54%] Generating lxqt-sudo_ja.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/translations/lxqt-sudo_it.ts -qm /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu/lxqt-sudo_it.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/translations/lxqt-sudo_ja.ts -qm /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu/lxqt-sudo_ja.qm
+Updating '/home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu/lxqt-sudo_id.qm'...
+    Generated 21 translation(s) (21 finished and 0 unfinished)
+Updating '/home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu/lxqt-sudo_ko.qm'...
+Updating '/home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu/lxqt-sudo_it.qm'...
+    Generated 20 translation(s) (20 finished and 0 unfinished)
+    Ignored 1 untranslated source text(s)
+    Generated 21 translation(s) (21 finished and 0 unfinished)
+Updating '/home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu/lxqt-sudo_ja.qm'...
+    Generated 21 translation(s) (21 finished and 0 unfinished)
+[ 56%] Generating lxqt-sudo_lt.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/translations/lxqt-sudo_lt.ts -qm /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu/lxqt-sudo_lt.qm
+[ 59%] Generating lxqt-sudo_nb_NO.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/translations/lxqt-sudo_nb_NO.ts -qm /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu/lxqt-sudo_nb_NO.qm
+[ 61%] Generating lxqt-sudo_nl.qm
+Updating '/home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu/lxqt-sudo_lt.qm'...
+    Generated 21 translation(s) (21 finished and 0 unfinished)
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/translations/lxqt-sudo_nl.ts -qm /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu/lxqt-sudo_nl.qm
+[ 63%] Generating lxqt-sudo_pl.qm
+Updating '/home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu/lxqt-sudo_nb_NO.qm'...
+    Generated 21 translation(s) (21 finished and 0 unfinished)
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/translations/lxqt-sudo_pl.ts -qm /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu/lxqt-sudo_pl.qm
+Updating '/home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu/lxqt-sudo_nl.qm'...
+    Generated 21 translation(s) (21 finished and 0 unfinished)
+Updating '/home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu/lxqt-sudo_pl.qm'...
+    Generated 21 translation(s) (21 finished and 0 unfinished)
+[ 65%] Generating lxqt-sudo_pt.qm
+[ 68%] Generating lxqt-sudo_pt_BR.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/translations/lxqt-sudo_pt_BR.ts -qm /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu/lxqt-sudo_pt_BR.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/translations/lxqt-sudo_pt.ts -qm /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu/lxqt-sudo_pt.qm
+Updating '/home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu/lxqt-sudo_pt_BR.qm'...
+    Generated 21 translation(s) (21 finished and 0 unfinished)
+[ 70%] Generating lxqt-sudo_si.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/translations/lxqt-sudo_si.ts -qm /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu/lxqt-sudo_si.qm
+Updating '/home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu/lxqt-sudo_pt.qm'...
+[ 72%] Generating lxqt-sudo_ru.qm
+    Generated 21 translation(s) (21 finished and 0 unfinished)
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/translations/lxqt-sudo_ru.ts -qm /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu/lxqt-sudo_ru.qm
+Updating '/home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu/lxqt-sudo_si.qm'...
+    Generated 0 translation(s) (0 finished and 0 unfinished)
+    Ignored 21 untranslated source text(s)
+Updating '/home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu/lxqt-sudo_ru.qm'...
+    Generated 21 translation(s) (21 finished and 0 unfinished)
+[ 75%] Generating lxqt-sudo_sk.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/translations/lxqt-sudo_sk.ts -qm /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu/lxqt-sudo_sk.qm
+[ 77%] Generating lxqt-sudo_sl.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/translations/lxqt-sudo_sl.ts -qm /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu/lxqt-sudo_sl.qm
+Updating '/home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu/lxqt-sudo_sk.qm'...
+    Generated 21 translation(s) (21 finished and 0 unfinished)
+[ 79%] Generating lxqt-sudo_tr.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/translations/lxqt-sudo_tr.ts -qm /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu/lxqt-sudo_tr.qm
+Updating '/home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu/lxqt-sudo_sl.qm'...
+    Generated 21 translation(s) (21 finished and 0 unfinished)
+[ 81%] Generating lxqt-sudo_uk.qm
+Updating '/home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu/lxqt-sudo_tr.qm'...
+    Generated 21 translation(s) (21 finished and 0 unfinished)
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/translations/lxqt-sudo_uk.ts -qm /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu/lxqt-sudo_uk.qm
+Updating '/home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu/lxqt-sudo_uk.qm'...
+    Generated 21 translation(s) (21 finished and 0 unfinished)
+[ 84%] Generating lxqt-sudo_vi.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/translations/lxqt-sudo_vi.ts -qm /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu/lxqt-sudo_vi.qm
+[ 86%] Generating lxqt-sudo_zh_CN.qm
+/usr/lib/qt5/bin/lrelease /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/translations/lxqt-sudo_zh_CN.ts -qm /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu/lxqt-sudo_zh_CN.qm
+Updating '/home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu/lxqt-sudo_vi.qm'...
+    Generated 21 translation(s) (21 finished and 0 unfinished)
+Updating '/home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu/lxqt-sudo_zh_CN.qm'...
+    Generated 21 translation(s) (21 finished and 0 unfinished)
+cd /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/cnc/lxqt-dev/lxqt-sudo-1.1.0 /home/cnc/lxqt-dev/lxqt-sudo-1.1.0 /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu/CMakeFiles/lxqt-sudo.dir/DependInfo.cmake --color=
+make[3]: Leaving directory '/home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu'
+make  -f CMakeFiles/lxqt-sudo.dir/build.make CMakeFiles/lxqt-sudo.dir/build
+make[3]: Entering directory '/home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu'
+[ 88%] Building CXX object CMakeFiles/lxqt-sudo.dir/lxqt-sudo_autogen/mocs_compilation.cpp.o
+[ 90%] Building CXX object CMakeFiles/lxqt-sudo.dir/sudo.cpp.o
+[ 93%] Building CXX object CMakeFiles/lxqt-sudo.dir/passworddialog.cpp.o
+/usr/bin/c++ -DLXQTSUDO=\"lxqt-sudo\" -DLXQTSUDO_LXSU=\"lxsu\" -DLXQTSUDO_LXSUDO=\"lxsudo\" -DLXQTSUDO_SU=\"su\" -DLXQTSUDO_SUDO=\"sudo\" -DLXQT_DATA_DIR=\"/usr/share\" -DLXQT_ETC_XDG_DIR=\"/etc/xdg\" -DLXQT_GRAPHICS_DIR=\"/usr/share/lxqt/graphics\" -DLXQT_MAJOR_VERSION=\"1\" -DLXQT_MINOR_VERSION=\"1\" -DLXQT_PATCH_VERSION=\"0\" -DLXQT_RELATIVE_SHARE_DIR=\"lxqt\" -DLXQT_RELATIVE_SHARE_TRANSLATIONS_DIR=\"lxqt/translations\" -DLXQT_SHARE_DIR=\"/usr/share/lxqt\" -DLXQT_SHARE_TRANSLATIONS_DIR=\"/usr/share/lxqt/translations\" -DLXQT_VERSION=\"1.1.0\" -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_SVG_LIB -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DQT_XML_LIB -I/home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu -I/home/cnc/lxqt-dev/lxqt-sudo-1.1.0 -I/home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu/lxqt-sudo_autogen/include -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/lxqt -isystem /usr/include/lxqt/LXQt -isystem /usr/include/KF5/KWindowSystem -isystem /usr/include/KF5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/qt5xdg -isystem /usr/include/aarch64-linux-gnu/qt5/QtXml -isystem /usr/include/qt5xdgiconloader -isystem /usr/include/qt5xdgiconloader/3.9.1 -isystem /usr/include/aarch64-linux-gnu/qt5/QtSvg -isystem /usr/include/aarch64-linux-gnu/qt5/QtX11Extras -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/lxqt-sudo-1.1.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -fvisibility=hidden -fvisibility-inlines-hidden -fPIC -std=c++14 -MD -MT CMakeFiles/lxqt-sudo.dir/lxqt-sudo_autogen/mocs_compilation.cpp.o -MF CMakeFiles/lxqt-sudo.dir/lxqt-sudo_autogen/mocs_compilation.cpp.o.d -o CMakeFiles/lxqt-sudo.dir/lxqt-sudo_autogen/mocs_compilation.cpp.o -c /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu/lxqt-sudo_autogen/mocs_compilation.cpp
+/usr/bin/c++ -DLXQTSUDO=\"lxqt-sudo\" -DLXQTSUDO_LXSU=\"lxsu\" -DLXQTSUDO_LXSUDO=\"lxsudo\" -DLXQTSUDO_SU=\"su\" -DLXQTSUDO_SUDO=\"sudo\" -DLXQT_DATA_DIR=\"/usr/share\" -DLXQT_ETC_XDG_DIR=\"/etc/xdg\" -DLXQT_GRAPHICS_DIR=\"/usr/share/lxqt/graphics\" -DLXQT_MAJOR_VERSION=\"1\" -DLXQT_MINOR_VERSION=\"1\" -DLXQT_PATCH_VERSION=\"0\" -DLXQT_RELATIVE_SHARE_DIR=\"lxqt\" -DLXQT_RELATIVE_SHARE_TRANSLATIONS_DIR=\"lxqt/translations\" -DLXQT_SHARE_DIR=\"/usr/share/lxqt\" -DLXQT_SHARE_TRANSLATIONS_DIR=\"/usr/share/lxqt/translations\" -DLXQT_VERSION=\"1.1.0\" -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_SVG_LIB -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DQT_XML_LIB -I/home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu -I/home/cnc/lxqt-dev/lxqt-sudo-1.1.0 -I/home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu/lxqt-sudo_autogen/include -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/lxqt -isystem /usr/include/lxqt/LXQt -isystem /usr/include/KF5/KWindowSystem -isystem /usr/include/KF5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/qt5xdg -isystem /usr/include/aarch64-linux-gnu/qt5/QtXml -isystem /usr/include/qt5xdgiconloader -isystem /usr/include/qt5xdgiconloader/3.9.1 -isystem /usr/include/aarch64-linux-gnu/qt5/QtSvg -isystem /usr/include/aarch64-linux-gnu/qt5/QtX11Extras -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/lxqt-sudo-1.1.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -fvisibility=hidden -fvisibility-inlines-hidden -fPIC -std=c++14 -MD -MT CMakeFiles/lxqt-sudo.dir/sudo.cpp.o -MF CMakeFiles/lxqt-sudo.dir/sudo.cpp.o.d -o CMakeFiles/lxqt-sudo.dir/sudo.cpp.o -c /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/sudo.cpp
+/usr/bin/c++ -DLXQTSUDO=\"lxqt-sudo\" -DLXQTSUDO_LXSU=\"lxsu\" -DLXQTSUDO_LXSUDO=\"lxsudo\" -DLXQTSUDO_SU=\"su\" -DLXQTSUDO_SUDO=\"sudo\" -DLXQT_DATA_DIR=\"/usr/share\" -DLXQT_ETC_XDG_DIR=\"/etc/xdg\" -DLXQT_GRAPHICS_DIR=\"/usr/share/lxqt/graphics\" -DLXQT_MAJOR_VERSION=\"1\" -DLXQT_MINOR_VERSION=\"1\" -DLXQT_PATCH_VERSION=\"0\" -DLXQT_RELATIVE_SHARE_DIR=\"lxqt\" -DLXQT_RELATIVE_SHARE_TRANSLATIONS_DIR=\"lxqt/translations\" -DLXQT_SHARE_DIR=\"/usr/share/lxqt\" -DLXQT_SHARE_TRANSLATIONS_DIR=\"/usr/share/lxqt/translations\" -DLXQT_VERSION=\"1.1.0\" -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_SVG_LIB -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DQT_XML_LIB -I/home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu -I/home/cnc/lxqt-dev/lxqt-sudo-1.1.0 -I/home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu/lxqt-sudo_autogen/include -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/lxqt -isystem /usr/include/lxqt/LXQt -isystem /usr/include/KF5/KWindowSystem -isystem /usr/include/KF5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/qt5xdg -isystem /usr/include/aarch64-linux-gnu/qt5/QtXml -isystem /usr/include/qt5xdgiconloader -isystem /usr/include/qt5xdgiconloader/3.9.1 -isystem /usr/include/aarch64-linux-gnu/qt5/QtSvg -isystem /usr/include/aarch64-linux-gnu/qt5/QtX11Extras -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/lxqt-sudo-1.1.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -fvisibility=hidden -fvisibility-inlines-hidden -fPIC -std=c++14 -MD -MT CMakeFiles/lxqt-sudo.dir/passworddialog.cpp.o -MF CMakeFiles/lxqt-sudo.dir/passworddialog.cpp.o.d -o CMakeFiles/lxqt-sudo.dir/passworddialog.cpp.o -c /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/passworddialog.cpp
+[ 95%] Building CXX object CMakeFiles/lxqt-sudo.dir/main.cpp.o
+/usr/bin/c++ -DLXQTSUDO=\"lxqt-sudo\" -DLXQTSUDO_LXSU=\"lxsu\" -DLXQTSUDO_LXSUDO=\"lxsudo\" -DLXQTSUDO_SU=\"su\" -DLXQTSUDO_SUDO=\"sudo\" -DLXQT_DATA_DIR=\"/usr/share\" -DLXQT_ETC_XDG_DIR=\"/etc/xdg\" -DLXQT_GRAPHICS_DIR=\"/usr/share/lxqt/graphics\" -DLXQT_MAJOR_VERSION=\"1\" -DLXQT_MINOR_VERSION=\"1\" -DLXQT_PATCH_VERSION=\"0\" -DLXQT_RELATIVE_SHARE_DIR=\"lxqt\" -DLXQT_RELATIVE_SHARE_TRANSLATIONS_DIR=\"lxqt/translations\" -DLXQT_SHARE_DIR=\"/usr/share/lxqt\" -DLXQT_SHARE_TRANSLATIONS_DIR=\"/usr/share/lxqt/translations\" -DLXQT_VERSION=\"1.1.0\" -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_SVG_LIB -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DQT_XML_LIB -I/home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu -I/home/cnc/lxqt-dev/lxqt-sudo-1.1.0 -I/home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu/lxqt-sudo_autogen/include -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/lxqt -isystem /usr/include/lxqt/LXQt -isystem /usr/include/KF5/KWindowSystem -isystem /usr/include/KF5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/qt5xdg -isystem /usr/include/aarch64-linux-gnu/qt5/QtXml -isystem /usr/include/qt5xdgiconloader -isystem /usr/include/qt5xdgiconloader/3.9.1 -isystem /usr/include/aarch64-linux-gnu/qt5/QtSvg -isystem /usr/include/aarch64-linux-gnu/qt5/QtX11Extras -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/lxqt-sudo-1.1.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -fvisibility=hidden -fvisibility-inlines-hidden -fPIC -std=c++14 -MD -MT CMakeFiles/lxqt-sudo.dir/main.cpp.o -MF CMakeFiles/lxqt-sudo.dir/main.cpp.o.d -o CMakeFiles/lxqt-sudo.dir/main.cpp.o -c /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/main.cpp
+[ 97%] Building CXX object CMakeFiles/lxqt-sudo.dir/LXQtAppTranslationLoader.cpp.o
+/usr/bin/c++ -DLXQTSUDO=\"lxqt-sudo\" -DLXQTSUDO_LXSU=\"lxsu\" -DLXQTSUDO_LXSUDO=\"lxsudo\" -DLXQTSUDO_SU=\"su\" -DLXQTSUDO_SUDO=\"sudo\" -DLXQT_DATA_DIR=\"/usr/share\" -DLXQT_ETC_XDG_DIR=\"/etc/xdg\" -DLXQT_GRAPHICS_DIR=\"/usr/share/lxqt/graphics\" -DLXQT_MAJOR_VERSION=\"1\" -DLXQT_MINOR_VERSION=\"1\" -DLXQT_PATCH_VERSION=\"0\" -DLXQT_RELATIVE_SHARE_DIR=\"lxqt\" -DLXQT_RELATIVE_SHARE_TRANSLATIONS_DIR=\"lxqt/translations\" -DLXQT_SHARE_DIR=\"/usr/share/lxqt\" -DLXQT_SHARE_TRANSLATIONS_DIR=\"/usr/share/lxqt/translations\" -DLXQT_VERSION=\"1.1.0\" -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_CAST_TO_ASCII -DQT_NO_DEBUG -DQT_NO_FOREACH -DQT_NO_URL_CAST_FROM_STRING -DQT_SVG_LIB -DQT_USE_QSTRINGBUILDER -DQT_WIDGETS_LIB -DQT_X11EXTRAS_LIB -DQT_XML_LIB -I/home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu -I/home/cnc/lxqt-dev/lxqt-sudo-1.1.0 -I/home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu/lxqt-sudo_autogen/include -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/lxqt -isystem /usr/include/lxqt/LXQt -isystem /usr/include/KF5/KWindowSystem -isystem /usr/include/KF5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtDBus -isystem /usr/include/qt5xdg -isystem /usr/include/aarch64-linux-gnu/qt5/QtXml -isystem /usr/include/qt5xdgiconloader -isystem /usr/include/qt5xdgiconloader/3.9.1 -isystem /usr/include/aarch64-linux-gnu/qt5/QtSvg -isystem /usr/include/aarch64-linux-gnu/qt5/QtX11Extras -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/lxqt-sudo-1.1.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -fvisibility=hidden -fvisibility-inlines-hidden -fPIC -std=c++14 -MD -MT CMakeFiles/lxqt-sudo.dir/LXQtAppTranslationLoader.cpp.o -MF CMakeFiles/lxqt-sudo.dir/LXQtAppTranslationLoader.cpp.o.d -o CMakeFiles/lxqt-sudo.dir/LXQtAppTranslationLoader.cpp.o -c /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu/LXQtAppTranslationLoader.cpp
+[100%] Linking CXX executable lxqt-sudo
+/usr/bin/cmake -E cmake_link_script CMakeFiles/lxqt-sudo.dir/link.txt --verbose=1
+/usr/bin/c++ -g -O2 -ffile-prefix-map=/home/cnc/lxqt-dev/lxqt-sudo-1.1.0=. -fstack-protector-strong -Wformat -Werror=format-security -march=armv8-a+crc+crypto -mtune=cortex-a72 -Wdate-time -D_FORTIFY_SOURCE=2 -fno-exceptions -Wall -Wextra -Wchar-subscripts -Wno-long-long -Wpointer-arith -Wundef -Wformat-security -Wnon-virtual-dtor -Woverloaded-virtual -Wpedantic -O2 -g -DNDEBUG -Wl,-Bsymbolic-functions -Wl,-Bsymbolic -Wl,-z,relro -Wl,-z,now -rdynamic "CMakeFiles/lxqt-sudo.dir/lxqt-sudo_autogen/mocs_compilation.cpp.o" "CMakeFiles/lxqt-sudo.dir/passworddialog.cpp.o" "CMakeFiles/lxqt-sudo.dir/sudo.cpp.o" "CMakeFiles/lxqt-sudo.dir/main.cpp.o" "CMakeFiles/lxqt-sudo.dir/LXQtAppTranslationLoader.cpp.o" -o lxqt-sudo  -lutil /usr/lib/aarch64-linux-gnu/liblxqt.so.1.1.0 -pthread /usr/lib/aarch64-linux-gnu/libKF5WindowSystem.so.5.96.0 /usr/lib/aarch64-linux-gnu/libX11.so /usr/lib/aarch64-linux-gnu/libQt5Xdg.so.3.9.1 /usr/lib/aarch64-linux-gnu/libQt5DBus.so.5.15.4 /usr/lib/aarch64-linux-gnu/libQt5Xml.so.5.15.4 /usr/lib/aarch64-linux-gnu/libQt5XdgIconLoader.so.3.9.1 /usr/lib/aarch64-linux-gnu/libQt5Svg.so.5.15.4 /usr/lib/aarch64-linux-gnu/libQt5Widgets.so.5.15.4 -lglib-2.0 -lgobject-2.0 -lgio-2.0 /usr/lib/aarch64-linux-gnu/libQt5X11Extras.so.5.15.4 /usr/lib/aarch64-linux-gnu/libQt5Gui.so.5.15.4 /usr/lib/aarch64-linux-gnu/libQt5Core.so.5.15.4 
+Creating lxsu symlink
+ln -f -s lxqt-sudo lxsu
+Creating lxsudo symlink
+ln -f -s lxqt-sudo lxsudo
+make[3]: Leaving directory '/home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu'
+[100%] Built target lxqt-sudo
+make[2]: Leaving directory '/home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu'
+/usr/bin/cmake -E cmake_progress_start /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu/CMakeFiles 0
+make[1]: Leaving directory '/home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu'
+   dh_auto_test -O--buildsystem=cmake
+   create-stamp debian/debhelper-build-stamp
+   dh_testroot -O--buildsystem=cmake
+   dh_prep -O--buildsystem=cmake
+   dh_auto_install -O--buildsystem=cmake
+	cd obj-aarch64-linux-gnu && make -j4 install DESTDIR=/home/cnc/lxqt-dev/lxqt-sudo-1.1.0/debian/tmp AM_UPDATE_INFO_DIR=no "INSTALL=install --strip-program=true"
+make[1]: Entering directory '/home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu'
+/usr/bin/cmake -S/home/cnc/lxqt-dev/lxqt-sudo-1.1.0 -B/home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu --check-build-system CMakeFiles/Makefile.cmake 0
+make  -f CMakeFiles/Makefile2 preinstall
+make[2]: Entering directory '/home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu'
+make[2]: Nothing to be done for 'preinstall'.
+make[2]: Leaving directory '/home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu'
+Install the project...
+/usr/bin/cmake -P cmake_install.cmake
+-- Install configuration: "RelWithDebInfo"
+-- Installing: /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-sudo/lxqt-sudo_ar.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-sudo/lxqt-sudo_arn.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-sudo/lxqt-sudo_ast.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-sudo/lxqt-sudo_bg.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-sudo/lxqt-sudo_ca.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-sudo/lxqt-sudo_cs.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-sudo/lxqt-sudo_cy.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-sudo/lxqt-sudo_da.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-sudo/lxqt-sudo_de.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-sudo/lxqt-sudo_el.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-sudo/lxqt-sudo_es.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-sudo/lxqt-sudo_et.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-sudo/lxqt-sudo_fi.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-sudo/lxqt-sudo_fr.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-sudo/lxqt-sudo_gl.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-sudo/lxqt-sudo_he.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-sudo/lxqt-sudo_hr.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-sudo/lxqt-sudo_hu.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-sudo/lxqt-sudo_id.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-sudo/lxqt-sudo_it.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-sudo/lxqt-sudo_ja.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-sudo/lxqt-sudo_ko.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-sudo/lxqt-sudo_lt.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-sudo/lxqt-sudo_nb_NO.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-sudo/lxqt-sudo_nl.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-sudo/lxqt-sudo_pl.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-sudo/lxqt-sudo_pt.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-sudo/lxqt-sudo_pt_BR.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-sudo/lxqt-sudo_ru.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-sudo/lxqt-sudo_si.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-sudo/lxqt-sudo_sk.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-sudo/lxqt-sudo_sl.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-sudo/lxqt-sudo_tr.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-sudo/lxqt-sudo_uk.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-sudo/lxqt-sudo_vi.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-sudo/lxqt-sudo_zh_CN.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/debian/tmp/usr/share/lxqt/translations/lxqt-sudo/lxqt-sudo_zh_TW.qm
+-- Installing: /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/debian/tmp/usr/bin/lxqt-sudo
+-- Installing: /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/debian/tmp/usr/bin/lxsu
+-- Installing: /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/debian/tmp/usr/bin/lxsudo
+-- Installing: /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/debian/tmp/usr/share/man/man1/lxqt-sudo.1
+-- Installing: /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/debian/tmp/usr/share/man/man1/lxsu.1
+-- Installing: /home/cnc/lxqt-dev/lxqt-sudo-1.1.0/debian/tmp/usr/share/man/man1/lxsudo.1
+make[1]: Leaving directory '/home/cnc/lxqt-dev/lxqt-sudo-1.1.0/obj-aarch64-linux-gnu'
+   dh_install -O--buildsystem=cmake
+   dh_installdocs -O--buildsystem=cmake
+   dh_installchangelogs -O--buildsystem=cmake
+   dh_installman -O--buildsystem=cmake
+   dh_installsystemduser -O--buildsystem=cmake
+   dh_perl -O--buildsystem=cmake
+   dh_link -O--buildsystem=cmake
+   dh_strip_nondeterminism -O--buildsystem=cmake
+   dh_compress -O--buildsystem=cmake
+   dh_fixperms -O--buildsystem=cmake
+   debian/rules override_dh_missing
+make[1]: Entering directory '/home/cnc/lxqt-dev/lxqt-sudo-1.1.0'
+dh_missing --fail-missing
+make[1]: Leaving directory '/home/cnc/lxqt-dev/lxqt-sudo-1.1.0'
+   dh_dwz -a -O--buildsystem=cmake
+   dh_strip -a -O--buildsystem=cmake
+   dh_makeshlibs -a -O--buildsystem=cmake
+   dh_shlibdeps -a -O--buildsystem=cmake
+   dh_installdeb -O--buildsystem=cmake
+   dh_gencontrol -O--buildsystem=cmake
+   dh_md5sums -O--buildsystem=cmake
+   dh_builddeb -O--buildsystem=cmake
+dpkg-deb: building package 'lxqt-sudo' in '../lxqt-sudo_1.1.0-1_arm64.deb'.
+dpkg-deb: building package 'lxqt-sudo-l10n' in '../lxqt-sudo-l10n_1.1.0-1_all.deb'.
+dpkg-deb: building package 'lxqt-sudo-dbgsym' in '../lxqt-sudo-dbgsym_1.1.0-1_arm64.deb'.
+ dpkg-genbuildinfo --build=binary -O../lxqt-sudo_1.1.0-1_arm64.buildinfo
+ dpkg-genchanges --build=binary -O../lxqt-sudo_1.1.0-1_arm64.changes
+dpkg-genchanges: info: binary-only upload (no source code included)
+ dpkg-source -i --after-build .
+dpkg-source: info: using options from lxqt-sudo-1.1.0/debian/source/options: --tar-ignore=.gitignore
+dpkg-buildpackage: info: binary-only upload (no source included)
+Now running lintian lxqt-sudo_1.1.0-1_arm64.changes ...
+running with root privileges is not recommended!
+Finished running lintian.
