@@ -3,12 +3,12 @@ USERNAME="cnc"
 PASSWORD="cnc"
 rootpasswd=1
 ### LINUX KERNEL
-VERSION="5.19.y"
+VERSION="5.15.y"
 BUILD_VERSION="1"
-menuconfig=0
+menuconfig=1
 crosscompile=1
 ### COMPILER
-GCC_VERSION="gcc-10"
+GCC_VERSION="gcc-12"
 gcc=1
 ccache=1
 clang=0
@@ -21,7 +21,7 @@ ext4=1
 btrfs=0
 xfs=0
 ### CUSTOM
-custom_defconfig=1
+custom_defconfig=0
 MYCONFIG="rt64_defconfig"
 verbose=1
 devrootfs=1
@@ -41,15 +41,15 @@ KBHOST="raspberrypi"
 ### LOCALES
 set_locales(){
 apt install -y locales
-export LANGUAGE=en_US.UTF-8
-export LANG=en_US.UTF-8
-export LC_ALL=C.UTF-8
-locale-gen en_US.UTF-8
+locale
+dpkg-reconfigure locales
+localedef -i en_GB -f UTF-8 en_GB.UTF-8
+locale
 }
 ### TIMEZONE
 set_timezone(){
-ln -snf /usr/share/zoneinfo/America/New_York /etc/localtime
-echo -n 'America/New_York' > /etc/timezone
+ln -snf /usr/share/zoneinfo/Europe/London /etc/localtime
+echo -n 'Europe/London' > /etc/timezone
 }
 ### NAME SERVER
 NAMESERVER1="8.8.8.8"
