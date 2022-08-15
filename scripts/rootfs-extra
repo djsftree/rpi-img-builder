@@ -29,7 +29,7 @@ set_timezone
 apt upgrade -y
 apt dist-upgrade -y
 if [[ "$DISTRO" == "debian" ]]; then
-	apt install -y ${PKGS} ${USER_PKGS} ${SYSMODS} resolvconf openssh-client openssh-server;
+	apt install -y ${PKGS} ${USER_PKGS} ${SYSMODS} resolvconf openssh-client openssh-server --no-install-recommends;
 	apt install -y --no-install-recommends xserver-xorg-video-fbdev;
 	apt install -y --no-install-recommends openbox;
 	apt install -y --no-install-recommends lightdm;
@@ -37,7 +37,7 @@ if [[ "$DISTRO" == "debian" ]]; then
 	apt install -y --no-install-recommends libmagic-dev libqt5svg5-dev p7zip-full libglib2.0-dev \
     qttools5-dev qttools5-dev-tools libqt5printsupport5 libjson-glib-1.0-0 libxcb-composite0 \
     libxcb-damage0 pulseaudio pipewire-pulse libpulse-mainloop-glib0 libexif-dev libmenu-cache-dev \
-    libkf5idletime5 upower
+    libkf5idletime5 upower;
 	apt install -y --no-install-recommends lxqt-core lxqt-branding-debian qt5-style-kvantum-themes;
 	apt install -y --no-install-recommends python3-dev python3-wheel python3-pip;
 	apt install -y --no-install-recommends dkms equivs devscripts meson ninja-build libdistro-info-perl;
