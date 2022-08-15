@@ -28,6 +28,6 @@ EXTRA="logo.nologo net.ifnames=0 firmware_class.path=/lib/firmware/updates/brcm"
 MOTD="Raspberry Pi"
 
 # image sizes
-EXT4="3000MB"
+EXT4="8000MB"
 BTRFS="2650MB"
 XFS="2650MB"

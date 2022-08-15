@@ -1,0 +1,8 @@
+img/*
+sysroot/*
+source/*
+board.txt
+gcc.txt
+*.xz
+p1/*
+p2/*

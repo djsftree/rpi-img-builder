@@ -1,0 +1,41 @@
+#!/bin/bash
+
+run_function1 (){
+
+  # remove kernel install from stage2
+  sed -i 's/stage2_kernel/#stage2_kernel/g' p2/root/stage2
+  dpkg --list | egrep 'linux-image|linux-headers'
+  
+}
+
+
+run_function2 (){
+  
+  apt install -y --no-install-recommends xserver-xorg-video-fbdev
+  apt install -y --no-install-recommends openbox
+  apt install -y --no-install-recommends lightdm
+  apt install -y --no-install-recommends lxqt-core lxqt-branding-debian qt5-style-kvantum-themes
+  apt install -y --no-install-recommends network-manager-gnome
+  apt install -y --no-install-recommends firefox-esr geany featherpad
+  apt install -y --no-install-recommends onboard
+  apt install -y --no-install-recommends dkms
+  
+  # install RT kernel
+  stage2_kernel
+
+  # dpkg-build tuning flags for rpi4
+  CFLAGS="-march=armv8-a+crc+crypto -mtune=cortex-a72"
+  echo "APPEND CFLAGS ${CFLAGS}" >> /etc/dpkg/buildflags.conf
+  echo "APPEND CXXFLAGS ${CFLAGS}" >> /etc/dpkg/buildflags.conf
+  
+  # onboard keyboard defaults
+  mv -f /root/userscripts/lightdm.conf /etc/lightdm/lightdm.conf
+  mv -f /root/userscripts/lightdm-gtk-greeter.conf /etc/lightdm/lightdm-gtk-greeter.conf
+  
+  # stop lxqt auto notifications at login
+  rm /etc/xdg/autostart/lxqt-notifications.desktop
+  
+  # set kvantum to default Qt style
+  echo "export QT_STYLE_OVERRIDE=kvantum" >> /etc/environment;
+
+}
