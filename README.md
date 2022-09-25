@@ -4,9 +4,10 @@
 
 ```
 Notes
-5.19 from https://github.com/raspberrypi/linux/tree/rpi-5.19.y
-5.19-rc3-rt5-1 patch - patches/userpatches/
+6.0 from https://github.com/raspberrypi/linux/tree/rpi-6.0.y
+6.0-rc6-rt9 patch - userpatches/
 Kernel config - defconfig/rt64_defconfig
+FLAGS -march=armv8-a+crc+crypto -mtune=cortex-a72"
 Package install -  userscripts/uscripts
 lightdm, openbox, LXQt 1.1.0, Qt5 Creator, VTK 9.1 wheel and bindings preset for QtPyVCP projects
 First boot detects and sets /etc/ethercat.conf automatically
@@ -26,10 +27,10 @@ PASSWORD="cnc"
 rootpasswd=1 --- 'toor' please change after booting!
 ```
 
-#### Build 5.19-rc3-rt5-1 kernel
+#### Build 6.0-rc6-rt9 kernel
 this step is optional - for RPI4 I have included debs in /output/bcm2711
 ```sh
-make kernel board=bcm2711	# linux source pulled from raspberrypi/linux/5.19y
+make kernel board=bcm2711
 ```
 
 #### edit build script

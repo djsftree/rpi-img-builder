@@ -27,6 +27,7 @@ run_function2 (){
   mv -f /root/userscripts/lightdm-gtk-greeter.conf /etc/lightdm/lightdm-gtk-greeter.conf
   
   # force xcb qt5 apps to use software rendering
+  mkdir -p /etc/X11/xinit/xinitrc.d
   mv -f /root/userscripts/10-qt5-check-opengl2.sh /etc/X11/xinit/xinitrc.d/10-qt5-check-opengl2.sh
 
   # LXQT 1.1.0
@@ -69,11 +70,19 @@ run_function2 (){
 
   # LinuxCNC
   echo ""
-  echo "Installing LinuxCNC -- 27 July 2022..."
+  echo "Compile and install LinuxCNC ..."
   sleep 1s
   apt install -y linuxcnc-uspace linuxcnc-uspace-dev mesaflash
-  dpkg -i /root/userscripts/dpkg/linuxcnc-uspace_*arm64.deb
-  dpkg -i /root/userscripts/dpkg/linuxcnc-uspace-dev_*arm64.deb
+  cd /home/${USERNAME}/dev
+  git clone --depth 1 https://github.com/LinuxCNC/linuxcnc.git linuxcnc
+  cd linuxcnc/debian
+  ./configure no-docs uspace
+  cd ..
+  mk-build-deps --install --tool='apt-get -o Debug::pkgProblemResolver=yes --yes' debian/control
+  dpkg-buildpackage -j4 -us -uc -b
+  cd ..
+  dpkg -i linuxcnc-uspace_*arm64.deb
+  dpkg -i linuxcnc-uspace-dev_*arm64.deb
 
 
 

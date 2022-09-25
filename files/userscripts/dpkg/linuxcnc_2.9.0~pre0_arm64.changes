@@ -1,36 +1,32 @@
 Format: 1.8
-Date: Wed, 27 Jul 2022 04:13:20 -0400
+Date: Fri, 12 Aug 2022 20:56:25 +0200
 Source: linuxcnc
 Binary: linuxcnc-uspace linuxcnc-uspace-dbgsym linuxcnc-uspace-dev
 Architecture: arm64
-Version: 2.9.0~pre0
-Distribution: experimental
+Version: 1:2.9.0~pre0
+Distribution: UNRELEASED
 Urgency: medium
 Maintainer: LinuxCNC Developers <emc-developers@lists.sourceforge.net>
-Changed-By: cnc <cnc@noip.org>
+Changed-By: Sebastian Kuzminsky <seb@highlab.com>
 Description:
  linuxcnc-uspace - motion controller for CNC machines and robots
  linuxcnc-uspace-dev - PC based motion controller for real-time Linux
 Changes:
- linuxcnc (2.9.0~pre0) experimental; urgency=medium
+ linuxcnc (1:2.9.0~pre0) UNRELEASED; urgency=medium
  .
-   [ Sebastian Kuzminsky ]
    * Master branch open for new features.
- .
-   [ cnc ]
-   * built by rpi-image-builder
 Checksums-Sha1:
- 33f9eeed0120b2aaed10f68f5a6f3b3d73f65614 10922756 linuxcnc-uspace-dbgsym_2.9.0~pre0_arm64.deb
- 07d5ff706df46a1aa82fdcd59dbc47018171fc1a 273224 linuxcnc-uspace-dev_2.9.0~pre0_arm64.deb
- b122d08fa02a64b3221e9b575f3f8f6c16b2362b 18848832 linuxcnc-uspace_2.9.0~pre0_arm64.deb
- d31e8d126dd251567dc730c2cf4d2b012983b208 16314 linuxcnc_2.9.0~pre0_arm64.buildinfo
+ 1ef060406835f457bad7699f456232737e66a95e 10965540 linuxcnc-uspace-dbgsym_2.9.0~pre0_arm64.deb
+ 89379ca0d9c2908ac66ce46889517777bdd425d4 273620 linuxcnc-uspace-dev_2.9.0~pre0_arm64.deb
+ db9ce0134da1973b53af9f2cd9dbbd3b4d399061 20363036 linuxcnc-uspace_2.9.0~pre0_arm64.deb
+ 360278e0b56b7cfa7441b67e30b4e803402ceab9 19600 linuxcnc_2.9.0~pre0_arm64.buildinfo
 Checksums-Sha256:
- 5da5ca9c0071712281230bd7f06b1bdc06770ec6aac9edbc117b8643eb5f0933 10922756 linuxcnc-uspace-dbgsym_2.9.0~pre0_arm64.deb
- 4d98b80340489d68618cd4d1937c4f857ba68a834da4497ca44d4340e9d418a2 273224 linuxcnc-uspace-dev_2.9.0~pre0_arm64.deb
- ce10a0c3c5103de4a83aec92491c10c9815060727c9b3133b57a3623f04c3986 18848832 linuxcnc-uspace_2.9.0~pre0_arm64.deb
- 0340213b7d67db3bd14243ba83ae3c622b7f79dcdd254dee530fab358f42c1a8 16314 linuxcnc_2.9.0~pre0_arm64.buildinfo
+ 8a4d3067f4f4522a0a49f8fa74797598049a3837469fd93eee746c1ec156db35 10965540 linuxcnc-uspace-dbgsym_2.9.0~pre0_arm64.deb
+ 907a501ad99bc45f83f717b6314a33ec830f7048b76d26652468cf2d3864fa1d 273620 linuxcnc-uspace-dev_2.9.0~pre0_arm64.deb
+ 9dd3c0213c4ebe08861761df382f2eb738d24f8acf44339a06643c7be8b18518 20363036 linuxcnc-uspace_2.9.0~pre0_arm64.deb
+ 662dcc32b1b072886038d1d92a97a4928054269f143ce91f4ea22096c388b886 19600 linuxcnc_2.9.0~pre0_arm64.buildinfo
 Files:
- 23231250a7ec3aee3c5240b7a54a344b 10922756 debug optional linuxcnc-uspace-dbgsym_2.9.0~pre0_arm64.deb
- 53c282bed27cc231c5bdf01467069665 273224 devel optional linuxcnc-uspace-dev_2.9.0~pre0_arm64.deb
- b88e7fafd25d089879055e4c5892dab2 18848832 misc optional linuxcnc-uspace_2.9.0~pre0_arm64.deb
- 58666e09f27ba09d5ae1352c7ba7751d 16314 misc optional linuxcnc_2.9.0~pre0_arm64.buildinfo
+ 74087a7ab042a0b7b03136ba1913d08d 10965540 debug optional linuxcnc-uspace-dbgsym_2.9.0~pre0_arm64.deb
+ 62d053b2e2a3d51054f353b5180defbe 273620 devel optional linuxcnc-uspace-dev_2.9.0~pre0_arm64.deb
+ 78929948297e76a01c57fa219f111240 20363036 misc optional linuxcnc-uspace_2.9.0~pre0_arm64.deb
+ aaf4cf46bb9a349ba132edabe3e09572 19600 misc optional linuxcnc_2.9.0~pre0_arm64.buildinfo

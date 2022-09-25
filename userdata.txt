@@ -3,12 +3,12 @@ USERNAME="cnc"
 PASSWORD="cnc"
 rootpasswd=1
 ### LINUX KERNEL
-VERSION="5.15.y"
+VERSION="6.0.y"
 BUILD_VERSION="1"
 menuconfig=0
 crosscompile=1
 ### COMPILER
-GCC_VERSION="gcc-10"
+GCC_VERSION="gcc-11"
 gcc=1
 ccache=1
 clang=0
